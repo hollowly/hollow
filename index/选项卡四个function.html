@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #tab1,#tab2,#tab3,#tab4{
+        width:265px;
+        height:180px;
+        border:2px solid blue;
+        background:grey;
+        display:none;
+    }
+    #bg1,#bg2,#bg3,#bg4{
+        background:white;
+    }
+    #bg1{
+        background:red;
+    }
+    #tab1{
+        display:block;
+    }
+</style>
+<body>
+    <div id="allbg">
+        <input type="button" value="选项卡1" onclick="tab1()" id="bg1">
+        <input type="button" value="选项卡2" onclick="tab2()" id="bg2">
+        <input type="button" value="选项卡3" onclick="tab3()" id="bg3">
+        <input type="button" value="选项卡4" onclick="tab4()" id="bg4">
+    </div>
+    <div id="all">
+        <div id="tab1">1111</div>
+        <div id="tab2">2222</div>
+        <div id="tab3">3333</div>
+        <div id="tab4">4444</div>
+    </div>
+</body>
+
+<script>
+    function tab1()
+    {
+        var odiv=document.getElementById('all');
+        var odiv1=odiv.getElementsByTagName('div');
+        var odiv2=document.getElementById('tab1');
+        var odiv3=document.getElementById('allbg');
+        var odiv4=odiv3.getElementsByTagName('input');
+        var odiv5=document.getElementById('bg1');
+        for(var i = 0;i < odiv1.length;i++)
+        {
+            odiv1[i].style.display='none';
+            odiv4[i].style.background='white';
+        }
+        odiv2.style.display='block';
+        odiv5.style.background='red';
+    }
+
+    function tab2()
+    {
+        var odiv=document.getElementById('tab2');
+        var odiv1=document.getElementById('all');
+        var odiv2=odiv1.getElementsByTagName('div');
+        var odiv3=document.getElementById('allbg');
+        var odiv4=odiv3.getElementsByTagName('input');
+        var odiv5=document.getElementById('bg2');
+        for(var i = 0; i < odiv2.length;i++)
+        {
+            odiv2[i].style.display='none';
+            odiv4[i].style.background='white';
+
+        }
+        odiv.style.display='block';
+        odiv5.style.background='red';
+    }
+
+    function tab3()
+    {
+        var odiv=document.getElementById('tab3');
+        var odiv1=document.getElementById('all');
+        var odiv2=odiv1.getElementsByTagName('div');
+        var odiv3=document.getElementById('allbg');
+        var odiv4=odiv3.getElementsByTagName('input');
+        var odiv5=document.getElementById('bg3');
+        for(var i = 0; i < odiv2.length;i++)
+        {
+            odiv2[i].style.display='none';
+            odiv4[i].style.background='white';
+        }
+        odiv.style.display='block';
+        odiv5.style.background='red';
+    }
+
+    function tab4()
+    {
+        var odiv=document.getElementById('tab4');
+        var odiv1=document.getElementById('all');
+        var odiv2=odiv1.getElementsByTagName('div');
+        var odiv3=document.getElementById('allbg');
+        var odiv4=odiv3.getElementsByTagName('input');
+        var odiv5=document.getElementById('bg4');
+        for(var i = 0; i < odiv2.length;i++)
+        {
+            odiv2[i].style.display='none';
+            odiv4[i].style.background='white';
+        }
+        odiv.style.display='block';
+        odiv5.style.background='red';
+    }
+</script>
+</html>

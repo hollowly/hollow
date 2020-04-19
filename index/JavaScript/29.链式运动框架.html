@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background: red;
+            font-size: 20px;
+            margin:0px;
+        }
+        #btn{
+            margin-bottom:10px;
+            margin-left:10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='链式运动' id='btn'>
+    <input type="button" value='关闭链式运动' id='btn1'>
+    <div id='div1'>
+        字体
+    </div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var odiv = document.getElementById('div1');
+        var obtn = document.getElementById('btn');
+        var obtn1 = document.getElementById('btn1');
+
+        obtn.onclick = function()
+        {
+            move(odiv,'width',300,function(){
+                move(odiv,'height',300,function(){
+                    move(odiv,'fontSize',100);
+                })
+            });
+        }
+
+        obtn1.onclick = function()
+        {
+            move(odiv,'fontSize',20,function(){
+                move(odiv,'height',100,function(){
+                    move(odiv,'width',100);
+                })
+            });
+        }
+    }
+
+    function move(obj,attr,iTarget,fnEnd)
+    {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+
+            var cur = parseInt(getStyle(obj,attr));
+
+            var speed = (iTarget-cur)/6;
+            speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+            if(cur == iTarget)
+            {
+                clearInterval(obj.timer);
+
+                if(fnEnd)fnEnd();
+            }
+            else
+            {
+               obj.style[attr]=cur+speed+'px';
+            }
+        },30)
+    }
+
+     //封装函数
+     function getStyle(obj,name)
+    {
+        if(obj.currentStyle)
+        {
+            return obj.currentStyle[name];
+        }
+        else
+        {
+            return getComputedStyle(obj,false)[name];
+        }
+    }
+</script>

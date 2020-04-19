@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background:red;
+            position: absolute;
+        }
+        .box{
+            border:1px dashed black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id='div1'></div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var odiv = document.getElementById('div1');
+
+        odiv.onmousedown = function()//鼠标按下
+        {
+            var disX = 0;
+            var disY = 0;
+
+            disX = event.clientX - odiv.offsetLeft;
+            disY = event.clientY - odiv.offsetTop;
+
+            var obox = document.createElement('div');
+            obox.className = 'box';
+            obox.style.width = odiv.offsetWidth -2 + 'px';
+            obox.style.height = odiv.offsetHeight -2 + 'px';
+
+            obox.style.left = odiv.offsetLeft + 'px';
+            obox.style.top = odiv.offsetTop + 'px';
+
+            document.body.appendChild(obox);
+
+            document.onmousemove = function()//鼠标移动
+            {
+                var l = event.clientX - disX;
+                var t = event.clientY - disY;
+
+                if(l < 0)//上
+                {
+                    l = 0;
+                }
+                else if(l > document.documentElement.clientWidth - odiv.offsetWidth)//下
+                {
+                    l = document.documentElement.clientWidth - odiv.offsetWidth;
+                }
+
+                if(t < 0)//左
+                {
+                    t = 0;
+                }
+                else if(t > document.documentElement.clientHeight - odiv.offsetHeight)//右
+                {
+                    t = document.documentElement.clientHeight - odiv.offsetHeight;
+                }
+
+                obox.style.left =  l + 'px';
+                obox.style.top = t + 'px';
+            }
+
+            document.onmouseup = function()//鼠标松开
+            {
+                document.onmousemove = null;
+                document.onmouseup = null;
+
+                odiv.style.left = obox.offsetLeft + 'px';
+                odiv.style.top = obox.offsetTop + 'px';
+
+                document.body.removeChild(obox);
+            }
+
+            return false;
+        }
+    }
+</script>

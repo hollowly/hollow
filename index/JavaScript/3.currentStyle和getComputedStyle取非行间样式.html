@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div1{
+            width:250px;height:200px;background:red;
+            }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>
+
+<script>
+    function getstyle(obj,name)
+    {
+        if(obj.currentStyle)
+        {
+            return obj.currentStyle[name];
+        }
+        else
+        {
+            return getComputedStyle(obj,false)[name];
+        }
+    }
+//行间外取样式:只能取单一样式
+//currentStyle只能用于IE浏览器
+//getComputedStyle用于其他浏览器
+    window.onload=function()
+    {
+        var odiv=document.getElementById('div');
+
+        alert(getstyle(odiv,'width'));
+    }
+//复合样式：background,border
+//单一样式：width,height,position
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id='txt1'>
+    <input type="button" value="创建li" id='btn1'>
+    <ul id="ul1">
+    </ul>
+    <ul id="ul2">
+    <li>1111111<a href=#>删除</a></li>
+    <li>2222222<a href=#>删除</a></li>
+    <li>3333333<a href=#>删除</a></li>
+    <li>4444444<a href=#>删除</a></li>
+    <li>5555555<a href=#>删除</a></li>
+    <li>6666666<a href=#>删除</a></li>
+    </ul>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var obtn=document.getElementById('btn1');
+        var otxt=document.getElementById('txt1');
+
+        obtn.onclick=function()
+        {
+            var oul1=document.getElementById('ul1');
+            var ali1=oul1.getElementsByTagName('li');
+            var cli1=document.createElement('li');
+            cli1.innerHTML=otxt.value;
+            //父级.appendChild(子节点);
+            //oul.appendChild(oli);
+            oul1.insertBefore(cli1,ali1[0]);
+        }
+
+        var aa=document.getElementsByTagName('a');
+        var oul2=document.getElementById('ul2');
+        for(var i = 0;i < aa.length;i++)
+        {
+            aa[i].onclick=function()
+            {
+                oul2.removeChild(this.parentNode);
+            }
+        }
+    }
+</script>

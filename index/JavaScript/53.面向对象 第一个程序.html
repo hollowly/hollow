@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    window.onload = function()
+    {
+        var obj = new Object;
+
+        obj.name='hollow';
+        obj.qq='2499538506';
+
+        obj.showname=function()
+        {
+            alert('我的名字叫'+this.name)
+        }
+        obj.showQQ=function()
+        {
+            alert('我的qq是'+this.qq)
+        }
+
+        obj.showname();
+        obj.showQQ();
+    }
+</script>
