@@ -2,12 +2,7 @@
   "name": "hollow",
   "version": "1.0.0",
   "description": "",
-  "main": "new_ajax.js",
-  "dependencies": {},
-  "devDependencies": {
-    "commitizen": "^4.0.4",
-    "cz-conventional-changelog": "^3.1.0"
-  },
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,10 +16,5 @@
   "bugs": {
     "url": "https://github.com/2499538506/hollow/issues"
   },
-  "homepage": "https://github.com/2499538506/hollow#readme",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changlog"
-    }
-  }
+  "homepage": "https://github.com/2499538506/hollow#readme"
 }
