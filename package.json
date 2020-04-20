@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/2499538506/hollow/issues"
   },
-  "homepage": "https://github.com/2499538506/hollow#readme"
+  "homepage": "https://github.com/2499538506/hollow#readme",
+  "config": {
+    "commitizen":{
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
