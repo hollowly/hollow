@@ -1,33 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8">
+<title>无标题文档</title>
 </head>
+
 <body>
-    
 </body>
 </html>
 
 <script>
-    window.onload = function()
+    function createPerson(name, qq)		//构造函数
     {
-        var obj = new Object;
-
-        obj.name='hollow';
-        obj.qq='2499538506';
-
-        obj.showname=function()
+        var obj=new Object();
+        
+        obj.name=name;
+        obj.qq=qq;
+        
+        obj.showName=function ()
         {
-            alert('我的名字叫'+this.name)
-        }
-        obj.showQQ=function()
+            alert('我的名字叫：'+this.name);
+        };
+        obj.showQQ=function ()
         {
-            alert('我的qq是'+this.qq)
-        }
-
-        obj.showname();
-        obj.showQQ();
+            alert('我的QQ号：'+this.qq);
+        };
+        
+        return obj;
     }
-</script>
+    
+    var obj=createPerson('blue', '258248832');
+    
+    obj.showName();
+    obj.showQQ();
+    
+    var obj2=createPerson('张三', '45648979879');
+    
+    obj2.showName();
+    obj2.showQQ();
+    </script>
