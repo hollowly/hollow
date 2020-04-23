@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background:white;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="开灯" id='btn1'>
+    <input type="button" value="关灯" id='btn2'><br><br>
+    <img src="img/10.jpg" style="width:800px;margin: auto 0px;"><br>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+$(function()
+{
+    $('#btn1').click(function()
+    {
+        $('body').css('background','white');
+    })
+    $('#btn2').click(function()
+    {
+        $('body').css('background','#ccc');
+    })
+})
+
+</script>
