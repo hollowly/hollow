@@ -35,7 +35,7 @@
     var alpha = 20;
     var timer = null;
 
-    function move(num1,num2)
+    function move(target,speed)
     {
         var odiv1 = document.getElementById('div1');
     
@@ -43,13 +43,13 @@
 
         timer = setInterval(function(){
 
-            if(alpha == num1)
+            if(alpha == target)
             {
                 clearInterval(timer);
             }
             else
             {
-                alpha += num2;
+                alpha += speed;
 
                 odiv1.style.opacity = alpha / 100;
             }
