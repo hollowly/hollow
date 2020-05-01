@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="button" value='获取' id='getbtn'>
+    <input type="button" value='设置' id='setbtn'>
+
+    <div id='div1'>我是div1标签
+        <p>我是p1标签<span>span1</span></p>
+    </div>
+
+    <div>我是div2标签
+        <p>我是p2标签<span>span2</span></p>
+    </div>
+</body>
+</html>
+
+<script src='jquery-3.5.0.js'></script>
+<script>
+    //text():获取和设置文本的.
+    $(function()
+    {
+        //1.获取文本.text()方法不给参数，会获取标签中所有文本，包括后代文本
+        $('#getbtn').click(function()
+        {
+            //$('#div1').text();//id为div1的
+            //$('div').text();//所有div
+        });
+
+        //2.设置文本.会覆盖原来内容和后代标签，设置的文本有html标签不会解析出来
+        $('#setbtn').click(function()
+        {
+            //$('#div1').text('我是新设置的文本');
+            $('div').text('我是div的文本');//隐式迭代
+        });
+    })
+</script>
