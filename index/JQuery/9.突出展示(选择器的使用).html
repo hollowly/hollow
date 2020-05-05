@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        #ul1
+        {
+            width:810px;
+            height: 440px;
+            position: absolute;
+            left:160px;
+            top:70px;
+        }
+        img{
+            width:250px;
+            height: 200px;
+        }
+        li{
+            margin: 10px;
+            float: left;
+            list-style:none;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body  style="background: black;">
+    <ul id='ul1'>
+        <li><img src="img/a.jpg"></li>
+        <li><img src="img/b.jpg"></li>
+        <li><img src="img/c.jpg"></li>
+        <li><img src="img/d.jpg"></li>
+        <li><img src="img/e.jpg"></li>
+        <li><img src="img/f.jpg"></li>
+    </ul>
+</body>
+</html>
+
+<script src='jquery-3.5.0.js'></script>
+<script>
+    $(function()
+    {
+        $('ul li').mouseenter(function()
+        {
+            $(this).css('opacity','1').siblings('li').css('opacity','0.4');
+        })
+
+        $('ul').mouseleave(function()
+        {
+           // $('ul li').css('opacity','1');
+            $(this).find('li').css('opacity','1');//2个都行
+        })
+    })
+</script>
