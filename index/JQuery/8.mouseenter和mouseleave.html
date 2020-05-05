@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            list-style: none;
+            position: absolute;
+            top: 150px;
+            left: 350px;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            margin-right: 15px;
+            background: pink;
+            width:100px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+        }
+        #box ul{
+            display: none;
+            list-style: none;
+        }
+        #box li ul li{
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+<div id='div1'>
+    <ul id='box'>
+        <li><a href=#>一级菜单</a>
+            <ul>
+                <li><a href=#>二级菜单</a></li>
+                <li><a href=#>二级菜单</a></li>
+                <li><a href=#>二级菜单</a></li>
+            </ul>
+        </li>
+        <li><a href=#>一级菜单</a>
+            <ul>
+                <li><a href=#>二级菜单</a></li>
+                <li><a href=#>二级菜单</a></li>
+                <li><a href=#>二级菜单</a></li>
+            </ul>
+        </li>
+        <li><a href=#>一级菜单</a>
+            <ul>
+                <li><a href=#>二级菜单</a></li>
+                <li><a href=#>二级菜单</a></li>
+                <li><a href=#>二级菜单</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+
+<script src='jquery-3.5.0.js'></script>
+<script>
+    $(function()
+    {
+        var x = 0;
+        $('#div1>ul>li'). mouseenter(function()
+        {
+            x++;
+            console.log(x);
+           $(this).children('ul').show();
+        })
+
+        $('ul>li').mouseleave(function()
+        {
+            $(this).children('ul').hide();
+        })
+    })
+</script>
