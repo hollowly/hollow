@@ -9,14 +9,16 @@
         li{
             width:150px;
             height: 20px;
-            margin-bottom: 1px;
             text-align: center;
             list-style:none;
             background: skyblue;
             border:1px solid black;
         }
         div{
-            display: none;
+          width:152px;
+          height:150px;
+          display: none;
+          background: chartreuse;
         }
     </style>
 </head>
@@ -34,6 +36,9 @@
 <script>
     $(function()
     {
-
+        $('ul li').click(function()
+        {
+            $(this).find('div').css('display','block');
+        })
     })
 </script>
