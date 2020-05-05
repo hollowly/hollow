@@ -6,15 +6,102 @@
     <title>Document</title>
 
     <style>
-
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width:460px;
+            height:300px;
+            position: absolute;
+            left:330px;
+            top:130px;
+        }
+        #ul1,#ul3{
+            width:60px;
+            height:240px;
+            float: left;
+            
+        }
+        img{
+            height:290px;
+            width:320px;
+            float: left;
+            display: none;
+            border:1px solid pink;
+            margin-left: 6px;
+            margin-right: 6px;
+        }
+        button{
+            width:60px;
+            background: white;
+            border:1px solid pink;
+            margin-bottom: 12px;
+        }
     </style>
 </head>
 <body>
-    
+<div id='box'>
+    <ul id='ul1'>
+        <button>刀妹</button>
+        <button>皎月</button>
+        <button>马尔扎哈</button>
+        <button>卡牌</button>
+        <button>剑圣</button>
+        <button>豹女</button>
+        <button>奶妈</button>
+        <button>迦娜</button>
+        <button>德莱文</button>
+    </ul>
+    <ul id='ul2'>
+        <img src="img/1001.jpg" style="display: block;"><img src="img/1002.jpg">
+        <img src="img/1003.jpg"><img src="img/1004.jpg">
+        <img src="img/1005.jpg"><img src="img/1006.jpg">
+        <img src="img/1007.jpg"><img src="img/1008.jpg">
+        <img src="img/1009.jpg"><img src="img/1010.jpg">
+        <img src="img/1011.jpg"><img src="img/1012.jpg">
+        <img src="img/1013.jpg"><img src="img/1014.jpg">
+        <img src="img/1015.jpg"><img src="img/1016.jpg">
+        <img src="img/1017.jpg"><img src="img/1018.jpg">
+    </ul>
+    <ul id='ul3'>
+        <button>盲僧</button>
+        <button>金克斯</button>
+        <button>日女</button>
+        <button>狗头</button>
+        <button>小鱼人</button>
+        <button>女枪</button>
+        <button>狐狸</button>
+        <button>猪妹</button>
+        <button>瑞文</button>
+    </ul>
+</div>
 </body>
 </html>
 
 <script src='jquery-3.5.0.js'></script>
 <script>
-    
+    $(function()
+    {
+        $('#ul1>button').mouseenter(function()
+        {
+            var idx = $(this).index();//索引，表示整个元素在他兄弟元素间的排行
+            $(this).css('background','red').siblings('button').css('background','white');
+            //$('#ul2 img:eq('+idx+')').show().siblings('img').hide();
+            $('#ul2>img').eq(idx).show().siblings('img').hide();//两种都行
+        })
+
+        $('#ul3>button').mouseenter(function()
+        {
+            var idx = $(this).index() + 9;
+            $(this).css('background','red').siblings('button').css('background','white');
+            $('#ul2 img:eq('+idx+')').show().siblings('img').hide();
+            //$('#ul2>img').eq(idx).show().siblings('img').hide();//两种都行
+        })
+
+        $('ul').mouseleave(function()
+        {
+            $('button').css('background','white');
+        })
+    })
 </script>
