@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div1,#div2,#div3,#div4{
+            width: 250px;
+            height: 200px;
+            margin-bottom: 10px;
+            background:yellow;
+            display: none;
+        }
+        button{
+            background: white;
+        }
+    </style>
+</head>
+<body>
+<div id='box'>
+    <button id='tab1'>选项卡1</button>
+    <button id='tab2'>选项卡2</button>
+    <button id='tab3'>选项卡3</button>
+    <button id='tab4'>选项卡4</button>
+    <div id='div1'>1111</div>
+    <div id='div2'>2222</div>
+    <div id='div3'>3333</div>
+    <div id='div4'>4444</div>
+</div>
+</body>
+</html>
+
+<script src='jquery-3.5.0.js'></script>
+<script>
+    $('button').click(function()
+    {
+        $(this).css('background','red').siblings('button').css('background','white');
+    })
+    //方法1
+    // $('#tab1').click(function()
+    // {
+    //     $('#div1').show().siblings('div').hide();
+    // })
+    // $('#tab2').click(function()
+    // {
+    //     $('#div2').show().siblings('div').hide();
+    // })
+    // $('#tab3').click(function()
+    // {
+    //     $('#div3').show().siblings('div').hide();
+    // })
+    // $('#tab4').click(function()
+    // {
+    //     $('#div4').show().siblings('div').hide();
+    // })
+
+
+    //方法2
+    tabclick(tab1,div1);
+    tabclick(tab2,div2);
+    tabclick(tab3,div3);
+    tabclick(tab4,div4);
+
+    function tabclick(tab,div)
+    {
+        $(tab).click(function()
+        {   
+            $(div).show().siblings('div').hide();
+        })
+    }
+</script>
