@@ -17,6 +17,10 @@
             background: white;
             border:1px solid pink;
         }
+        .css{
+            background: red;
+            border:1px solid red;
+        }
     </style>
 </head>
 <body>
@@ -35,11 +39,11 @@
 
 <script src='jquery-3.5.0.js'></script>
 <script>
-    $('button').click(function()
-    {
-        $(this).css('background','red').siblings('button').css('background','white');
-    })
     //方法1
+    // $('button').click(function()
+    // {
+    //     $(this).css('background','red').siblings('button').css('background','white');
+    // })
     // $('#tab1').click(function()
     // {
     //     $('#div1').show().siblings('div').hide();
@@ -59,16 +63,32 @@
 
 
     //方法2
-    tabclick(tab1,div1);
-    tabclick(tab2,div2);
-    tabclick(tab3,div3);
-    tabclick(tab4,div4);
+    // $('button').click(function()
+    // {
+    //     $(this).css('background','red').siblings('button').css('background','white');
+    // })
+    // tabclick(tab1,div1);
+    // tabclick(tab2,div2);
+    // tabclick(tab3,div3);
+    // tabclick(tab4,div4);
 
-    function tabclick(tab,div)
+    // function tabclick(tab,div)
+    // {
+    //     $(tab).click(function()
+    //     {   
+    //         $(div).show().siblings('div').hide();
+    //     })
+    // }
+
+    //方法3
+    $(function()
     {
-        $(tab).click(function()
-        {   
-            $(div).show().siblings('div').hide();
+        $('button').click(function()
+        {
+            $(this).addClass('css').siblings('button').removeClass('css');
+
+            var idx = $(this).index() + 1;
+            $('div').eq(idx).show().siblings('div').hide();
         })
-    }
+    })
 </script>
