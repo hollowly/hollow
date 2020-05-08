@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input{
+            margin: 5px;
+        }
+        .css{
+            background: pink;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id='div1'>
+    账号：<input type='text'><br>
+    密码：<input type='password'><br>
+</div>
+    <input type="button" value='提交'>
+    <input type="reset" value='重置'>
+</body>
+</html>
+
+<script src='jquery-3.5.0.js'></script>
+<script>
+    $(function()
+    {
+        $('#div1>input').focus(function()//获取焦点
+        {
+            $(this).attr('value','请输入英文或数字');
+            $(this).addClass('css').siblings('input').removeClass('css');
+        })
+
+        $('#div1>input').blur(function()//失去焦点
+        {
+            $(this).attr('value','');
+            $('#div1>input').removeClass('css');
+        })
+    })
+</script>
