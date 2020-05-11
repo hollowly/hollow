@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        
+        #box{
+            position: absolute;
+            top:150px;
+            left:300px;
+            width:345px;
+            height: 120px;
+            list-style:none;
+        }
+        li{
+            background: pink;
+            list-style: none;
+            margin-right: 15px;
+            width:100px;
+            float:left;
+            line-height: 30px;
+            text-align: center;
+        }
+        ul li ul li{
+            background: skyblue;
+        }
+        #box ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id='box'>
+        <li>一级菜单
+            <ul id='ul1'>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul id='ul2'>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul id='ul3'>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
+
+<script src='jquery-3.5.0.js'></script>
+<script>
+    $(function()
+    {
+        $('#box > li').mouseenter(function()
+        {
+            $(this).children('ul').slideDown(400);
+        })
+
+        $('#box > li').mouseleave(function()
+        {
+            $(this).children('ul').slideUp(200);
+        })
+    })
+</script>
