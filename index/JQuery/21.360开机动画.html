@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        #div1{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+        span{
+            position: absolute;
+            top:0px;
+            left:301px;
+            color:white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id='div1'>
+        <span id='close'>X</span>
+        <img src="img/3601.jpg"><br>
+        <img src="img/3602.jpg">
+    </div>
+</body>
+</html>
+
+<script src='jquery-3.5.0.js'></script>
+<script>
+    $(function()
+    {
+        $('#close').click(function()
+        {
+            $('#div1').animate({height:'237px'},1000,function(){
+                $('#div1').animate({width:'0px'},1000);
+            })
+        })
+    })
+</script>
