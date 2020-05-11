@@ -36,12 +36,20 @@
     {
         $('#add').click(function()
         {
-            $('#div1').addClass('font width');
+            $('#div1').addClass('font width');//添加
         })
 
         $('#remove').click(function()
         {
-            $('#div1').removeClass('font width');
+            $('#div1').removeClass('font width');//移除
+        })
+        $('#judge').click(function()
+        {
+            $('#div1').hasClass('font width');//判断一个元素有没有某个类有就返回true，没有返回false
+        })
+        $('#change').click(function()
+        {
+            $('#div1').toggleClass('font width');//切换,如果元素有某个类就移除这个类，如果元素没有这个类就添加这个类
         })
     })
 </script>
