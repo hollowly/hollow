@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: red;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='移动' id='lr800'>
+    <div id='div1'></div>
+</body>
+</html>
+
+<script src='jquery-3.5.0.js'></script>
+<script>
+    $(function()
+    {
+        //animate()
+        //参数1:必选的 对象 代表需要做动画属性
+        //参数2:可选的 代表动画的时长
+        //参数3:可选的 代表的是缓动还是匀速    默认swing(缓动) linear(匀速)
+        $('#lr800').click(function()
+        {
+            $('#div1').animate({left:'600px'},2000,'linear');
+        })
+    })
+</script>
