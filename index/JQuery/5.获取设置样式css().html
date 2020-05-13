@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background: pink;
+            border:1px solid;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='获取' id='getbtn'>
+    <input type="button" value='设置' id='setbtn'>
+<div id='div1'></div>
+<div id='div2' style="width:200px"></div>
+<div id='div3' style="width:250px"></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#getbtn').click(function()
+        {
+            //获取样式：
+            alert($('#div1').css('width'));
+        })
+
+        $('#setbtn').click(function()
+        {
+            //获取样式：
+            $('#div2').css({
+                'height':'200px',
+                'background':'green',
+                'border':'2px solid red',
+                'margin':'5px'
+            });
+
+            $('#div3').css({
+                'height':'250px',
+                'background':'red',
+                'border':'5px solid skyblue'
+            });
+        })
+    })
+</script>

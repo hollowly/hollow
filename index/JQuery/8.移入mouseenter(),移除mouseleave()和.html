@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #ul1{
+            list-style: none;
+            width:330px;
+            height: 120px;
+            position: absolute;
+            top:150px;
+            left:350px;
+        }
+        li{
+            float:left;
+            width:100px;
+            height: 30px;
+            margin-right:10px;
+            text-align: center;
+            line-height: 30px;
+            background: pink;
+            list-style: none;
+        }
+        #ul1 li ul li{
+            background: skyblue;
+        }
+        #ul1 ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id='ul1'>
+        <li>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#ul1>li').mouseenter(function()
+        {
+            $(this).children('ul').show();
+        })
+
+        $('#ul1>li').mouseleave(function()
+        {
+            $(this).children('ul').hide();
+        })
+    })
+</script>
