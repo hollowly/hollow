@@ -6,15 +6,72 @@
     <title>Document</title>
     
     <style>
-
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #ul1{
+            position: absolute;
+            top:150px;
+            left:340px;
+        }
+        li{
+            width:120px;
+            height: 30px;
+            list-style: none;
+            background: pink;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+            margin-right: 5px;
+        }
+        li ul{
+            display: none;
+        }
+        #ul1 li ul li{
+            background: skyblue;
+        }
     </style>
 </head>
 <body>
-    
+    <ul id='ul1'>
+        <li>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li id='ul2'>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li id='ul3'>一级菜单
+            <ul>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
 </body>
 </html>
 <script src="jquery-3.5.0.js"></script>
 
 <script>
+    $(function()
+    {
+        $('#ul1 > li').mouseenter(function()
+        {
+            $(this).children('ul').slideDown(500);
+        })
 
+        $('#ul1 > li').mouseleave(function()
+        {
+            $(this).children('ul').slideUp(300);
+        })
+    })
 </script>
