@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="button" value='prepend' id='prepend'>
+    <input type="button" value='append' id='append'>
+    <input type="button" value='before' id='before'>
+    <input type="button" value='after' id='after'>
+    <input type="button" value='appendTo' id='appendTo'>
+    <ul id='ul1'>
+        <li>我是li标签1</li>
+        <li>我是li标签2</li>
+        <li>我是li标签3</li>
+    </ul>
+
+    <ul id='ul2'>
+        <li>我是li标签11</li>
+        <li id='li22'>我是li标签22</li>
+        <li>我是li标签33</li>
+    </ul>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        //注释.
+        //prepend:  作为子元素添加到开头
+        //append:   作为子元素添加到末尾
+        //before:    元素A.before(元素B)  作为兄弟元素把元素B插入到元素A之前
+        //after:     元素A.after(元素B)  作为兄弟元素把元素B插入到元素A之后 
+        //appendTo: 子元素.appendTo(父元素)  //把子元素作为父元素的最后一个字元素添加
+
+
+        //prepend:添加元素到开头
+        $('#prepend').click(function()
+        {
+            var linew = $("<li>我是新创建的li标签</li>");
+            //var li22 = $('#li22');
+            $('#ul1').prepend(linew);
+        })
+        //append:添加元素到末尾
+        $('#append').click(function()
+        {
+            var linew = $("<li>我是新创建的li标签</li>");
+            //var li22 = $('#li22');
+            $('#ul1').append(linew);
+        })
+
+        //before:元素A.after(元素B)  把元素B插入到元素A之前 
+        $('#before').click(function()
+        {
+            var divnew = $("<div>我是新创建的div标签</div>");
+            $('#ul1').before(divnew);
+        })
+
+        //after: 元素A.after(元素B)  把元素B插入到元素A之后 
+        $('#after').click(function()
+        {
+            var divnew = $("<div>我是新创建的div标签</div>");
+            $('#ul1').after(divnew);
+        })
+
+        //appendTo: 子元素.appendTo(父元素)  //把子元素作为父元素的最后一个字元素添加
+        $('#appendTo').click(function()
+        {
+            var linew = $("<li>我是新创建的li标签</li>");
+            linew.appendTo($('#ul1'));
+        })
+        
+    })
+</script>
