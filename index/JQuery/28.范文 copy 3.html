@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        table td{
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='插入数据' id='inster'>
+    <table>
+        <thead id='tablehead'>
+            <tr>
+                <td>标题</td>
+                <td>地址</td>
+                <td>说明</td>
+            </tr>
+        </thead>
+        <tbody id='tablebody'>
+
+        </tbody>
+    </table>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    var data = 
+    [
+        {
+            name:'博客园',
+            url:'https://www.cnblogs.com/',
+            type:'我的博客园'
+        },
+        {
+            name:'Github',
+            url:'https://hollowly.github.io/',
+            type:'我的github'
+        },
+        {
+            name:'百度',
+            url:'https://www.百度.com/',
+            type:'百度一下'
+        }
+    ]
+
+
+    $('#inster').click(function()
+    {
+        var list = [];
+        for(let i = 0;i < data.length;i++)
+        {
+            //生成<tr>
+            list.push('<tr>')
+
+            //生成<td>
+            for(var key in data[i])
+            {
+                list.push('<td>');
+                list.push(data[i][key]);
+                list.push('</td>');
+            }
+            //生成</tr>
+            list.push('</tr>');
+        }
+
+        list.join('');
+    })
+</script>
