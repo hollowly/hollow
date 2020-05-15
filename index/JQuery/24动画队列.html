@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #div1{
+            background: red;
+            width: 200px;
+            height: 600px;
+            margin: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='开始动画' id='start'>
+    <input type="button" value='停止动画' id='stop'>
+    <div id='div1'></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+$(function()
+{
+    $('#start').click(function()
+    {
+        $('#div1').slideDown(1000).slideUp(1000);
+    })
+
+    $('#stop').click(function()
+    {
+        //stop();
+        //参数1:是否清楚队列
+        //参数2:是否跳转到最终结果
+        //默认都是false
+
+        //$('#div1').stop(true,false);
+        $('#div1').stop(false,false);
+    })
+})
+</script>
