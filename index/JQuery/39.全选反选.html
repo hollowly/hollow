@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        table{
+            position:absolute;
+            top:100px;
+            left:300px;
+            width:320px;
+            height:200px;
+            text-align: center;
+        }
+        thead{
+            width:320px;
+            background: skyblue;
+        }
+        input{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table border cellspacing=0>
+        <thead>
+            <tr>
+                <td><input type="checkbox" id='allchecked'></td>
+                <td>课程名称</td>
+                <td>所属学院</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>JavaScript</td>
+                <td>前端用与开发学院</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>css</td>
+                <td>前端用与开发学院</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>jquery</td>
+                <td>前端用与开发学院</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>html</td>
+                <td>前端用与开发学院</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#allchecked').click(function()
+        {
+            var checkvalue = $(this).prop('checked');
+            $('tbody input').prop('checked',checkvalue);
+        })
+
+        $('tbody input').click(function()
+        {
+            var numall = $('tbody input').length;//所有复选框的个数
+            var numselect = $('tbody input:checked').length;//被选中复选框的个数
+
+            //1、
+            // if(numall == numselect)
+            // {
+            //     $('#allchecked').prop('checked',true);
+            // }
+            // else
+            // {
+            //     $('#allchecked').prop('checked',false);
+            // }
+            //2、
+            $('#allchecked').prop('checked',numall == numselect);
+        })
+    })
+</script>

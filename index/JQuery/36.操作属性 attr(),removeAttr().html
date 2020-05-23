@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        img{
+            width:500px;
+        }
+    </style>
+</head>
+<body><br>
+    <input type="button" value="获取属性" id='btn1'>
+    <input type="button" value="设置属性" id='btn2'>
+    <input type="button" value="移除属性" id='btn3'><br><br>
+    <img src="img/10.jpg" title="剑姬" aaa='aaa' bbb='bbb' id='ig'>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#btn1').click(function()
+        {
+            //获取
+            console.log($('#ig').attr('src'));
+        })
+
+        $('#btn2').click(function()
+        {
+            //设置
+            // $('#ig').attr('src','img/11.jpg');//修改属性
+            // $('ig').attr('aaa','哈哈哈');//修改自定义属性
+            //$('ig').attr('bbb','bbb');//添加属性
+            $('#ig').attr(
+                {
+                    'src':'img/11.jpg',
+                    'title':'妖姬',
+                    'aaa':'哈哈哈',
+                }
+            )
+        })
+
+        $('#btn3').click(function()
+        {
+            $('#ig').removeAttr('title');//移除一个
+
+            $('#ig').removeAttr('title aaa bbb');//移除多个
+        })
+    })
+</script>
