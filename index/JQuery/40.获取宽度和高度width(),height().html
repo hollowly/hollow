@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            padding: 30px;
+            border:5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="设置" id='one'>
+
+    <div id='div1'></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#one').click(function()
+        {
+
+            $('#div1').width(400);
+            $('#div1').height(400);
+            //获取或元素的宽高，不包括padding/border/margin
+            console.log($('#div1').width());
+            console.log($('#div1').height());
+            //返回元素包括内包括内边距(padding)
+            console.log($('#div1').innerWidth());
+            console.log($('#div1').innerHeight());
+            //返回元素包括的所有边框
+            console.log($('#div1').outerWidth(true));
+            console.log($('#div1').outerHeight(true));
+
+            //获取页面可视区
+            console.log($(window).width());
+            console.log($(window).height());
+        })
+    })
+</script>
