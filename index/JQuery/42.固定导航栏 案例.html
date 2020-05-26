@@ -40,14 +40,20 @@
             text-align: center;
             margin: 0 auto;
             display: none;
+            position: relative;
         }
         body{
             height:2000px;
         }
+        #div1{
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
-    <img src="img/2014.jpg">
+    <img src="img/2014.jpg" id='img1'>
+<div id='div1'>
     <ol id='ol1'>
         <li>体育首页</li>
         <li>中国足球</li>
@@ -79,6 +85,7 @@
     </ul>
     <ul id='ul2'><li>!!!!!!!!!!!!!!</li>
     </ul>
+</div>
 </body>
 </html>
 <script src="jquery-3.5.0.js"></script>
@@ -91,5 +98,33 @@
             var idx = $(this).index();
             $(this).parent().siblings('ul').eq(idx).show().siblings('ul').hide();
         })
+    })
+
+    $(window).scroll(function()
+    {
+        var scrolltopvalue = $(window).scrollTop();//图片高度
+        
+        var imgHeight = $('#img1').height();
+        console.log(scrolltopvalue)
+        if(scrolltopvalue >= imgHeight)
+        {
+            $('#div1').css(
+                {
+                    'position': 'fixed',
+                    'top':'0',
+                    'left':'0',
+                }
+            )
+        }
+        else
+        {
+            $('#div1').css(
+                {
+                    'position':'static',
+                    'top':'0',
+                    'left':'0',
+                }
+            );
+        }
     })
 </script>
