@@ -46,6 +46,7 @@
             height:2000px;
         }
         #div1{
+            border:1px solid red;
             margin: 0;
             padding: 0;
         }
@@ -86,6 +87,7 @@
     <ul id='ul2'><li>!!!!!!!!!!!!!!</li>
     </ul>
 </div>
+<img src="img/20141.jpg" id='img2'>
 </body>
 </html>
 <script src="jquery-3.5.0.js"></script>
@@ -102,19 +104,20 @@
 
     $(window).scroll(function()
     {
-        var scrolltopvalue = $(window).scrollTop();//图片高度
-        
-        var imgHeight = $('#img1').height();
-        console.log(scrolltopvalue)
-        if(scrolltopvalue >= imgHeight)
+        var scrolltopvalue = $(window).scrollTop();
+        var imgheight = $('#img1').height();  //图片高度
+        var divhight = $('#div1').height();   //第二部分的高度
+
+        if(scrolltopvalue >= imgheight)
         {
             $('#div1').css(
                 {
                     'position': 'fixed',
                     'top':'0',
                     'left':'0',
-                }
-            )
+                })
+                //设置第三部分的marginTop的值为第二部分的高度.
+                 $('#img2').css(marginTop,divhight + 10);
         }
         else
         {
@@ -125,6 +128,8 @@
                     'left':'0',
                 }
             );
+            //设置第三部分的marginTop的值为原来的值.
+            $('#img2').css(marginTop,10);
         }
     })
 </script>
