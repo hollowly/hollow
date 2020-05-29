@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="注册事件" id='btn1'>
+    <input type="button" value="解绑事件" id='btn2'>
+    <div id='div1'></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        //给div添加注册事件
+        $('#btn1').on('click',function()
+        {
+            $('#div1').on(
+            {
+                'click':function()
+                {
+                    console.log('点击事件');
+                },
+                'mouseenter':function()
+                {
+                    console.log('鼠标移入事件');
+                }
+            })
+        })
+
+        //事件解绑事件.
+        $('#btn2').on('click',function()
+        {
+            //解除所有事件
+            $('#div1').off();
+            //解除click事件
+            $('#div1').off('click');
+        })
+    })
+</script>
