@@ -6,15 +6,66 @@
     <title>Document</title>
     
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            position: relative;
+            top: 100px;
+            left: 100px;
 
+        }
     </style>
 </head>
 <body>
-    
+    <div id='div1'>
+        <input type="button" value="按钮" id='btn1'><br><br>
+        <a href="https://www.baidu.com">百度一下</a>
+    </div>
 </body>
 </html>
 <script src="jquery-3.5.0.js"></script>
 
 <script>
+    $(function()
+    {
+        //1.常用的3个坐标
+        $('#div1').on('click',function(e)
+        {
+            // //距离屏幕左上角值
+            // console.log('screenX：'+e.screenX +':'+e.screenY);
+            // //可视区左上角的值
+            // console.log('clientX：'+e.clientX +':'+e.clientY);
+            // //页面左上角的值
+            // console.log('pageX：'+e.pageX +':'+e.pageY);
+            alert('div单击事件');
+        })
 
+         //2.(阻止)事件冒泡
+        $('#btn1').on('click',function(e)
+        {
+            alert('按钮单击事件');
+            e.stopPropagation();//阻止事件冒泡
+        })
+
+        //3.(阻止)浏览器默认行为
+        $('a').on('click',function(e)
+        {
+            alert('a标签单击事件');
+            // e.stopPropagation();//阻止事件冒泡
+            // e.preventDefault();//阻止默认行为(a标签跳转)
+
+            return false;//既能阻止事件冒泡，又能阻止默认行为
+        })
+
+        //4.获取键盘事件.
+        $(document).on('keydown',function(e)
+        {
+            console.log($(e.keyCode));
+        })
+    })
 </script>

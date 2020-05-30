@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $(document).on('keydown',function(e)
+        {
+            if($(e.keyCode))
+            {
+                $('body').css('background',color())
+            }
+        })
+    })
+
+    function color()
+    {
+        var arr = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+        var col = '#';
+        for(i = 0;i < 6;i++)
+        {
+            num = (Math.floor(Math.random() * 16))
+            col += arr[num];
+            //col += arr[Math.floor(Math.random() * 16)];
+        }
+        return col;
+    }
+</script>
