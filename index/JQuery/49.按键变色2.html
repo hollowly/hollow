@@ -7,7 +7,7 @@
     
     <style>
         #div1{
-            width: 500px;
+            width: 600px;
             height: 400px;
             background: pink;
             font-size: 50px;
@@ -43,6 +43,21 @@
         {
             $('#div1').css('background','blue');
             $('#span1').text('66');
+        }
+        else if(e.keyCode == 71)
+        {
+            $('#div1').css('background','green');
+            $('#span1').text('71');
+        }
+        else if(e.keyCode)
+        {
+            $('#div1').css('background','yellow');
+            $('#span1').text('89');
+        }
+        else
+        {
+            $('#div1').css('background','pink');
+            $('#span1').text('占无此键');
         }
     })
 </script>
