@@ -36,23 +36,23 @@
                 var l = event.clientX - disX;
                 var t = event.clientY - disY;
 
-                if(l < 0)//上
-                {
-                    l = 0;
-                }
-                else if(l > document.documentElement.clientWidth - odiv.offsetWidth)//下
-                {
-                    l = document.documentElement.clientWidth - odiv.offsetWidth;
-                }
+                // if(l < 0)//上
+                // {
+                //     l = 0;
+                // }
+                // else if(l > document.documentElement.clientWidth - odiv.offsetWidth)//下
+                // {
+                //     l = document.documentElement.clientWidth - odiv.offsetWidth;
+                // }
 
-                if(t < 0)//左
-                {
-                    t = 0;
-                }
-                else if(t > document.documentElement.clientHeight - odiv.offsetHeight)//右
-                {
-                    t = document.documentElement.clientHeight - odiv.offsetHeight;
-                }
+                // if(t < 0)//左
+                // {
+                //     t = 0;
+                // }
+                // else if(t > document.documentElement.clientHeight - odiv.offsetHeight)//右
+                // {
+                //     t = document.documentElement.clientHeight - odiv.offsetHeight;
+                // }
 
                 odiv.style.left =  l + 'px';
                 odiv.style.top = t + 'px';

@@ -18,8 +18,8 @@
             position: absolute;
         }
     </style>
-    <!-- <script src ="Drag.js"></script>
-    <script src ="limitDrag.js"></script> -->
+    <script src ="Drag.js"></script>
+    <script src ="limitDrag.js"></script>
 </head>
 <body>
     <div id='div1'>普通拖拽</div>
@@ -35,87 +35,87 @@
     }
 
     //普通拖拽
-    function Drag(id)
-    {
-        var _this = this;
+//     function Drag(id)
+//     {
+//         var _this = this;
 
-        this.disX = 0;
-        this.disY = 0;
+//         this.disX = 0;
+//         this.disY = 0;
 
-        this.odiv = document.getElementById(id);
-       this.odiv.onmousedown = function()
-       {
-           _this.fnDown();
-           return false;
-       }
-    }
+//         this.odiv = document.getElementById(id);
+//        this.odiv.onmousedown = function()
+//        {
+//            _this.fnDown();
+//            return false;
+//        }
+//     }
 
-    Drag.prototype.fnDown = function()
-    {
-        var _this = this;
+//     Drag.prototype.fnDown = function()
+//     {
+//         var _this = this;
 
-        this.disX = event.clientX - this.odiv.offsetLeft;
-        this.disY = event.clientY - this.odiv.offsetTop;
+//         this.disX = event.clientX - this.odiv.offsetLeft;
+//         this.disY = event.clientY - this.odiv.offsetTop;
 
-        document.onmousemove = function()
-        {
-            _this.fnMove();
-        }
-        document.onmouseup = function()
-        {
-            _this.fnUp();
-        }
-    }
+//         document.onmousemove = function()
+//         {
+//             _this.fnMove();
+//         }
+//         document.onmouseup = function()
+//         {
+//             _this.fnUp();
+//         }
+//     }
 
-    Drag.prototype.fnMove = function()
-    {
-        this.odiv.style.left = event.clientX - this.disX + 'px';
-        this.odiv.style.top = event.clientY - this.disY + 'px';
-    }
+//     Drag.prototype.fnMove = function()
+//     {
+//         this.odiv.style.left = event.clientX - this.disX + 'px';
+//         this.odiv.style.top = event.clientY - this.disY + 'px';
+//     }
 
-    Drag.prototype.fnUp = function()
-    {
-        document.onmousemove = null;
-        document.onmouseup = null;
-    }
+//     Drag.prototype.fnUp = function()
+//     {
+//         document.onmousemove = null;
+//         document.onmouseup = null;
+//     }
 
 
 
-    //限制拖拽(继承)
-    function limitDrag(id)
-    {
-        Drag.call(this,id);
-    }
+//     //限制拖拽(继承)
+//     function limitDrag(id)
+//     {
+//         Drag.call(this,id);
+//     }
 
-    for(var i in Drag.prototype)
-    {
-        limitDrag.prototype[i] = Drag.prototype[i];
-    }
+//     for(var i in Drag.prototype)
+//     {
+//         limitDrag.prototype[i] = Drag.prototype[i];
+//     }
 
-    limitDrag.prototype.fnMove = function()
-    {
-    var l = event.clientX - this.disX;
-        var t = event.clientY - this.disY;
+//     limitDrag.prototype.fnMove = function()
+//     {
+//     var l = event.clientX - this.disX;
+//         var t = event.clientY - this.disY;
 
-        if(l < 0)
-        {
-            l = 0;
-        }
-        else if(l > document.documentElement.clientWidth - this.odiv.offsetWidth)
-        {
-            l = document.documentElement.clientWidth - this.odiv.offsetWidth;
-        }
+//         if(l < 0)
+//         {
+//             l = 0;
+//         }
+//         else if(l > document.documentElement.clientWidth - this.odiv.offsetWidth)
+//         {
+//             l = document.documentElement.clientWidth - this.odiv.offsetWidth;
+//         }
 
-        if(t < 0)
-        {
-            t = 0;
-        }
-        else if(t > document.documentElement.clientHeight - this.odiv.offsetHeight)
-        {
-            t = document.documentElement.clientHeight - this.odiv.offsetHeight;
-        }
+//         if(t < 0)
+//         {
+//             t = 0;
+//         }
+//         else if(t > document.documentElement.clientHeight - this.odiv.offsetHeight)
+//         {
+//             t = document.documentElement.clientHeight - this.odiv.offsetHeight;
+//         }
 
-        this.odiv.style.left = l + 'px';
-        this.odiv.style.top = t + 'px';
-}
+//         this.odiv.style.left = l + 'px';
+//         this.odiv.style.top = t + 'px';
+// }
 </script>
