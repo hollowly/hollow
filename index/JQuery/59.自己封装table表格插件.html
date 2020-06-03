@@ -10,11 +10,21 @@
     </style>
 </head>
 <body>
-    
+    <div id='div1'>
+
+    </div>
 </body>
 </html>
 <script src="jquery-3.5.0.js"></script>
 
 <script>
-
+    $('#div1').table(
+        ['序号','姓名','年龄','工资'],
+        [
+            {n:'xy',age:20,s:10},
+            {n:'wy',age:17,s:8},
+            {n:'pl',age:18,s:7},
+            {n:'djx',age:19,s:15},
+        ]
+    )
 </script>
