@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="plugi/jquery-ui.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Accordion -->
+<h2 class="demoHeaders">Accordion</h2>
+<div id="accordion">
+	<h3>First</h3>
+	<div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+	<h3>Second</h3>
+	<div>Phasellus mattis tincidunt nibh.</div>
+	<h3>Third</h3>
+    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <h3>djx</h3>
+    <div>hollows</div>
+</div>
+    
+<!-- Tabs -->
+<h2 class="demoHeaders">Tabs</h2>
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">First</a></li>
+		<li><a href="#tabs-2">Second</a></li>
+		<li><a href="#tabs-3">Third</a></li>
+	</ul>
+	<div id="tabs-1">111</div>
+	<div id="tabs-2">222</div>
+    <div id="tabs-3">333</div>
+    <div id="tabs-4">hollows</div>
+</div>
+
+
+<!-- Datepicker -->
+<h2 class="demoHeaders">Datepicker</h2>
+<div id="datepicker"></div>
+
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+<script src="plugi/jquery-ui.js"></script>
+<script>
+    $(function()
+    {  
+        $( "#accordion" ).accordion();
+        
+        $( "#tabs" ).tabs();
+
+        $( "#datepicker" ).datepicker(
+        {
+	        inline: true
+        });
+    })
+</script>
