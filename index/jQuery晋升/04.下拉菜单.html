@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #ul1{
+            width: 300px;
+            height: 50px;
+            background: red;
+            margin:0 auto;
+            margin-top: 200px;
+            list-style: none;
+        }
+        #ul1 > li{
+            width: 100px;
+            height: 50px;
+            float: left;
+            line-height: 50px;
+            font-size: 16px;
+        }
+        #ul2{
+            line-height: 40px;
+            background: pink;
+            list-style: none;
+            display: none;
+        }
+        #ul2 > li{
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <ul id='ul1'>
+        <li>一级菜单
+            <ul id='ul2'>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul id='ul2'>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul></li>
+        <li>一级菜单
+            <ul id='ul2'>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul></li>
+    </ul>
+</body>
+</html>
+
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#ul1 > li').mouseenter(function()
+        {
+            $(this).children('ul').stop().slideDown(300);
+        })
+        $('#ul1 > li').mouseleave(function()
+        {
+            $(this).children('ul').stop().slideUp(300);
+        })
+    });
+</script>
