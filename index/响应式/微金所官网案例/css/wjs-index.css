@@ -1,0 +1,25 @@
+/* 定义变量 */
+.wjs_header {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+.row {
+  text-align: center;
+  height: 100%;
+}
+.row > div:nth-of-type(-n+3) {
+  border-right: 1px solid #ccc;
+}
+.row .wjs_code {
+  position: relative;
+}
+.row .wjs_code > img {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  display: none;
+}
+.row .wjs_code:hover > img {
+  display: block;
+}

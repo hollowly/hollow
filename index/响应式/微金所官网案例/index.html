@@ -11,7 +11,7 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap 引用当前bootstrap框架核心的样式文件 -->
-    <link href="./bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
@@ -19,11 +19,37 @@
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="css/wjs-index.css">
   </head>
   <body>
 
     <!-- 头部块 -->
-    <div class="wjs_header"></div>
+    <div class="wjs_header hidden-xs hidden-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <a href="javascript:;" class="wjs_code">
+                        <span>手机微金所</span>
+                        <span class="glyphicon glyphicon-menu-down"></span>
+                        <img src="img/code.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <a href="javascript:;">
+                        4006-89-4006（服务时间：9:00~21:00）联系在线客服
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a href="javascript:;">常见问题</a>&nbsp;&nbsp;
+                    <a href="javascript:;">财务登录</a>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-danger">免费注册</button>
+                    <button type="button" class="btn btn-link">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- 导航条 -->
     <div class="wjs_nav"></div>
     <!-- 轮播图 -->
@@ -41,8 +67,8 @@
 
 
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="./jquery-3.5.0.js"></script>
+    <script src="../jquery-3.5.0.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   </body>
 </html>
