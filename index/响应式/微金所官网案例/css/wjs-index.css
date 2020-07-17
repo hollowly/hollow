@@ -8,6 +8,7 @@ a:active,
 a:visited {
   text-decoration: none;
 }
+/* 头部块 */
 .wjs_header {
   height: 50px;
   line-height: 50px;
@@ -43,8 +44,28 @@ a:visited {
   text-decoration: none;
   outline: none;
 }
-.wjs_nav .navbar-collapse {
-  height: 150px;
-  line-height: 150px;
-  border: 1px solid red;
+/* 导航块 */
+.wjs_nav .navbar-brand {
+  height: 80px;
+  line-height: 50px;
+  font-size: 40px;
+}
+.wjs_nav .navbar-toggle {
+  margin-top: 23px;
+}
+.wjs_nav .navbar-nav > li > a {
+  font-size: 16px;
+  line-height: 50px;
+  color: #555;
+}
+.wjs_nav .navbar-nav > li > a:hover,
+.wjs_nav .navbar-nav > li a:focus {
+  color: #555;
+  border-bottom: 3px solid red;
+}
+.wjs_nav .navbar-nav .active > a,
+.wjs_nav .navbar-nav .active a:hover,
+.wjs_nav .navbar-nav .active a:focus {
+  background: transparent;
+  border-bottom: 3px solid red;
 }
