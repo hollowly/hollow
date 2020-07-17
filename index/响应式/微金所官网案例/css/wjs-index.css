@@ -43,3 +43,8 @@ a:visited {
   text-decoration: none;
   outline: none;
 }
+.wjs_nav .navbar-collapse {
+  height: 150px;
+  line-height: 150px;
+  border: 1px solid red;
+}
