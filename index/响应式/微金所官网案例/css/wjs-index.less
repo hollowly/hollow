@@ -1,4 +1,10 @@
 /* 定义变量 */
+a{
+    color: black;
+}
+a:link,a:hover,a:active,a:visited{
+    text-decoration: none;
+}
 @bbaseColor:#e92322;
 .wjs_header{
     height: 50px;
@@ -12,11 +18,9 @@
         border-right: 1px solid #ccc;
     }
     .wjs_code{
-        position: relative;
+        // position: relative;
         > img{
             position: absolute;
-            top: 20px;
-            left: 0px;
             display: none;
         }
         &:hover{
@@ -25,5 +29,22 @@
             }
         }
     }
-    
+
+    .btn-danger{
+        background: red;
+        border: 1px solid red;
+        outline: none;
+
+    }
+    .btn{
+        padding: 4px 15px;
+        outline: none;
+    }
+    .btn-link{
+        color: #444;
+        &:hover{
+            text-decoration: none;
+            outline: none;
+        }
+    }
 }
