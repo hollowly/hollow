@@ -69,11 +69,14 @@ a:visited {
   background: transparent;
   border-bottom: 3px solid red;
 }
-.wjs_banner {
-  border: 1px solid red;
-}
-.wjs_banner .item .item-img {
-  width: 100%;
-  display: block;
-  border: 1px solid blue;
+/* 轮播图 */
+@media screen and (max-width: 768px) {
+  .item-img {
+    width: 100%;
+    display: block;
+  }
+  .item-img > img {
+    width: 100%;
+    display: block;
+  }
 }

@@ -81,13 +81,19 @@ a:link,a:hover,a:active,a:visited{
     }
 }
 
+/* 轮播图 */
 .wjs_banner{
-   border:1px solid red;
-   .item{
-        .item-img{
+  
+}
+
+@media screen and (max-width:768px)
+{
+    .item-img{
+        width: 100%;
+        display: block;
+        >img{
             width: 100%;
             display: block;
-            border: 1px solid blue;
-        }
-   }
+         }
+    }
 }
