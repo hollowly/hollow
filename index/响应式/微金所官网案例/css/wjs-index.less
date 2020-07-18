@@ -83,10 +83,10 @@ a:link,a:hover,a:active,a:visited{
 
 /* 轮播图 */
 .wjs_banner{
-  
+  border: 0px;
 }
-
-@media screen and (max-width:768px)
+// 移动端
+@media screen and (max-width:767px)
 {
     .item-img{
         width: 100%;
@@ -95,5 +95,18 @@ a:link,a:hover,a:active,a:visited{
             width: 100%;
             display: block;
          }
+    }
+}
+// 非移动端
+@media screen and (min-width:767px)
+{
+    .item-img{
+        width: 100%;
+        height: 410px;
+        display: block;
+        // 背景图片居中显示
+        background-position: center center;
+        // 背景图片大小
+        background-size: cover;
     }
 }
