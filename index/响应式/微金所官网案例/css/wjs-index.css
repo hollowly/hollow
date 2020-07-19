@@ -136,4 +136,21 @@ a:visited {
 /* 产品块 */
 .product {
   clear: both;
+  background: #eee;
+  padding: 30px;
+}
+.product .nav-tabs > li > a {
+  border-radius: 0px;
+  line-height: 50px;
+}
+.product .nav-tabs > li > a:active,
+.product .nav-tabs > li a:hover,
+.product .nav-tabs > li a:focus,
+.product .nav-tabs > li a {
+  background: none;
+  border: none;
+}
+.product .nav-tabs > li > a:hover,
+.product .nav-tabs > li a:focus {
+  border-bottom: 3px solid red;
 }

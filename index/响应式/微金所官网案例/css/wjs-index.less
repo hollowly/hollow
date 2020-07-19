@@ -158,4 +158,21 @@ a:link,a:hover,a:active,a:visited{
 /* 产品块 */
 .product{
     clear: both;
+    background: #eee;
+    padding: 30px;
+    .nav-tabs{
+        >li{
+            >a{
+                border-radius: 0px;
+                line-height: 50px;
+            }
+            >a:active,a:hover,a:focus,a{
+                background: none;
+                border: none;
+            }
+            >a:hover,a:focus{
+                border-bottom: 3px solid red;
+            }
+        }
+    }
 }
