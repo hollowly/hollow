@@ -24,9 +24,11 @@ a:visited {
 .row .wjs_code > img {
   position: absolute;
   display: none;
+  z-index: 999;
 }
 .row .wjs_code:hover > img {
   display: block;
+  z-index: 999;
 }
 .row .btn-danger {
   background: red;
