@@ -95,13 +95,40 @@ a:visited {
   }
 }
 /* 信息块 */
-.wis_info .container-fluid {
-  box-sizing: border-box;
+.wis_info {
+  margin: 30px;
 }
-.wis_info .container-fluid > .row {
-  box-sizing: border-box;
+.wis_info > .container-fluid > .row {
   height: 80px;
 }
-.wis_info .container-fluid > .row .media {
-  margin-top: 50px;
+.wis_info > .container-fluid > .row > a:hover {
+  color: red;
+}
+/* 预约块 */
+.reverse {
+  height: 70px;
+  line-height: 70px;
+  border: 1px solid #d2d2d2;
+  font-size: 18px;
+}
+.reverse .row {
+  text-align: left;
+}
+.reverse .row > a {
+  margin-left: 20px;
+  color: red;
+  border-bottom: 1px dashed red;
+}
+.reverse .row > .reverse-what,
+.reverse .row .reverse-xcp {
+  color: #333;
+  border-bottom: 0px;
+}
+.reverse .row > a:hover {
+  color: red;
+}
+.reverse .row > span {
+  color: red;
+  margin-left: 6px;
+  margin-right: 6px;
 }

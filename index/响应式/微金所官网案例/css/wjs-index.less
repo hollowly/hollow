@@ -115,19 +115,42 @@ a:link,a:hover,a:active,a:visited{
 
 /* 信息块 */
 .wis_info{
-    .container-fluid{
-        // border: 1px solid blue;
-        box-sizing: border-box;
+    margin: 30px;
+    >.container-fluid{
         >.row{
-            // border: 1px solid red;
-            box-sizing: border-box;
             height: 80px;
-            // line-height:320%;
-            .media{
-                // border: 2px solid red;
-                margin-top: 50px;
+            >a:hover{
+               color:red;
             }
         }
     }
-    
+}
+
+/* 预约块 */
+.reverse{
+    height: 70px;
+    line-height: 70px;
+    border: 1px solid rgb(210, 210, 210);
+    font-size: 18px;
+    .row{
+        text-align: left;
+        // border: 1px solid red;
+        >a{
+            margin-left: 20px;
+            color: red;
+            border-bottom: 1px dashed red;
+        }
+        >.reverse-what,.reverse-xcp{
+            color: #333;
+            border-bottom: 0px;
+        }
+        >a:hover{
+            color: red;
+        }
+        >span{
+            color: red;
+            margin-left: 6px;
+            margin-right: 6px;
+        }
+    }
 }
