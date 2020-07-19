@@ -135,5 +135,5 @@ a:visited {
 }
 /* 产品块 */
 .product {
-  border: 1px solid white;
+  clear: both;
 }
