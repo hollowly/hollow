@@ -110,12 +110,13 @@ a:visited {
   line-height: 70px;
   border: 1px solid #d2d2d2;
   font-size: 18px;
+  box-sizing: border-box;
 }
 .reverse .row {
+  display: inline-block;
   text-align: left;
 }
 .reverse .row > a {
-  margin-left: 20px;
   color: red;
   border-bottom: 1px dashed red;
 }
@@ -131,4 +132,8 @@ a:visited {
   color: red;
   margin-left: 6px;
   margin-right: 6px;
+}
+/* 产品块 */
+.product {
+  border: 1px solid white;
 }
