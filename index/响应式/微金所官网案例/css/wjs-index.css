@@ -94,3 +94,14 @@ a:visited {
     background-size: cover;
   }
 }
+/* 信息块 */
+.wis_info .container-fluid {
+  box-sizing: border-box;
+}
+.wis_info .container-fluid > .row {
+  box-sizing: border-box;
+  height: 80px;
+}
+.wis_info .container-fluid > .row .media {
+  margin-top: 50px;
+}
