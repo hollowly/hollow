@@ -140,7 +140,6 @@ a:visited {
   padding: 30px;
 }
 .product .nav-tabs > li > a {
-  border-radius: 0px;
   line-height: 50px;
 }
 .product .nav-tabs > li > a:active,
@@ -152,5 +151,5 @@ a:visited {
 }
 .product .nav-tabs > li > a:hover,
 .product .nav-tabs > li a:focus {
-  border-bottom: 3px solid red;
+  border-bottom: 2px solid red;
 }
