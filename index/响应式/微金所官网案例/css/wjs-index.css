@@ -153,3 +153,72 @@ a:visited {
 .product .nav-tabs > li a:focus {
   border-bottom: 2px solid red;
 }
+.product .product-box {
+  height: 150px;
+  margin-top: 20px;
+}
+.product .product-box > .box-left {
+  margin-right: 100px;
+  height: 150px;
+  background: white;
+  border-right: 1px dashed #ccc;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.product .product-box > .box-left > p {
+  padding-top: 5px;
+}
+.product .product-box > .box-left > .row > div {
+  border: 0px;
+}
+.product .product-box > .box-right {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  background: white;
+  text-align: center;
+  padding-top: 30px;
+}
+.product .product-box > .box-right > b {
+  font-size: 40px;
+  color: red;
+}
+.product .product-box > .box-right > span {
+  color: red;
+}
+.product .product-box > .box-right > .box-right-text {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-60%);
+}
+.product .product-box > .box-right > .box-right-text > .first {
+  cursor: pointer;
+  border: 1px solid red;
+  color: red;
+}
+.product .product-box > .box-right > .box-right-text > .last {
+  cursor: pointer;
+  border: 1px solid blue;
+  color: blue;
+}
+.product .first-box-div > .box-left {
+  background: red;
+  color: white;
+}
+.product .first-box-div > .box-right {
+  background: red;
+  color: white;
+}
+.product .first-box-div > .box-right > b {
+  color: white;
+}
+.product .first-box-div > .box-right > span {
+  color: white;
+}
