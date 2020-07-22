@@ -135,27 +135,35 @@ a:visited {
 }
 /* 产品块 */
 .product {
-  height: 480px;
   clear: both;
   background: #eee;
   padding: 30px;
 }
-.product .nav-tabs > .active {
-  border-bottom: 2px solid red;
+.product .tab-parent {
+  width: 100%;
+  overflow: hidden;
 }
-.product .nav-tabs > li > a {
+.product .tab-parent .nav-tabs {
+  width: 150%;
+}
+.product .tab-parent .nav-tabs > .active > a {
+  border-bottom: 3px solid red;
+}
+.product .tab-parent .nav-tabs > li > a {
   line-height: 50px;
 }
-.product .nav-tabs > li > a:active,
-.product .nav-tabs > li a:hover,
-.product .nav-tabs > li a:focus,
-.product .nav-tabs > li a {
+.product .tab-parent .nav-tabs > li > a:active,
+.product .tab-parent .nav-tabs > li a:hover,
+.product .tab-parent .nav-tabs > li a:focus,
+.product .tab-parent .nav-tabs > li a {
+  border-bottom: 3px solid red;
   background: none;
   border: none;
 }
-.product .nav-tabs > li > a:hover,
-.product .nav-tabs > li a:focus {
-  border-bottom: 2px solid red;
+.product .tab-parent .nav-tabs > li > a:hover,
+.product .tab-parent .nav-tabs > li a:focus {
+  color: red;
+  border-bottom: 3px solid red;
 }
 .product .tab-content .row > div {
   border-right: 0px;
@@ -234,3 +242,4 @@ a:visited {
 .product .first-box-div > .box-right > span {
   color: white;
 }
+/* 新闻块 */

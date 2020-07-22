@@ -157,29 +157,37 @@ a:link,a:hover,a:active,a:visited{
 
 /* 产品块 */
 .product{
-    height: 480px;
     clear: both;
     background: #eee;
     padding: 30px;
-    .nav-tabs{
-        >.active{
-            border-bottom: 2px solid red;
-        }
-        >li{
-            >a{
-                // border-radius: 0px;
-                line-height: 50px;
+    .tab-parent{
+        width: 100%;
+        overflow: hidden;
+        .nav-tabs{
+            width: 150%;
+            >.active{
+                >a{
+                    border-bottom: 3px solid red;
+                }
             }
-            >a:active,a:hover,a:focus,a{
-                background: none;
-                border: none;
-            }
-            >a:hover,a:focus{
-                border-bottom: 2px solid red;
+            >li{
+                >a{
+                    // border-radius: 0px;
+                    line-height: 50px;
+                }
+                >a:active,a:hover,a:focus,a{
+                    border-bottom: 3px solid red;
+                    background: none;
+                    border: none;
+                }
+                >a:hover,a:focus{
+                    color: red;
+                    border-bottom: 3px solid red;
+                }
             }
         }
     }
-
+    
     .tab-content{
         .row{
             >div{
@@ -266,3 +274,5 @@ a:link,a:hover,a:active,a:visited{
         }
     }
 }
+
+/* 新闻块 */
