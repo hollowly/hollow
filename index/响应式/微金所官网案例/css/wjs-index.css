@@ -135,9 +135,13 @@ a:visited {
 }
 /* 产品块 */
 .product {
+  height: 480px;
   clear: both;
   background: #eee;
   padding: 30px;
+}
+.product .nav-tabs > .active {
+  border-bottom: 2px solid red;
 }
 .product .nav-tabs > li > a {
   line-height: 50px;
@@ -152,6 +156,14 @@ a:visited {
 .product .nav-tabs > li > a:hover,
 .product .nav-tabs > li a:focus {
   border-bottom: 2px solid red;
+}
+.product .tab-content .row > div {
+  border-right: 0px;
+}
+.product .tab-content > div:nth-of-type(n+2) {
+  color: red;
+  line-height: 250px;
+  font-size: 100px;
 }
 .product .product-box {
   height: 150px;
@@ -196,7 +208,7 @@ a:visited {
   position: absolute;
   left: 50%;
   top: 20px;
-  transform: translateX(-60%);
+  transform: translateX(-55%);
 }
 .product .product-box > .box-right > .box-right-text > .first {
   cursor: pointer;
