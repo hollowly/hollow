@@ -276,3 +276,55 @@ a:link,a:hover,a:active,a:visited{
 }
 
 /* 新闻块 */
+.news{
+    >.container{
+        margin-top: 30px;
+        >.row{
+            .news-title{
+                font-size: 25px;
+                line-height: 50px;
+                text-align: center;
+                border-bottom: 1px solid #ccc;
+                position: relative;
+                &::before{
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    position: absolute;
+                    bottom: -5px;
+                    right: -8px;
+                }
+            }
+        }
+    .nav-tabs{
+        >li{
+        margin-bottom: 60px;
+            >a{
+                background: #ccc;
+                border: none;
+                width: 60px;
+                height: 60px;
+                line-height: 40px;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+            >a:hover{
+                border: none;
+                background: red;
+                color: white;
+            }
+            >a:active{
+                >a,a:hover,a:focus{
+                    border: none;
+                    color: white;
+                    background: red;
+
+                }
+            }
+        }
+    }
+    }
+}
