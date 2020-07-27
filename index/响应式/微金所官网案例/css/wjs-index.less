@@ -277,6 +277,7 @@ a:link,a:hover,a:active,a:visited{
 
 /* 新闻块 */
 .news{
+    height: 100%;
     >.container{
         margin-top: 30px;
         >.row{
@@ -288,43 +289,105 @@ a:link,a:hover,a:active,a:visited{
                 position: relative;
                 &::before{
                     content: "";
+                    border: 1px solid #ccc;
                     width: 8px;
                     height: 8px;
-                    border-radius: 4px;
-                    border: 1px solid #ccc;
+                    border-radius: 50%;
                     position: absolute;
-                    bottom: -5px;
                     right: -8px;
+                    bottom: -5px;
                 }
             }
+            >div{
+                border: none;
+            }
         }
-    .nav-tabs{
-        >li{
-        margin-bottom: 60px;
-            >a{
-                background: #ccc;
-                border: none;
-                width: 60px;
-                height: 60px;
-                line-height: 40px;
-                text-align: center;
-                cursor: pointer;
-                border-radius: 50%;
-            }
-            >a:hover{
-                border: none;
-                background: red;
-                color: white;
-            }
-            >a:active{
-                >a,a:hover,a:focus{
-                    border: none;
-                    color: white;
-                    background: red;
+        .nav-tabs{
+        border: none;
+        position: relative;
 
+            >.news-before{
+                width: 1px;
+                height: 100%;
+                position: absolute;
+                left: 45%;
+                border-left: 1px dashed red;
+            }
+
+            >li{
+            margin-bottom: 60px;
+                >a{
+                    background: #ccc;
+                    border: none;
+                    width: 60px;
+                    height: 60px;
+                    line-height: 40px;
+                    text-align: center;
+                    cursor: pointer;
+                    border-radius: 50%;
+                }
+                >a:hover{
+                    border: none;
+                    background: red;
+                    color: white;
+                }
+                &.active{
+                    a,a:hover,a:focus{
+                        border: none;
+                        color: white;
+                        background: red;
+                    }
+                }
+            }
+
+            >li:last-child{
+                margin-bottom: 0px;
+            }
+            /* 使用媒体查询设置li元素之间的宽度 */
+            @media screen and (min-width:768px) and (max-width:992px){
+                >li{
+                    margin: 20px 40px;
+                }
+            }
+            /* 宽度小于768 */
+            @media screen and (max-width:768px){
+                >li{
+                    margin: 20px 0px;
+                    width: 25%;
                 }
             }
         }
     }
+
+    .tab-content{
+        margin-left: 10px;
+        >div{
+            text-align: left;
+            font-size: 14px;
+            height: 400px;
+            >p{
+                padding: 28px;
+            }
+        }
+    }
+}
+
+/* 合作伙伴 */
+.partne{
+    background: #eee;
+    >.container{
+        >div{
+            padding: 40px;
+            >ul{
+                >li{
+                    float: left;
+                    list-style: none;
+                    >img{
+                        width: 100px;
+                        margin-right: 60px;
+                    }
+                }
+            }
+        }
     }
 }

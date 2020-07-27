@@ -243,6 +243,9 @@ a:visited {
   color: white;
 }
 /* 新闻块 */
+.news {
+  height: 100%;
+}
 .news > .container {
   margin-top: 30px;
 }
@@ -255,13 +258,29 @@ a:visited {
 }
 .news > .container > .row .news-title::before {
   content: "";
+  border: 1px solid #ccc;
   width: 8px;
   height: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  border-radius: 50%;
   position: absolute;
-  bottom: -5px;
   right: -8px;
+  bottom: -5px;
+}
+.news > .container > .row > div {
+  border: none;
+}
+.news > .container .nav-tabs {
+  border: none;
+  position: relative;
+  /* 使用媒体查询设置li元素之间的宽度 */
+  /* 宽度小于768 */
+}
+.news > .container .nav-tabs > .news-before {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  left: 45%;
+  border-left: 1px dashed red;
 }
 .news > .container .nav-tabs > li {
   margin-bottom: 60px;
@@ -281,10 +300,50 @@ a:visited {
   background: red;
   color: white;
 }
-.news > .container .nav-tabs > li > a:active > a,
-.news > .container .nav-tabs > li > a:active a:hover,
-.news > .container .nav-tabs > li > a:active a:focus {
+.news > .container .nav-tabs > li.active a,
+.news > .container .nav-tabs > li.active a:hover,
+.news > .container .nav-tabs > li.active a:focus {
   border: none;
   color: white;
   background: red;
+}
+.news > .container .nav-tabs > li:last-child {
+  margin-bottom: 0px;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .news > .container .nav-tabs > li {
+    margin: 20px 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .news > .container .nav-tabs > li {
+    margin: 20px 0px;
+    width: 25%;
+  }
+}
+.news .tab-content {
+  margin-left: 10px;
+}
+.news .tab-content > div {
+  text-align: left;
+  font-size: 14px;
+  height: 400px;
+}
+.news .tab-content > div > p {
+  padding: 28px;
+}
+/* 合作伙伴 */
+.partne {
+  background: #eee;
+}
+.partne > .container > div {
+  padding: 40px;
+}
+.partne > .container > div > ul > li {
+  float: left;
+  list-style: none;
+}
+.partne > .container > div > ul > li > img {
+  width: 100px;
+  margin-right: 60px;
 }
