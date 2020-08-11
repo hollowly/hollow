@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="myform">
+        用户名：<input type="text" name="username" placeholder="请输入用户名" autofocus autocomplete="on"> <br>
+        <!-- placeholder：提示文本 -->
+        <!-- autofocus：自动获取焦点 -->
+        <!-- autocomplete:自动完成 on:打开   off:关闭
+        1.必须通过提交，才会记录下来
+        2.当前元素必须要有name属性 -->
+
+        手机号：<input type="tel" required pattern="^(\+86)?1\d{10}$"> <br>
+        <!-- required:必须输入 -->
+        <!-- pattern：正则表达式验证 -->
+
+        <input type="file" multiple> <br>
+        <!-- multiple：可以选择多个文件 -->
+
+        邮箱：<input type="email" multiple> <br>
+        <!-- 在邮箱中可以输入多个邮箱，中间用逗号(,)分隔 -->
+
+
+        提交：<input type="submit"> <br>
+    </form>
+
+
+
+
+    <!-- 下面这个表单元素并没有包含在form中不会进行提交 -->
+    <!-- form：指定表单id，指定id表单进行提交时，也会将当前的提交 -->
+    地址：<input type="text" form="myform">
+</body>
+</html>
