@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/10.jpg" alt="" id='img'>
+    <img src="img/11.jpg" alt="" id='img'>
+    <img src="img/12.jpg" alt="" id='img'>
+
+    <input type="button" id="full" value="全屏">
+    <input type="button" id="exitfull" value="退出全屏">
+    <input type="button" id="isfull" value="是否全屏">
+</body>
+</html>
+
+<script>
+    /* 全屏操作的主要方法和属性：
+    1.requestFullscreen():开启全屏显示
+    不同浏览器需要添加不同的前缀
+        chrome：webkit     firefox：moz     ie：ms      opera：o
+    */
+    window.onload = function()
+    {
+        var oimg = document.getElementById('img');
+
+        // document.querySelector('#full').onclick = function()
+        // {
+        //     oimg.requestFullscreen();
+        // }
+
+        document.getElementById('full').onclick = function()
+        {
+            oimg.requestFullscreen();
+        }
+    }
+</script>
