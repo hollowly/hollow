@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选取第一个字符：实现首字下沉 */
+        p::first-letter{
+            color: red;
+            font-size: 30px;
+            float: left;
+        }
+
+        /* 选取第一行 */
+        p::first-line{
+            text-decoration: underline;
+        }
+
+        /* 设置当前选中内容的样式 */
+        p::selection{
+            background: pink;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>hollows<br>123456789</p>
+</body>
+</html>
