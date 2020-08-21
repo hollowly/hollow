@@ -6,19 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            /* background-image: linear-gradient(to left,rgba(255, 255, 255, 0),rgb(0, 0, 0)); */
-            /* background-image: linear-gradient(to left,rgba(0, 0, 0, 1),rgb(255, 255, 255,0)); */
-/* background-image: linear-gradient(to right, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%); */
+        div{
+            margin-right: 30px;
         }
         .div1{
+            float: left;
             width: 300px;
             height: 300px;
-            background: linear-gradient(to bottom,rgb(255,255,255),rgb(0,0,0));
+            /*线性渐变： linear-gradient:(方向，开始颜色 位置，颜色2 位置，颜色3 位置...)
+            to top: 0deg
+            to right:90deg 
+            to bottom:180deg --默认值
+            to left:270deg */
+            background:linear-gradient(to right,red,#6FF); 
+        }
+        .div2{
+            width: 300px;
+            height: 300px;
+            float: left;
+            /* 径向渐变:radial-gradient  */
+            background: radial-gradient(at left top,red,#6FF);
+            /* overflow: scroll; */
         }
     </style>
 </head>
 <body>
-    <div class="div1"></div>
+    <div class="div1">线性渐变</div>
+    
+    <div class="div2">径向渐变</div>
 </body>
 </html>
