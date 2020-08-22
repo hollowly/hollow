@@ -10,9 +10,14 @@
             padding: 0;
             margin: 0;
         }
-        .item{
+        #menu{
             width: 200px;
-            height: 170px;
+            height: auto;
+            margin: 10px auto;
+        }
+        .item{
+            width: 100%;
+            height: auto;
             background: rgb(159,244,228);
             border-bottom: 2px solid #ccc;
             color: rgb(240,165,37);
@@ -21,57 +26,74 @@
             line-height: 50px;
             text-shadow:rgb(38, 0, 255) 1px 1px 3px;  
         }
-        #ul1{
-            /* display: none; */
-            width: 200px;
-            height: 120px;
+        .itembox{
+            display: none;
+            width: 100%;
+            height: auto;
+            background: rgb(255,232,150);
+        }
+        .itembox > #ul1{
+            list-style: none;
             text-shadow: none;
             font-weight: 700;
             font-size: 18px;
-            background: rgb(255,232,150);
             line-height: 30px;
+        }
+
+        .item:hover > .itembox{
+            display: block;
         }
     </style>
 </head>
 <body>
+<div id='menu'>
     <div class="item">
         <h2>市内新闻</h2>
-        <ul id='ul1'>
-            <li>11111111111111</li>
-            <li>22222222222222</li>
-            <li>33333333333333</li>
-            <li>44444444444444</li>
-        </ul>
+        <div class="itembox">
+            <ul id='ul1'>
+                <li>11111111111111</li>
+                <li>22222222222222</li>
+                <li>33333333333333</li>
+                <li>44444444444444</li>
+            </ul>
+        </div>
     </div>
 
     <div class="item">
         <h2>省内新闻</h2>
-        <ul id='ul1'>
-            <li>11111111111111</li>
-            <li>22222222222222</li>
-            <li>33333333333333</li>
-            <li>44444444444444</li>
-        </ul>
+        <div class="itembox">
+            <ul id='ul1'>
+                <li>11111111111111</li>
+                <li>22222222222222</li>
+                <li>33333333333333</li>
+                <li>44444444444444</li>
+            </ul>
+        </div>
     </div>
 
     <div class="item">
         <h2>国内新闻</h2>
-        <ul id='ul1'>
-            <li>11111111111111</li>
-            <li>22222222222222</li>
-            <li>33333333333333</li>
-            <li>44444444444444</li>
-        </ul>
+        <div class="itembox">
+            <ul id='ul1'>
+                <li>11111111111111</li>
+                <li>22222222222222</li>
+                <li>33333333333333</li>
+                <li>44444444444444</li>
+            </ul>
+        </div>
     </div>
 
     <div class="item">
         <h2>国际新闻</h2>
-        <ul id='ul1'>
-            <li>11111111111111</li>
-            <li>22222222222222</li>
-            <li>33333333333333</li>
-            <li>44444444444444</li>
-        </ul>
+        <div class="itembox">
+            <ul id='ul1'>
+                <li>11111111111111</li>
+                <li>22222222222222</li>
+                <li>33333333333333</li>
+                <li>44444444444444</li>
+            </ul>
+        </div>
     </div>
+</div>
 </body>
 </html>
