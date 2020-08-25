@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+
+            /* 添加动画效果 */
+            /* 1.指定动画名称 */
+            animation-name: moveTest;
+            animation-duration: 2s; /* 动画时长 */
+            animation-iteration-count: 2;    /* 动画播放次数 infinite:无限次*/
+            animation-direction: alternate;  /* 来回交替 */
+            animation-delay: 1s;    /* 动画延迟 */
+            
+            /* 设置动画结束时的状态：默认情况下，动画执行完毕 会回到最初状态
+                1、forwards:会保留动画结束时的状态
+                2、backwards:不会保留动画结束时的状态,如果有初始状态，会立刻进入初始状态
+                3、both:会保留结束状态，也会进入初始状态
+             */
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+            animation-play-state: running;   /* 设置播放状态 paused：暂停     running：播放*/
+        }
+        
+        /* 创建动画 */
+        @keyframes moveTest {
+            0%{
+                transform: translate(0px,0px) rotate(45deg);
+            }
+            30%{
+                transform: translate(200px,200px);
+            }
+            60%{
+                transform: translate(0px,200px);
+            }
+            100%{
+                transform: translate(0px,0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="播放" id='running'>
+    <input type="button" value="暂停" id='paused'> <br><br>
+    <div class="div1"></div>
+</body>
+</html>
+
+<script>
+    window.onload = function()
+    {
+        var div = document.querySelector('.div1');
+
+        document.querySelector('#running').onclick = function()
+        {
+            div.style.animationPlayState = 'running';
+        }
+
+        document.querySelector('#paused').onclick = function()
+        {
+            div.style.animationPlayState = "paused";
+        }
+    }
+</script>
