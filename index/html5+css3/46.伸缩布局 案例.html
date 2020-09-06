@@ -13,11 +13,24 @@
         div{
             margin: 50px auto;
             width: 700px;
-            height: 600px;
-            border: 1px solid red;
+            height: 500px;
+            border: 1px solid #ccc;
         }
-        ul{
+        div > ul{
             list-style: none;
+            width: 100%;
+
+            display: flex;
+            justify-content: space-evenly;
+        }
+        div > ul >li{
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            text-align:center;
+            background: #9fff9d;
+            border-right: 1px solid #ccc;
+            flex: 1;
         }
     </style>
 </head>
