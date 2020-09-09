@@ -80,14 +80,14 @@
         {
             $(this).css('background','red').siblings('li').css('background','white');
             var idx = $(this).index();
-            $('#ul2>img').eq(idx).show().siblings('img').hide();
-        })
+            $('#ul2 > img').eq(idx).show().siblings('img').hide();
+        });
 
         $('#ul3>li').mouseenter(function()
         {
             $(this).css('background','red').siblings('li').css('background','white');
             var idx = $(this).index() + 9;
-            $('#ul2>img').eq(idx).show().siblings('img').hide();
-        })
-    })
+            $('#ul2 > img').eq(idx).show().siblings('img').hide();
+        });
+    });
 </script>
