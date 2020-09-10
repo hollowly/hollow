@@ -25,6 +25,8 @@
             height: 100%;
             float: left;
             transform-style: preserve-3d;
+            /* 添加过渡效果 */
+            transition: transform 0.5s;
         }
         ul > li > span{
             width: 100%;
@@ -32,6 +34,7 @@
             position: absolute;
             left: 0;
             top: 0;
+            z-index: -1;
         }
         ul > li > span:nth-of-type(1){
             background: url('img/10.jpg');
@@ -74,12 +77,13 @@
             text-align: center;
             line-height: 60px;
             position: absolute;
-            top: 50%;
+            top: 40%;
             text-decoration: none;
             font-size: 40px;
-            transform: translate(0,-50%);
+            /* transform: translate(0,-50%); */
             background: rgba(0,0,0,0.5);
             color: white;
+            z-index: 1;
         }
         .left{
             left: 0;
@@ -128,8 +132,59 @@
             </li>
         </ul>
 
-        <a href="" class="left">&lt;</a>
-        <a href="" class="right">&gt;</a>
+        <a href="#" class='left'>&lt;</a>
+        <a href="#" class='right'>&gt;</a>
     </div>
+
+    <script src='../jquery-3.5.0.js'></script>
+
+    <script>
+        $(function(){
+            var index = 0;
+
+            // 设置节流阀 true说明本次单击会有响应处理
+            var flag = true;
+
+            // 右按钮
+            $('.right').click(function(){
+                if(flag == true){
+                    // 设置节流阀
+                    flag = false;
+                    index--;
+                    // 所谓下一张就是将所有li元素围绕x旋转
+                    $('li').each(function(key,value){
+                        // 通过transform进行旋转
+                        $(this).css({
+                            'transform':"rotateX("+(index*90)+"deg)",
+                            'transition-delay': (key*0.15) + 's',
+                        })
+                    })
+                    setTimeout(function(){
+                        flag = true;
+                    },1200);
+                }
+            })
+            
+            // 左按钮
+            $('.left').click(function(){
+                if(flag == true){
+                    // 设置节流阀
+                    flag = false;
+                    index++;
+                    // 所谓下一张就是将所有li元素围绕x旋转
+                    $('li').each(function(key,value){
+                        // 通过transform进行旋转
+                        $(this).css({
+                            'transform':"rotateX("+(index*90)+"deg)",
+                            'transition-delay': (key*0.15) + 's',
+                        })
+                    })
+                    setTimeout(function(){
+                        flag = true;
+                    },1200);
+                }
+            })
+        })
+    </script>
 </body>
 </html>
