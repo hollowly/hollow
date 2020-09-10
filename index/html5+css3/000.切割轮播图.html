@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .view{
+            width: 560px;
+            height: 300px;
+            margin: 100px auto;
+            position: relative;
+        }
+        ul{
+            width: 100%;
+            height: 100%;
+            list-style: none;
+        }
+        ul > li{
+            width: 20%;
+            height: 100%;
+            float: left;
+            transform-style: preserve-3d;
+        }
+        ul > li > span{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        ul > li > span:nth-of-type(1){
+            background: url('img/10.jpg');
+            background-size: 560px;
+            /* 往Z轴方向偏移 */
+            transform: translateZ(150px);
+        }
+        ul > li > span:nth-of-type(2){
+            background: url('img/11.jpg');
+            background-size: 560px;
+            transform: translateY(-150px) rotateX(90deg);
+        }
+        ul > li > span:nth-of-type(3){
+            background: url('img/12.jpg');
+            background-size: 560px;
+            transform: translateZ(-150px) rotateX(180deg);
+        }
+        ul > li > span:nth-of-type(4){
+            background: url('img/13.jpg');
+            background-size: 560px;
+            transform: translateY(150px) rotateX(-90deg);
+        }
+        /* 设置每一个li元素的span所显示的图片位置 */
+        ul > li:nth-of-type(2) > span{
+            background-position: -100% 0;
+        }
+        ul > li:nth-of-type(3) > span{
+            background-position: -200% 0;
+        }
+        ul > li:nth-of-type(4) > span{
+            background-position: -300% 0;
+        }
+        ul > li:nth-of-type(5) > span{
+            background-position: -400% 0;
+        }
+
+        .left,.right{
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            position: absolute;
+            top: 50%;
+            text-decoration: none;
+            font-size: 40px;
+            transform: translate(0,-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+        }
+        .left{
+            left: 0;
+        }
+        .right{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class='view'>
+        <ul>
+            <!-- 每一个li是一个结构块 -->
+            <li>
+                <!-- 每一个span是这个结构块的某一面 -->
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+        </ul>
+
+        <a href="" class="left">&lt;</a>
+        <a href="" class="right">&gt;</a>
+    </div>
+</body>
+</html>
