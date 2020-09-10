@@ -7,7 +7,12 @@
     <script src="../jquery-3.5.0.js"></script>
     <script src="jquery.fullPage.js"></script>
     <style>
-        .second .current{
+        .first.current{
+            font-size: 100px;
+            color: pink;
+        }
+
+        .second.current{
             font-size: 150px;
         }
     </style>
@@ -37,8 +42,8 @@
                 /* 当滚动到某一屏之后调用
                 index：当前屏幕的索引，索引从1开始 */
                 afterLoad:function(anchorLink,index){
-                    alert(idnex);
-                    
+                    $('.section').removeClass('current');
+                    // alert(index);
                     $('.section').eq(index-1).addClass('current');
                 }
             });
