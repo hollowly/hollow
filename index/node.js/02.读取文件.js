@@ -11,7 +11,7 @@ var fs = require('fs');
     //     data undefined 没有数据
     //     error 错误对象
     
-fs.readFile('1.txt',function(error,data) {
+fs.readFile('你好.txt',function(error,data) {
     // console.log(data.toString());
     // console.log(error);
     

@@ -10,7 +10,7 @@ var fs = require('fs');
     // 失败
     //     文件写入失败
     //     error 就是错误对象
-fs.writeFile('你好.txt','我是nodejs',function(error) {
+fs.writeFile('你好.txt','你好，我是nodejs',function(error) {
     if(error){
         console.log('写入失败');
     } else {
