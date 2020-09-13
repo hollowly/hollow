@@ -3,7 +3,7 @@ var http = require('http');
 
 var server = http.createServer();
 
-server.on('request',function(req ,res) {
+server.on('request',function(res ,req) {
     // console.log('收到客户端的请求，请求路径是' + req.url);
     var url = req.url;
 
@@ -20,6 +20,6 @@ server.on('request',function(req ,res) {
     }
 })
 
-server.listen(3002, function() {
+server.listen(3000, function() {
     console.log('服务器启动成功了，可以通过http://127.0.0.1:3000/ 来进行访问');
 })
