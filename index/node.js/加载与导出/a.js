@@ -11,6 +11,6 @@ var bExports = require('./b.js');
 
 console.log(bExports.foo);
 
-console.log(bExports.add(10,3000));
+console.log(bExports.add(10,30));
 
 console.log(bExports.ages);
