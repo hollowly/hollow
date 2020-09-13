@@ -4,20 +4,20 @@ var http = require('http');
 var server = http.createServer();
 
 server.on('request',function(req ,res) {
-    console.log('收到客户端的请求，请求路径是' + req.url);
-    
-    if(req.url ="/") {
-        res.write('index');
-    } else if (req.url = '/login') {
-        res.write('登录');
-    } else if (req.url = '/register') {
-        res.write('注册');
-    } else if (req.url = '/haha') {
-        res.write('哈哈哈');
-    }
-    
-    res.end();
+    // console.log('收到客户端的请求，请求路径是' + req.url);
+    var url = req.url;
 
+    if(url === "/") {
+        res.end('index page');
+    } else if (url === '/login') {
+        res.end('登录 page');
+    } else if (url === '/register') {
+        res.end('注册 page');
+    } else if (url === '/haha') {
+        res.end('哈哈哈 page');
+    } else {
+        res.end('404 not found.')
+    }
 })
 
 server.listen(3002, function() {
