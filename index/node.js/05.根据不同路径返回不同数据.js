@@ -3,10 +3,9 @@ var http = require('http');
 
 var server = http.createServer();
 
-server.on('request',function(res ,req) {
+server.on('request',function(req ,res) {
     // console.log('收到客户端的请求，请求路径是' + req.url);
     var url = req.url;
-
     if(url === "/") {
         res.end('index page');
     } else if (url === '/login') {
@@ -15,8 +14,23 @@ server.on('request',function(res ,req) {
         res.end('注册 page');
     } else if (url === '/haha') {
         res.end('哈哈哈 page');
+    } else if(url === '/products') {
+            var products = [{
+                name:'苹果 X',
+                price:8888
+            },
+            {
+                name:'菠萝 X',
+                price:6666
+            },
+            {
+                name:'小辣椒 X',
+                price:1999
+            },
+        ]
+        res.end(JSON.stringify(products));
     } else {
-        res.end('404 not found.')
+        res.end('404 Not Found.');
     }
 })
 
