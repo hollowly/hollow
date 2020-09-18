@@ -6,7 +6,7 @@ var server = http.createServer();
 server.on('request',function(req, res) {
     var url = req.url;
 
-    if(url === '/'){
+    if(url === '/') {
         fs.readFile('./index/index.html',function(err, data) {
             if(err) {
                 res.setHeader('Content-Type','text/plain; charset=utf-8');
