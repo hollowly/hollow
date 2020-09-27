@@ -14,15 +14,14 @@ server.on('request',function(req, res) {
             return;
         }
         // 1.如何得到目录列表中的文件名和目录名 (fs.readdir)
-        // fs.readdir(wwwDir ,function(err, files) {
-        //     if(err) {
-        //         res.end('Can not find www dir.');
-        //     }
-        //     console.log(files);
-        // })
+        fs.readdir(wwwDir ,function(err, files) {
+            if(err) {
+                res.end('Can not find www dir.');
+            }
+            console.log(files);
+        })
         data = data.toString();
 
-        data = data.replace('i','123');
         // console.log(data);
         // 2.如何将得到的文件名和目录名替换到  template.html 中 (模板引擎)
         res.end(data);
