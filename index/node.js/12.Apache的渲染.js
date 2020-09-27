@@ -22,6 +22,7 @@ server.on('request',function(req, res) {
         })
         data = data.toString();
 
+        data = data.replace('i','123');
         // console.log(data);
         // 2.如何将得到的文件名和目录名替换到  template.html 中 (模板引擎)
         res.end(data);
