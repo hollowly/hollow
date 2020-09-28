@@ -11,11 +11,15 @@
         <h3>{{name}}</h3>
     </div>
 
+    <div id='div2'>
+        {{a}}
+        {{b}}
+    </div>
 
     <script src="vue.js"></script>
     <script>
         // 变成范式：声明式编程
-        let div1 = new vue({
+        let div1 = new Vue({
             el:'#div1',     //用于挂载要管理的元素
             data: {         //定义数据
                 message:'你好啊！Vue',
@@ -23,6 +27,14 @@
             }
         })
 
+
+        let div2 = new Vue({
+            el:"#div2",
+            data: {
+                a:'111',
+                b:'222',
+            }
+        })
     </script>
 </body>
 </html>
