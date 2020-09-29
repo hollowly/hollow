@@ -17,7 +17,7 @@
 <body>
     
     <div id='app'>
-        <!-- <h2 v-bind:class='{active:isActive, line:isLine}'>{{message}}</h2> -->
+        <h2 v-bind:class='{active:isActive, line:isLine}'>{{message}}</h2>
         <h2 v-bind:class='getClasses()'>{{message}}</h2>
         <button v-on:click='change'>按钮</button>
     </div>
