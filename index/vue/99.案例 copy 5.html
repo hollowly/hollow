@@ -6,12 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id='app'>
+        {{message}}
+    </div>
 
     <script src="vue.js"></script>
-    
-    <script>
 
+    <script>
+        let app = new Vue({
+            el:'#app',
+            message:'第一个代码.'
+        }) 
     </script>
 </body>
 </html>
