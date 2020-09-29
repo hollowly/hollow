@@ -6,12 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id='app'>
+        <!-- 普通写法，使用v-bind指令 -->
+        <h1>{{message}}</h1>
+        <img v-bind:src='imgURL' alt="" width="600px">
+
+        <h1>{{message1}}</h1>
+        <!-- 语法糖写法 -->
+        <img :src="imgURL" alt="" width="600px">
+    </div>
 
     <script src="vue.js"></script>
     
     <script>
-        
+        var app = new Vue({
+            el:'#app',
+            data: {
+                message:'动态图片绑定:',
+                message1: '语法糖写法:',
+                imgURL:'https://files.dbnuo.com/wallpaper/wallhaven-83yl1y.webp',
+            }
+        })
     </script>
 </body>
 </html>
