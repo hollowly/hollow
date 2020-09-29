@@ -14,7 +14,7 @@
     <div id='app'>
         <h1>{{message}}</h1>
         <ul>
-            <li v-for = '(items,index) in moves' v-bind:class=getclasses() @click=bgchange()>{{items}}</li>
+            <li v-for = '(items,index) in moves' v-bind:class='getclasses()' @click='bgchange()'>{{items}}</li>
         </ul>
     </div>
 
