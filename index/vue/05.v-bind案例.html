@@ -6,12 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id='app'>
+        <h1>{{message}}</h1>
+        <ul>
+            <li v-for = 'items in moves'>{{items}}</li>
+        </ul>
+    </div>
 
     <script src="vue.js"></script>
     
     <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message:'列表:',
+                moves: ['进击的巨人','海尔兄弟','元龙','灵笼'],
+            }
 
+        })
     </script>
 </body>
 </html>
