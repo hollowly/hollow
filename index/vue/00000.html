@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="vue.js"></script>
+    <style>
+        .active{
+            color: red;
+        }
+        .shadow{
+            text-shadow: 1px 1px 2px blue;
+        }
+    </style>
 </head>
 <body>
     <div id='app'>  
@@ -17,10 +25,16 @@
 
         <h2>计数器：</h2>
         当前计数：{{num}} <br>
-        <button @click=add>+</button>
-        <button @click=sub>-</button>
+        <button @click='add()'>+</button>
+        <button @click='sub()'>-</button>
 
         <h2>v-bind的使用：</h2>
+        <h3><a v-bind:href="aUrl">{{coblogs}}</a></h3>
+        <img v-bind:src='imgUrl' width="500px">
+
+        <h2>v-bind动态绑定class：</h2>
+        <h3 v-bind:class='{active: isactive, shadow: isshadow}'>{{test}}</h3>
+        <button @click='getClass()'>点击我为上面的文字添加效果(class)</button>
     </div>
 
 
@@ -28,9 +42,15 @@
         let app = new Vue({
             el:'#app',
             data:{
+                coblogs:'我的博客',
                 num: 0,
+                isactive: false,
+                isshadow: false,
                 message:"第一个vue",
                 moves: ['我和我的祖国','hello','world','hollow'],
+                aUrl:'https://www.cnblogs.com/hollows/',
+                imgUrl: 'https://files.dbnuo.com/wallpaper/wallhaven-83yl1y.webp',
+                test: '你好啊Vue!',
             },
             methods:{
                 add:function() {
@@ -38,6 +58,10 @@
                 },
                 sub:function() {
                     this.num--;
+                },
+                getClass:function() {
+                    this.isactive = !this.isactive;
+                    this.isshadow = !this.isshadow;
                 }
             }
         })
