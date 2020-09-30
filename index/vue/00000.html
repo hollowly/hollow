@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id='app'>  
+        <h1>{{message}}</h1>
+
+        <h2>列表：</h2>
+        <ul>
+            <li v-for='items in moves'>{{items}}</li>
+        </ul>
+
+        <h2>计数器：</h2>
+        当前计数：{{num}} <br>
+        <button @click=add>+</button>
+        <button @click=sub>-</button>
+
+        <h2>v-bind的使用：</h2>
+    </div>
+
+
+    <script>
+        let app = new Vue({
+            el:'#app',
+            data:{
+                num: 0,
+                message:"第一个vue",
+                moves: ['我和我的祖国','hello','world','hollow'],
+            },
+            methods:{
+                add:function() {
+                    this.num++;
+                },
+                sub:function() {
+                    this.num--;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
