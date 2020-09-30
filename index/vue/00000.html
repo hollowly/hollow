@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <div id='app'>  
+    <div id='app'>
         <h1>{{message}}</h1>
 
         <h2>列表：</h2>
@@ -33,8 +33,8 @@
         <img v-bind:src='imgUrl' width="500px">
 
         <h2>v-bind动态绑定class：</h2>
-        <h3 v-bind:class='{active: isactive, shadow: isshadow}'>{{test}}</h3>
-        <button @click='getClass()'>点击我为上面的文字添加效果(class)</button>
+        <h3 v-bind:class='getClass()'>{{test}}</h3>
+        <button @click='changeClass()'>点击我为上面的文字添加效果(class)</button>
     </div>
 
 
@@ -59,9 +59,12 @@
                 sub:function() {
                     this.num--;
                 },
-                getClass:function() {
+                changeClass:function() {
                     this.isactive = !this.isactive;
                     this.isshadow = !this.isshadow;
+                },
+                getClass:function() {
+                    return {active: this.isactive, shadow: this.isshadow};
                 }
             }
         })
