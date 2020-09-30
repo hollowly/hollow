@@ -8,7 +8,7 @@
 <body>
     
     <div id='app'>
-    <h3 :style="{'font-size': '100px'}">{{message}}</h3>
+    <h3 :style="getStyle()">{{message}}</h3>
     </div>
 
 
@@ -20,6 +20,13 @@
             data: {
                 message:'你好啊!',
                 findSize: 100,
+                bgColor: 'red',
+                findColor:'pink',
+            },
+            methods: {
+                getStyle:function() {
+                    return {'font-size': this.findSize + 'px', 'background': this.bgColor, 'color': this.findColor};
+                }
             }
         })
     </script>

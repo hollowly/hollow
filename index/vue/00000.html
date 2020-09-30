@@ -35,6 +35,9 @@
         <h2>v-bind动态绑定class：</h2>
         <h3 v-bind:class='getClass()'>{{test}}</h3>
         <button @click='changeClass()'>点击我为上面的文字添加效果(class)</button>
+
+        <h2>动态绑定style：</h2>
+        <h6 :style="getStyle()">你好啊Vue！</h6>
     </div>
 
 
@@ -51,6 +54,10 @@
                 aUrl:'https://www.cnblogs.com/hollows/',
                 imgUrl: 'https://files.dbnuo.com/wallpaper/wallhaven-83yl1y.webp',
                 test: '你好啊Vue!',
+                findbgColor:'pink',
+                findSize:100,
+                findmarginSize:0,
+                findColor:'red',
             },
             methods:{
                 add:function() {
@@ -65,7 +72,10 @@
                 },
                 getClass:function() {
                     return {active: this.isactive, shadow: this.isshadow};
-                }
+                },
+                getStyle:function() {
+                    return {'background':this.findbgColor,'font-size':this.findSize + 'px','margin':this.findmarginSize,'color':this.findColor}
+                },
             }
         })
     </script>
