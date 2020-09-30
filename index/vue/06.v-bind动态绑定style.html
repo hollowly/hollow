@@ -7,11 +7,21 @@
 </head>
 <body>
     
+    <div id='app'>
+    <h3 :style="{'font-size': '100px'}">{{message}}</h3>
+    </div>
+
 
     <script src="vue.js"></script>
     
     <script>
-
+        let app = new Vue({
+            el: '#app',
+            data: {
+                message:'你好啊!',
+                findSize: 100,
+            }
+        })
     </script>
 </body>
 </html>
