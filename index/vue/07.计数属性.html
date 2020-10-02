@@ -7,24 +7,32 @@
 </head>
 <body>
     <div id='app'>
-        <h3>{{prices}}{{allPrices}}</h3>
+        <h3>{{pricesText}}{{allPrices}}</h3>
     </div>
-    
+
     <script src="vue.js"></script>
     <script>
         const app = new Vue({
             el: '#app',
             data: {
-                prices: '总价格：',
-            },
-            methods: {
+                pricesText: '总价格：',
                 books: [
-                    {id: 100,name: 'javascript',price: 100},
-                    {id: 101,name: 'linux',price: 120},
-                    {id: 102,name: 'my sql',price: 145},
-                    {id: 103,name: 'jquery',price: 78},
+                    {id: 100, name: 'javascript', price: 100},
+                    {id: 101, name: 'linux', price: 120},
+                    {id: 102, name: 'my sql', price: 145},
+                    {id: 103, name: 'jquery', price: 78},
                 ]
             },
+            
+            computed: {
+                allPrices: function() {
+                    let result = 0;
+                    for(let i = 0; i < this.books.length; i++) {
+                        result += this.books[i].price;
+                    }
+                    return result;
+                }
+            }
         })
     </script>
 </body>
