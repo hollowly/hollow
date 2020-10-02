@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .vcolor {
+            color: red;
+        }
+        .shadow {
+            text-shadow: 1px 1px 2px blue;
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <h2>{{message}}</h2>
+        <h2>{{lititle}}</h2>
+        <ul>
+            <li v-for='items in lis'>{{items}}</li>
+        </ul>
+        <h2>{{countNumTitle}}</h2>
+        当前计数{{countNum}}
+        <button @click='add()'>+</button>
+        <button @click='sub()'>-</button>
+        <h2>{{v_bind}}</h2>
+        <h3><a v-bind:href="aUrl">我的博客</a></h3>
+        <img v-bind:src="imgUrl" width="300px">
+        <h2>{{v_bindClass}}</h2>
+        <h3 v-bind:class='getClass()'>{{helloVue}}</h3>
+        <button v-on:click='change()'>点我为上面添加样式</button>
+        <h2>{{v_bindStyle}}</h2>
+        <h3 v-bind:style="getStyle()">{{helloVue}}</h3>
+    </div>
+
+
+
+
+    <script src="vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊,Vue!',
+                lititle: '列表：',
+                lis: ['我和我的祖国','hello','world','hollows'],
+
+                countNumTitle: '计数器：',
+                countNum: 0,
+
+                v_bind: 'v-bind的使用：',
+                aUrl: 'https://www.cnblogs.com/hollows/',
+                imgUrl: 'https://files.dbnuo.com/wallpaper/wallhaven-83yl1y.webp',
+
+                v_bindClass: 'v-bind绑定class：',
+                helloVue:'你好啊Vue！',
+                isVcolor:false,
+                isShadow:false,
+
+                v_bindStyle: "动态绑定style：",
+            },
+
+            methods: {
+                add: function() {
+                    this.countNum++;
+                },
+                sub: function() {
+                    this.countNum--;
+                },
+                getClass: function() {
+                    return {vcolor: this.isVcolor, shadow: this.isShadow};
+                },
+                change: function() {
+                    this.isVcolor = !this.isVcolor;
+                    this.isShadow = !this.isShadow;
+                },
+                getStyle: function() {
+                    return {'background':'pink','color':'red','font-size':'150px','margin':'0px'};
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
