@@ -23,6 +23,16 @@
                 // fullName:function() {
                 //     return this.firstName + ' ' +this.lastName;
                 // }
+                fullName: {
+                    set:function(newValue) {
+                        const names = newValue.split();
+                        this.firstName = newValue[0];
+                        this.lastName = newValue[1];
+                    },
+                    get:function() {
+                        return this.firstName + ' ' +this.lastName;
+                    }
+                }
             }
         })
     </script>
