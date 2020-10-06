@@ -38,6 +38,9 @@
 
         <h2>动态绑定style：</h2>
         <h6 :style="getStyle()">你好啊Vue！</h6>
+
+        <h2>计数属性：</h2>
+        <h3>总价格：{{prices}}</h3>
     </div>
 
 
@@ -58,8 +61,15 @@
                 findSize:100,
                 findmarginSize:0,
                 findColor:'red',
+                books: [
+                    {id: 100, name:'javascript', price: 62},
+                    {id: 101, name:'php', price: 45},
+                    {id: 102, name:'jquery', price: 53},
+                    {id: 103, name:'linux', price: 120},
+                    {id: 104, name:'java', price: 140},
+                ]
             },
-            methods:{
+            methods: {
                 add:function() {
                     this.num++;
                 },
@@ -76,6 +86,15 @@
                 getStyle:function() {
                     return {'background':this.findbgColor,'font-size':this.findSize + 'px','margin':this.findmarginSize,'color':this.findColor}
                 },
+            },
+            computed: {
+                prices: function() {
+                    let allPrices = 0;
+                    for(let i = 0;i < this.books.length;i++) {
+                        allPrices += this.books[i].price;
+                        return allPrices;
+                    }
+                }
             }
         })
     </script>
