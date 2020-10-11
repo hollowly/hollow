@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <h1>{{message}}</h1>
+        <ul>
+            <li v-for = '(items,index) in moves' v-bind:class='getclasses()' @click='bgchange()'>{{items}}</li>
+        </ul>
+    </div>
+
+    <script src="vue.js"></script>
+    
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                isactive:true,
+                message:'列表:',
+                moves: ['进击的巨人','海尔兄弟','元龙','灵笼'],
+            },
+            methods: {
+                bgchange:function() {
+                    this.isactive = !this.isactive;
+                },
+                getclasses:function() {
+                    return {active:this.isactive};
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
