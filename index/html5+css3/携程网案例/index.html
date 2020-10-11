@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        header{
+            width: 100%;
+        }
+        header > img{
+            width: 100%;
+        }
+
+        main > .item{
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            background: rgb(83,166,82);
+            margin-top: 20px;
+            box-sizing: border-box;
+
+            display: flex;
+        }
+        main > .item > .left{
+            flex: 1;
+        }
+        main > .item > .right{
+            flex: 2;
+        }
+        main > .item > .right > a{
+            display: block;
+            text-align: center;
+            line-height: 50px;
+            height: 50px;
+            text-decoration: none;
+            width: 50%;
+            color: white;
+            box-sizing: border-box;
+            float: left;
+            border-left: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+        main > .item:nth-child(2){
+            background: rgb(156,86,161);
+        }
+        main > .item:nth-child(3){
+            background: rgb(93,111,187);
+        }
+        
+        main > .item:nth-child(4){
+            background: rgb(83,166,82);
+        }
+        .item-footer{
+            width: 100%;
+            display: flex;
+        }
+        .item-footer > a{
+            flex: 1;
+        }
+        .item-footer > a > img{
+            width: 50%;
+        }
+
+        footer{
+            width: 100%;
+        }
+        footer > .item{
+            width: 100%;
+            display: flex;
+        }
+        footer > .item:nth-child(1) > a{
+            height: 40px;
+            line-height: 40px;
+            text-decoration: none;
+            color: black;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            flex: 1;
+        }
+        footer > .item:nth-child(2){
+            margin-top: 10px;
+            font-size: 15px;
+            display: block;
+            text-align: center;
+        }
+        footer > .item > a:hover{
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/top.png" alt="">
+    </header>
+
+    <main>
+        <div class="item">
+            <div class="left"></div>
+            <div class="right">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特惠酒店</a>
+                <a href="#">客栈公寓</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="left"></div>
+            <div class="right">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特惠酒店</a>
+                <a href="#">客栈公寓</a></div>
+        </div>
+        <div class="item">
+            <div class="left"></div>
+            <div class="right">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特惠酒店</a>
+                <a href="#">客栈公寓</a></div>
+        </div>
+        <div class="item">
+            <div class="left"></div>
+            <div class="right">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特惠酒店</a>
+                <a href="#">客栈公寓</a></div>
+        </div>
+
+        <div class="item-footer">
+            <a href="#">
+                <img src="img/foot1.png" alt="">
+            </a>
+            <a href="#">
+                <img src="img/foot2.png" alt="">
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="item">
+            <a href="#">电话预定</a>
+            <a href="#">下载客服端</a>
+            <a href="#">我的</a>
+        </div>
+
+        <div class="item">
+            <a href="#">网站地图</a> |
+            <a href="#">ENGLISH</a> |
+            <a href="#">电脑版</a>
+            <p>&copy;2015携程旅行</p>
+        </div>
+    </footer>
+</body>
+</html>

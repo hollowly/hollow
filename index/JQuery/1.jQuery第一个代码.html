@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:300px;
+            height:50px;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="设置边框" id='btn1'>
+    <input type="button" value="设置文本" id='btn2'>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+<script>
+    $(function()
+    {
+        $('#btn1').click(function()
+        {
+            $('div').css('border','1px solid red');
+        })
+
+        $('#btn2').click(function()
+        {
+            $('div').text('哈哈哈');
+        })
+    })
+
+    // window.onload=function()
+    // {
+    //     alert('我是window入口函数');
+    // }
+
+    // $(function()
+    // {
+    //     alert('我是jQuery入口函数');
+    // })
+    
+    // $(document).ready(function()
+    // {
+    //     $('#btn1').click(function()
+    //     {
+    //         $('div').css('border','1px solid red');
+    //     })
+
+    //     $('#btn2').click(function()
+    //     {
+    //         $('div').text('哈哈哈');
+    //     })
+    // })
+</script>

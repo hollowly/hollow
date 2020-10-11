@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 1250px;
+            height: 141px;
+            overflow: hidden;
+            margin: 100px auto;
+        }
+        ul{
+            width: 200%;
+            height: 141px;
+            list-style: none;
+            cursor: pointer;
+
+            animation-name: move;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        ul > li > img{
+            width: 250px;
+            float: left;
+        }
+        /* 设置动画 */
+        @keyframes move {
+            0%{
+                transform: translate(0px);
+            }
+            100%{
+                transform: translate(-1250px);
+            }
+        }
+
+        .box:hover > ul{
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="ul1">
+            <li><img src='img/10.jpg'></li>
+            <li><img src='img/11.jpg'></li>
+            <li><img src='img/12.jpg'></li>
+            <li><img src='img/13.jpg'></li>
+            <li><img src='img/14.jpg'></li>
+            <li><img src='img/10.jpg'></li>
+            <li><img src='img/11.jpg'></li>
+            <li><img src='img/12.jpg'></li>
+            <li><img src='img/13.jpg'></li>
+            <li><img src='img/14.jpg'></li>
+        </ul>
+    </div>
+</body>
+</html>

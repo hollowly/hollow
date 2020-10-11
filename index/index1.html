@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            color:green;
+            background:pink;
+        }
+        h2{
+            margin-top:0px;
+            margin-bottom:5px;
+        }
+        #btn1,#btn2,#btn3,#btn4{
+            background:white;
+        }
+
+        #div1,#div2,#div3,#div4{
+            background:gray;
+            border:2px solid red;
+            width:300px;
+            height:200px;
+            display:none;
+            color:yellow;
+        }
+
+        #div1{
+            border:2px solid red;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <h2>选项卡切换：</h2>
+    <div id="tabipt">
+        <input type="button" value="选项卡1" id="btn1">
+        <input type="button" value="选项卡2" id="btn2">
+        <input type="button" value="选项卡3" id="btn3">
+        <input type="button" value="选项卡4" id="btn4">
+    </div>
+    <div id="tabdiv">
+        <div id="div1">1111111111</div>
+        <div id="div2">2222222222</div>
+        <div id="div3">3333333333</div>
+        <div id="div4">4444444444</div>
+    </div><br>
+    
+    <h2>计算：</h2>
+    <input type="text" id="sumnum1">
+    <input type="text" id="sumnum2">
+    <input type="button" value="求和" id="sum"><br>
+
+    <h2>变色：</h2>
+    <input type="button" value="变色" id='changecolor'>
+    <table border="1px" id="table1">
+        <tr>
+            <th>姓名</th>
+            <th>语文</th>
+            <th>数学</th>
+            <th>英语</th></tr>
+        <tr>
+            <th>张三</th>
+            <th>75</th>
+            <th>88</th>
+            <th>82</th></tr>
+        <tr>
+            <th>李四</th>
+            <th>76</th>
+            <th>86</th>
+            <th>76</th></tr>
+        <tr>
+            <th>王五</th>
+            <th>85</th>
+            <th>77</th>
+            <th>90</th></tr>
+    </table><br>
+    <h2>时分秒转换：</h2>
+    <input type="button" value="时间转换" id="changetime">
+    <input type="text" id="timenum1"><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body> 
+</html>
+
+<script>
+    window.onload=function()
+    { 
+        //选项卡：
+        var obtn1=document.getElementById('btn1');
+        var obtn2=document.getElementById('btn2');
+        var obtn3=document.getElementById('btn3');
+        var obtn4=document.getElementById('btn4');
+        var otabdiv=document.getElementById('tabdiv');
+        var otabipt=document.getElementById('tabipt')
+        var aipt=otabipt.getElementsByTagName('input');
+        var adiv=otabdiv.getElementsByTagName('div');
+
+        obtn1.onclick=function()
+        {
+            for(i = 0;i < adiv.length;i++)
+            {
+                adiv[i].style.display="none";
+                aipt[i].style.background="white";
+            }
+            adiv[0].style.display="block";
+            aipt[0].style.background="red";
+        }
+
+        obtn2.onclick=function()
+        {
+            for(i = 0;i < adiv.length;i++)
+            {
+                adiv[i].style.display="none";
+                aipt[i].style.background="white";
+            }
+            adiv[1].style.display="block";
+            aipt[1].style.background="red";
+        }
+
+        obtn3.onclick=function()
+        {
+            for(i = 0;i < adiv.length;i++)
+            {
+                adiv[i].style.display="none";
+                aipt[i].style.background="white";
+            }
+            adiv[2].style.display="block";
+            aipt[2].style.background='red';
+        }
+
+        obtn4.onclick=function()
+        {
+            for(i = 0;i < adiv.length;i++)
+            {
+                adiv[i].style.display="none";
+                aipt[i].style.background="white";
+            }
+            adiv[3].style.display="block";
+            aipt[3].style.background="red";
+        }
+
+        //求和
+        var otxt1=document.getElementById('sumnum1');
+        var otxt2=document.getElementById('sumnum2');
+        var obtn1=document.getElementById('sum');
+
+        obtn1.onclick=function()
+        {
+            var num1=parseFloat(otxt1.value);
+            var num2=parseFloat(otxt2.value);
+
+            if(isNaN(num1))
+            {
+                alert('你输入的第一个数字有误！');
+            }
+            else if(isNaN(num2))
+            {
+                alert('你输入的第二个数字有误！');
+            }
+            else
+            {
+            alert(num1+num2);
+            }
+        }
+
+        //变色
+        var obtn=document.getElementById('changecolor');
+        var otable=document.getElementById('table1');
+        var atr=otable.getElementsByTagName('tr');
+
+        obtn.onclick=function()
+        {
+            for(i = 0;i < atr.length;i++)
+            {
+                if(i % 2 == 0)
+                {
+                    atr[i].style.background="#ccff33";
+                }
+                else
+                {
+                    atr[i].style.background="#99ffff";
+                }
+            }
+        }
+        //时分秒转换
+        var obtn=document.getElementById('changetime');
+        var otxt=document.getElementById('timenum1');
+
+        obtn.onclick=function()
+        {
+            num1=parseFloat(otxt.value);
+            if(num1 >= 60)
+            {
+                for(i = 0;num1 >= 60;num1 -= 60)
+                {
+                    i++;
+                }
+
+                for(j = 0;i >= 60;i -= 60)
+                {
+                    j++;
+                }
+                for(k = 0;j >= 24;j -= 24)
+                {
+                    k++;
+                }
+                alert(k+"天"+j+"小时"+i+"分钟"+num1 % 60+"秒");
+            }
+            else if(isNaN(num1))
+            {
+                alert('请输入数字!!!!小提示：输入4493594有惊喜哦');
+            }
+            else
+            {
+                alert(num1+'秒');
+            }
+        }
+    }
+</script>
+

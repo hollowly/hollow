@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 200px;
+            border: 1px solid red;
+            margin:0px auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        .one{
+            width: 200px;
+            height: 200px;
+            background: red;
+
+            /* flex-shrink:定义收缩比例，通过设置来计算收缩空间
+            默认值为1 */
+            flex-shrink: 2;
+        }
+        .two{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            flex-shrink: 1;
+        }
+        .there{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="there">3</div>
+    </div>
+</body>
+</html>

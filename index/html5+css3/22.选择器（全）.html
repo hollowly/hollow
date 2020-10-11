@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 不会过滤第一个元素，不满足就不会添加样式 */
+        ul > li:first-child{
+            background: pink;
+        }
+
+        /* 会过滤掉不满足的第一个元素 */
+        ul > li:first-of-type{
+            color: red;
+        }
+
+        ul > li:nth-child(5){
+            color: blue;
+        }
+        /* :nth-child():不会过滤掉其他标签 */
+        ul > li:nth-child(even)
+        {
+            background: pink;
+        }
+        ul > li:nth-child(odd){
+            background:orange;
+        }
+
+        /* :nth-of-type():会过滤掉其他标签 */
+        ul > li:nth-of-type(even)
+        {
+            background: pink;
+        }
+        ul > li:nth-of-type(odd){
+            background:orange;
+        }
+
+
+        /* 为前面4个添加属性 */
+        ul > li:nth-of-type(-n+4){
+            background: yellow;
+        }
+         /* 为后面4个添加属性 */
+         ul > li:nth-last-of-type(-n+4){
+            background: red;
+        }
+
+        /* 空元素：连空格都没有 */
+        ul > li:empty{
+            background: pur;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <div style="height: 20px;width: 300px;">1</div>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</body>
+</html>

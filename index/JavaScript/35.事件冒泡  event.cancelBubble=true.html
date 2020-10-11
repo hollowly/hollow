@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:400px;
+            height:300px;
+            background:#ccc;
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='显示' id='btn1'>
+    <div id='div1'>点击任何地方就可以关闭我</div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+       var odiv = document.getElementById('div1');
+       var obtn = document.getElementById('btn1');
+
+       obtn.onclick=function()
+       {
+            odiv.style.display='block';
+
+            event.cancelBubble = true;//不再向父级冒泡
+       }
+
+       document.onclick=function()
+       {
+           odiv.style.display = 'none';
+       }
+    }
+</script>

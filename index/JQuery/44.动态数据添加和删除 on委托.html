@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #box{
+            position: absolute;
+            top:100px;
+            left:300px;
+        }
+        table{
+            width: 400px;
+            height: 250px;
+            text-align: center;
+        }
+        thead{
+            background:skyblue;
+        }
+        tbody{
+            background: pink;
+        }
+        a{
+            color: red;
+        }
+        #div1{
+            width:440px;
+            height: 220px;
+            background: white;
+            border:1px solid red;
+            position: absolute;
+            left:300px;
+            top:160px;
+            z-index: 999;
+            display: none;
+        }
+        #div2{
+            background:rgb(240, 240, 240);
+            height:35px;
+        }
+        #div2 #close{
+            width:22px;
+            height: 22px;
+            text-align: center;
+            position: relative;
+            top:-25px;
+            left: 410px;
+            cursor: pointer;
+        }
+        #div2 #span1{
+            line-height: 32px;
+            color:rgb(63, 61, 61);
+        }
+        #div3{
+            height: 165px;
+            margin: 15px;
+        }
+        #div3 #tianjia,#qingkong{
+            height: 25px;
+            width: 170px;
+            position: relative;
+            left: 30px;
+        }
+        /* 遮罩层 */
+        #divhide{
+        width:100%;
+        height:100%;
+        position: fixed;
+        left:0;
+        top:0;
+        z-index: 998;
+        background-color:black;
+        opacity:0.6;
+        display: none;
+        }
+    </style>
+</head>
+<body>
+<div id='box'>
+    <input type="button" value='添加数据' id='add'>
+    <table border cellspacing = 0>
+        <thead>
+            <tr>
+                <td>课程名称</td>
+                <td>所属学院</td>
+                <td>已学会</td>
+            </tr>
+        </thead>
+        <tbody id='tbody'>
+            <tr>
+                <td>javascript</td>
+                <td>前端与移动开发</td>
+                <td><a href=#>delete</a></td>
+            </tr>
+            <tr>
+                <td>css</td>
+                <td>前端与移动开发</td>
+                <td><a href=#>delete</a></td>
+            </tr>
+            <tr>
+                <td>html</td>
+                <td>前端与移动开发</td>
+                <td><a href=#>delete</a></td>
+            </tr>
+            <tr>
+                <td>jquery</td>
+                <td>前端与移动开发</td>
+                <td><a href=#>delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    <!-- 添加数据表单 -->
+    <div id='div1'>
+        <div id='div2'>
+            <span id='span1'>添加数据</span>
+            <div id='close'>X</div>
+        </div>
+        <div id='div3'>
+            课程名称：<input type="text" size="38" id='txt1'><br><br>
+            所属学院：<input type="text" size="38" id='txt2'><br><br>
+            <input type="button" value="添加" id='tianjia'>
+            <input type="button" value="清空" id='qingkong'>
+        </div>
+    </div>
+    <!-- 遮罩层 -->
+    <div id='divhide'></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        //点击添加数据,显示面板和遮罩层
+        $('#add').click(function()
+        {
+            $('#divhide').show();
+            $('#div1').show();
+            
+        })
+
+        //关闭按钮
+        $('#close').mouseenter(function()
+        {
+            $('#close').css('background','red');
+        })
+        $('#close').mouseleave(function()
+        {
+            $('#close').css('background','rgb(240, 240, 240)');
+        })
+        $('#close').click(function()
+        {
+            //清空内容
+            $('#txt1').val('');
+            $('#txt2').val('');
+            //隐藏遮罩层和div
+            $('#div1').hide();
+            $('#divhide').hide();
+        })
+
+        //点击添加按钮，把输入的内容添加到tbody中
+        $('#tianjia').click(function()
+        {
+            var txt1 = $('#txt1').val();//用户输入的课程名称
+            var txt2 = $('#txt2').val();//用户输入的所属学院
+            var newtr = $(
+                            '<tr>'+
+                            '<td>'+txt1+'</td>'+
+                            '<td>'+txt2+'</td>'+
+                            '<td><a href="#">delete</a></td>'+
+                            '</tr>'
+                        );
+            $('#tbody').append(newtr);
+            //清空内容
+            $('#txt1').val('');
+            $('#txt2').val('');
+            //隐藏遮罩层和div
+            $('#div1').hide();
+            $('#divhide').hide();
+        })
+        //清空按钮
+        $('#qingkong').click(function()
+        {
+            //清空内容
+            $('#txt1').val('');
+            $('#txt2').val('');
+        })
+
+        //点击deldete这些a标签，删除对应的tr
+        $('#tbody').on('click','a',function()
+        {
+            //jquery为了方便，把this修改了，this变成了a标签
+            $(this).parent('td').parent('tr').remove();
+        })
+    })
+</script>

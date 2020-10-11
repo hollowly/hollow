@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #ol1 li{
+            list-style: none;
+            float: left;
+            margin-left: 31px;
+            color:white;
+            cursor: pointer;
+            line-height: 50px;
+            font-size: 20px;
+        }
+        #ol1{
+            background: black;
+            width:1500px;
+            height: 50px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #ul2 li{
+            list-style:none;
+            float: left;
+            margin-left: 45px;
+            color: white;
+        }
+        #ul2{
+            background: red;
+            width:1500px;
+            height: 30px;
+            text-align: center;
+            margin: 0 auto;
+            display: none;
+            position: relative;
+        }
+        body{
+            height:2000px;
+        }
+        #div1{
+            border:1px solid red;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/2014.jpg" id='img1'>
+<div id='div1'>
+    <ol id='ol1'>
+        <li>体育首页</li>
+        <li>中国足球</li>
+        <li>亚冠</li>
+        <li>中超</li>
+        <li>国足</li>
+        <li>视频</li>
+        <li>数据库</li>
+        <li>视频直播:看比赛</li>
+        <li>2014巴西世界杯</li>
+    </ol>
+    <ul id='ul2'><li>全景视频</li><li>直播大厅</li><li>视频回放</li><li>积分榜</li>
+        <li>射手榜</li><li>赛程</li><li>16强名单</li><li>滚动新闻</li><li>图片</li>
+        <li>原创—中超贼客</li><li>恒大博客</li><li>鲁能官博</li><li>购彩</li><li>方言解说</li>
+    </ul>
+    <ul id='ul2'><li>别看了,中国没有足球</li><li>就这？</li><li>雷霆嘎巴</li>
+    </ul>
+    <ul id='ul2'><li>反正没有中国</li>
+    </ul>
+    <ul id='ul2'><li>！</li>
+    </ul>
+    <ul id='ul2'><li>!!!</li>
+    </ul>
+    <ul id='ul2'><li>!!!!!!</li>
+    </ul>
+    <ul id='ul2'><li>!!!!!!!!!</li>
+    </ul>
+    <ul id='ul2'><li>!!!!!!!!!!</li>
+    </ul>
+    <ul id='ul2'><li>!!!!!!!!!!!!!!</li>
+    </ul>
+</div>
+<img src="img/20141.jpg" id='img2'>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#ol1 > li').click(function()
+        {
+            var idx = $(this).index();
+            $(this).parent().siblings('ul').eq(idx).show().siblings('ul').hide();
+        })
+    })
+
+    $(window).scroll(function()
+    {
+        var scrolltopvalue = $(window).scrollTop();
+        var imgheight = $('#img1').height();  //图片高度
+        var divhight = $('#div1').height();   //第二部分的高度
+
+        if(scrolltopvalue >= imgheight)
+        {
+            $('#div1').css(
+                {
+                    'position': 'fixed',
+                    'top':'0',
+                    'left':'0',
+                })
+                //设置第三部分的marginTop的值为第二部分的高度.
+                 $('#img2').css(marginTop,divhight + 10);
+        }
+        else
+        {
+            $('#div1').css(
+                {
+                    'position':'static',
+                    'top':'0',
+                    'left':'0',
+                }
+            );
+            //设置第三部分的marginTop的值为原来的值.
+            $('#img2').css(marginTop,10);
+        }
+    })
+</script>

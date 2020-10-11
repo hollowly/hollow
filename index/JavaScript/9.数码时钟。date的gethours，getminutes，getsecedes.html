@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{width:40px;margin-top:25px;}
+        strong{font-size:32px;}
+    </style>
+</head>
+<body>
+    <img src=img/0.jpg>
+    <img src=img/0.jpg>
+    <strong>:</strong>
+    <img src=img/0.jpg>
+    <img src=img/0.jpg>
+    <strong>:</strong>
+    <img src=img/0.jpg>
+    <img src=img/0.jpg>
+</body>
+</html>
+
+<script>
+    function todou(n)
+    {
+        if(n < 10)
+        {
+            return '0'+n;
+        }
+        else
+        {
+            return ''+n;
+        }
+    }
+
+    window.onload=function()
+    {
+        var aimg=document.getElementsByTagName('img');
+        
+        function tick()
+        {
+            var odate=new Date();
+            var str=todou(odate.getHours())+todou(odate.getMinutes())+todou(odate.getSeconds());
+
+            for(i = 0;i < aimg.length;i++)
+            {
+                aimg[i].src='img/'+str[i]+'.jpg';//因为一些浏览器的兼容问题，可以把str[i]换成str.charAt(i);
+            }
+        }
+
+        setInterval(tick,1000)
+        tick();
+    }
+</script>

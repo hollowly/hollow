@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #div1{
+            width: 600px;
+            height: 400px;
+            background: pink;
+            font-size: 50px;
+            line-height: 300px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h1>按键改变颜色</h1>
+    <div id='div1'>
+        keyCode为：<span id='span1'></span>
+    </div>
+</center>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(document).on('keydown',function(e)
+    {
+        if(e.keyCode == 82)
+        {
+            $('#div1').css('background','red');
+            $('#span1').text('82');
+        }
+        else if(e.keyCode == 80)
+        {
+            $('#div1').css('background','pink');
+            $('#span1').text('80');
+        }
+        else if(e.keyCode == 66)
+        {
+            $('#div1').css('background','blue');
+            $('#span1').text('66');
+        }
+        else if(e.keyCode == 71)
+        {
+            $('#div1').css('background','green');
+            $('#span1').text('71');
+        }
+        else if(e.keyCode)
+        {
+            $('#div1').css('background','yellow');
+            $('#span1').text('89');
+        }
+        else
+        {
+            $('#div1').css('background','pink');
+            $('#span1').text('占无此键');
+        }
+    })
+</script>

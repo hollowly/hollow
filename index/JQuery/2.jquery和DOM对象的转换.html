@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'one'></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+<script>
+    //DOM对象转成jquery对象:
+    var div1 = document.getElementById('one');
+    var $div1 = $(div1);
+
+    //jquery对象转成DOM对象:
+    //1.用下标取出来
+    var $divs = $('div');
+    var div1 = $divs[0];
+    //2.使用jquery的方法取 get():
+    var div2 = $divs.get(1);
+    
+</script>

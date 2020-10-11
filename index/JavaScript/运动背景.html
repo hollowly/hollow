@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:100px;
+            height:50px;
+            background:aqua;
+            margin:10px;
+            margin-left:150px;
+            font-size: 12pt;
+            font-style:italic;
+        }
+        #last{
+            width:4px;
+            height:590px;
+            background: lightpink;
+            position: absolute;
+            left:843px;
+        }
+    </style>
+</head>
+<body style='background:rgb(250, 16, 216)'>
+    <span id="last"></span>
+    <div>0</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var adiv = document.getElementsByTagName('div');
+
+        for(let i = 0;i < adiv.length;i++)
+        {
+            adiv[i].onmouseover=function()
+            {
+                document.body.style.background = getColor();
+                move(this,690);
+            }
+
+            adiv[i].onmouseout=function()
+            {
+                move(this,100);
+            }
+        }
+    }
+
+    //运动
+    function move(obj,iTarget)
+    {
+        clearInterval(obj.timer);
+
+        obj.timer=setInterval(function(){
+            var speed = (iTarget - obj.offsetWidth) / 6; 
+            speed = speed>0?Math.ceil(speed):Math.floor(speed);//速度
+
+            if(obj.offsetWidth==iTarget)
+            {
+                clearInterval(obj.timer);
+            }
+            else
+            {
+                obj.style.width=obj.offsetWidth+speed+'px';
+            }
+        },30)
+    }
+
+    //颜色
+    function getColor()
+    {
+        var arry =new Array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
+        var color="#";
+        for(let i = 0;i < 6;i++)
+        {
+            color += arry[Math.floor(Math.random() * 16)];
+        }
+    return color;
+    }
+
+</script>

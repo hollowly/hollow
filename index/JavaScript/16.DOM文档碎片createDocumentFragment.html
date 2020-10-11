@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul1">
+
+    </ul>
+
+
+</body>
+</html>
+<script>
+    window.onload=function()
+    {
+        var oul1=document.getElementById('ul1');
+        var ofrag=document.createDocumentFragment();//文档碎片
+
+        for(var i = 0;i < 1000;i++)
+        {
+            var cli=document.createElement('li');//创建li
+
+            ofrag.appendChild(cli);//把创建好的li放在ofrag里面
+        }
+        oul1.appendChild(ofrag);//在把ofrag创建到ul里面
+    }
+</script>

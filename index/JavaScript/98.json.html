@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // 键值对的集合，值的有序列表
+    var JsonObj = {"name":"Hannah","like":["看书", "电影", "晨跑"]}; 
+    //数组
+    var jsonArr = [{"name": "tom","type": "cat"},{"name": "jack","type": "mouse"}]
+
+    //对象
+    var jsonObj = {"like": ["看书", "电影", "晨跑"],"book": ["数字城堡", "刻意练习", "老人与海"]}
+
+
+
+    // 遍历JSON对象
+    var json = 
+    {
+        "name":"hollow", 
+        "password":"123456"
+    }
+    for(var i in json )
+    {
+        document.write(i + ":" + json[i] + '<br>');
+    }
+    document.write('<br>');
+    // 遍历JSON数组
+    var json = [
+    {
+        "name":"Liza", 
+        "password":"123"
+    },
+    {
+        "name":"Mike", 
+        "password":"456"
+    }
+    ];
+    for(var i in json)
+    {
+        document.write(json[i].name + ":" + json[i].password + '<br>');
+    }
+</script>

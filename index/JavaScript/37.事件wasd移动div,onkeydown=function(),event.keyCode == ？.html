@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background:red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id='div1'></div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+       document.onkeydown=function()
+       {
+           var odiv = document.getElementById('div1');
+            //w = 87;a = 65;s = 83;d = 68;
+           if(event.keyCode == 87)
+           {
+                odiv.style.top = odiv.offsetTop - 15 + 'px';
+           }
+           else if(event.keyCode == 83)
+           {
+                odiv.style.top = odiv.offsetTop + 15 + 'px';
+           }
+           else if(event.keyCode == 68)
+           {
+                odiv.style.left = odiv.offsetLeft + 15 + 'px';
+           }
+           else if(event.keyCode == 65)
+           {
+                odiv.style.left = odiv.offsetLeft - 15 + 'px';
+           }
+       }
+    }
+</script>

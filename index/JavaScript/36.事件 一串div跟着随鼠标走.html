@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width:8px;
+            height:8px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</body>
+</html>
+<script>
+    document.onmousemove=function()
+    {
+        var top = document.documentElement.scrollTop || document.body.scrollTop;
+        var left = document.documentElement.scrollLeft || document.body.scrollLeft;
+
+        var adiv = document.getElementsByTagName('div');
+
+        for(i = adiv.length-1;i > 0;i--)
+        {
+            adiv[i].style.left = adiv[i -1].offsetLeft + 'px';
+            adiv[i].style.top = adiv[i - 1].offsetTop + 'px';
+        }
+        adiv[0].style.left = event.clientX + left + 'px';
+        adiv[0].style.top = event.clientY + top + 'px';
+    }
+</script>

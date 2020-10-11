@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="button" value='获取' id='getbtn'>
+    <input type="button" value='设置' id='setbtn'>
+
+    <div id='div1'>我是一个div1标签
+        <p>我是一个p1标签</p><span>span1</span>
+    </div>
+
+    <div id='div2'>我是一个div2标签
+        <p>我是一个p2标签</p><span>span2</span>
+    </div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+$(function()
+{
+    $('#getbtn').click(function()
+    {
+        //获取文本：text()方法不给参数
+        $('#div1').text();
+        //$('div').text();
+    })
+
+    $('#setbtn').click(function()
+        {
+            //设置文本
+            $('#div1').text('我是新设置的文本');
+            //$('div').text('我是新设置的文本');//隐式迭代
+        })
+})
+</script>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            border: 1px solid red;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        
+        #div2{
+            border: 1px solid blue;
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin-left: 20px;
+        }
+        #p1{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 在h5中想要拖拽元素，就必须为元素添加draggable="true"，图片和超链接默认就可以拖拽 -->
+    <div id='div1'>
+        <p draggable="true" id='p1'>试着拖拽我到另一个框架</p>
+    </div>
+    <div id='div2'></div>
+</body>
+</html>
+
+<script>
+    var p = document.getElementById('p1');
+    var div1 = document.getElementById('div1');
+    var div2 = document.getElementById('div2');
+    /* 应用于被拖拽元素的事件
+    ondrag          应用于拖拽元素，整个拖拽过程都会调用
+    ondragstart     应用于拖拽元素，当拖拽开始时调用
+    ondragleave     应用于拖拽元素，当鼠标离开拖拽元素时调用
+    ondragend       应用于拖拽元素，当拖拽结束时调用*/
+    p.ondrag = function()
+    {
+        console.log('ondrag');
+    }
+    p.ondragstart = function()
+    {
+        console.log('ondragstart');
+    }
+    p.ondragleave = function()
+    {
+        console.log('ondragleave');
+    }
+    p.ondragend = function()
+    {
+        console.log('ondragend');
+    }
+
+    /* 应用于目标元素的事件
+    ondragenter         应用于目标元素，当拖拽元素进入时调用
+    ondragover          应用于目标元素，当停留在目标元素上时调用
+    ondrop              应用于目标元素，当在目标元素上松开鼠标时调用
+    ondragleave         应用于目标元素，当鼠标离开目标元素时调用*/
+
+    div2.ondragenter = function()
+    {
+        console.log('ondragenter');
+    }
+    div2.ondragover = function(e)
+    {
+        // console.log('ondragover');
+        // 如果想触发ondrop事件，那么就必须在这里阻止默认行为
+        e.preventDefault();
+    }
+    // 浏览器会阻止ondrop事件：我们必须在ondrop中阻止浏览器默认行为
+    div2.ondrop = function()
+    {
+        console.log('ondrop');
+        // 添加被拖拽的元素到当前位置
+        div2.appendChild(p);
+    }
+    div2.ondragleave = function()
+    {
+        console.log('ondragleave');
+    }
+
+    // 拖拽实现代码
+    div1.ondragover = function(e)
+    {
+        e.preventDefault();
+    }
+    div1.ondrop = function()
+    {
+        div1.appendChild(p);
+    }
+</script>

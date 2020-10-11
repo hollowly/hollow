@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            background: red;
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            text-align: center;
+            /* 2个值对应，左上右下，右上左下（对角的方式进行） */
+            border-radius: 100px 20px;
+        }
+        #div2{
+            background: red;
+            width: 300px;
+            height: 100px;
+            text-align: center;
+            margin: 0px auto;
+            border-radius: 150px/50px;
+        }
+        #div3{
+            background: red;
+            width: 300px;
+            height: 150px;
+            text-align: center;
+            margin: 20px auto;
+            border-radius: 300px 300px 0px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">hollows</div>
+    
+    <div id="div2">hollows</div>
+
+    
+    <div id="div3">hollows</div>
+</body>
+</html>

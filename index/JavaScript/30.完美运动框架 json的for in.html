@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background: red;
+            font-size: 20px;
+            margin:0px;
+            opacity: 0.4;
+            margin-top:10px;
+        }
+        #btn{
+            margin-bottom:10px;
+            margin-left:10px;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='完美运动' id='btn1'>
+    <input type="button" value='关闭完美运动' id='btn2'>
+    <div id='div1'>
+        字体
+    </div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var odiv = document.getElementById('div1');
+        var obtn1 = document.getElementById('btn1');
+        var obtn2 = document.getElementById('btn2');
+
+        obtn1.onclick = function()
+        {
+            move(odiv,{width:300, height:300, fontSize:50, opacity:100});
+        }
+        obtn2.onclick = function()
+        {
+            move(odiv,{width:100, height:100, fontSize:20, opacity:40});
+        }
+    }
+
+    function move(obj,json,fnEnd)
+    {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+
+            var bStop = true;//假设所有值都已经到了
+
+            for(var attr in json)//for in
+            {
+                var cur = 0;
+
+                if(attr=='opacity')
+                {
+                    cur = Math.round(parseFloat(getStyle(obj,attr)) * 100);
+                }
+                else
+                {
+                    cur = parseFloat(getStyle(obj,attr));
+                }
+
+                var speed = (json[attr]-cur)/6;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+                if(cur != json[attr])
+                bStop = false;
+
+                if(attr == 'opacity')
+                {
+                    obj.style.opacity = (cur+speed) / 100;
+                }
+                else
+                {
+                    obj.style[attr] = cur + speed + 'px';
+                }
+            }
+
+            if(bStop)
+            {
+                clearInterval(obj.timer);
+                
+                if(fnEnd)fnEnd();
+            }
+        },30)
+    }
+
+     //封装函数
+     function getStyle(obj,name)
+    {
+        if(obj.currentStyle)
+        {
+            return obj.currentStyle[name];
+        }
+        else
+        {
+            return getComputedStyle(obj,false)[name];
+        }
+    }
+</script>

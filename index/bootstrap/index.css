@@ -1,0 +1,15 @@
+/* 引入其他less文件 */
+.div1 {
+  background: blue;
+  width: 100px;
+  height: 100px;
+  margin-top: 30px;
+}
+body {
+  background: red;
+}
+body > .div {
+  width: 200px;
+  height: 200px;
+  background: yellow;
+}

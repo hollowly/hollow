@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 以下是CSS内容 -->
+    <link rel="stylesheet" type="text/css" href="css1.css" id="text">
+    <style>
+    h1,h2,h3,h4,h5,h6{
+        margin:10px;
+    }
+    #goto{
+        width:200px;
+        height:100px;
+        border:1px solid red;
+        color:yellow;
+        display:none;
+    }
+    #change{
+        width:150px;
+        height:250px;
+        background:gray;
+        display:none;
+    }
+    #a{
+        width:200px;
+        height:200px;
+        background:black;
+    }
+    #b{
+        width:200px;
+        height:200px;
+        background:black;
+    }
+    #c{
+        width:50px;
+        height:50px;
+        border:1px solid red;
+        background:pink;
+        margin:5px;
+        float:left;
+    }
+    #div1 #f{
+        width:290px;
+        height:200px;
+        background:gray;
+        color:yellow;
+        border:2px solid blue;
+        display:none;
+    }
+    #tab1,#tab2,#tab3,#tab4{
+        border:2px solid red;
+        background:grey;
+        width:290px;
+        height:200px;
+        color:yellow;
+        display:none;
+    }
+    #bg1,#bg2,#bg3,#bg4{
+        background:white;
+    }
+    .active{
+        background:red;
+    }
+    #calendar{
+        width:290px;
+        height:500px;
+        background:rgb(197, 195, 195);
+    }
+    /* 日历css： */
+    td{
+        border: 5px solid rgb(218, 218, 218);
+        width: 59px;
+        height: 59px;
+        text-align: center;
+        background: rgb(83, 83, 83);
+        color: white;
+      }
+      .td{
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+      }
+      #t1{
+        border: 10px solid rgb(218, 218, 218);
+        
+        position: relative;
+        width: 240px;
+        height: 320px;
+        background: rgb(218, 218, 218);
+      }
+      #d2{
+        width: 240px;
+        height: 100px;
+        background: rgb(218, 218, 218);
+      }
+      #p1{
+        position: relative;
+        margin: auto;
+        width: 205px;
+        height: 80px;
+        background: rgb(255, 255, 255);
+      }
+    </style>
+</head>
+<!-- 以下是正文内容 -->
+<body text=green>
+    <h2>换肤(当前是默认色)：</h2>
+    <input type="button" value="换肤1" onclick="a('css1.css')">
+    <input type="button" value="换肤2" onclick="a('css2.css')">
+    <input type="button" value="换肤3" onclick="a('css3.css')">
+    <br><br>
+
+    <h4>请点击一键上号gogogo</h4>
+
+    <input type="text" style=width:200px;height:20px id="shanghao">
+    <input type="button" value="一键上号" onclick="b()"><br><br>
+    <input type="text" style=width:200px;height:20px id="gaimima">
+    <input type="button" value="一键上号" onclick="c()">
+    <br><br>
+
+    <h4>这是一个单选框请不要把鼠标移上来：</h4>
+    <input type="radio" onmousemove="d('display','block')" onmouseout="d('display','none')" style="width:20px;height:20px;">
+    <div id=goto>为了你的安全，请不要一键点击上号......</div>
+    <br><br>
+
+    <input type="button" value="显示隐藏div" onclick="e()">
+    <div id="change"></div>
+    <br><br>
+    <h2>变高变宽变绿：</h2>
+    <input type="button" value="变宽" onclick="f('width','400px')">
+    <input type="button" value="变高" onclick="f('height','400px')">
+    <input type="button" value="变绿" onclick="f('background','green')">
+    <div id="a"></div>
+
+    <h2>变高变宽变绿晋级版：</h2>
+    <input type="button" value="变宽plus" onclick="g('width','400px','200px')">
+    <input type="button" value="变高plus" onclick="g('height','400px','200px')">
+    <input type="button" value="变绿plus" onclick="g('background','green','black')">
+    <div id="b"></div>
+
+    <h2>for初见应用：</h2>
+    <input type="button" value="一键变色" onclick="changecolor()"><br>
+    <div id="d">
+        <div id="c"></div>
+        <div id="c"></div>
+        <div id="c"></div>
+        <div id="c"></div>
+        <div id="c"></div>
+        <div id="c"></div>
+        <div id="c"></div>
+        <div id="c"></div>
+    </div>
+    <br><br><br><div id="c"></div><br><br><br>
+
+    <h2>全选和反选(复选框)：</h2>
+    <input type="button" value="全选" onclick="aall()">
+    <input type="button" value="不选" onclick="unall()">
+    <input type="button" value="反选" onclick="reall()"><br>
+    <div id="e">
+        <input type="checkbox">
+        <input type="checkbox"><br>
+        <input type="checkbox">
+        <input type="checkbox"><br>
+        <input type="checkbox">
+        <input type="checkbox"><br>
+        <input type="checkbox">
+        <input type="checkbox"><br>
+    </div>
+    <h4>以下复选框是为了区分上面的复选框不是同一类而不会被选中</h4>
+        <input type="checkbox">
+        <input type="checkbox"><br>
+        <input type="checkbox">
+        <input type="checkbox"><br>
+    <br><br>
+    
+    <h2>选项卡四个script版：</h2>
+    <div id="all">
+        <input type="button" value="选项卡1" onclick="tab1()" id="bg1" style="background:red">
+        <input type="button" value="选项卡2" onclick="tab2()" id="bg2">
+        <input type="button" value="选项卡3" onclick="tab3()" id="bg3">
+        <input type="button" value="选项卡4" onclick="tab4()" id="bg4">
+        <div id="tab1" style="display:block">1111</div>
+        <div id="tab2">2222</div>
+        <div id="tab3">3333</div>
+        <div id="tab4">4444</div>
+    </div>
+    <br>
+
+    <h2>选项卡只有一个script版：</h2>
+    <div id="div1">
+        <input class="active" type="button" value="选项卡1">
+        <input type="button" value="选项卡2">
+        <input type="button" value="选项卡3">
+        <input type="button" value="选项卡4">   
+        <div id="f" style="display:block">这是第一个选项卡的内容 111</div>
+        <div id="f">这是第二个选项卡的内容 222</div>
+        <div id="f">这是第三个选项卡的内容 333</div>
+        <div id="f">这是第四个选项卡的内容 444</div>
+    </div>
+    <br>
+
+    <h2>简单日历：</h2>
+    <div id="d1">
+        <table id="t1">
+          <tr>
+            <td>1<br>JAN</td>
+            <td>2<br>FER</td>
+            <td>3<br>MAR</td>
+          </tr>
+          <tr>
+            <td>4<br>APR</td>
+            <td>5<br>MAY</td>
+            <td>6<br>JUN</td>
+          </tr>
+          <tr>
+            <td>7<br>JUL</td>
+            <td>8<br>AUG</td>
+            <td>9<br>SEP</td>
+          </tr>
+          <tr>
+            <td>10<br>OCT</td>
+            <td>11<br>NOV</td>
+            <td>12<br>DEC</td>
+          </tr>
+        </table>
+        <div id="d2">
+            <p id="p1"></p>
+        </div>
+    </div>
+</body>
+</html>
+<!-- 以下是JS代码 -->
+<script>
+    //换肤(当前是默认色)：
+    function a(value)
+    {
+        var odiv=document.getElementById('text');
+        odiv.href=value;
+    }
+
+    //一键上号：
+    function b()
+    {
+        var odiv=document.getElementById('shanghao');
+        odiv.value='2499538506';
+    }
+
+    //一键上号：
+    function c()
+    {
+        var odiv=document.getElementById('gaimima');
+        odiv.value='这是密码********';
+    }
+
+    //这是一个单选框请不要把鼠标移上来：
+    function d(name,value)
+    {
+        var odiv=document.getElementById('goto');
+        odiv.style[name]=value;
+    }
+
+    //显示隐藏DIV：
+    function e()
+    {
+        var odiv=document.getElementById('change');
+        if(odiv.style.display=='block')
+        {
+            odiv.style.display='none';
+        }else
+        {
+            odiv.style.display='block';
+        }
+    }
+
+    //变高变宽变绿：
+    function f(name,value)
+    {
+        var odiv=document.getElementById('a');
+        odiv.style[name]=value;
+    }
+
+
+    //变高变宽变绿晋级版：
+    function g(name,value1,value2)
+    {
+        var odiv=document.getElementById('b');
+        if(odiv.style[name]==value1)
+        {
+            odiv.style[name]=value2;
+        }else
+        {
+            odiv.style[name]=value1;
+        }
+    }
+
+    //for初见应用：
+    function changecolor()
+    {
+        var odiv=document.getElementById('d');
+        var odiv1=odiv.getElementsByTagName('div');
+        for(var i = 0;i < odiv1.length;i++)
+        {
+            odiv1[i].style.background="blue";
+        }
+    }
+
+    //全选和反选(复选框)——全选：
+    function aall()
+    {
+        var odiv=document.getElementById('e');
+        var odiv1=odiv.getElementsByTagName('input');
+        for(var i = 0;i < odiv1.length;i++)
+        {
+            odiv1[i].checked=true;
+        }
+    }
+
+    //全选和反选(复选框)——不选：
+    function unall()
+    {
+        var odiv=document.getElementById('e');
+        var odiv1=odiv.getElementsByTagName('input');
+        for(var i = 0;i < odiv1.length;i++)
+        {
+            odiv1[i].checked=false;
+        }
+    }
+    //全选和反选(复选框)——反选：
+    function reall()
+    {
+        var odiv=document.getElementById('e');
+        var odiv1=odiv.getElementsByTagName('input');
+        for(var i = 0;i < odiv1.length;i++)
+        {
+            if(odiv1[i].checked == true)
+            {
+                odiv1[i].checked = false;
+            }else
+            {
+                odiv1[i].checked = true;
+            }
+        }
+    }
+    //选项卡1：
+    function tab1()
+    {
+        var odiv=document.getElementById('tab1');
+        var odiv1=document.getElementById('all');
+        var odiv2=odiv1.getElementsByTagName('div')
+        var odiv3=odiv1.getElementsByTagName('input');
+        var odiv4=document.getElementById('bg1');
+        for(var i = 0;i < odiv2.length;i++)
+        {
+            odiv2[i].style.display='none';
+            odiv3[i].style.background='white';
+        }
+        odiv.style.display='block';
+        odiv4.style.background='red';
+    }
+
+    //选项卡2：
+    function tab2()
+    {
+        var odiv2=document.getElementById('tab2');
+        var odiv=document.getElementById('all');
+        var odiv1=odiv.getElementsByTagName('div');
+        var odiv3=document.getElementById('bg2');
+        var odiv4=odiv.getElementsByTagName('input');
+        for(i = 0;i < odiv1.length;i++)
+        {
+            odiv1[i].style.display='none';
+            odiv4[i].style.background='white';
+        }
+        odiv2.style.display='block';
+        odiv3.style.background='red';
+    }
+
+    //选项卡3：
+    function tab3()
+    {
+        var odiv=document.getElementById('tab3');
+        var odiv1=document.getElementById('all');
+        var odiv2=odiv1.getElementsByTagName('div');
+        var odiv3=odiv1.getElementsByTagName('input');
+        var odiv4=document.getElementById('bg3');
+        for(var i = 0;i < odiv2.length;i++)
+        {
+            odiv2[i].style.display='none';
+            odiv3[i].style.background='white';
+        }
+        odiv.style.display='block';
+        odiv4.style.background='red';
+    }
+
+    //选项卡4：
+    function tab4()
+    {
+        var odiv=document.getElementById('all');
+        var odiv1=odiv.getElementsByTagName('div');
+        var odiv2=document.getElementById('tab4');
+        var odiv3=document.getElementById('bg4');
+        var odiv4=odiv.getElementsByTagName('input');
+        for(var i = 0;i < odiv1.length;i++)
+        {
+            odiv1[i].style.display='none';
+            odiv4[i].style.background='white';
+        }
+        odiv2.style.display='block';
+        odiv3.style.background='red';
+    }
+
+    // 选项卡只有一个script代码版：
+    window.onload=function()
+    {
+        var odiv=document.getElementById('div1');
+        var ainput=odiv.getElementsByTagName('input');
+        var adiv=odiv.getElementsByTagName('div');
+        for(var i = 0;i < ainput.length;i++)
+        {
+            ainput[i].index = i;
+            ainput[i].onclick=function()
+            {
+                for(var i = 0;i < ainput.length;i++)
+                {
+                    ainput[i].className='';
+                    adiv[i].style.display='none';
+                }
+                this.className='active';
+                adiv[this.index].style.display='block';
+            }
+        }
+    
+    // 简单日历：
+        function get(id)
+        {
+          return document.getElementById(id);
+        }
+        function gets(tagName)
+        {
+          return document.getElementsByTagName(tagName);
+        }
+        var tds = gets('td');
+        for (var i = 0; i < tds.length; i++)
+        {
+          tds[i].index = i;
+          tds[i].onmouseover = function ()
+          {
+            for (a = 0; a < tds.length; a++)
+            {
+              tds[a].className = '';
+            }
+            tds[this.index].className = 'td';
+            get('p1').innerHTML = (this.index + 1) + arr[this.index];
+          }
+        }
+        arr=['月活动：学编程','月活动：还是学编程',
+        '月活动：依然是学编程', '月活动：学编程无止境',
+        '月活动：学编程天下无敌','月活动：学编程学编程', 
+        '月活动：还还还是学编程','月活动：没错，一直在学编程',
+        '月活动：对的，依然学编程', '月活动：继续学编程',
+        '月活动：倒数第二个月依然学编程', '月活动：最后一个月必须学编程']}
+    </script>

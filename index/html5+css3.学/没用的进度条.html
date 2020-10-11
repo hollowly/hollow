@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.0.js"></script>
+</head>
+<body>
+    <button id='start'>开始</button>
+    <button id='stop'>结束</button> <br><br>
+    正在加载：<span id='sp'>0</span>%：<progress id='prg' max = '100' min = '0' value = '0'></progress>
+    <script>
+        window.onload = function() {
+            var num = 0;
+            document.getElementById('start').onclick = function() {
+                timer = setInterval(function() {
+                    if(num >= 100) {
+                    clearInterval(timer);
+                }
+                num++;
+
+                document.getElementById('prg').value = num;
+                document.getElementById('sp').innerHTML = num;
+                },20)
+            }
+        }
+    </script>
+</body>
+</html>

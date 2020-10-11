@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<textarea rows='10' cols='40' id='txt1'></textarea><br>
+
+<!-- 北京淘宝职位招
+聘网|北京淘宝职位招聘信息】-北京58同城
+58同城北京淘宝职位招聘网免费提供给您大量真实有
+效的北京淘宝职位招聘信息,同时各大北京公司可以免费
+发布淘宝职位职位信息。好的北京淘宝职位招聘信息就在58
+同城北京... -->
+
+<input type="button" value="过滤" id="btn1"><br>
+<textarea rows='10' cols='40' id='txt2'></textarea><br><br><br><br>
+
+<!-- ------------------------------------------------------ -->
+
+<textarea rows='10' cols='40' id='txt3'></textarea><br>
+    <!-- <p>可道士仍旧每天都来看望妺喜。</p>
+    <p>这一日，道士按时前来，妺喜令宫人都退下，坐起身道：“敢问道长在何处修行？”</p>
+    <p>“神山道观，不足为外人道。”道士捻着胡须，一副故作高深的表情。</p>
+    <p>“神山道观？我看是深山老林还差不多。”</p>
+    <p>“王后这是何意？”</p>
+    <p>“你当我真的看不出你是一只狐妖？”</p>
+    <p>“你到王宫里来究竟有何意图？”</p>
+    <p>“自然是救你，我看到皇榜后心生怜惜，想着慈悲为怀便来了，当然也是顺便混个国师当当。”</p>
+    <p>“你现在离开王宫，我会让大王赐你价值连城的珍稀宝物。可你如果执意留在王宫中，唯有一死。”妺喜目露凶光。</p>
+    <p>道士哈哈大笑，笑声清脆爽朗，一转身蓝色光芒一闪，只见那道士化身为一位细皮嫩肉的年轻男子。</p>
+    <p>那男子蓝色眼眸，宛若无垠星空，眉宇间满是摄魂夺魄，撩倒众生的魅惑。</p>
+    <p>一身水蓝色长袍，长发如瀑，周身气质犹如仙人一般。</p>
+    <p>最重要的是，原来他一直在封锁自己的灵力，如今解了这封锁，妺喜感受到对方强大的灵力，少说也有千年修为，而自己的修为仅仅两百年。</p>
+    <p>关键真身更加不占优势，人家是狐狸，自己是喜鹊………</p>
+    <p>“你…你到底想干什么？”</p>
+    <p>“在下灵狐九夭。”九夭绕起唇角：“你不必害怕，我只是来玩儿的，体验生活。”</p>
+    <p>“那你何苦要当那国师？”</p> -->
+
+<input type="button" value="转换" id="btn2"><br>
+<textarea rows='10' cols='40' id='txt4'></textarea><br><br><br>
+
+<input type="text" id="txt5">
+<input type="button" value="效验邮箱" id="btn3">
+
+<br><br><br><br><br>
+</body>
+</html>
+
+<script>
+    //var str='abcdef';
+
+    // alert(str.search('b'));//返回位置，没有就返回-1
+    // alert(str.substring(2,5))//返回cde，不包括结束位置
+    // alert(str.charAt(3));//返回d
+    //var str1='12-45-54-aaa-r53';
+    //var arr=str1.split('-');//字符串切分
+    // alert(arr);
+
+    //正则表达式：
+    //var re=new RegExp('a','i');//js风格     i=ignore 忽略大小写
+    //var re1=/a/i;//perl风格
+
+    //var str='gesdg 45r  gr 34gf443';
+    //var re=/\d+/g; //d数字   g=global找到全部(全局匹配)  +若干
+    
+    //alert(str.match(re));//获取匹配的项目
+
+    //var str='abc aaa erw';
+    //var re=/a/g;
+    //alert(str.replace(re,'0'));//replace替换
+
+    //过滤敏感词：
+    window.onload=function()
+    {
+        var otxt1=document.getElementById('txt1');
+        var otxt2=document.getElementById('txt2');
+        var obtn1=document.getElementById('btn1');
+
+        obtn1.onclick=function()
+        {
+            var re=/北京|淘宝|百度/g;//去除敏感词
+            otxt2.value=otxt1.value.replace(re,'***');
+        }
+    }
+
+    //正则表达式[] 任意字符，范围，排除[^];
+    // [0-9]:0-9其中一个
+    // [^0-9]:除了0-9的都可以
+
+        var otxt3=document.getElementById('txt3');
+        var otxt4=document.getElementById('txt4');
+        var obtn2=document.getElementById('btn2');
+
+        obtn2.onclick=function()
+        {
+            var re=/<[^<>]+>/g;//去除html标签
+            otxt4.value=otxt3.value.replace(re,'');
+        }
+        // \d  数字                 [0-9]
+        // \w  英文，数字，下划线    [a-z0-9]
+        // \s  空白字符  空格，tab
+        // +   若干
+        // \D  除了数字
+        // \W  除了英文，数字，下划线
+        // \S  除了空格字符
+
+
+        //量词
+        //{n}     正好出现n次    [1-9]\d{10}:电话号码
+        //{n,m}   最少n次最多m次 [1-9]\d{4,10}:数字1-9开头的,必须是5-11位
+        //{n,}    最少n次，最多不限
+        //?       最少0次，最多一次
+        //*       可以没有，可以有
+
+        //特殊符号
+        // ^行首
+        // $行尾
+
+        //效验邮箱（邮箱正规表达式规则）：
+        var otxt5=document.getElementById('txt5');
+        var obtn3=document.getElementById('btn3');
+
+        obtn3.onclick=function()
+        {
+            var re=/^\w+@[a-z0-9]+\.[a-z]+$/i;
+
+            if(re.test(otxt5.value))
+            {
+                alert('合法邮箱');
+            }
+            else
+            {
+                alert('不合法邮箱!');
+            }
+        }
+        // ^行首
+        // $行尾
+</script>

@@ -1,0 +1,398 @@
+/* 定义变量 */
+a{
+    color: black;
+}
+a:link,a:hover,a:active,a:visited{
+    text-decoration: none;
+}
+
+/* 头部块 */
+.wjs_header{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+.row{
+    text-align: center;
+    height: 100%;
+    > div:nth-of-type(-n+3){
+        border-right: 1px solid #ccc;
+    }
+    .wjs_code{
+        // position: relative;
+        > img{
+            position: absolute;
+            display: none;
+            z-index: 999;
+        }
+        &:hover{
+            > img{
+                display: block;
+                z-index: 999;
+            }
+        }
+    }
+
+    .btn-danger{
+        background: red;
+        border: 1px solid red;
+        outline: none;
+
+    }
+    .btn{
+        padding: 4px 15px;
+        outline: none;
+    }
+    .btn-link{
+        color: #444;
+        &:hover{
+            text-decoration: none;
+            outline: none;
+        }
+    }
+}
+
+/* 导航块 */
+.wjs_nav{
+    .navbar-brand{
+        height: 80px;
+        line-height: 50px;
+        font-size: 40px;
+    }
+    .navbar-toggle{
+        margin-top: 23px;
+    }
+    .navbar-nav{
+        >li{
+            >a{
+                font-size: 16px;
+                line-height: 50px;
+                color: #555;
+            }
+            >a:hover,a:focus{
+                color: #555;
+                border-bottom: 3px solid red;
+            }
+        }
+        .active{
+            >a,a:hover,a:focus{
+                background: transparent;
+                border-bottom: 3px solid red;
+            }
+        }
+    }
+}
+
+/* 轮播图 */
+.wjs_banner{
+  border: 0px;
+}
+// 移动端
+@media screen and (max-width:767px)
+{
+    .item-img{
+        width: 100%;
+        display: block;
+        >img{
+            width: 100%;
+            display: block;
+         }
+    }
+}
+// 非移动端
+@media screen and (min-width:767px)
+{
+    .item-img{
+        width: 100%;
+        height: 410px;
+        display: block;
+        // 背景图片居中显示
+        background-position: center center;
+        // 背景图片大小
+        background-size: cover;
+    }
+}
+
+/* 信息块 */
+.wis_info{
+    margin: 30px;
+    >.container-fluid{
+        >.row{
+            height: 80px;
+            >a:hover{
+               color:red;
+            }
+        }
+    }
+}
+
+/* 预约块 */
+.reverse{
+    height: 70px;
+    line-height: 70px;
+    border: 1px solid rgb(210, 210, 210);
+    font-size: 18px;
+    box-sizing: border-box;
+    .row{
+        display: inline-block;
+        text-align: left;
+        >a{
+            color: red;
+            border-bottom: 1px dashed red;
+        }
+        >.reverse-what,.reverse-xcp{
+            color: #333;
+            border-bottom: 0px;
+        }
+        >a:hover{
+            color: red;
+        }
+        >span{
+            color: red;
+            margin-left: 6px;
+            margin-right: 6px;
+        }
+    }
+}
+
+/* 产品块 */
+.product{
+    clear: both;
+    background: #eee;
+    .tab-parent{
+        width: 100%;
+        overflow: hidden;
+        .nav-tabs{
+            width: 150%;
+            >.active{
+                >a{
+                    border-bottom: 3px solid red;
+                }
+            }
+            >li{
+                >a{
+                    // border-radius: 0px;
+                    line-height: 50px;
+                }
+                >a:active,a:hover,a:focus,a{
+                    border-bottom: 3px solid red;
+                    background: none;
+                    border: none;
+                }
+                >a:hover,a:focus{
+                    color: red;
+                    border-bottom: 3px solid red;
+                }
+            }
+        }
+    }
+    
+    .tab-content{
+        .row{
+            >div{
+                border-right: 0px;
+            }
+        }
+        >div:nth-of-type(n+2)
+        {
+            color: red;
+            line-height: 250px;
+            font-size: 100px;
+        }
+    }
+
+    .product-box{
+        height: 150px;
+        margin-top: 20px;
+        >.box-left{
+            margin-right: 100px;
+            height: 150px;
+            background: white;
+            border-right: 1px dashed #ccc;
+            position: relative;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            >p{
+                padding-top: 5px;
+            }
+            >.row > div{
+                border: 0px;
+            }
+        }
+        >.box-right{
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            width: 100px;
+            height: 150px;
+            position: absolute;
+            right: 15px;
+            top: 20px;
+            background: white;
+            text-align: center;
+            padding-top: 30px;
+            >b{
+                font-size: 40px;
+                color: red;
+            }
+            >span{
+                color: red;
+            }
+            >.box-right-text{
+                width: 100%;
+                position: absolute;
+                left: 50%;
+                top: 20px;
+                transform: translateX(-55%);
+                >.first{
+                    cursor: pointer;
+                    border: 1px solid red;
+                    color: red;
+                }
+                >.last{
+                    cursor: pointer;
+                    border: 1px solid blue;
+                    color: blue;
+                }
+            }
+        }
+    }
+    .first-box-div{
+        >.box-left{
+            background: red;
+            color: white;
+        }
+        >.box-right{
+            background: red;
+            color: white;
+            >b{
+                color: white;
+            }
+            >span{
+                color: white;
+            }
+        }
+    }
+}
+
+/* 新闻块 */
+.news{
+    height: 100%;
+    height: 450px;
+    >.container{
+        margin-top: 30px;
+        >.row{
+            .news-title{
+                font-size: 25px;
+                line-height: 50px;
+                text-align: center;
+                border-bottom: 1px solid #ccc;
+                position: relative;
+                &::before{
+                    content: "";
+                    border: 1px solid #ccc;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    position: absolute;
+                    right: -8px;
+                    bottom: -5px;
+                }
+            }
+            >div{
+                border: none;
+            }
+        }
+        .nav-tabs{
+        border: none;
+        position: relative;
+
+            >.news-before{
+                width: 1px;
+                height: 100%;
+                position: absolute;
+                left: 45%;
+                border-left: 1px dashed red;
+            }
+
+            >li{
+            margin-bottom: 60px;
+                >a{
+                    background: #ccc;
+                    border: none;
+                    width: 60px;
+                    height: 60px;
+                    line-height: 40px;
+                    text-align: center;
+                    cursor: pointer;
+                    border-radius: 50%;
+                }
+                >a:hover{
+                    border: none;
+                    background: red;
+                    color: white;
+                }
+                &.active{
+                    a,a:hover,a:focus{
+                        border: none;
+                        color: white;
+                        background: red;
+                    }
+                }
+            }
+
+            >li:last-child{
+                margin-bottom: 0px;
+            }
+            /* 使用媒体查询设置li元素之间的宽度 */
+            @media screen and (min-width:768px) and (max-width:992px){
+                >li{
+                    margin: 20px 40px;
+                }
+            }
+            /* 宽度小于768 */
+            @media screen and (max-width:768px){
+                >li{
+                    margin: 20px 0px;
+                    width: 25%;
+                }
+            }
+        }
+    }
+
+    .tab-content{
+        margin-left: 10px;
+        >div{
+            text-align: left;
+            font-size: 14px;
+            height: 400px;
+            >p{
+                padding: 28px;
+            }
+        }
+    }
+}
+
+/* 合作伙伴 */
+.partne{
+    background: #eee;
+    >.container{
+        >div{
+            padding: 30px;
+            >ul{
+                margin-top: 30px;
+                width: 100%;
+                text-align: center;
+                line-height: 100px;
+                height: 100px;
+                >li{
+                    float: left;
+                    list-style: none;
+                    >img{
+                        width: 100px;
+                        margin-right: 60px;
+                    }
+                }
+            }
+        }
+    }
+}

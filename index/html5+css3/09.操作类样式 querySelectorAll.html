@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .green{
+            color: green;
+        }
+        .blue{
+            color: blue;
+        }
+        .skyblue{
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>前端与开发</li>
+        <li class="green">java</li>
+        <li class="blue">测试</li>
+        <li class="skyblue">javascript</li>
+
+        <input type="button" value='为第一个li添加样式' id='add'>
+        <input type="button" value='为第二个li移除样式' id='remove'>
+        <input type="button" value='为第三个li切换样式' id='toggle'>
+        <input type="button" value='判断第四个是否包含某个元素(返回true/false)' id='contains'>
+    </ul>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        document.querySelector('#add').onclick=function()
+        {
+            document.querySelector('li').classList.add('red');
+        }
+
+        document.querySelector('#remove').onclick=function()
+        {
+            document.querySelector('.green').classList.remove('green');
+        }
+
+        document.querySelector('#toggle').onclick=function()
+        {
+            document.querySelectorAll('li')[2].classList.toggle('blue');
+        }
+
+        document.querySelector('#contains').onclick=function()
+        {
+            var iscon = document.querySelectorAll('li')[3].classList.contains('skyblue');
+            console.log(iscon);
+        }
+    }
+</script>

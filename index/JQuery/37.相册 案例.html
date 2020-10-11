@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        img{
+            padding: 10px;
+            width:200px;
+            cursor: pointer;/* 小手指 */
+        }
+        #bigimg{
+            width:850px;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/10.jpg" title='剑姬'>
+    <img src="img/11.jpg" title='妖姬'>
+    <img src="img/12.jpg" title='刀妹'>
+    <img src="img/13.jpg" title='卡米尔'>
+<div>
+    <img id='bigimg' src="img/400.jpg">
+</div>
+    <p id='des'>请点击一个图片</p>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $('img').click(function()
+    {
+        var srcvalue = $(this).attr('src');
+        var titlevalue = $(this).attr('title');
+        $('#bigimg').attr('src',srcvalue);
+        $('#bigimg').attr('title',titlevalue);
+        $('#des').text(titlevalue);
+    });
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    //1.如何查看jquery版本
+    console.log(jQuery.fn.jquery);
+
+    console.log(jQuery.prototype.jquery);
+
+    console.log($.fn.jquery);
+
+    console.log($.prototype.jquery);
+    //2.如果引入了多个jquery文件，那使用的$是最后引用的文件.
+
+    //3.多库共存
+    $.noConflict();//把 $符号的控制权释放
+
+    console.log($.fn.jquery);
+</script>
