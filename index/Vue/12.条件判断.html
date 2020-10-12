@@ -6,7 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div id='app'></div>
+    <div id='app'>
+        <div v-if="isshow">
+            <h3>abc</h3>
+            <h3>abc</h3>
+            <h3>abc</h3>
+            <h3>abc</h3>
+            <h3>abc</h3>
+            <h2>abc</h2>
+            <h2>{{message}}</h2>
+        </div>
+
+        <div v-else><h2>isshow为false时显示我</h2></div>
+    </div>
 
     <script src="vue.js"></script>
     
@@ -14,10 +26,8 @@
         const app = new Vue({
             el:'#app',
             data: {
-
-            },
-            methods: {
-
+                message:'你好啊',
+                isshow:true,
             }
         })
     </script>
