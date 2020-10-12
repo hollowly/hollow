@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .active {
+            text-shadow: 1px 1px 2px blue;
+        }
+        .show {
+            color: pink;
+        }
+    </style>
 </head>
 <body>
     <div id='app'>
@@ -12,9 +20,14 @@
             <li v-for='items in lis'>{{items}}</li>
         </ul>
         <h2>{{count}}</h2>
-        <button @click=add>+</button>
-        <button @click=sub>-</button>
-        <a v-bind:href='blogUrl'>我的博客：</a>
+        <button @click='add()'>+</button>
+        <button @click='sub()'>-</button>
+        <h2><a v-bind:href='blogUrl'>我的博客</a></h2>
+        <img :src="imgUrl" alt="" width="400px">
+        <h3 v-bind:style="getStyle()">{{message}}</h3>
+        <h3 v-bind:class='getClass()'>{{message}}</h3>
+        <button @click='change()'>点我为上面添加样式</button>
+        <h2>{{prices}}</h2>
     </div>
 
     <script src="vue.js"></script>
@@ -27,6 +40,15 @@
                 lis: ['我和我的祖国','hellow','world','hollow'],
                 count: 0,
                 blogUrl : 'https://www.cnblogs.com/hollows/',
+                imgUrl: 'https://files.dbnuo.com/wallpaper/wallhaven-83yl1y.webp',
+                isactive:true,
+                isshow:true,
+                books:[
+                    {id:100,name:'javascript',price:100},
+                    {id:101,name:'jquery',price:150},
+                    {id:102,name:'html',price:200},
+                    {id:102,name:'html',price:200},
+                ]
             },
             methods: {
                 add() {
@@ -34,6 +56,26 @@
                 },
                 sub() {
                     this.count--;
+                },
+                getStyle() {
+                    return {'color':'red','background':'pink','margin':'0px','font-size':'50px'}
+                },
+                getClass() {
+                    return {active:this.isactive,show:this.isshow}
+                },
+                change() {
+                    this.isactive = !this.isactive;
+                    this.isshow = !this.isshow;
+                }
+            },
+
+            computed: {
+                prices:function() {
+                    let pricenum = 0;
+                    for(let i = 0; i < this.books.length;i++) {
+                        pricenum += this.books[i].price;
+                    }
+                    return pricenum;
                 }
             }
 
