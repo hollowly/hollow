@@ -6,12 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id='app'>
+        <ul>
+            <li v-for = 'item in letter'>{{item}}</li>
+        </ul>
+        <button @click='btnclick'>按钮</button>
+    </div>
 
     <script src="vue.js"></script>
     
     <script>
-
+        const app = new Vue({
+            el: '#app',
+            data: {
+                letter:['a','b','c','d'],
+            },
+            methods: {
+                btnclick() {
+                    this.letter.pop();
+                }
+            },
+        })
     </script>
 </body>
 </html>
