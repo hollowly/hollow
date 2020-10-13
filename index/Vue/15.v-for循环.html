@@ -8,9 +8,11 @@
 <body>
     <div id='app'>
         <ul>
+            <!-- 在遍历的过程中，没有使用索引值(下标值) -->
             <li v-for = 'item in names'>{{item}}</li> <br>
             
-            <li v-for = '(index item) in names'>{{index}}.{{item}}</li>
+            <!-- 在遍历过程中，获取索引值 -->
+            <li v-for = '(item, index) in names'>{{index+1}}.{{item}}</li>
         </ul>
     </div>
 
