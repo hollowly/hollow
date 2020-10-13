@@ -10,6 +10,7 @@
         <ul>
             <li v-for = 'item in letter'>{{item}}</li>
         </ul>
+        <button @click='btnClick'></button>
     </div>
 
     <script src="vue.js"></script>
@@ -21,7 +22,7 @@
                 letter:['A','B','C','D','E','F'],
             },
             methods: {
-                divclick() {
+                btnClick() {
                     
                 }
             }
