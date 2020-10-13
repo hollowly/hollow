@@ -8,7 +8,8 @@
 <body>
     <div id='app'>
         <ul>
-            <li v-for = 'item in letter'>{{item}}</li>
+            <!-- key的作用是为了高效的更新虚拟DOM -->
+            <li v-for = 'item in letter' :key='item'>{{item}}</li>
         </ul>
     </div>
 
