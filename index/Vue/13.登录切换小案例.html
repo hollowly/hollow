@@ -8,10 +8,10 @@
 <body>
     <div id='app'>
         <span v-if='isUser'>
-           用户账号： <input type="text" placeholder="请输入用户账号">
+           用户账号： <input type="text" placeholder="请输入用户账号" key='username'>
         </span>
         <span v-else>
-            用户邮箱： <input type="text" placeholder="请输入用户邮箱">
+            用户邮箱： <input type="text" placeholder="请输入用户邮箱" key='email'>
         </span>
         <button @click='isUser = !isUser'>切换类型</button>
     </div>
