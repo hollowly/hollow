@@ -6,12 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id='app'>
+        <ul>
+            <li v-for = 'item in letter'>{{item}}</li>
+        </ul>
+    </div>
 
     <script src="vue.js"></script>
     
     <script>
-
+        const app = new Vue({
+            el: '#app',
+            data: {
+                letter: ['A','B','C','D','E','F'],
+            },
+        })
     </script>
 </body>
 </html>
