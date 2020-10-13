@@ -146,7 +146,7 @@
             var flag = true;
 
             // 右按钮
-            $('.right').click(function(){
+            $('.right').click(function() {
                 if(flag == true){
                     // 设置节流阀
                     flag = false;
@@ -159,27 +159,27 @@
                             'transition-delay': (key*0.15) + 's',
                         })
                     })
-                    setTimeout(function(){
+                    setTimeout(function() {
                         flag = true;
                     },1200);
                 }
             })
             
             // 左按钮
-            $('.left').click(function(){
-                if(flag == true){
+            $('.left').click(function() {
+                if(flag == true) {
                     // 设置节流阀
                     flag = false;
                     index++;
                     // 所谓下一张就是将所有li元素围绕x旋转
-                    $('li').each(function(key,value){
+                    $('li').each(function(key,value) {
                         // 通过transform进行旋转
                         $(this).css({
                             'transform':"rotateX("+(index*90)+"deg)",
                             'transition-delay': (key*0.15) + 's',
                         })
                     })
-                    setTimeout(function(){
+                    setTimeout(function() {
                         flag = true;
                     },1200);
                 }
