@@ -43,7 +43,13 @@
                     // sort():排序
                     // this.letter.sort();
 
-                    this.letter.reverse();
+                    // this.letter.reverse();
+
+                    // 注意：通过索引值修改数组中的元素
+                    // this.letter[0] = 'bbbbb';
+                    // this.letter.splice(0,1,'bbbbb');
+                    // set(要修改的对象，索引值，修改后的值)
+                    Vue.set(this.letter,0,'bbbbb');
                 }
             },
         })
