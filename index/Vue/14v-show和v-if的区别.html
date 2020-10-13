@@ -9,7 +9,8 @@
     <div id='app'>
         <!-- v-if：当条件为false时，包含v-if指令的元素，根本不会存在dom中 -->
         <h2 v-if='isShow'>{{message}}</h2>
-
+        
+        <!-- v-show：当条件为false是，v-show只是为元素增加了行内样式：display:none -->
         <h2 v-show='isShow'>{{message}}</h2>
     </div>
 
