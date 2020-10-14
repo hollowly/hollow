@@ -14,7 +14,7 @@
     <div id='app'>
         <h1>{{message}}</h1>
         <ul>
-            <li v-for = '(items,index) in moves' v-bind:class='getclasses()' @click='bgchange()'>{{items}}</li>
+            <li v-for = '(items, index) in moves' :class = '{active: currIndex === index}' @click='liClick(index)'>{{items}}</li>
         </ul>
     </div>
 
@@ -25,15 +25,13 @@
             el: '#app',
             data: {
                 isactive:true,
+                currIndex: 0,
                 message:'列表:',
                 moves: ['进击的巨人','海尔兄弟','元龙','灵笼'],
             },
             methods: {
-                bgchange:function() {
-                    this.isactive = !this.isactive;
-                },
-                getclasses:function() {
-                    return {active:this.isactive};
+                liClick(index) {
+                    index
                 }
             }
 
