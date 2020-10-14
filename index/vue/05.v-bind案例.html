@@ -8,6 +8,9 @@
         .active {
             color: red;
         }
+        ul > li {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -31,7 +34,7 @@
             },
             methods: {
                 liClick(index) {
-                    index
+                    this.currIndex = index;
                 }
             }
 
