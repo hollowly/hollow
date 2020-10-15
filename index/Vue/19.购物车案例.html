@@ -83,16 +83,16 @@
                 getPrice() {
                     let result = 0;
                     for(let i = 0;i < this.books.length;i++) {
-                        result += this.books[i].price * this.books[i].count;
+                        result += this.books[i].price;
                     }
                     return result;
-                }
+                },
             },
             filters: {
-                showPrice(price) {
-                    return '￥' + price.toFixed(2);
+                    showPrice(price) {
+                        return '￥' + price.toFixed(2);
+                    }
                 }
-            }
         })
     </script>
 </body>
