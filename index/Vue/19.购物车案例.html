@@ -24,37 +24,39 @@
 </head>
 <body>
     <div id='app'>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>书籍名称</th>
-                    <th>出版日期</th>
-                    <th>价格</th>
-                    <th>购买数量</th>
-                    <th>操作</th>
-                </tr>
-            </thead>
+        <div v-if='books.length > 0'>   
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>书籍名称</th>
+                        <th>出版日期</th>
+                        <th>价格</th>
+                        <th>购买数量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                <tr v-for='(item, index) in books'>
-                    <td>{{item.id}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.date}}</td>
-                    <td>{{item.price | showPrice}}</td>
+                <tbody>
+                    <tr v-for='(item, index) in books'>
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.date}}</td>
+                        <td>{{item.price * item.count | showPrice}}</td>
 
-                    <td>
-                        <button @click='add(index)'>+</button>
-                        {{item.count}}
-                        <button @click='sub(index)' v-bind:disabled='item.count === 1'>-</button>
-                    </td>
+                        <td>
+                            <button @click='add(index)'>+</button>
+                            {{item.count}}
+                            <button @click='sub(index)' v-bind:disabled='item.count <= 1'>-</button>
+                        </td>
 
-                    <td><button @click='removeClick(index)'>移除</button></td>
-                </tr>
-            </tbody>
-        </table>
-        
-        总价格：{{getPrice | showPrice}}
+                        <td><button @click='removeClick(index)'>移除</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            总价格：{{getPrice | showPrice}}
+        </div>
+        <h2 v-else>当前购物车为空</h2>
     </div>
 
     <script src="vue.js"></script>
@@ -78,18 +80,25 @@
                 sub(index) {
                     this.books[index].count--;
                 },
+                removeClick(index) {
+                    this.books.splice(index, 1);
+                }
             },
             computed: {
                 getPrice() {
                     let result = 0;
-                    for(let i = 0;i < this.books.length;i++) {
-                        result += this.books[i].price;
-                    }
+                    // for(let i = 0;i < this.books.length;i++) {
+                    //     result += this.books[i].price * this.books[i].count;
+                    // }
+                    // for(let i in this.books) {
+                    //     result += this.books[i].price * this.books[i].count;
+                    // }
+                    // for(let item of this.books) {
+                    //     result += item.price * item.count;
+                    // }
+                    
                     return result;
                 },
-                removeClick(index) {
-                    this.books.splice(this,1)
-                }
             },
             filters: {
                     showPrice(price) {
