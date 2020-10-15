@@ -11,7 +11,13 @@
     <script src="vue.js"></script>
     
     <script>
+        const nums = [10,234,254,46,76,786,678,54];
 
+        let newNums = nums.filter(function(n) {
+            return n < 100;
+        })
+
+        console.log(newNums);
     </script>
 </body>
 </html>
