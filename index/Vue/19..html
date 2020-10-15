@@ -6,12 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id='app'>
+        <h1>{{message}}</h1>
+
+        <ul>
+            <li v-for = 'items in books'>{{items}}</li>
+        </ul>
+
+        <button @click=aa>按钮</button>
+        <button @click=bb()>按钮</button>
+    </div>
 
     <script src="vue.js"></script>
     
     <script>
-
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message:'Vue!',
+                books:['javascript','php','java','python'],
+            },
+            methods: {
+                aa() {
+                    console.log('aa');
+                }
+            }
+        })
     </script>
 </body>
 </html>
