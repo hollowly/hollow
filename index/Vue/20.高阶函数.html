@@ -12,12 +12,26 @@
     
     <script>
         const nums = [10,234,254,46,76,786,678,54];
-
+        // filter/map/reduce
+        
+        // 1.filter函数的使用
+        // filter函数中的回调函数有一个要求，必须返回一个boolean值
+        // true：当返回true时，函数内部会自动将这次回调的值加入到新的数组中
+        // false：当返回false时，函数内部会过滤掉这个值
         let newNums = nums.filter(function(n) {
             return n < 100;
         })
+        console.log(newNums); // 10,46,76,54
 
-        console.log(newNums);
+
+        // 2.map函数的使用
+        let new2Nums = newNums.map(function(n) {
+            return n * 2;
+        })
+        console.log(new2Nums); // 20,92,152,108
+
+        // 3.reduce函数的使用
+        
     </script>
 </body>
 </html>
