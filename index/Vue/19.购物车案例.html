@@ -40,13 +40,13 @@
                 <tr v-for='item in books'>
                     <td>{{item.id}}</td>
                     <td>{{item.name}}</td>
-                    <td>{{item.data}}</td>
-                    <td>{{item.price}}</td>
+                    <td>{{item.date}}</td>
+                    <td>{{item.price | showPrice}}</td>
 
                     <td>
-                        <button>+</button>
+                        <button @click='add()'>+</button>
                         {{item.count}}
-                        <button>-</button>
+                        <button @click='sub()'>-</button>
                     </td>
 
                     <td><button>移除</button></td>
@@ -54,7 +54,7 @@
             </tbody>
         </table>
         
-        总价格：{{allPrice}}
+        总价格：{{getPrice | showPrice}}
     </div>
 
     <script src="vue.js"></script>
@@ -64,12 +64,34 @@
             el: '#app',
             data: {
                 books:[
-                    {id:1, name:'《算法导论》',data:'2006-9',price:85,count:1},
-                    {id:1, name:'《UNIX编程艺术》',data:'2006-2',price:59,count:1},
-                    {id:1, name:'《编程珠玑》',data:'2008-10',price:39,count:1},
-                    {id:1, name:'《代码大全》',data:'2006-3',price:128,count:1},
+                    {id:1, name:'《算法导论》',date:'2006-9',price:85.00,count:1},
+                    {id:1, name:'《UNIX编程艺术》',date:'2006-2',price:59.00,count:1},
+                    {id:1, name:'《编程珠玑》',date:'2008-10',price:39.00,count:1},
+                    {id:1, name:'《代码大全》',date:'2006-3',price:128.00,count:1},
                 ],
                 allPrice:0,
+            },
+            methods: {
+                add() {
+                    this.books.count++;
+                },
+                sub() {
+                    this.books.count--;
+                },
+            },
+            computed: {
+                getPrice() {
+                    let result = 0;
+                    for(let i = 0;i < this.books.length;i++) {
+                        result += this.books[i].price * this.books[i].count;
+                    }
+                    return result;
+                }
+            },
+            filters: {
+                showPrice(price) {
+                    return '￥' + price.toFixed(2);
+                }
             }
         })
     </script>
