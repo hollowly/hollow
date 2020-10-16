@@ -8,7 +8,8 @@
 <body>
     <div id='app'>
         <ul>
-            <!-- key的作用是为了高效的更新虚拟DOM -->
+            <!-- key的作用是为了高效的更新虚拟DOM
+                或者说：加key是为了内部修改节点的时候效率更高 -->
             <li v-for = 'item in letter' :key='item'>{{item}}</li>
         </ul>
     </div>

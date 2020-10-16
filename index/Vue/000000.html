@@ -35,31 +35,31 @@
     <div id='app'>
         <h1>{{message}}</h1>
 <hr>
-        <h2>列表：</h2>
+        <h1>列表：</h1>
         <ul>
             <li v-for='items in moves'>{{items}}</li>
         </ul>
 <hr>
-        <h2>计数器：</h2>
+        <h1>计数器：</h1>
         当前计数：{{num}} <br>
         <button @click='addCount'>+</button>
         <button @click='subCount'>-</button>
 <hr>
-        <h2>v-bind的使用：</h2>
+        <h1>v-bind的使用：</h1>
         <h3><a v-bind:href="aUrl">{{coblogs}}</a></h3>
         <img v-bind:src='imgUrl' width="500px">
 <hr>
-        <h2>v-bind动态绑定class：</h2>
+        <h1>v-bind动态绑定class：</h1>
         <h3 v-bind:class='getClass()'>{{test}}</h3>
         <button @click='changeClass()'>点击我为上面的文字添加效果(class)</button>
 <hr>
-        <h2>动态绑定style：</h2>
+        <h1>动态绑定style：</h1>
         <h6 :style="getStyle()">你好啊Vue！</h6>
 <hr>
-        <h2>计数属性：</h2>
+        <h1>计数属性：</h1>
         <h3>总价格：{{prices}}</h3>
 <hr>
-        <h2>v-if切换：</h2>
+        <h1>v-if切换：</h1>
         <span v-if='isUser'>
             用户账号：<input type="text" placeholder="请输入用户账号">
         </span>
@@ -68,7 +68,8 @@
         </span>
         <button @click='isUser = !isUser'>切换类型</button>
 <hr>
-        <h2>v-for中添加key：</h2>
+        <h1>v-for中添加key：</h1>
+        <h4>注释：加key是为了内部修改节点的时候效率更高</h4>
         <ul>
             <li v-for = '(items, index) in lis' :key='items'>{{items}}</li>
         </ul>
@@ -109,6 +110,22 @@
             <h2>当前购物车为空！</h2>
         </div>
 <hr>
+        <h2>v-model的使用：</h2>
+        <input type="text" v-model='message2'>
+        <h2>{{message2}}</h2>
+<hr>
+        <h1>v-model结合radio:</h1>
+        <label for="man">
+            <input type="radio" value='男' id='man' v-model='sex'>男
+        </label>
+        <label for="woman">
+            <input type="radio" value='女' id='woman' v-model='sex'>女
+        </label>
+        <h2>您当前的性别是：{{sex}}</h2>
+<hr>
+
+
+
     </div>
 
 
@@ -143,7 +160,9 @@
                     {id:1, name:'《unix编程艺术》', deta:'2006-2', price:59.00, count:1},
                     {id:1, name:'《编程珠玑》', deta:'2008-10', price:39.00, count:1},
                     {id:1, name:'《代码大全》', deta:'2006-3', price:128.00, count:1},
-                ]
+                ],
+                message2:'你好啊！',
+                sex:'男',
             },
 
             methods: {
