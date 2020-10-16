@@ -6,12 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id='app'>
+        <input type="text" v-model = 'message'>
+        {{message}}
+    </div>
 
     <script src="vue.js"></script>
     
     <script>
-
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message:'你好啊！',
+            }
+        })
     </script>
 </body>
 </html>
