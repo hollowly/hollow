@@ -13,7 +13,7 @@
             text-shadow: 1px 1px 2px blue;
         }
         body {
-            height: 2000px;
+            height: 3000px;
         }
         table {
             border: 1px solid #cccccc;
@@ -70,12 +70,12 @@
 <hr>
         <h2>v-for中添加key：</h2>
         <ul>
-            <li v-for = 'items in lis' key='items'>{{items}}</li>
+            <li v-for = '(items, index) in lis' :key='items'>{{items}}</li>
         </ul>
-        <button @click='btnClearLi(index)'>删除</button>
+        <button @click='btnClearLi()'>删除</button>
 <hr>
         <h2>购物车案列：</h2>
-        <span v-if='books2.length > 0'>
+        <div v-if='books2.length > 0'>
             <table>
                 <thead>
                     <tr>
@@ -93,22 +93,21 @@
                         <td>{{items.id}}</td>
                         <td>{{items.name}}</td>
                         <td>{{items.deta}}</td>
-                        <td>{{'￥' + items.price*items.count + '.00'}}</td>
+                        <td>{{'￥' + items.price * items.count + '.00'}}</td>
                         <td>
-                            <button @click='add(index)'>+</button>
+                            <button @click = 'add(index)'>+</button>
                             {{items.count}}
-                            <button @click='sub(index)' :disabled='items.count <= 1'>-</button>
+                            <button @click = 'sub(index)' :disabled = 'items.count <= 1'>-</button>
                         </td>
-                        <td><button @click='btnRemove(index)'>移除</button></td>
+                        <td><button @click = 'btnRemove(index)'>移除</button></td>
                     </tr>
                 </tbody>
             </table>
             <h2>总价格：{{'￥' + getPrice + '.00'}}</h2>
-        </span>
-        <span v-else>
-            <h1>当前购物车为空</h1>
-        </span>
-
+        </div>
+        <div v-else>
+            <h2>购物车为空！</h2>
+        </div>
 <hr>
     </div>
 
@@ -130,7 +129,7 @@
                 findSize:100,
                 findmarginSize:0,
                 findColor:'red',
-                lis:['javascript','php','java','python'],
+                lis:['javascript','php','java','python','c++','jquery','bootstrap'],
                 books1: [
                     {id: 100, name:'javascript', price: 62},
                     {id: 101, name:'php', price: 45},
@@ -151,30 +150,37 @@
                 add:function() {
                     this.num++;
                 },
+
                 sub:function() {
                     this.num--;
                 },
+
                 changeClass:function() {
                     this.isactive = !this.isactive;
                     this.isshadow = !this.isshadow;
                 },
+
                 getClass:function() {
                     return {active: this.isactive, shadow: this.isshadow};
                 },
+
                 getStyle:function() {
                     return {'background':this.findbgColor,'font-size':this.findSize + 'px','margin':this.findmarginSize,'color':this.findColor}
                 },
+                
+                btnClearLi() {
+                    this.lis.pop();
+                },
+
                 add(index) {
                     this.books2[index].count++;
                 },
+
                 sub(index) {
                     this.books2[index].count--;
                 },
                 btnRemove(index) {
                     this.books2.splice(index, 1);
-                },
-                btnClearLi(index) {
-                    this.lis.splice(index, 1);
                 }
             },
 
@@ -191,6 +197,7 @@
                         return pre + book.price * book.count;
                     }, 0)
                 }
+                
             }
         })
     </script>
