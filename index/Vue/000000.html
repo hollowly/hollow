@@ -42,8 +42,8 @@
 <hr>
         <h2>计数器：</h2>
         当前计数：{{num}} <br>
-        <button @click='add()'>+</button>
-        <button @click='sub()'>-</button>
+        <button @click='addCount'>+</button>
+        <button @click='subCount'>-</button>
 <hr>
         <h2>v-bind的使用：</h2>
         <h3><a v-bind:href="aUrl">{{coblogs}}</a></h3>
@@ -106,7 +106,7 @@
             <h2>总价格：{{'￥' + getPrice + '.00'}}</h2>
         </div>
         <div v-else>
-            <h2>购物车为空！</h2>
+            <h2>当前购物车为空！</h2>
         </div>
 <hr>
     </div>
@@ -147,11 +147,11 @@
             },
 
             methods: {
-                add:function() {
+                addCount:function() {
                     this.num++;
                 },
 
-                sub:function() {
+                subCount:function() {
                     this.num--;
                 },
 
@@ -197,7 +197,7 @@
                         return pre + book.price * book.count;
                     }, 0)
                 },
-                
+
             }
         })
     </script>
