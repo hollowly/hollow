@@ -13,7 +13,6 @@
     <script>
         const nums = [10,234,254,46,76,786,678,54];
         // // filter/map/reduce
-        
         // // 1.filter函数的使用
         // // 对数组中的内容进行对应的条件过滤
         // // filter函数中的回调函数有一个要求，必须返回一个boolean值
@@ -43,14 +42,22 @@
         // // 第四次： 264   n = 108
         // // 372
         // console.log(new3Nums);
-        let newNums =  nums.filter(function(n) {
-            return n < 100;
-        }).map(function(n) {
-            return n * 2;
-        }).reduce(function(preValue, n) {
-            return preValue + n;
-        }, 0);
 
+
+        // 链式编程
+        // let newNums =  nums.filter(function(n) {
+        //     return n < 100;
+        // }).map(function(n) {
+        //     return n * 2;
+        // }).reduce(function(preValue, n) {
+        //     return preValue + n;
+        // }, 0);
+
+        // console.log(newNums);
+
+
+        // 箭头函数
+        let newNums = nums.filter(n => n < 100).map(n => n * 2).reduce((pre, n) => pre + n);
         console.log(newNums);
     </script>
 </body>

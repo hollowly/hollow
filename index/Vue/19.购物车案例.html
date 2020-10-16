@@ -86,18 +86,21 @@
             },
             computed: {
                 getPrice() {
-                    let result = 0;
+                    // let result = 0;
                     // for(let i = 0;i < this.books.length;i++) {
                     //     result += this.books[i].price * this.books[i].count;
                     // }
                     // for(let i in this.books) {
                     //     result += this.books[i].price * this.books[i].count;
                     // }
-                    for(let item of this.books) {
-                        result += item.price * item.count;
-                    }
+                    // for(let item of this.books) {
+                    //     result += item.price * item.count;
+                    // }
 
-                    return result;
+                    // return result;
+                    return this.books.reduce(function(pre, book) {
+                        return pre + book.price * book.count;
+                    }, 0);
                 },
             },
             filters: {
