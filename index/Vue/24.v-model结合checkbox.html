@@ -8,9 +8,15 @@
 <body>
     <div id='app'>
         <label for="agreen">
-            <input type="checkbox" id='agreen' v-model='isAgreen'>同意协议
+            <h3><input type="checkbox" id='agreen' v-model='isAgreen'>同意协议</h3>
         </label>
         <h2>你当前选中的是：{{isAgreen}}</h2>
+        <button :disabled='!isAgreen'>下一步</button>
+<hr>
+        <input type="checkbox">篮球
+        <input type="checkbox">足球
+        <input type="checkbox">乒乓球
+        <input type="checkbox">羽毛球
     </div>
 
     <script src="vue.js"></script>
