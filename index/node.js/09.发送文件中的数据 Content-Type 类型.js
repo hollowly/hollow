@@ -32,5 +32,6 @@ server.on('request',function(req, res) {
 });
 
 server.listen(3000, function() {
+    console.log('服务器已启动,可以通过http://localhost:3000/进行访问');
     console.log('Server is running...');
 })
