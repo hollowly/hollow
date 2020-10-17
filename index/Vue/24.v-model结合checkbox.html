@@ -7,7 +7,29 @@
 </head>
 <body>
     <div id='app'>
-
+        <h3>
+            <label for="ball1">
+                <input type="checkbox" id='ball1' value='篮球' v-model='isHobys'>篮球
+            </label>
+            
+            <label for="ball2">
+                <input type="checkbox" id='ball2' value='足球' v-model='isHobys'>足球
+            </label>
+            
+            <label for="ball3">
+                <input type="checkbox" id='ball3' value='羽毛球' v-model='isHobys'>羽毛球
+            </label>
+            
+            <label for="ball4">
+                <input type="checkbox" id='ball4' value='乒乓球' v-model='isHobys'>乒乓球
+            </label> <br>
+            您选择的兴趣有：{{isHobys}}
+        </h3>
+<hr>
+        <label for="agreen">
+            <h3><input type="checkbox" id='agreen' v-model='isAgreen'>同意协议</h3>
+        </label>
+        <button :disabled='!isAgreen'>下一步</button>
     </div>
 
     <script src="vue.js"></script>
@@ -16,6 +38,8 @@
         const app = new Vue({
             el:'#app',
             data: {
+                isHobys:[],
+                isAgreen:false,
             }
         })
     </script>
