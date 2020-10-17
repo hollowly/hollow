@@ -8,10 +8,10 @@
 <body>
     <div id='app'>
         <h3>
-            <label v-for='items in orignhobbys' :for='items'>
-                <input type="checkbox" :id='items' v-model='hobbys' :value='items'>{{items}}
+            <label v-for='items in orignHobbys' :for="items">
+                <input type='checkbox' :id='items' :value='items' v-model='hobbys'>{{items}}
             </label> <br>
-            您选择的爱好有：{{hobbys}}
+            您选择的兴趣有：{{hobbys}}
         </h3>
     </div>
 
@@ -22,7 +22,7 @@
             el:'#app',
             data: {
                 hobbys:[],
-                orignhobbys: ['篮球','足球','乒乓球','羽毛球','台球','高尔夫球'],
+                orignHobbys:['篮球','高尔夫','台球','足球','乒乓球','羽毛球'],
             }
         })
     </script>
