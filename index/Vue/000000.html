@@ -6,6 +6,9 @@
     <title>Document</title>
     <script src="vue.js"></script>
     <style>
+        body, html {
+            user-select:none;
+        }
         .active{
             color: red;
         }
@@ -13,7 +16,7 @@
             text-shadow: 1px 1px 2px blue;
         }
         body {
-            height: 3000px;
+            height: 5000px;
         }
         table {
             border: 1px solid #cccccc;
@@ -115,14 +118,71 @@
         <h2>{{message2}}</h2>
 <hr>
         <h1>v-model结合radio:</h1>
-        <label for="man">
-            <input type="radio" value='男' id='man' v-model='sex'>男
-        </label>
-        <label for="woman">
-            <input type="radio" value='女' id='woman' v-model='sex'>女
-        </label>
-        <h2>您当前的性别是：{{sex}}</h2>
+        <h3>
+            <label for="man">
+                <input type="radio" id="man" value='男' v-model='sex'>男
+            </label>
+            <label for="woman">
+                <input type="radio" id="woman" value='女' v-model='sex'>女
+            </label> <br>
+            您当前的性别是：{{sex}}
+        </h3>
 <hr>
+        <h1>v-mode结合checkbox：</h1>
+        <h3>
+            <label for="ball1">
+                <input type="checkbox" id="ball1" value="篮球" v-model='hobbys'>篮球
+            </label>
+            <label for="ball2">
+                <input type="checkbox" id="ball2" value="足球" v-model='hobbys'>足球
+            </label>
+            <label for="ball3">
+                <input type="checkbox" id="ball3" value="乒乓球" v-model='hobbys'>乒乓球
+            </label>
+            <label for="ball4">
+                <input type="checkbox" id="ball4" value="羽毛球" v-model='hobbys'>羽毛球
+            </label>
+            <label for="ball5">
+                <input type="checkbox" id="ball5" value="台球" v-model='hobbys'>台球
+            </label> <br>
+            <h3>您选择的兴趣有：{{hobbys}}</h3>
+<hr>
+            <label for="agreen">
+                <h3><input type="checkbox" id="agreen" v-model='isAgreen'>同意协议</h3>
+            </label>
+            <button :disabled='!isAgreen'>下一步</button>
+        </h3>
+<hr>
+        <h1>v-model结合select：</h1>
+        <select name="abc" v-model='fruit'>
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="菠萝">菠萝</option>
+            <option value="葡萄">葡萄</option>
+            <option value="哈密瓜">哈密瓜</option>
+        </select>
+        <h3>您选择的水果有：{{fruit}}</h3>
+
+        <select name="abc" multiple v-model='fruits'>
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="菠萝">菠萝</option>
+            <option value="葡萄">葡萄</option>
+            <option value="哈密瓜">哈密瓜</option>
+        </select>
+        <h3>您选择的水果有：{{fruits}}</h3>
+<hr>
+        <h1>v-model修饰符：</h1>
+        <h2>
+            <label :for="item" v-for='item in newhobbys'>
+                <input type="checkbox" :id="item" :value="item" v-model='newhobby'>{{item}}
+            </label>
+            <h3>您选择的兴趣有：{{newhobby}}</h3>
+        </h2>
+<hr>
+        
+
+
 
 
 
@@ -163,6 +223,12 @@
                 ],
                 message2:'你好啊！',
                 sex:'男',
+                hobbys:[],
+                isAgreen:false,
+                fruit:'葡萄',
+                fruits:[],
+                newhobby:[],
+                newhobbys:['篮球','足球','乒乓球','羽毛球','台球'],
             },
 
             methods: {
