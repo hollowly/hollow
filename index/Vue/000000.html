@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="vue.js"></script>
     <style>
         body, html {
             user-select:none;
@@ -180,17 +179,42 @@
             <h3>您选择的兴趣有：{{newhobby}}</h3>
         </h2>
 <hr>
-        
-
-
-
-
-
+<hr>
+<hr>
+        <h1>组件化全局/局部，语法糖和模板分离写法：</h1>
+        <cpn1></cpn1>
+        <cpn2></cpn2>
     </div>
 
 
+
+
+    <!-- 组件： -->
+        <template id='cpn1'>
+            <div>
+                <h1>我是全局定义的</h1>
+                <p>我是内容哈哈哈</p>
+            </div>
+        </template>
+        
+        <template id='cpn2'>
+            <div>
+                <h1>我是局部定义的</h1>
+                <p>我是内容呵呵呵</p>
+            </div>
+        </template>
+
+
+    <script src="vue.js"></script>
+
     <script>
-        let app = new Vue({
+        // 组件化全局写法
+        Vue.component('cpn1', {
+            template: '#cpn1',
+        })
+
+
+        const app = new Vue({
             el:'#app',
             data:{
                 coblogs:'我的博客',
@@ -282,6 +306,13 @@
                         return pre + book.price * book.count;
                     }, 0)
                 },
+            },
+            
+            // 组件化局部写法
+            components: {
+                cpn2: {
+                    template: '#cpn2',
+                }
             }
         })
     </script>
