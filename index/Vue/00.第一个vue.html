@@ -6,16 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="div1">
+    <div id="app">
         <h1>{{message}}</h1>
         <h3>{{name}}</h3>
     </div>
 
     <script src="vue.js"></script>
     <script>
-        // 变成范式：声明式编程
-        let div1 = new Vue({
-            el:'#div1',     //用于挂载要管理的元素
+        // 编程范式：声明式编程
+        const app = new Vue({
+            el:'#app',     //用于挂载要管理的元素
             data: {         //定义数据
                 message:'你好啊！Vue',
                 name:'dengjunxian'

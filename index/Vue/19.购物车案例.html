@@ -43,13 +43,11 @@
                         <td>{{item.name}}</td>
                         <td>{{item.date}}</td>
                         <td>{{item.price * item.count | showPrice}}</td>
-
                         <td>
                             <button @click='add(index)'>+</button>
                             {{item.count}}
                             <button @click='sub(index)' v-bind:disabled='item.count <= 1'>-</button>
                         </td>
-
                         <td><button @click='removeClick(index)'>移除</button></td>
                     </tr>
                 </tbody>
