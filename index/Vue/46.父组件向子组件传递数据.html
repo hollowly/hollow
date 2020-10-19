@@ -6,50 +6,53 @@
     <title>Document</title>
 </head>
 <body>
-        <div id='app'>
-            <cpn :cmessage='message' :cmoves='moves'></cpn>
-        </div>
+    <div id='app'>
+        <cpn :cmessage='message' :cmoves='moves' :c-info='info'></cpn>
+    </div>
 
-        
-        <template id='cpn'>
-            <div>
-                <h1>{{cmessage}}</h1>
-                <ul>
-                    <li v-for='item in cmoves'>{{item}}</li>
-                </ul>
-                <h3>{{cmoves}}</h3>
-            </div>
-        </template>
+
+    <template id='cpn'>
+        <div>
+            <h1>{{cmessage}}</h1>
+            <ul>
+                <li v-for='item in cmoves'>{{item}}</li>
+            </ul>
+            {{cmoves}}
+
+            <h2>{{cInfo.name}}</h2>
+        </div>
+    </template>
+
     <script src="vue.js"></script>
-    
+
     <script>
         const app = new Vue({
-            el:'#app',
+            el: '#app',
             data: {
-                message:'你好啊',
+                message: '你好啊',
                 moves:['海王','海贼王','海尔兄弟'],
+                info: {
+                    name:'hollow',
+                    age:18,
+                    height:1.88,
+                }
             },
             components: {
-                cpn:{
-                    template:'#cpn',
+                cpn: {
+                    template: '#cpn',
                     props: {
-                        // 1.限制类型
-                        cmoves:Array,
-                        cmessage:String,
-
-                        // 2.提供一些默认值
-                        cmoves: {
-                            // 限制类型
-                            type:Array,
-                            // 默认值
-                            default:'aaa',
-                            // 要求用户必须绑定
-                            required:true,
-                        },
                         cmessage: {
                             type:String,
-                            default:'bbb',
+                            default:'aaaa',
                             required:true,
+                        },
+                        cmoves: {
+                            type:Array,
+                            default:[],
+                        },
+                        cInfo: {
+                            type:Object,
+                            default:{},
                         }
                     }
                 }
