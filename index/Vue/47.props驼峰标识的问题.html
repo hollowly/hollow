@@ -8,6 +8,8 @@
 <body>
     <div id='app'>
         <cpn :c-info='info' :child-my-message='message'></cpn>
+
+        {{aaa}}
     </div>
 
     <template id='cpn'>
@@ -29,6 +31,7 @@
         const app = new Vue({
             el: '#app',
             data: {
+                aaa:'sgsdgsd',
                 info: {
                     name: 'hollow',
                     age: 18,
