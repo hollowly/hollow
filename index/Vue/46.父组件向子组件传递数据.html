@@ -6,33 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <div id='app'>
-        <cpn :cmessage='message' :cmoves='moves'></cpn>
-    </div>
-
-    <template id='cpn'>
-        <div>
-            <ul>
-                <li v-for='item in cmoves'>{{item}}</li>
-            </ul>
-            <h1>{{cmessage}}</h1>
+        <div id='app'>
+            <cpn :cmessage='message' :cmoves='moves'></cpn>
         </div>
-    </template>
+
+        
+        <template id='cpn'>
+            <div>
+                <h1>{{cmessage}}</h1>
+                <ul>
+                    <li v-for='item in cmoves'>{{item}}</li>
+                </ul>
+            </div>
+        </template>
     <script src="vue.js"></script>
     
     <script>
         const app = new Vue({
-            el: '#app',
+            el:'#app',
             data: {
-                message: '你好啊！',
+                message:'你好啊',
                 moves:['海王','海贼王','海尔兄弟'],
             },
             components: {
                 cpn: {
                     template:'#cpn',
-                },
-                props:['cmoves','cmessage']
+                    props:['cmessage','cmoves'],
+                }
             }
         })
     </script>
