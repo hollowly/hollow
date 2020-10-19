@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id='app'>
+        <cpn :cmessage='message' :cmoves='moves'></cpn>
+    </div>
+
+    <template id='cpn'>
+        <div>
+            <ul>
+                <li v-for='item in cmoves'>{{item}}</li>
+            </ul>
+            <h1>{{cmessage}}</h1>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊！',
+                moves:['海王','海贼王','海尔兄弟'],
+            },
+            components: {
+                cpn: {
+                    template:'#cpn',
+                },
+                props:['cmoves','cmessage']
+            }
+        })
+    </script>
+</body>
+</html>
