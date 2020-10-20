@@ -8,16 +8,16 @@
 <body>
     <div id='app'>
         <cpn @item-click='cpnClick'></cpn>
-    </div>
+    </div>    
 
 
     <template id='cpn'>
         <div>
-            <button v-for='item in categories' @click='btnClick(item)'>{{item.name}}</button>
+            <button v-for='item in cat' @click='btnClick(item)'>{{item.name}}</button>
         </div>
     </template>
     <script src="vue.js"></script>
-    
+
     <script>
         const app = new Vue({
             el:'#app',
@@ -26,26 +26,26 @@
                     template:'#cpn',
                     data() {
                         return {
-                            categories:[
-                                {id:'aaa',name:'热门推荐'},
-                                {id:'bbb',name:'事件数码'},
-                                {id:'ccc',name:'家用家电'},
-                                {id:'ddd',name:'电脑办公'},
+                            cat: [
+                                {id:'aaa',name:'gitee'},
+                                {id:'bbb',name:'cnblogs'},
+                                {id:'ccc',name:'vue'},
+                                {id:'ddd',name:'github'},
                             ]
-                         }
-                     },
+                        }
+                    },
                     methods: {
-                        // 子组件发射：自定义函数
+                            // 发射
                         btnClick(item) {
-                            this.$emit('item-click',item);
+                            this.$emit('item-click',item)
                         }
                     }
-                },
+                }
             },
 
             methods: {
                 cpnClick(item) {
-                    console.log('cpnclick',item);
+                    console.log('cpnClick',item)
                 }
             }
         })
