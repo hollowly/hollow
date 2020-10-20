@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+        th, td {
+            text-align: center;
+            border:1px solid #ccc;
+            padding: 20px;
+        }
+        th {
+            background: #f7f7f7;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <h1>购物车案例：</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>书籍名称</th>
+                    <th>出版日期</th>
+                    <th>价格</th>
+                    <th>购买数量</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for='(item, index) in books'>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.data}}</td>
+                    <td>{{'￥' + item.price + '.00'}}</td>
+                    <td>
+                        <button @click='add(index)'>+</button>
+                        {{item.count}}
+                        <button @click='sub(index)'>+</button>
+                    </td>
+                    <td>
+                        <button>移除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>总价格：{{'￥' + getprice(index) + '.00'}}</h2>
+    </div>
+    
+    <script src="vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data: {
+                books:[
+                    {id:001, name:'算法导论', data:'2006-9', price:85.00, count:1},
+                    {id:001, name:'Unix编程艺术', data:'2006-2', price:59.00, count:1},
+                    {id:001, name:'编程珠玑', data:'2008-10', price:39.00, count:1},
+                    {id:001, name:'代码大全', data:'2006-3', price:128.00, count:1},
+                ],
+            },
+            methods: {
+                getprice(index) {
+                    result = 0;
+                    for(let i = 0; i < this.books.length;i++) {
+                        result += this.books[i].price * this.books[i].count;
+                    }
+                    return result;
+                }
+            },
+        })
+    </script>
+</body>
+</html>
