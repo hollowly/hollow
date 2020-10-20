@@ -15,7 +15,7 @@
             text-shadow: 1px 1px 2px blue;
         }
         body {
-            height: 5000px;
+            height: 10000px;
         }
         table {
             border: 1px solid #cccccc;
@@ -184,6 +184,26 @@
         <h1>组件化全局/局部，语法糖和模板分离写法：</h1>
         <cpn1></cpn1>
         <cpn2></cpn2>
+<hr>
+        <h1>组件中常量存放问题data()：</h1>
+        <cpn3></cpn3>
+        <cpn4></cpn4>
+<hr>
+        <h1>计数器组件化：</h1>
+        <cpn5></cpn5>
+        <cpn5></cpn5>
+        <cpn5></cpn5>
+<hr>
+<hr>    
+        <h1>父子组件通信—父传子 (props):</h1>
+        <cpn6 :cmoves='moves' :cmessage='message' :c-info='info'></cpn6>
+<hr>
+        <h1>父子组件通信—子传父(自定义事件)：</h1>
+        <!-- :ccat='cat'是父传子绑定        @item-click='cpnClick'是子传父绑定 -->
+        <cpn7 :ccat='cat' @item-click='cpnClick'></cpn7>
+
+
+
     </div>
 
 
@@ -192,18 +212,56 @@
     <!-- 组件： -->
         <template id='cpn1'>
             <div>
-                <h1>我是全局定义的</h1>
-                <p>我是内容哈哈哈</p>
+                <h1>我是全局定义的111</h1>
+                <p>我是内容哈哈哈111</p>
             </div>
         </template>
-        
         <template id='cpn2'>
             <div>
-                <h1>我是局部定义的</h1>
-                <p>我是内容呵呵呵</p>
+                <h1>我是局部定义的222</h1>
+                <p>我是内容呵呵呵222</p>
             </div>
         </template>
 
+        <template id='cpn3'>
+            <div>
+                <h1>{{title}}</h1>
+                <p>{{cont}}</p>
+            </div>
+        </template>
+        <template id='cpn4'>
+            <div>
+                <h1>{{title}}</h1>
+                <p>{{cont}}</p>
+            </div>
+        </template>
+
+        <template id='cpn5'>
+            <div>
+                <h3>当前计数：{{num}}</h3>
+                <button @click='add()'>+</button>
+                <button @click='sub()'>-</button>
+            </div>
+        </template>
+
+        <template id='cpn6'>
+            <div>
+                <h3>
+                    {{cmoves}} <br>
+                    {{cmessage}}
+                    <ul>
+                        <li v-for='item in cmoves'>{{item}}</li>
+                    </ul>
+                    {{cInfo}}
+                </h3>
+            </div>
+        </template>
+
+        <template id='cpn7'>
+            <div>
+                <button v-for='item in ccat' @click='btnClick(item)'>{{item.name}}</button>
+            </div>
+        </template>
 
     <script src="vue.js"></script>
 
@@ -211,6 +269,15 @@
         // 组件化全局写法
         Vue.component('cpn1', {
             template: '#cpn1',
+        }),
+        Vue.component('cpn3', {
+            template:'#cpn3',
+            data() {
+                return {
+                    title: '我是标题111',
+                    cont: '我是内容111'
+                }
+            },
         })
 
 
@@ -253,43 +320,51 @@
                 fruits:[],
                 newhobby:[],
                 newhobbys:['篮球','足球','乒乓球','羽毛球','台球'],
+                info: {
+                    id:19301013,
+                    name:'hollow',
+                    age:20,
+                    height:1.86,
+                },
+                cat:[
+                    {id:'aaa',name:'javascript'},
+                    {id:'bbb',name:'php'},
+                    {id:'ccc',name:'java'},
+                    {id:'ddd',name:'jquery'},
+                ]
             },
 
             methods: {
                 addCount:function() {
                     this.num++;
                 },
-
                 subCount:function() {
                     this.num--;
                 },
-
                 changeClass:function() {
                     this.isactive = !this.isactive;
                     this.isshadow = !this.isshadow;
                 },
-
                 getClass:function() {
                     return {active: this.isactive, shadow: this.isshadow};
                 },
-
                 getStyle:function() {
                     return {'background':this.findbgColor,'font-size':this.findSize + 'px','margin':this.findmarginSize,'color':this.findColor}
                 },
-                
                 btnClearLi() {
                     this.lis.pop();
                 },
-
                 add(index) {
                     this.books2[index].count++;
                 },
-
                 sub(index) {
                     this.books2[index].count--;
                 },
                 btnRemove(index) {
                     this.books2.splice(index, 1);
+                },
+                cpnClick(item) {
+                    console.log('cpnClick',item);
                 }
             },
 
@@ -312,7 +387,68 @@
             components: {
                 cpn2: {
                     template: '#cpn2',
+                },
+                cpn4: {
+                    template: '#cpn4',
+                    data() {
+                        return {
+                            title:'我是标题222',
+                            cont:'我是内容222'
+                        }
+                    },
+                },
+                cpn5: {
+                    template: '#cpn5',
+                    data() {
+                        return {
+                            num: 0,
+                        }
+                    },
+                    methods: {
+                        add() {
+                            this.num++;
+                        },
+                        sub() {
+                            this.num--;
+                        }
+                    },
+                },
+                cpn6: {
+                    template:'#cpn6',
+                    props: {
+                        cmoves: {
+                            type:Array,
+                            default:['default'],
+                        },
+                        cmessage: {
+                            type:String,
+                            default:'default',
+                        },
+                        cInfo: {
+                            type:Object,
+                            // default: {default:'default'},
+                        }
+                    }
+                },
+                cpn7: {
+                    template:'#cpn7',
+                    // 父传子
+                    props: {
+                        ccat: {
+                            type:Array,
+                            default:['defult'],
+                        }
+                    },
+                    // 子传父
+                    methods: {
+                        btnClick(item) {
+                            this.$emit('item-click',item);
+                        }
+                    }
                 }
+
+
+
             }
         })
     </script>
