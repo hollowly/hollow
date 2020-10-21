@@ -51,21 +51,20 @@
 
     document.ondragstart = function(e)
     {
-        e.target.style.opacity = 0.5;
+        // e.target.style.opacity = 0.5;
 
         e.dataTransfer.setData('text/html',e.target.id);
     }
-    document.ondragend = function(e)
-    {
-        e.target.style.opacity = 1;
-    }
+    // document.ondragend = function(e)
+    // {
+    //     e.target.style.opacity = 1;
+    // }
 
 
-
-    document.ondragenter = function(e)
-    {
-        console.log(e.target);
-    }
+    // document.ondragenter = function(e)
+    // {
+    //     console.log(e.target);
+    // }
 
     document.ondragover = function(e)
     {
