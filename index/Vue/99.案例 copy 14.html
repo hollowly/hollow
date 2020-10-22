@@ -6,12 +6,73 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id='app'>
+        <h1>app-num1：{{num1}}</h1>
+        <h1>app-num2：{{num2}}</h1>
+        <hr>
+        <cpn :cnum1='num1' :cnum2='num2' @num1-change='num1Change' @num2-change='num2Change'></cpn>
+    </div>
 
+    <template id='cpn'>
+        <div>
+            <h1>cpn-cnum1：{{cnum1}}</h1>
+            <h1>cpn-dnum1：{{dnum1}}</h1>
+            <input type="text" v-model='dnum1' @input='dnum1Input()'>
+            <h1>cpn-cnum2：{{cnum2}}</h1>
+            <h1>cpn-dnum1：{{dnum2}}</h1>
+            <input type="text" v-model='dnum2' @input='dnum2Input()'>
+        </div>
+    </template>
     <script src="vue.js"></script>
     
     <script>
 
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                num1: 0,
+                num2: 1,
+            },
+            methods: {
+                num1Change(value) {
+                    this.num1 = parseInt(value);
+                },
+                num2Change(value) {
+                    this.num2 = parseInt(value);
+                }
+            },
+            components: {
+                cpn : {
+                    template: '#cpn',
+                    props: {
+                        cnum1: {
+                            type:Number,
+                            default:111,
+                        },
+                        cnum2: {
+                            type:Number,
+                            default:222,
+                        }
+                    },
+                    data() {
+                        return {
+                            dnum1: this.cnum1,
+                            dnum2: this.cnum2,
+                        }
+                    },
+                    methods: {
+                        dnum1Input(value) {
+                            this.$emit('num1-change',this.dnum1);
+                        },
+                        dnum2Input(value) {
+                            this.$emit('num2-change',this.dnum2);
+                        }
+                        
+                    },
+                }
+            }
+        })
     </script>
 </body>
 </html>
