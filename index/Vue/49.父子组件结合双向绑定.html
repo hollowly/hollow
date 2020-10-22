@@ -31,15 +31,15 @@
         const app = new Vue({
             el: '#app',
             data: {
-                num1: 0,
-                num2: 1,
+                num1: 1,
+                num2: 2,
             },
             methods: {
                 num1Change(value) {
-                    this.num1 = parseInt(value);
+                    this.num1 = parseInt(value) * 5;
                 },
                 num2Change(value) {
-                    this.num2 = parseInt(value);
+                    this.num2 = parseInt(value) * 5;
                 }
             },
             components:{
