@@ -8,16 +8,25 @@
 <body>
     <div id='app'>
         <cpn>
-            <span slot='center'>标题</span>
+            <span slot="center">主体红</span>
+            <span slot='right'>☰</span>
+        </cpn>
+        <cpn>
+            <span slot="center">主体绿</span>
+            <span slot='right'>...</span>
+        </cpn>
+        <cpn>
+            <span slot="center">主体白</span>
+            <span slot='right'>更多</span>
         </cpn>
     </div>
     
-
     <template id='cpn'>
         <div>
-            <slot name='left'><span>左边</span></slot>
+            <slot name='left'><button>返回</button></slot>
             <slot name='center'><span>中间</span></slot>
             <slot name='right'><span>右边</span></slot>
+            <hr>
         </div>
     </template>
     <script src="vue.js"></script>
