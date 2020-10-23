@@ -6,12 +6,40 @@
     <title>Document</title>
 </head>
 <body>
+    <div id='app'>
+        <cpn>
+            <span slot='left'><button>aaa</button></span>
+        </cpn>
 
+        <cpn>
+            <span slot='center'><button>aaa</button></span>
+        </cpn>
+
+        <cpn><span slot='right'><button>aaa</button></span></cpn>
+    </div>
     
+
+    <template id='cpn'>
+        <div>
+            <h1>cpn标题</h1>
+            <slot name='left'>左边</slot>
+            <slot name='center'>中边</slot>
+            <slot name='right'>右边</slot>
+            <hr>
+        </div>
+    </template>
     <script src="vue.js"></script>
     
     <script>
 
+        const app = new Vue({
+            el: '#app',
+            components: {
+                cpn: {
+                    template: '#cpn',
+                }
+            }
+        })
         
     </script>
 </body>
