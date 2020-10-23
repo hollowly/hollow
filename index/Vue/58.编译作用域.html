@@ -7,37 +7,34 @@
 </head>
 <body>
     <div id='app'>
-        <cpn>
-            <span slot='center'>我是主体内容red</span>
-            <span slot='right'>.....</span>
-        </cpn>
-        <cpn>
-            <span slot='left'><button>返回到跟目录</button></span>
-        </cpn>
-        <cpn>
-            <span slot='center'>主体内容green</span>
-            <span slot='right'>...☰...</span>
-        </cpn>
+        <h1 v-show='isShow'>我是app标题</h1>
+
+        <cpn></cpn>
     </div>
     
+
     <template id='cpn'>
         <div>
-            <slot name='left'><button>返回</button></slot>
-            <slot name='center'>主体内容</slot>
-            <slot name='right'>更多</slot>
-            <hr>
+            <h1 v-show='isShow'>我是cpn标题</h1>
         </div>
     </template>
     <script src="vue.js"></script>
-
+    
     <script>
         const app = new Vue({
             el: '#app',
+            data: {
+                isShow:true,
+            },
             components: {
                 cpn: {
                     template:'#cpn',
+                    data() {
+                        return {
+                            isShow:false,
+                        }
+                    },
                 }
-
             }
         })
     </script>
