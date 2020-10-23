@@ -201,9 +201,14 @@
         <h1>父子组件通信—子传父(自定义事件)：</h1>
         <!-- :ccat='cat'是父传子绑定        @item-click='cpnClick'是子传父绑定 -->
         <cpn7 :ccat='cat' @item-click='cpnClick'></cpn7>
-
-
-
+<hr>
+        <h1>父子组件访问结合双向绑定：</h1>
+        <cpn8 :cnum1='num1' :cnum2='num2' @num1-change='num1Cange' @num2-change='num2Change'></cpn8>
+        <hr>
+        <h1>组件访问-父访问子 and 子访问父：</h1>
+        <button @click='Vchildren'>父访问子</button>
+        <cpn9 ref='ref1'></cpn9>
+<hr>
     </div>
 
 
@@ -216,6 +221,7 @@
                 <p>我是内容哈哈哈111</p>
             </div>
         </template>
+
         <template id='cpn2'>
             <div>
                 <h1>我是局部定义的222</h1>
@@ -229,6 +235,7 @@
                 <p>{{cont}}</p>
             </div>
         </template>
+
         <template id='cpn4'>
             <div>
                 <h1>{{title}}</h1>
@@ -263,6 +270,23 @@
             </div>
         </template>
 
+        <template id='cpn8'>
+            <div>
+                <h2>cnum1={{cnum1}}</h2>
+                <h2>dnum1={{dnum1}}</h2>
+                <input type="text" v-model='dnum1' @input='dnum1Input'>
+                <hr>
+                <h2>cnum2={{cnum2}}</h2>
+                <h2>dnum2={{dnum2}}</h2>
+                <input type="text" v-model='dnum2' @input='dnum2Input'>
+            </div>
+        </template>
+
+        <template id='cpn9'>
+            <div>
+                <button @click='Vparpent'>子访问父</button>
+            </div>
+        </template>
     <script src="vue.js"></script>
 
     <script>
@@ -331,7 +355,9 @@
                     {id:'bbb',name:'php'},
                     {id:'ccc',name:'java'},
                     {id:'ddd',name:'jquery'},
-                ]
+                ],
+                num1: 1,
+                num2: 2,
             },
 
             methods: {
@@ -365,7 +391,22 @@
                 },
                 cpnClick(item) {
                     console.log('cpnClick',item);
+                },
+                num1Cange(value) {
+                    this.num1 = parseFloat(value) * 5;
+                },
+                num2Change(value) {
+                    this.num2 = parseFloat(value) * 5;
+                },
+                Vchildren() {
+                    console.log(this.$children);
+
+                    this.$refs.ref1.show();
+                },
+                show() {
+                    console.log('我是爸爸根VueShow');
                 }
+
             },
 
             computed: {
@@ -445,6 +486,46 @@
                             this.$emit('item-click',item);
                         }
                     }
+                },
+                cpn8: {
+                    template: '#cpn8',
+                    props: {
+                        cnum1: {
+                            type:Number,
+                            default:111,
+                        },
+                        cnum2: {
+                            type:Number,
+                            default:222,
+                        }
+                    },
+                    data() {
+                        return {
+                            dnum1: this.cnum1,
+                            dnum2: this.cnum2,
+                        }
+                    },
+                    methods: {
+                        dnum1Input(value) {
+                            this.$emit('num1-change',this.dnum1);
+                        },
+                        dnum2Input(value) {
+                            this.$emit('num2-change',this.dnum2);
+                        }
+                    },
+                },
+                cpn9: {
+                    template: '#cpn9',
+                    methods: {
+                        Vparpent() {
+                            console.log(this.$root);
+
+                            this.$root.show();
+                        },
+                        show() {
+                            console.log('我是儿子cpn9Show');
+                        }
+                    },
                 }
 
 
