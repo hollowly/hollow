@@ -7,69 +7,46 @@
 </head>
 <body>
     <div id='app'>
-        <h1>{{num1}}</h1>
-        <h1>{{num2}}</h1>
-<hr>
-        <cpn :cnum1='num1' :cnum2='num2' @num1-change='num1Change' @num2-change='num2Change'></cpn>
+        <cpn :ccat='cat' @cpn-click='cpnClick'></cpn>
     </div>
 
     <template id='cpn'>
         <div>
-            <h1>cnum1={{cnum1}}</h1>
-            <h1>dnum1={{dnum1}}</h1>
-            <input type="text" v-model='dnum1' @input='dnum1Input'>
-<hr>
-            <h1>cnum1={{cnum2}}</h1>
-            <h1>dnum2={{dnum2}}</h1>
-            <input type="text" v-model='dnum2' @input='dnum2Input'>
+            <button v-for='item in ccat' @click='btnClick(item)'>{{item.name}}</button>
         </div>
     </template>
-
     <script src="vue.js"></script>
 
     <script>
+
         const app = new Vue({
-            el: '#app',
+            el:'#app',
             data: {
-                num1: 1,
-                num2: 2,
+                cat:[
+                    {id:'aaa',name:'javascript'},
+                    {id:'bbb',name:'java'},
+                    {id:'ccc',name:'php'},
+                    {id:'ddd',name:'jQuery'},
+                ],
             },
             methods: {
-                num1Change(value) {
-                    this.num1 = parseFloat(value) * 5;
-                },
-                num2Change(value) {
-                    this.num2 = parseFloat(value) * 5;
+                cpnClick(itme) {
+                    console.log('cpnClick',itme);
                 }
             },
             components: {
                 cpn: {
-                    template: '#cpn',
+                    template:'#cpn',
                     props: {
-                        cnum1: {
-                            type:Number,
-                            default: 111,
-                        },
-                        cnum2: {
-                            type:Number,
-                            default:222,
-                        }
-                    },
-                    data() {
-                        return {
-                            dnum1: this.cnum1,
-                            dnum2: this.cnum2,
-                        }
+                        ccat: Array,
+                        default:['default'],
                     },
                     methods: {
-                        dnum1Input(value) {
-                            this.$emit('num1-change',this.dnum1);
-                        },
-                        dnum2Input(value) {
-                            this.$emit('num2-change',this.dnum2);
+                        btnClick(itme) {
+                            this.$emit('cpn-click',itme);
                         }
                     },
-                }
+                },
             }
         })
     </script>
