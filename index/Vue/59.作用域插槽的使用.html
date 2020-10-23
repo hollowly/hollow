@@ -6,40 +6,53 @@
     <title>Document</title>
 </head>
 <body>
-
     <div id='app'>
         <cpn>
 
         </cpn>
-    </div>
+        
+        <cpn>
+            <template slot-scope="slot">
+                <span v-for='item in slot.data'>{{item}} - </span>
+            </template>
+        </cpn>
 
+        <cpn>
+            <template slot-scope="slot">
+                <span v-for='item in slot.data'>{{item}} * </span>
+            </template>
+        </cpn>
+
+    </div>
+    <!-- 作用域插槽：父组件替换插槽的标签，但是内容由子组件来提供的 -->
 
     <template id='cpn'>
         <div>
-            <slot>
+            <slot :data='language'>
                 <ul>
-                    <li v-for='item in cat'>{{item}}</li>
+                    <li v-for='item in language'>{{item}}</li>
                 </ul>
             </slot>
         </div>
     </template>
     <script src="vue.js"></script>
     
-
     <script>
+        
         const app = new Vue({
             el: '#app',
             components: {
                 cpn: {
-                    template: '#cpn',
+                    template:'#cpn',
                     data() {
                         return {
-                            cat:['javascript','java','php','jquery'],
+                            language:['javascript','php','java','python','c#'],
                         }
                     },
                 }
             }
         })
+        
     </script>
 </body>
 </html>
