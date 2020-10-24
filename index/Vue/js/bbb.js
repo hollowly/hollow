@@ -1,6 +1,6 @@
 
 // 1.导入的{}中定义的变量
-import aaa, {sum} from "./aaa.js";
+import {sum} from "./aaa.js";
 
 var name = '小明';
 var  flag = false;

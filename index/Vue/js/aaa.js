@@ -41,7 +41,7 @@ export class person {
 }
 
 
-// 4.导出的时候可以让导出者自己命名
+// 4.导出的时候可以让导出者自己命名：export default
 // const address = '北京市';
 // export default  address;
 
