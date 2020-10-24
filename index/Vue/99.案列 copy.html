@@ -7,43 +7,39 @@
 </head>
 <body>
     <div id='app'>
-        <cpn :cbooks='books'></cpn>
-        <cpn :cbooks='books'>
-            <template slot-scope='slot'>
-                <span v-for='item in slot.data'>{{item}} - </span>
-            </template></cpn>
-        <cpn :cbooks='books'></cpn>
+        <cpn></cpn>
     </div>
 
     <template id='cpn'>
         <div>
-            <slot :data='cbooks'>
-                <ul>
-                    <li v-for='item in cbooks'>{{item}}</li>
-                </ul>
-            </slot>
+            <label for="agreen">
+                <input type="checkbox" id='agreen' v-model='isagreen'> 同意协议
+            </label> <br>
+            <button :disabled='!isagreen'>下一步</button>
         </div>
     </template>
     <script src="vue.js"></script>
 
+
     <script>
-        const app = new Vue({
+
+        const a = new Vue({
             el: '#app',
             data: {
-                books:['java','php','jquery','javascript'],  
+
             },
             components: {
                 cpn: {
                     template: '#cpn',
-                    props: {
-                        cbooks: {
-                            type:Array,
-                            default:['default'],
+                    data() {
+                        return {
+                            isagreen:false,
                         }
-                    }
+                    },
                 }
             }
         })
     </script>
+    
 </body>
 </html>

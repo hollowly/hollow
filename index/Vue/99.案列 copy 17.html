@@ -8,30 +8,28 @@
 <body>
     <div id='app'>
         <cpn>
-            <span slot='left'><button>aaa</button></span>
+            <button slot='left'>左边</button>
         </cpn>
-
         <cpn>
-            <span slot='center'><button>aaa</button></span>
+            <button slot='center'>中间</button>
         </cpn>
-
-        <cpn><span slot='right'><button>aaa</button></span></cpn>
+        <cpn>
+            <button slot='right'>右边</button>
+        </cpn>
     </div>
-    
+
 
     <template id='cpn'>
         <div>
-            <h1>cpn标题</h1>
-            <slot name='left'>左边</slot>
-            <slot name='center'>中边</slot>
-            <slot name='right'>右边</slot>
+            <slot name='left'>左</slot>
+            <slot name='center'>中</slot>
+            <slot name='right'>右</slot>
             <hr>
         </div>
     </template>
     <script src="vue.js"></script>
-    
-    <script>
 
+    <script>
         const app = new Vue({
             el: '#app',
             components: {
@@ -40,7 +38,6 @@
                 }
             }
         })
-        
     </script>
 </body>
 </html>
