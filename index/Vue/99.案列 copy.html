@@ -6,54 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-
     <div id='app'>
-        <cpn :ccat='cat'></cpn>
-
-        <cpn :ccat='cat'>
-            <template slot-scope='aaa'>
-                <span v-for='item in aaa.data'>{{item}} - </span>
-            </template>
-        </cpn>
-
-        <cpn :ccat='cat'>
-            <template slot-scope="aaa">
-                <span v-for='item in aaa.data'>{{item}} * </span>
-            </template>
-        </cpn>
+        <cpn></cpn>
     </div>
 
-
-    <template id='cpn'>
-        <div>
-            <slot :data='ccat'>
-                <ul>
-                    <li v-for='item in ccat'>{{item}}</li>
-                </ul>
-            </slot>
-            <hr>
-        </div>
-    </template>
 
     <script src="vue.js"></script>
 
     <script>
         const app = new Vue({
             el: '#app',
-            data: {
-                cat:['javascript','java','php','jquery'],
-            },
-            components: {
-                cpn: {
-                    template:'#cpn',
-                    props: {
-                        ccat: {
-                            type:Array,
-                            default:['default'],
-                        }
-                    }
-                },
-            }
         })
     </script>
 </body>
