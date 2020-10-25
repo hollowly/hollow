@@ -69,25 +69,21 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__info_js__ = __webpack_require__(2);
-
-// CommonJS导入：
-const {add, mul} = __webpack_require__(1)
-
-console.log(add(20, 40));
-console.log(mul(20, 40));
-
-// ES6导入：
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__function__ = __webpack_require__(1);
 
 
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__info_js__["c" /* name */]);
-console.log(__WEBPACK_IMPORTED_MODULE_0__info_js__["a" /* age */]);
-console.log(__WEBPACK_IMPORTED_MODULE_0__info_js__["b" /* height */]);
+console.log(Object(__WEBPACK_IMPORTED_MODULE_0__function__["a" /* add */])(20, 30));
+console.log(Object(__WEBPACK_IMPORTED_MODULE_0__function__["b" /* mul */])(20, 30));
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mul; });
+
 
 function add(num1, num2) {
     return num1 + num2;
@@ -97,25 +93,8 @@ function mul(num1, num2) {
     return num1 * num2;
 }
 
-// CommonJS导出：
-module.exports = {
-    add,
-    mul
-}
+// 导出
 
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return name; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return age; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return height; });
-
-// ES6导出：
-var name = 'hollow';
-var age = 18;
-var height = 1.88;
 
 /***/ })
 /******/ ]);
