@@ -7,53 +7,72 @@
 </head>
 <body>
     <div id='app'>
-        <cpn :cbooks='books'></cpn>
-        <cpn :cbooks='books'>
-            <template slot-scope='slot'>
-                <span v-for='item in slot.data'>{{item}} - </span>
-            </template>
-        </cpn>
-        <cpn :cbooks='books'>
-            <template slot-scope='slot'>
-                <span v-for='item in slot.data'>{{item}} * </span>
-            </template>
-        </cpn>
+        <h1>app-num1:{{num1}}</h1>
+        <h1>app-num2:{{num2}}</h1>
+        <hr>
+        <cpn :cnum1='num1' :cnum2='num2' @num1-change='num1Change' @num2-change='num2Change'></cpn>
     </div>
-    
 
     <template id='cpn'>
         <div>
-            <slot :data='cbooks'>
-                <ul>
-                    <li v-for='item in cbooks'>{{item}}</li>
-                </ul>
-            </slot>
+            <h1>cpn-cnum1:{{cnum1}}</h1>
+            <h1>cpn-dnum1:{{dnum1}}</h1>
+            <input type="text" v-model='dnum1' @input='dnum1Input()'>
+            <h1>cpn-cnum1:{{cnum1}}</h1>
+            <h1>cpn-dnum2:{{dnum2}}</h1>
+            <input type="text" v-model='dnum2' @input='dnum2Input()'>
+            <hr>
         </div>
     </template>
+
     <script src="vue.js"></script>
-    
+
     <script>
-
-
-        
         const app = new Vue({
             el: '#app',
             data: {
-                books: ['javascript','php','java','python'],
+                num1: 1,
+                num2: 2,
+            },
+            methods: {
+                num1Change(value) {
+                    this.num1 = parseFloat(value);
+                },
+                num2Change(value) {
+                    this.num2 = parseFloat(value);
+                }
             },
             components: {
                 cpn: {
                     template: '#cpn',
                     props: {
-                        cbooks: {
-                            type:Array,
-                            default:['default'],
+                        cnum1:{
+                            type:Number,
+                            default:111,
+                        },
+                        cnum2: {
+                            type:Number,
+                            default:222,
                         }
-                    }
+                    },
+                    data() {
+                        return {
+                            dnum1: this.cnum1,
+                            dnum2: this.cnum2,
+                        }
+                    },
+                    methods: {
+                        dnum1Input(value) {
+                            this.$emit('num1-change',this.dnum1);
+                        },
+                        dnum2Input(value) {
+                            this.$emit('num2-change',this.dnum2);
+                        }
+                    },
                 }
+
             }
         })
-        
     </script>
 </body>
 </html>
