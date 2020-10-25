@@ -70,11 +70,17 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__function__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__info__ = __webpack_require__(2);
 
 
 
 console.log(Object(__WEBPACK_IMPORTED_MODULE_0__function__["a" /* add */])(20, 30));
 console.log(Object(__WEBPACK_IMPORTED_MODULE_0__function__["b" /* mul */])(20, 30));
+
+
+
+
+console.log(__WEBPACK_IMPORTED_MODULE_1__info__["c" /* name */], __WEBPACK_IMPORTED_MODULE_1__info__["a" /* age */], __WEBPACK_IMPORTED_MODULE_1__info__["b" /* height */]);
 
 /***/ }),
 /* 1 */
@@ -95,6 +101,18 @@ function mul(num1, num2) {
 
 // 导出
 
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return age; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return height; });
+var name = 'hollow';
+var age = 18;
+var height = 1.88;
 
 /***/ })
 /******/ ]);
