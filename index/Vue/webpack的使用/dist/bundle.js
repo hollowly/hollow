@@ -69,49 +69,52 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__function__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__info__ = __webpack_require__(1);
 
-// 使用 commonjs 模块规范导入
-const {name, age, height} = __webpack_require__(1);
-
-console.log(name, age, height);
+// ES6 模块化的导入
 
 
-// ES6 模块化导入
+console.log(__WEBPACK_IMPORTED_MODULE_0__info__["d" /* name */], __WEBPACK_IMPORTED_MODULE_0__info__["a" /* age */], __WEBPACK_IMPORTED_MODULE_0__info__["b" /* height */]);
+console.log(__WEBPACK_IMPORTED_MODULE_0__info__["c" /* hobby */]);
 
+// commonjs 模块化规范导入
 
-console.log('num1=',20,'num2=',50,'num1+num2=',Object(__WEBPACK_IMPORTED_MODULE_0__function__["a" /* add */])(20, 50));
+const {add, mul} = __webpack_require__(2);
 
-
-console.log('num1=',20,'num2=',50,'num1*num2=',Object(__WEBPACK_IMPORTED_MODULE_0__function__["b" /* mul */])(20, 50));
+console.log(add(20, 40));
+console.log(mul(20, 40));
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-// const { modifier } = require("ansi-styles");
-
-var name = 'hollow';
-var age = 18;
-var height = 1.88;
-
-// commonjs 模块化导出
-module.exports = {
-    name,
-    age,
-    height
-}
-
-/***/ }),
-/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = add;
-/* harmony export (immutable) */ __webpack_exports__["b"] = mul;
 
-// ES6 模块化导出
-function add(num1, num2) {
+// ES6 模块的导出
+const name = 'hollow';
+/* harmony export (immutable) */ __webpack_exports__["d"] = name;
+
+const age = 18;
+/* harmony export (immutable) */ __webpack_exports__["a"] = age;
+
+const height = 1.88;
+/* harmony export (immutable) */ __webpack_exports__["b"] = height;
+
+
+
+const hobby = 'boll';
+/* harmony export (immutable) */ __webpack_exports__["c"] = hobby;
+
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+
+// commonjs 模块化的导出
+
+function add(num1 ,num2) {
     return num1 + num2;
 }
 
@@ -120,6 +123,10 @@ function mul(num1, num2) {
 }
 
 
+module.exports = {
+    add,
+    mul,
+}
 
 /***/ })
 /******/ ]);
