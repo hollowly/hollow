@@ -12,4 +12,5 @@ const {add, mul} = require('./js/function');
 console.log(add(20, 40));
 console.log(mul(20, 40));
 
-// 3.依赖
+// 3.style/css依赖
+require('./css/normall.css');
