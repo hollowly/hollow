@@ -69,26 +69,27 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__function__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__info__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__info__ = __webpack_require__(2);
+
+// 使用 commonjs 的模块化规范导入
+const {add, mul} = __webpack_require__(1);
+
+
+console.log(add(20, 30));
+console.log(mul(20, 30));
 
 
 
-console.log(Object(__WEBPACK_IMPORTED_MODULE_0__function__["a" /* add */])(20, 30));
-console.log(Object(__WEBPACK_IMPORTED_MODULE_0__function__["b" /* mul */])(20, 30));
+// 使用ES6的模块化规范导入
 
 
 
-
-console.log(__WEBPACK_IMPORTED_MODULE_1__info__["c" /* name */], __WEBPACK_IMPORTED_MODULE_1__info__["a" /* age */], __WEBPACK_IMPORTED_MODULE_1__info__["b" /* height */]);
+console.log(__WEBPACK_IMPORTED_MODULE_0__info__["c" /* name */], __WEBPACK_IMPORTED_MODULE_0__info__["a" /* age */], __WEBPACK_IMPORTED_MODULE_0__info__["b" /* height */]);
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mul; });
 
 
 function add(num1, num2) {
@@ -99,8 +100,11 @@ function mul(num1, num2) {
     return num1 * num2;
 }
 
-// 导出
-
+// 使用 commonjs 规范导出
+module.exports = {
+    add,
+    mul,
+}
 
 /***/ }),
 /* 2 */
@@ -110,6 +114,8 @@ function mul(num1, num2) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return name; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return age; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return height; });
+
+// 使用 ES6 规范导出
 var name = 'hollow';
 var age = 18;
 var height = 1.88;
