@@ -69,13 +69,13 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__info__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_info__ = __webpack_require__(1);
 
 // ES6 模块化的导入
 
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__info__["d" /* name */], __WEBPACK_IMPORTED_MODULE_0__info__["a" /* age */], __WEBPACK_IMPORTED_MODULE_0__info__["b" /* height */]);
-console.log(__WEBPACK_IMPORTED_MODULE_0__info__["c" /* hobby */]);
+console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["d" /* name */], __WEBPACK_IMPORTED_MODULE_0__js_info__["a" /* age */], __WEBPACK_IMPORTED_MODULE_0__js_info__["b" /* height */]);
+console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["c" /* hobby */]);
 
 // commonjs 模块化规范导入
 
