@@ -6,12 +6,53 @@
     <title>Document</title>
 </head>
 <body>
-
+    <div id='app'>
+        <cpn :cbooks='books'></cpn>
+        <cpn :cbooks='books'>
+            <template slot-scope='slot'>
+                <span v-for='item in slot.data'>{{item}} - </span>
+            </template>
+        </cpn>
+        <cpn :cbooks='books'>
+            <template slot-scope='slot'>
+                <span v-for='item in slot.data'>{{item}} * </span>
+            </template>
+        </cpn>
+    </div>
     
+
+    <template id='cpn'>
+        <div>
+            <slot :data='cbooks'>
+                <ul>
+                    <li v-for='item in cbooks'>{{item}}</li>
+                </ul>
+            </slot>
+        </div>
+    </template>
     <script src="vue.js"></script>
     
     <script>
 
+
+        
+        const app = new Vue({
+            el: '#app',
+            data: {
+                books: ['javascript','php','java','python'],
+            },
+            components: {
+                cpn: {
+                    template: '#cpn',
+                    props: {
+                        cbooks: {
+                            type:Array,
+                            default:['default'],
+                        }
+                    }
+                }
+            }
+        })
         
     </script>
 </body>
