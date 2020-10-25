@@ -6,4 +6,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),  //出口文件路径
         filename: 'bundle.js'   //出口文件名字
     },
+    module: {
+        rules: [
+            {
+              test: /\.css$/,
+              use: [ 'css-loader' ]
+            }
+        ]
+    }
 }

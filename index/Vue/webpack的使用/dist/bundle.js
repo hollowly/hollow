@@ -84,6 +84,8 @@ const {add, mul} = __webpack_require__(2);
 console.log(add(20, 40));
 console.log(mul(20, 40));
 
+// 3.依赖
+
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
