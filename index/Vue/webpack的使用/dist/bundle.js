@@ -84,7 +84,11 @@ console.log(mul(20, 30));
 
 
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__info__["c" /* name */], __WEBPACK_IMPORTED_MODULE_0__info__["a" /* age */], __WEBPACK_IMPORTED_MODULE_0__info__["b" /* height */]);
+console.log(__WEBPACK_IMPORTED_MODULE_0__info__["d" /* name */], __WEBPACK_IMPORTED_MODULE_0__info__["a" /* age */], __WEBPACK_IMPORTED_MODULE_0__info__["b" /* height */]);
+
+console.log("<hr>");
+
+console.log(__WEBPACK_IMPORTED_MODULE_0__info__["c" /* hobby */]);
 
 /***/ }),
 /* 1 */
@@ -111,14 +115,17 @@ module.exports = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return name; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return age; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return height; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return hobby; });
 
 // 使用 ES6 规范导出
 var name = 'hollow';
 var age = 18;
 var height = 1.88;
+
+var hobby = 'ball';
 
 /***/ })
 /******/ ]);
