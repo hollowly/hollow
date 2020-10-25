@@ -10,7 +10,7 @@ module.exports = {
         rules: [
             {
               test: /\.css$/,
-              use: [ 'css-loader' ]
+              use: [ 'style-loader', 'css-loader' ]    // css-loader只负责将css文件加载
             }
         ]
     }
