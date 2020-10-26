@@ -37,8 +37,9 @@ module.exports = {
                   options: {
                     // 当加载图片小于limit时，会将图片编译成base64字符串形式
                     // 当加载的图片大于limit时，需要使用 file-loader 模块进行加载
-                    limit: 8192
-                  }
+                    limit: 8192,
+                    name:'img/[name].[hash:8].[ext]'
+                  },
                 }
               ]
             }
