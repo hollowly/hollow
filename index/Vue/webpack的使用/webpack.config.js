@@ -4,10 +4,12 @@ module.exports = {
     entry: './src/main.js',     //入口文件
     output: {      //出口文件
         path: path.resolve(__dirname, 'dist'),  //出口文件路径
-        filename: 'bundle.js'   //出口文件名字
+        filename: 'bundle.js',   //出口文件名字
+        publicPath: 'dist/'
     },
     module: {
         rules: [
+            // css 文件打包配置
             {
               test: /\.css$/, 
             // css-loader 解析 CSS 文件后，使用 import 加载，并且返回 CSS 代码
@@ -15,6 +17,7 @@ module.exports = {
             // 使用多个loader时，是从右向左，所以stype-loader在css-loader前面
               use: [ 'style-loader', 'css-loader' ]   
             },
+            // less 文件打包配置
             {
               test: /\.less$/,
               use: [{
@@ -24,7 +27,22 @@ module.exports = {
               }, {
                   loader: "less-loader" // compiles Less to CSS
               }]
+            },
+            // 图片打包配置
+            {
+              test: /\.(png|jpg|gif)$/,
+              use: [
+                {
+                  loader: 'url-loader',
+                  options: {
+                    // 当加载图片小于limit时，会将图片编译成base64字符串形式
+                    // 当加载的图片大于limit时，需要使用 file-loader 模块进行加载
+                    limit: 8192
+                  }
+                }
+              ]
             }
+            
         ]
     }
 }
