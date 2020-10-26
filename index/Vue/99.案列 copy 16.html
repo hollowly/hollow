@@ -11,13 +11,16 @@
         .sty2 {
             color: red;
         }
+        body {
+            height: 10000px;
+        }
     </style>
 </head>
 <body>
     <div id='app'>
         <ul>
             <li v-for='item in lis'>{{item}}</li>
-
+        </ul>
             <h1>计数器：{{num}}</h1>
             <button @click='add()'>+</button>
             <button @click='sub()'>-</button>
@@ -55,9 +58,73 @@
             <label for="ball3">
                 <input type="checkbox" value="乒乓球" id="ball3" v-model='ball'>乒乓球
             </label>  您的选择有：{{ball}}
-        </ul>
+            <hr>
+
+            <cpn1>
+                <span slot='slot1'>
+                    <h1>我是标题1111</h1>
+                    <h4>我是内容111</h4>
+                </span>
+            </cpn1>
+            <cpn1>
+                <span slot='slot1'>
+                    <h1>我是标题22222</h1>
+                    <h4>我是内容2222</h4>
+                </span>
+            </cpn1>
+            <hr>
+            <cpn2></cpn2>
+            <cpn2></cpn2>
+            <cpn2></cpn2>
+            <cpn2></cpn2>
+            <hr>
+            <cpn3 :cbooks='books' @cpn-click='cpnClick'></cpn3>
+            <hr>
+            <cpn4 ref='ref1'></cpn4>
+            <button @click='parCha'>父访问子</button>
+            <h1>父子组件结合双向绑定</h1>
+            <h1>num1 = {{num1}}</h1>
+            <h1>num2 = {{num2}}</h1>
+            <hr>
+            <cpn5 :pnum1 = 'dnum1' :pnum2='dnum2'></cpn5>
     </div>
 
+
+    <template id='cpn1'>
+        <div>
+            <slot name='slot1'></slot>
+        </div>
+    </template>
+
+    <template id='cpn2'>
+        <div>
+            当前计数：{{num1}}
+            <button @click='add()'>+</button>
+            <button @click='sub()'>-</button>
+        </div>
+    </template>
+
+    <template id='cpn3'>
+        <div>
+            <button v-for='item in cbooks' @click='cpnClick(item)'>{{item}}</button>
+        </div>
+    </template>
+
+    <template id='cpn4'>
+        <div>
+            <button @click='chaPar'>子访问父</button>
+        </div>
+    </template>
+
+    <template id='cpn5'>
+        <div>
+            <h1>dnum1 = {{dnum1}}</h1>
+            <h1>dnum2 = {{dnum2}}</h1>
+            <hr>
+            <h1>pnum1 = {{pnum1}}</h1>
+            <h1>pnum2 = {{pnum2}}</h1>
+        </div>
+    </template>
     <script src="vue.js"></script>
 
     <script>
@@ -75,6 +142,9 @@
                 message1:'hellow world',
                 sex:'男',
                 ball:[],
+                books:['jquery','bootstorp','html','css','ajax'],
+                num1:1,
+                num2:2,
             },
             methods: {
                 add() {
@@ -89,8 +159,87 @@
                 },
                 isgo() {
                     this.isgogo = !this.isgogo;
+                },
+                cpnClick(item) {
+                    console.log('cpnclick',item);
+                },
+                parCha() {
+                    this.$refs.ref1.show()
+                },
+                show() {
+                    console.log('我是appshow，谁想访问我？');
                 }
             },
+
+            components: {
+                cpn1: {
+                    template: '#cpn1',
+                },
+                cpn2: {
+                    template: '#cpn2',
+                    data() {
+                        return {
+                            num1:0,
+                        }
+                    },
+                    methods: {
+                        add() {
+                            this.num1++;
+                        },
+                        sub() {
+                            this.num1--;
+                        }
+                    },
+                },
+                cpn3: {
+                    template: '#cpn3',
+                    props: {
+                        cbooks: {
+                            type:Array,
+                            default:['default'],
+                        }
+                    },
+                    methods: {
+                        cpnClick(item) {
+                            this.$emit('cpn-click',item);
+                        }
+                    },
+                },
+                cpn4: {
+                    template: '#cpn4',
+                    props: {
+
+                    },
+                    methods: {
+                        show() {
+                            console.log('我是儿子cpn4的。show');
+                        },
+                        chaPar() {
+                            this.$root.show();
+                        }
+                    },
+                },
+                cpn5: {
+                    template: '#cpn5',
+                    data() {
+                        return {
+                            dnum1: 1,
+                            dnum2: 2,
+                        }
+                    },
+                    props: {
+                        pnum1:{
+                            type:Number,
+                            default:111,
+                        },
+                        pnum2: {
+                            type:Number,
+                            default:222,
+                        }
+                    }
+                }
+
+            }
         })
     </script>
 </body>
