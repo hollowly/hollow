@@ -86,7 +86,7 @@
             <h1>num1 = {{num1}}</h1>
             <h1>num2 = {{num2}}</h1>
             <hr>
-            <cpn5 :pnum1='num1' :pnum2='num1'></cpn5>
+            <cpn5 :pnum1='num1' :pnum2='num1' @num1-change='num1Change' @num2-change='num2Change'></cpn5>
     </div>
 
 
@@ -119,11 +119,11 @@
     <template id='cpn5'>
         <div>
             <h1>dnum1 = {{dnum1}}</h1>
-            <input type="text" v-model='dnum1'>
+            <input type="text" v-model='dnum1' @input='dnum1Input'>
             <h1>dnum2 = {{dnum2}}</h1>
             <hr>
             <h1>pnum1 = {{pnum1}}</h1>
-            <input type="text" v-model='dnum2'>
+            <input type="text" v-model='dnum2' @input='dnum2Input'>
             <h1>pnum2 = {{pnum2}}</h1>
         </div>
     </template>
@@ -170,6 +170,12 @@
                 },
                 show() {
                     console.log('我是appshow，谁想访问我？');
+                },
+                num1Change(value) {
+                    this.num1 = parseFloat(value)
+                },
+                num2Change(value) {
+                    this.num2 = parseFloat(value)
                 }
             },
 
@@ -238,7 +244,15 @@
                             type:Number,
                             default:222,
                         }
-                    }
+                    },
+                    methods: {
+                        dnum1Input(value) {
+                            this.$emit('num1-change',this.pnum1);
+                        },
+                        dnum2Input(value) {
+                            this.$emit('num2-change',this.pnum2);
+                        }
+                    },
                 }
 
             }
