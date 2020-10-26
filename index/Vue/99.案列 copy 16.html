@@ -86,7 +86,7 @@
             <h1>num1 = {{num1}}</h1>
             <h1>num2 = {{num2}}</h1>
             <hr>
-            <cpn5 :pnum1 = 'dnum1' :pnum2='dnum2'></cpn5>
+            <cpn5 :pnum1='num1' :pnum2='num1'></cpn5>
     </div>
 
 
@@ -119,9 +119,11 @@
     <template id='cpn5'>
         <div>
             <h1>dnum1 = {{dnum1}}</h1>
+            <input type="text" v-model='dnum1'>
             <h1>dnum2 = {{dnum2}}</h1>
             <hr>
             <h1>pnum1 = {{pnum1}}</h1>
+            <input type="text" v-model='dnum2'>
             <h1>pnum2 = {{pnum2}}</h1>
         </div>
     </template>
