@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script src="vue.js"></script>
+    
+    <script>
+// 三。配置webpack less：
+// 1. 安装 less 依赖：
+// npm install --save-dev less-loader less
+// -----------------------------------------------------------------------------------------------------------------------------
+// 2. 在 webpack.config.js rules中进行配置：
+// {
+//               test: /\.less$/,
+//               use: [{
+//                   loader: "style-loader" // creates style nodes from JS strings
+//               }, {
+//                   loader: "css-loader" // translates CSS into CommonJS
+//               }, {
+//                   loader: "less-loader" // compiles Less to CSS
+//               }]
+//             }
+// -----------------------------------------------------------------------------------------------------------------------------
+// 3. npm run build 进行打包，完成
+// -----------------------------------------------------------------------------------------------------------------------------
+// 注释：在  npm run build 中有可能出现以下错误：
+// (node:5268) UnhandledPromiseRejectionWarning: TypeError: loaderContext.getResolve is not a function
+//     at createWebpackLessPlugin (E:\hollowly\hollow\index\Vue\webpack的使用\node_modules\less-loader\dist\utils.js:36:33)
+//     at getLessOptions (E:\hollowly\hollow\index\Vue\webpack的使用\node_modules\less-loader\dist\utils.js:153:33)
+//     at Object.lessLoader (E:\hollowly\hollow\index\Vue\webpack的使用\node_modules\less-loader\dist\index.js:31:49)
+//     at LOADER_EXECUTION (E:\hollowly\hollow\index\Vue\webpack的使用\node_modules\loader-runner\lib\LoaderRunner.js:119:14)
+//     at runSyncOrAsync (E:\hollowly\hollow\index\Vue\webpack的使用\node_modules\loader-runner\lib\LoaderRunner.js:120:4)
+//     at iterateNormalLoaders (E:\hollowly\hollow\index\Vue\webpack的使用\node_modules\loader-runner\lib\LoaderRunner.js:232:2)
+//     at Array.<anonymous> (E:\hollowly\hollow\index\Vue\webpack的使用\node_modules\loader-runner\lib\LoaderRunner.js:205:4)
+//     at Storage.finished (E:\hollowly\hollow\index\Vue\webpack的使用\node_modules\enhanced-resolve\lib\CachedInputFileSystem.js:40:15)
+//     at E:\hollowly\hollow\index\Vue\webpack的使用\node_modules\enhanced-resolve\lib\CachedInputFileSystem.js:77:9
+//     at E:\hollowly\hollow\index\Vue\webpack的使用\node_modules\graceful-fs\graceful-fs.js:123:16
+//     at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:63:3)
+// (node:5268) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+// (node:5268) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+// 原因是版本错误，所以要对版本进行降级：
+// npm install less@3.9.0 -s
+// npm install less-loader@4.1.0 -s
+        
+    </script>
+</body>
+</html>
