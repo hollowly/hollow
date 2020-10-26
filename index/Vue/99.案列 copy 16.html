@@ -4,26 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .sty1 {
+            text-shadow: 1px 1px 3px blue;
+        }
+        .sty2 {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <div id='app'>
-        <h1>app-num1:{{num1}}</h1>
-        <h1>app-num2:{{num2}}</h1>
-        <hr>
-        <cpn :cnum1='num1' :cnum2='num2' @num1-change='num1Change' @num2-change='num2Change'></cpn>
-    </div>
+        <ul>
+            <li v-for='item in lis'>{{item}}</li>
 
-    <template id='cpn'>
-        <div>
-            <h1>cpn-cnum1:{{cnum1}}</h1>
-            <h1>cpn-dnum1:{{dnum1}}</h1>
-            <input type="text" v-model='dnum1' @input='dnum1Input()'>
-            <h1>cpn-cnum1:{{cnum1}}</h1>
-            <h1>cpn-dnum2:{{dnum2}}</h1>
-            <input type="text" v-model='dnum2' @input='dnum2Input()'>
+            <h1>计数器：{{num}}</h1>
+            <button @click='add()'>+</button>
+            <button @click='sub()'>-</button>
+
+            <h2 :class="{sty1:issty1, sty2:issty2}">{{message}}</h2>
+            <button @click='changesty()'>按钮</button>
+
+            <h2 :style="{'color':iscolor,background:isbackground}">message</h2>
             <hr>
-        </div>
-    </template>
+            <label for="user" v-if='isgogo'>
+                <input type="text" name="" id="user" placeholder="请输入账户">
+            </label>
+            <label for="email" v-else>
+                <input type="text" name="" id="email" placeholder="请输入邮箱">
+            </label>
+
+            <button @click='isgo'>切换类型</button>
+            <hr>
+            <input type="text" v-model='message1'>
+            {{message1}}
+            <hr>
+            <label for="man">
+                <input type="radio" id="man" v-model='sex' value="男">男
+            </label>
+            <label for="woman">
+                <input type="radio" id="woman" v-model='sex' value="女">女
+            </label>  您的性别是：{{sex}}
+            <hr>
+            <label for="ball1">
+                <input type="checkbox" value="篮球" id="ball1" v-model='ball'>篮球
+            </label>
+            <label for="ball2">
+                <input type="checkbox" value="足球" id="ball2" v-model='ball'>足球
+            </label>
+            <label for="ball3">
+                <input type="checkbox" value="乒乓球" id="ball3" v-model='ball'>乒乓球
+            </label>  您的选择有：{{ball}}
+        </ul>
+    </div>
 
     <script src="vue.js"></script>
 
@@ -31,47 +64,33 @@
         const app = new Vue({
             el: '#app',
             data: {
-                num1: 1,
-                num2: 2,
+                lis: ['1','2','3'],
+                num:0,
+                message: 'hello world',
+                issty1:true,
+                issty2:true,
+                iscolor:'red',
+                isbackground:'blue',
+                isgogo: true,
+                message1:'hellow world',
+                sex:'男',
+                ball:[],
             },
             methods: {
-                num1Change(value) {
-                    this.num1 = parseFloat(value);
+                add() {
+                    this.num++;
                 },
-                num2Change(value) {
-                    this.num2 = parseFloat(value);
+                sub() {
+                    this.num--;
+                },
+                changesty() {
+                    this.issty1 = !this.issty1;
+                    this.issty2 = !this.issty2;
+                },
+                isgo() {
+                    this.isgogo = !this.isgogo;
                 }
             },
-            components: {
-                cpn: {
-                    template: '#cpn',
-                    props: {
-                        cnum1:{
-                            type:Number,
-                            default:111,
-                        },
-                        cnum2: {
-                            type:Number,
-                            default:222,
-                        }
-                    },
-                    data() {
-                        return {
-                            dnum1: this.cnum1,
-                            dnum2: this.cnum2,
-                        }
-                    },
-                    methods: {
-                        dnum1Input(value) {
-                            this.$emit('num1-change',this.dnum1);
-                        },
-                        dnum2Input(value) {
-                            this.$emit('num2-change',this.dnum2);
-                        }
-                    },
-                }
-
-            }
         })
     </script>
 </body>
