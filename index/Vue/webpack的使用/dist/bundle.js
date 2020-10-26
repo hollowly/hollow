@@ -60,139 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_info__ = __webpack_require__(1);
-
-// ES6 模块化的导入
-
-
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["d" /* name */], __WEBPACK_IMPORTED_MODULE_0__js_info__["a" /* age */], __WEBPACK_IMPORTED_MODULE_0__js_info__["b" /* height */]);
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["c" /* hobby */]);
-
-// commonjs 模块化规范导入
-
-const {add, mul} = __webpack_require__(2);
-
-console.log(add(20, 40));
-console.log(mul(20, 40));
-
-// 3.style/css依赖
-__webpack_require__(3);
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// ES6 模块的导出
-const name = 'hollow';
-/* harmony export (immutable) */ __webpack_exports__["d"] = name;
-
-const age = 18;
-/* harmony export (immutable) */ __webpack_exports__["a"] = age;
-
-const height = 1.88;
-/* harmony export (immutable) */ __webpack_exports__["b"] = height;
-
-
-
-const hobby = 'boll';
-/* harmony export (immutable) */ __webpack_exports__["c"] = hobby;
-
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-
-// commonjs 模块化的导出
-
-function add(num1 ,num2) {
-    return num1 + num2;
-}
-
-function mul(num1, num2) {
-    return num1 * num2;
-}
-
-
-module.exports = {
-    add,
-    mul,
-}
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(4);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(6)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../node_modules/css-loader/dist/cjs.js!./normall.css", function() {
-		var newContent = require("!!../../node_modules/css-loader/dist/cjs.js!./normall.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(5)(false);
-// Module
-exports.push([module.i, "body {\r\n    background: red;\r\n}", ""]);
-
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -283,7 +155,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 6 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -689,6 +561,137 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_info__ = __webpack_require__(3);
+
+// ES6 模块化的导入
+
+
+console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["d" /* name */], __WEBPACK_IMPORTED_MODULE_0__js_info__["a" /* age */], __WEBPACK_IMPORTED_MODULE_0__js_info__["b" /* height */]);
+console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["c" /* hobby */]);
+
+// commonjs 模块化规范导入
+
+const {add, mul} = __webpack_require__(4);
+
+console.log(add(20, 40));
+console.log(mul(20, 40));
+
+// 3.style/css依赖
+__webpack_require__(5);
+
+// 4.less依赖
+__webpack_require__(8);
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// ES6 模块的导出
+const name = 'hollow';
+/* harmony export (immutable) */ __webpack_exports__["d"] = name;
+
+const age = 18;
+/* harmony export (immutable) */ __webpack_exports__["a"] = age;
+
+const height = 1.88;
+/* harmony export (immutable) */ __webpack_exports__["b"] = height;
+
+
+
+const hobby = 'boll';
+/* harmony export (immutable) */ __webpack_exports__["c"] = hobby;
+
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+
+// commonjs 模块化的导出
+
+function add(num1 ,num2) {
+    return num1 + num2;
+}
+
+function mul(num1, num2) {
+    return num1 * num2;
+}
+
+
+module.exports = {
+    add,
+    mul,
+}
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(6);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(1)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../node_modules/css-loader/dist/cjs.js!./normall.css", function() {
+		var newContent = require("!!../../node_modules/css-loader/dist/cjs.js!./normall.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// Module
+exports.push([module.i, "body {\r\n    background: red;\r\n}", ""]);
+
+
+
+/***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
@@ -781,6 +784,66 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(9);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(1)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../node_modules/css-loader/dist/cjs.js!../../node_modules/less-loader/dist/cjs.js!./special.less", function() {
+		var newContent = require("!!../../node_modules/css-loader/dist/cjs.js!../../node_modules/less-loader/dist/cjs.js!./special.less");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// Module
+exports.push([module.i, "body {\n  font-size: 50px;\n  color: orange;\n  text-align: center;\n}\n", ""]);
+
 
 
 /***/ })

@@ -14,3 +14,6 @@ console.log(mul(20, 40));
 
 // 3.style/css依赖
 require('./css/normall.css');
+
+// 4.less依赖
+require('./css/special.less');

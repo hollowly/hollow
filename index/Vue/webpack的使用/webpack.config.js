@@ -14,6 +14,16 @@ module.exports = {
             // style-loader 将模块的导出作为样式添加到 DOM 中
             // 使用多个loader时，是从右向左，所以stype-loader在css-loader前面
               use: [ 'style-loader', 'css-loader' ]   
+            },
+            {
+              test: /\.less$/,
+              use: [{
+                  loader: "style-loader" // creates style nodes from JS strings
+              }, {
+                  loader: "css-loader" // translates CSS into CommonJS
+              }, {
+                  loader: "less-loader" // compiles Less to CSS
+              }]
             }
         ]
     }
