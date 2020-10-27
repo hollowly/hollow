@@ -24,7 +24,7 @@ import Vue from 'vue';
 // 6.把写的vue代码放进app.js中，并应用
 // import app from './vue/app.js'
 
-// 6
+// 6.引用 .vue 文件
 import app from './vue/app.vue'
 
 new Vue({
