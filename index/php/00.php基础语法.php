@@ -1,4 +1,4 @@
-<?php
++<?php
     $hello = '大家好，我是';
     $name = '<strong>邓俊贤</strong>';
     $age = '20';
