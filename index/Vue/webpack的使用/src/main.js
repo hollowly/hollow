@@ -18,13 +18,19 @@ require('./css/normall.css');
 // 4.less依赖
 require('./css/special.less');
 
-// 5.引用 Vue
+// 5.引用 Vue.js
 import Vue from 'vue';
 
+// 6.把写的vue代码放进app.js中，并应用
+// import app from './vue/app.js'
 
-const app = new Vue({
+// 6
+import app from './vue/app.vue'
+
+new Vue({
     el:'#app',
-    data: {
-        message:'hello wpbpack Vue!',
+    template: '<app/>',
+    components: {
+        app
     }
 })
