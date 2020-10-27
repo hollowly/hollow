@@ -6,7 +6,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),  //出口文件路径
         filename: 'bundle.js',   //出口文件名字
         publicPath: 'dist/'
-    },
+      },
     module: {
         rules: [
             // css 文件打包配置
@@ -55,5 +55,11 @@ module.exports = {
             }
             
         ]
+    },
+    resolve: {
+      // alias:别名
+      alias: {
+        'vue$': 'vue/dist/vue.esm.js',
+      }
     }
 }

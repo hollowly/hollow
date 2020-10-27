@@ -17,3 +17,14 @@ require('./css/normall.css');
 
 // 4.less依赖
 require('./css/special.less');
+
+// 5.引用 Vue
+import Vue from 'vue';
+
+
+const app = new Vue({
+    el:'#app',
+    data: {
+        message:'hello wpbpack Vue!',
+    }
+})
