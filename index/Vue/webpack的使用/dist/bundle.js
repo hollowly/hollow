@@ -14021,7 +14021,7 @@ var urlEscape = __webpack_require__(30);
 var ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(31));
 
 // Module
-exports.push([module.i, "body {\r\n    /* background: red; */\r\n    background:url(" + ___CSS_LOADER_URL___0___ + ");\r\n    background-position: center;\r\n}", ""]);
+exports.push([module.i, "body {\r\n    /* background: red; */\r\n    background:url(" + ___CSS_LOADER_URL___0___ + ");\r\n    background-position: 50% 0%;\r\n}", ""]);
 
 
 
@@ -14208,7 +14208,7 @@ if(false) {
 
 exports = module.exports = __webpack_require__(0)(false);
 // Module
-exports.push([module.i, "body {\n  font-size: 25px;\n  color: orange;\n}\n", ""]);
+exports.push([module.i, "body {\n  font-size: 25px;\n  color: red;\n}\n", ""]);
 
 
 
