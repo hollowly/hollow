@@ -1,6 +1,6 @@
 const path = require('path');  //在node (全局) 中寻找 path 包
 const webpack = require('webpack');  //在 node(全局) 中寻找 webpack 包
-
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //在 node(全局) 中寻找 html-webpack-plugin 包
 
 module.exports = {
     entry: './src/main.js',     //入口文件
@@ -74,5 +74,6 @@ module.exports = {
     // 横幅的配置(版权)
     plugins:[
       new webpack.BannerPlugin('最终版权归hollow所有'),
+
     ]
 }
