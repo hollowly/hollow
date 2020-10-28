@@ -21,13 +21,13 @@ require('./css/special.less');
 // 5.引用 Vue.js
 import Vue from 'vue';
 
-// 6.引用 .vue 文件
+// 6.引用 app 组件-app.vue 文件
 import app from './vue/app.vue'
 
 new Vue({
     el:'#app',
     template: '<app/>',
     components: {
-        app
+        app,
     }
 })
