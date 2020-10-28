@@ -441,7 +441,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(22);
+var	fixUrls = __webpack_require__(23);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -781,29 +781,38 @@ function updateLink (link, options, obj) {
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(5);
+__webpack_require__(26);
+(function webpackMissingModule() { throw new Error("Cannot find module \"./dist/bundle1.js\""); }());
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
-var _info = __webpack_require__(5);
+var _info = __webpack_require__(6);
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(7);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _app = __webpack_require__(9);
+var _app = __webpack_require__(10);
 
 var _app2 = _interopRequireDefault(_app);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log(_info.name, _info.age, _info.height);
-// ES6 模块化的导入
+// 1.ES6 模块化的导入
 
 console.log(_info.hobby);
 
-// commonjs 模块化规范导入
+// 2.commonjs 模块化规范导入
 
-var _require = __webpack_require__(17),
+var _require = __webpack_require__(18),
     add = _require.add,
     mul = _require.mul;
 
@@ -811,16 +820,13 @@ console.log(add(20, 40));
 console.log(mul(20, 40));
 
 // 3.style/css依赖
-__webpack_require__(18);
+__webpack_require__(19);
 
 // 4.less依赖
-__webpack_require__(23);
+__webpack_require__(24);
 
 // 5.引用 Vue.js
 
-
-// 6.把写的vue代码放进app.js中，并应用
-// import app from './vue/app.js'
 
 // 6.引用 .vue 文件
 
@@ -834,7 +840,7 @@ new _vue2.default({
 });
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -852,7 +858,7 @@ var height = exports.height = 1.88;
 var hobby = exports.hobby = 'boll';
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12851,10 +12857,10 @@ Vue.compile = compileToFunctions;
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(0), __webpack_require__(7).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(0), __webpack_require__(8).setImmediate))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -12910,7 +12916,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(8);
+__webpack_require__(9);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -12924,7 +12930,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -13117,19 +13123,19 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(2)))
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_app_vue__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_df3ec428_node_modules_vue_loader_lib_selector_type_template_index_0_app_vue__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_app_vue__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_df3ec428_node_modules_vue_loader_lib_selector_type_template_index_0_app_vue__ = __webpack_require__(17);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(10)
+  __webpack_require__(11)
 }
-var normalizeComponent = __webpack_require__(14)
+var normalizeComponent = __webpack_require__(15)
 /* script */
 
 /* template */
@@ -13171,17 +13177,17 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(11);
+var content = __webpack_require__(12);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(12)("9c2f10f4", content, false, {});
+var update = __webpack_require__(13)("9c2f10f4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -13197,7 +13203,7 @@ if(false) {
 }
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -13207,7 +13213,7 @@ exports.push([module.i, "\n.title[data-v-df3ec428] {\n    color: yellow;\n}\n", 
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -13226,7 +13232,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(13)
+var listToStyles = __webpack_require__(14)
 
 /*
 type StyleObject = {
@@ -13435,7 +13441,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /**
@@ -13468,7 +13474,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -13565,7 +13571,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13595,7 +13601,7 @@ module.exports = function normalizeComponent (
 });
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13621,7 +13627,7 @@ if (false) {
 }
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13643,11 +13649,11 @@ module.exports = {
 };
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(19);
+var content = __webpack_require__(20);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -13693,13 +13699,13 @@ if(false) {
 }
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
 // Imports
-var urlEscape = __webpack_require__(20);
-var ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(21));
+var urlEscape = __webpack_require__(21);
+var ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(22));
 
 // Module
 exports.push([module.i, "body {\r\n    /* background: red; */\r\n    background:url(" + ___CSS_LOADER_URL___0___ + ");\r\n}", ""]);
@@ -13707,7 +13713,7 @@ exports.push([module.i, "body {\r\n    /* background: red; */\r\n    background:
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13733,13 +13739,13 @@ module.exports = function escape(url) {
 };
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/10.12342959.jpg";
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 
@@ -13834,11 +13840,11 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(24);
+var content = __webpack_require__(25);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -13884,7 +13890,7 @@ if(false) {
 }
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -13892,6 +13898,12 @@ exports = module.exports = __webpack_require__(1)(false);
 exports.push([module.i, "body {\n  font-size: 50px;\n  color: orange;\n  text-align: center;\n}\n", ""]);
 
 
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: SyntaxError: E:\\hollowly\\hollow\\index\\Vue\\webpack的使用\\src\\main1.js: Unexpected token (9:13)\n\n\u001b[0m \u001b[90m  7 | \u001b[39m\u001b[36mnew\u001b[39m \u001b[33mVue\u001b[39m({\n \u001b[90m  8 | \u001b[39m    el\u001b[33m:\u001b[39m\u001b[32m'#app'\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 | \u001b[39m    template\u001b[33m:\u001b[39m\u001b[33m<\u001b[39m\u001b[33mcpn\u001b[39m\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m    | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 | \u001b[39m    components\u001b[33m:\u001b[39m {\n \u001b[90m 11 | \u001b[39m       cpn\u001b[33m,\u001b[39m\n \u001b[90m 12 | \u001b[39m    }\u001b[0m\n");
 
 /***/ })
 /******/ ]);
