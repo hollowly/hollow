@@ -1,13 +1,13 @@
-const path = require('path');  //在node (全局) 中寻找 path 包
-const webpack = require('webpack');  //在 node(全局) 中寻找 webpack 包
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //在 node(全局) 中寻找 html-webpack-plugin 包
+const path = require('path');  //在node (全局) 中寻找 path 包——用来配置出口文件路径的
+const webpack = require('webpack');  //在 node(全局) 中寻找 webpack 包——用来配置横幅的(版权)
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //在 node(全局) 中寻找 html-webpack-plugin 包(用来webpack自动帮我们生成一个最终html文件)
 
 module.exports = {
     entry: './src/main.js',     //入口文件
     output: {      //出口文件
         path: path.resolve(__dirname, 'dist'),  //出口文件路径
         filename: 'bundle.js',   //出口文件名字
-        publicPath: 'dist/'
+        // publicPath: 'dist/'
       },
     module: {
         rules: [
@@ -74,6 +74,8 @@ module.exports = {
     // 横幅的配置(版权)
     plugins:[
       new webpack.BannerPlugin('最终版权归hollow所有'),
-
+      new HtmlWebpackPlugin({
+        template: 'index.html',
+      }),
     ]
 }
