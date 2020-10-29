@@ -1,6 +1,7 @@
 const path = require('path');  //在node (全局) 中寻找 path 包——用来配置出口文件路径的
 const webpack = require('webpack');  //在 node(全局) 中寻找 webpack 包——用来配置横幅的(版权)
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //在 node(全局) 中寻找 html-webpack-plugin 包(用来webpack自动帮我们生成一个最终html文件)
+const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin'); // 在mode(全局) 中寻找uglifyjs-webpack-plugin(用来压缩js代码的)
 
 module.exports = {
     entry: './src/main.js',     //入口文件
@@ -77,5 +78,6 @@ module.exports = {
       new HtmlWebpackPlugin({
         template: 'index.html',
       }),
+      new UglifyjsWebpackPlugin(),
     ]
 }
