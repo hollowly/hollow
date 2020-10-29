@@ -31,3 +31,6 @@ new Vue({
         App,
     }
 })
+
+
+document.write('<button>按钮</button>')
