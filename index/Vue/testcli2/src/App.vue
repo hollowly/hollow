@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+     <h1>我是app标题</h1>
+     <h2>{{name}}</h2>
+     <cpn1></cpn1>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
 
+import cpn1 from './vue/Cpn1.vue';
 export default {
   name: 'App',
+  data() {
+    return {
+      name:'我是app的name'
+    }
+  },
   components: {
-    HelloWorld
+    cpn1,
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  /* body {
+    background: red;
+  } */
 </style>
