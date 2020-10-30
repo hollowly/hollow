@@ -17,7 +17,7 @@ new Vue({
 
 
     // 那么 .vue 中的文件中的 template 由谁处理的呢
-    // 是有 vue-template-compiler
+    // 是由 vue-template-compiler
 
     // runtiem-only
     // render -> vdom -> UI
