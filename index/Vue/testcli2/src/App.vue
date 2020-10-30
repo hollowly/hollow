@@ -7,8 +7,8 @@
 </template>
 
 <script>
-
 import cpn1 from './vue/Cpn1.vue';
+
 export default {
   name: 'App',
   data() {
@@ -23,7 +23,8 @@ export default {
 </script>
 
 <style>
-  /* body {
-    background: red;
-  } */
+  body {
+    background: url('./img/10.jpg');
+    background-position: center 0%;
+  }
 </style>
