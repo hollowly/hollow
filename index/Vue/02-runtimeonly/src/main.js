@@ -8,3 +8,13 @@ new Vue({
   el: '#app',
   render: h => h(App)
 })
+
+
+// render: h => h(App) 等同于
+    // render:function(h) {
+    //   return h(App);
+    // }
+
+
+// runtiem-only
+// render -> vdom -> UI

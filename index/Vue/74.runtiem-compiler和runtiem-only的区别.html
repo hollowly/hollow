@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="vue.js"></script>
+
+    <script>
+// runtime-complier：
+// new Vue({
+//   el: '#app',
+//   components: { App },
+//   template: '<App/>'
+// })
+//-------------------------------------------------------------------------
+// runtime-only：
+// new Vue({
+//   el: '#app',
+//   render: h => h(App)
+// })
+
+// render: h => h(App) 等同于
+    // render:function(h) {
+    //   return h(App);
+    // }
+//-------------------------------------------------------------------------
+
+// runtime-compiler(v1)
+// template -> ast -> render -> vdom -> UI
+
+
+// runtime-only(v2)(1.性能更高 2.下面的代码量更少)
+// render -> vdom -> UI
+        
+    </script>
+</body>
+</html>
