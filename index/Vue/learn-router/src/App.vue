@@ -1,21 +1,16 @@
 <template>
   <div>
-		<h1 id='h1'>我是App组件</h1>
-		<cpn1/>
-		<cpn2/>
+		<h1>我是App组件</h1>
+		<h2><router-link to='cpn1'>cpn1</router-link></h2>
+		<h2><router-link to='cpn2'>cpn2</router-link></h2>
+		<router-view></router-view>
+		<h1>hello world</h1>
   </div>
 </template>
 
 <script>
-import cpn1 from './components/Cpn1.vue'
-import cpn2 from './components/Cpn2.vue'
-
 export default {
 	name: 'App',
-	components: {
-		cpn1,
-		cpn2,
-	}
 }
 </script>
 
@@ -23,8 +18,5 @@ export default {
 body {
 	background: url('./img/10.jpg');
 	background-position: center 0%;
-}
-#h1 {
-	background:red;
 }
 </style>
