@@ -1,28 +1,25 @@
 <!--  -->
 <template>
-    <div>
-        <h2>我是vue-cli2的标题</h2>
+    <div id='cpn1'>
+        <h2>我是cpn1的标题</h2>
         <h3>{{name}}</h3>
-        <cpn2></cpn2>
     </div>
  </template>
  
  <script>
-   import cpn2 from './Cpn2.vue';
  export default {
    data () {
      return {
-         name:'hello vue-cli2'
+         name:'hello cpn1'
      }
    },
-   components: {
-     cpn2,
-   }
- 
  }
  
  </script>
  
- <style>
- 
- </style>
+
+<style lang='less'>
+  #cpn1 {
+    background: red;
+  }
+</style>

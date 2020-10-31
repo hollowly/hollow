@@ -1,7 +1,8 @@
 <!--  -->
 <template>
-   <div>
-       <h1>cpn2b标题</h1>
+   <div id='cpn2'>
+       <h1>我是cpn2的标题</h1>
+       <h3>{{name}}</h3>
    </div>
 </template>
 
@@ -9,13 +10,15 @@
 export default {
   data () {
     return {
-        name:'cpn2'
+        name:'hello cpn2'
     }
   },
 }
 
 </script>
 
-<style lang='less' scoped>
-
+<style lang='less'>
+  #cpn2 {
+    background: blue;
+  }
 </style>
