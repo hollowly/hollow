@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style lang='less'>
+<style>
   body {
     background: url('./img/10.jpg');
     background-position: center 0%;
