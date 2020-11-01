@@ -15,10 +15,12 @@ export default {
 	name: 'App',
 	methods: {
 		cpn1Click() {
-			this.$router.push('/cpn1');
+			// this.$router.push('/cpn1');
+			this.$router.replace('/cpn1');
 		},
 		cpn2Click() {
-			this.$router.push('/cpn2');
+			// this.$router.push('/cpn2');
+			this.$router.replace('/cpn2');
 		}
 	},
 }
