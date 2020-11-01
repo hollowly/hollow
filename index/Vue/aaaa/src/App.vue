@@ -20,7 +20,6 @@ export default {
 	data() {
 		return {
 			name:'hollow-learn-vue',
-			lis:['hello','world','hollow','hollowly','hollows'],
 		}
 	},
 }
