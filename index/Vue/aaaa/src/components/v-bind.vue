@@ -1,12 +1,12 @@
 <!--  -->
 <template>
 	<div>
-		<h2>v-bind动态绑定class：</h2>
-		<h2><a v-bind:href="url">我的博客：</a></h2>
+		<h2>v-bind fynamic binding class：</h2>
+		<h2><a v-bind:href="url">My blog：</a></h2>
 		<img :src="imgUrl" width="300"> <br><br>
 		<span :class="{active:isActive}">{{message}}</span> <br>
-		<button @click='changeActive'>点我为上面的文字添加样式</button>
-		<h2>动态绑定style：</h2>
+		<button @click='changeActive'>Click me to style the text above</button>
+		<h2>Dynamic binding style：</h2>
 		<span :style='getStyle()'>{{message}}</span>
 		
 	</div>

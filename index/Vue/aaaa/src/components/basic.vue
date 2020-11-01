@@ -2,12 +2,12 @@
 <template>
 	<div>
 		<h2>{{name}}</h2>
-		<h2>列表：</h2>
+		<h2>list：</h2>
 		<ul>
 			<li v-for='item in lis' :key="item">{{item}}</li>
 		</ul>
-		<h2>计数器：</h2>
-		当前计数：{{num}}
+		<h2>Counter：</h2>
+		Current count：{{num}}
 		<button @click='add()'>+</button>
 		<button @click='sub()'>-</button>
 	</div>

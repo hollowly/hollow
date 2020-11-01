@@ -2,8 +2,10 @@
   <div id="app">
 		<span class='hollow'>{{name}}</span>
 <hr>
-		<h1 class='float'><router-link to='/basic'>vue的基本用法：</router-link></h1>
-		<h1 class='float'><router-link to='/v-bind'>v-bind的使用：</router-link></h1>
+		<h1><router-link to='/basic'>vue use</router-link></h1>
+		<h1><router-link to='/v-bind'>v-bind use</router-link></h1>
+		<h1><router-link to='/v-ifANDv-for'>v-if and v-for</router-link></h1>
+		<h1><router-link to='/ShoppingCart'>ShoppingCart</router-link></h1>
 		<hr>
 		<router-view></router-view>
   </div>
