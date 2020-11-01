@@ -20,13 +20,16 @@ export default {
 }
 </script>
 <style>
-.hollow {
-	display: block;
-	text-align: center;
-	font-size: 50px;
-	text-shadow: 1px 1px 4px blue;
-}
+	.hollow {
+		display: block;
+		text-align: center;
+		font-size: 50px;
+		text-shadow: 1px 1px 4px blue;
+	}
 	a {
 		color: red;
+	}
+	body{
+		height: 100000px;
 	}
 </style>
