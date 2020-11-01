@@ -9,7 +9,7 @@
 		<h1><router-link to='/v-model'>v-model</router-link></h1>
 		<h1><router-link to='/parent-child-components'>parent and child components</router-link></h1>
 		<hr>
-		<router-view :clis='lis'></router-view>
+		<router-view :clis='lis' :cnum1='num1' :cnum2='num2' @num1Change='num1Change' @num2Change='num2Change'></router-view>
   </div>
 </template>
 
@@ -19,7 +19,17 @@ export default {
 	data() {
 		return {
 			name:'hollow-learn-vue',
-			lis:['jacascript','php','jquery','hello','world','vue']
+			lis:['jacascript','php','jquery','hello','world','vue'],
+			num1: 1,
+			num2: 2,
+		}
+	},
+	methods: {
+		num1Change(value) {
+			this.num1 = parseFloat(value);
+		},
+		num2Change(value) {
+			this.num2 = parseFloat(value);
 		}
 	},
 }
