@@ -1,9 +1,9 @@
 <template>
   <div id="app">
 		<h1>{{name}}</h1>
-		<router-link to='/home' tag='button' replace>主页</router-link>
-		<router-link to='/about' tag='button' replace>关于</router-link>
-		<router-link to='/user' tag='button' replace>我的</router-link>
+<hr>
+		<h1><router-link to='/basic'>vue的基本用法：</router-link></h1>
+		<h1><router-link to='/v-bind'>v-bind的使用：</router-link></h1>
 		<router-view></router-view>
   </div>
 </template>
@@ -18,7 +18,8 @@ export default {
 	},
 }
 </script>
-
 <style>
-
+	a {
+		text-decoration: none;
+	}
 </style>
