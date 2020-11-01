@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import cpn1 from '../components/Cpn1'
-import cpn2 from '../components/Cpn2'
+import home from '../components/home'
+import about from '../components/about'
+import user from '../components/user'
 
 Vue.use(Router)
 
@@ -10,16 +11,20 @@ export default new Router({
 		{
 			path:'',
 			// redirect：重定向
-			redirect: '/cpn1'
+			redirect: '/home'
 		},
     {
-      path: '/cpn1',
-      component: cpn1,
+      path: '/home',
+      component: home,
     },
     {
-      path: '/cpn2',
-      component: cpn2,
-    }
+      path: '/about',
+      component: about,
+		},
+		{
+			path: '/user/:userId',
+			component:user,
+		}
 	],
 	mode: 'history',
 	linkActiveClass:'active'
