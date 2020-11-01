@@ -8,9 +8,8 @@
 		<h1><router-link to='/ShoppingCart'>ShoppingCart</router-link></h1>
 		<h1><router-link to='/v-model'>v-model</router-link></h1>
 		<h1><router-link to='/parent-child-components'>parent and child components</router-link></h1>
-		
 		<hr>
-		<router-view></router-view>
+		<router-view :clis='lis'></router-view>
   </div>
 </template>
 
@@ -20,6 +19,7 @@ export default {
 	data() {
 		return {
 			name:'hollow-learn-vue',
+			lis:['jacascript','php','jquery','hello','world','vue']
 		}
 	},
 }
