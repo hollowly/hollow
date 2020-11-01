@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-		<h1>{{name}}</h1>
+		<span class='hollow'>{{name}}</span>
 <hr>
-		<h1><router-link to='/basic'>vue的基本用法：</router-link></h1>
-		<h1><router-link to='/v-bind'>v-bind的使用：</router-link></h1>
+		<h1 class='float'><router-link to='/basic'>vue的基本用法：</router-link></h1>
+		<h1 class='float'><router-link to='/v-bind'>v-bind的使用：</router-link></h1>
+		<hr>
 		<router-view></router-view>
   </div>
 </template>
@@ -13,13 +14,19 @@ export default {
 	name: 'App',
 	data() {
 		return {
-			name:'我是app组件标题'
+			name:'hollow-learn-vue'
 		}
 	},
 }
 </script>
 <style>
+.hollow {
+	display: block;
+	text-align: center;
+	font-size: 50px;
+	text-shadow: 1px 1px 4px blue;
+}
 	a {
-		text-decoration: none;
+		color: red;
 	}
 </style>
