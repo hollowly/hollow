@@ -8,6 +8,9 @@ const v_if = () => import('../components/v-if and v-for')
 const ShoppingCart = () => import('../components/ShoppingCart')
 const v_model = () => import('../components/v-model')
 const parent_child_components = () => import('../components/parent-child-components')
+const slots = () => import('../components/slots')
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -32,10 +35,14 @@ export default new Router({
 			path:'/v-model',
 			component:v_model
 		},
-		 {
-			 path:'/parent-child-components',
-			 component:parent_child_components
-		 }
+		{
+			path:'/parent-child-components',
+			component:parent_child_components
+		},
+		{
+			path:'/slots',
+			component:slots
+		}
 	],
 	mode:'history',
 	// linkActiveClass:'active',

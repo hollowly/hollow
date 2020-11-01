@@ -14,7 +14,7 @@
 		<h2>cnum2 = {{cnum2}}</h2>
 		<h2>dnum2 = {{dnum2}}</h2>
 		<input type="text" v-model='dnum2' @input='dnum2Change()'>
-		
+		<hr>
 	</div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
 		},
 		dnum2Change(value) {
 			this.$emit('num2Change',this.dnum2)
-		}
+		},
 	},
 	props: {
 		clis:{
