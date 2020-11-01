@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '../components/home'
-import about from '../components/about'
-import user from '../components/user'
+
+const home = () => import('../components/home')
+const about = () => import('../components/about')
+const user = () => import('../components/user')
 
 Vue.use(Router)
 
@@ -15,15 +16,15 @@ export default new Router({
 		},
     {
       path: '/home',
-      component: home,
+      component: home
     },
     {
       path: '/about',
-      component: about,
+      component: about
 		},
 		{
 			path:'/user/:id',
-			component:user,
+			component: user
 		}
 	],
 	mode: 'history',
