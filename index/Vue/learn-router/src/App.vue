@@ -6,7 +6,7 @@
 		<!-- <button @click='cpn1Click'>cpn1</button>
 		<button @click='cpn2Click'>cpn2</button> -->
 
-		<router-link to='/home'>首页</router-link>
+		<router-link to='/home'>主页</router-link>
 		<router-link to='/about'>关于</router-link>
 		<router-link :to="'/user/'+userId">我的</router-link>
 		<router-view/>
