@@ -7,7 +7,7 @@
 			<li v-for='item in lis' :key="item">{{item}}</li>
 		</ul>
 		<h2>Counter：</h2>
-		Current count：{{num}}
+		Current count：{{num}} <br>
 		<button @click='add()'>+</button>
 		<button @click='sub()'>-</button>
 	</div>

@@ -5,29 +5,30 @@
 			<thead>
 				<tr>
 					<th></th>
-					<th>书籍名称</th>
-					<th>出版日期</th>
-					<th>价格</th>
-					<th>购买数量</th>
-					<th>操作</th>
+					<th>name</th>
+					<th>data</th>
+					<th>price</th>
+					<th>number</th>
+					<th>operation</th>
 				</tr>
 			</thead>
 
 			<tbody>
-				<tr v-for='(item, index) in books' :key='item'>
+				<tr v-for='(item, index) in books' :key='index'>
 					<td>{{index + 1}}</td>
 					<td>{{item.name}}</td>
 					<td>{{item.data}}</td>
-					<td>{{item.price}}</td>
-					<td>{{item.count}}</td>
+					<td>{{ '￥' + item.price * item.count + '.00'}}</td>
 					<td>
-						<button>+</button>
+						<button @click='add(index)'>+</button>
 						{{item.count}}
-						<button>-</button>
-					</td>
+						<button @click='sub(index)' :disabled='item.count <= 1'>-</button>
+						</td>
+					<td><button @click='remove(index)'>remove</button></td>
 				</tr>
 			</tbody>
 		</table>
+		<h2>Total price：{{'￥' + getPrice + '.00'}}</h2>
 	</div>
 </template>
 
@@ -43,6 +44,26 @@ export default {
 			]
 		}
 	},
+	methods: {
+		add(index) {
+			this.books[index].count++
+		},
+		sub(index) {
+			this.books[index].count--
+		},
+		remove(index) {
+			this.books.splice(index,1)
+		}
+	},
+	computed: {
+		getPrice() {
+			let result = 0
+			for(let i = 0; i < this.books.length; i++) {
+				result += this.books[i].price * this.books[i].count
+			}
+			return result
+		}
+	}
 
 }
 

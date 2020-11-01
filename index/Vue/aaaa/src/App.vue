@@ -2,10 +2,11 @@
   <div id="app">
 		<span class='hollow'>{{name}}</span>
 <hr>
-		<h1><router-link to='/basic'>vue use</router-link></h1>
-		<h1><router-link to='/v-bind'>v-bind use</router-link></h1>
+		<h1><router-link to='/basic'>vue</router-link></h1>
+		<h1><router-link to='/v-bind'>v-bind</router-link></h1>
 		<h1><router-link to='/v-ifANDv-for'>v-if and v-for</router-link></h1>
 		<h1><router-link to='/ShoppingCart'>ShoppingCart</router-link></h1>
+		<h1><router-link to='/v-model'>v-model</router-link></h1>
 		<hr>
 		<router-view></router-view>
   </div>

@@ -6,7 +6,7 @@ const basic = () => import('../components/basic')
 const v_bind =  () => import('../components/v-bind')
 const v_if = () => import('../components/v-if and v-for')
 const ShoppingCart = () => import('../components/ShoppingCart')
-
+const v_model = () => import('../components/v-model')
 
 Vue.use(Router)
 
@@ -27,6 +27,10 @@ export default new Router({
 		{
 			path:'/ShoppingCart',
 			component:ShoppingCart
+		},
+		{
+			path:'/v-model',
+			component:v_model
 		}
 	],
 	mode:'history',
