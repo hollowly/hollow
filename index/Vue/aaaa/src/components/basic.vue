@@ -1,4 +1,4 @@
-<!-- vue的基本用法 -->
+<!--  -->
 <template>
 	<div>
 		<h2>{{name}}</h2>
@@ -18,7 +18,7 @@ export default {
 	data () {
 		return {
 			name: 'hello Vue！',
-			lis: ['我和我的祖国','hello','world','hollow'],
+			lis: ['vue','hello','world','hollow'],
 			num: 0,
 		}
 	},

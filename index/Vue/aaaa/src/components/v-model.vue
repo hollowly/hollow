@@ -34,9 +34,23 @@
 		<h3>Interest of your hobbys：{{hobbys}}</h3>
 	<hr>
 		<h1>v-model combined with select</h1>
-		<select>
-			<option value="apple">Apple</option>
+		<select v-model='fruits'>
+			<option value="Apple">Apple</option>
+			<option value="Banana">Banana</option>
+			<option value="Pineapple">Pineapple</option>
+			<option value="Grape" selected>Grape</option>
+			<option value="watermelon">watermelon</option>
 		</select>
+		<h3>The fruit of your choice：{{fruits}}</h3>
+		<br>
+		<select v-model='newfruits' multiple>
+			<option value="Apple">Apple</option>
+			<option value="Banana">Banana</option>
+			<option value="Pineapple">Pineapple</option>
+			<option value="Grape" selected>Grape</option>
+			<option value="watermelon">watermelon</option>
+		</select>
+		<h3>The fruit of your choice：{{newfruits}}</h3>
 	</div>
 </template>
 
@@ -46,7 +60,9 @@ export default {
 		return {
 			message:'hello Vue',
 			sex:"man",
-			hobbys:[]
+			hobbys:[],
+			fruits:'',
+			newfruits:[]
 		}
 	},
 

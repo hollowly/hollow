@@ -7,7 +7,7 @@ const v_bind =  () => import('../components/v-bind')
 const v_if = () => import('../components/v-if and v-for')
 const ShoppingCart = () => import('../components/ShoppingCart')
 const v_model = () => import('../components/v-model')
-
+const parent_child_components = () => import('../components/parent-child-components')
 Vue.use(Router)
 
 export default new Router({
@@ -31,7 +31,11 @@ export default new Router({
 		{
 			path:'/v-model',
 			component:v_model
-		}
+		},
+		 {
+			 path:'/parent-child-components',
+			 component:parent_child_components
+		 }
 	],
 	mode:'history',
 	// linkActiveClass:'active',

@@ -7,6 +7,8 @@
 		<h1><router-link to='/v-ifANDv-for'>v-if and v-for</router-link></h1>
 		<h1><router-link to='/ShoppingCart'>ShoppingCart</router-link></h1>
 		<h1><router-link to='/v-model'>v-model</router-link></h1>
+		<h1><router-link to='/parent-child-components'>parent and child components</router-link></h1>
+		
 		<hr>
 		<router-view></router-view>
   </div>
@@ -17,7 +19,8 @@ export default {
 	name: 'App',
 	data() {
 		return {
-			name:'hollow-learn-vue'
+			name:'hollow-learn-vue',
+			lis:['hello','world','hollow','hollowly','hollows'],
 		}
 	},
 }
