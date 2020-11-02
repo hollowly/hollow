@@ -8,11 +8,19 @@
 <body>
 	
 	<pre>
-const home = () => import('../components/home')
-{
-	path: '/home',
-	component: home
-},
+		<!-- 
+		以后我们的打包的js文件会越来越大，所以路由懒加载是为了把一个js文件分成多个。
+		把打包后的js文件分成多个，在需要渲染的时候才加载当应的js文件，这样能
+	
+	
+	-->
+
+
+	const home = () => import('../components/home')
+	{
+		path: '/home',
+		component: home
+	},
 	</pre>
 
 	<script src="vue.js"></script>
