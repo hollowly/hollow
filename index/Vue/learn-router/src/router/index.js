@@ -7,6 +7,9 @@ const homeMessage = () => import('../components/homeMessage')
 
 const about = () => import('../components/about')
 const user = () => import('../components/user')
+const profile = () => import('../components/profile')
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -41,6 +44,10 @@ export default new Router({
 		{
 			path:'/user/:id',
 			component: user
+		},
+		{
+			path:'/profile',
+			component: profile
 		}
 	],
 	mode: 'history',

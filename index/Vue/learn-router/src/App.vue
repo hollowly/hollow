@@ -9,6 +9,7 @@
 		<router-link to='/home'>主页</router-link>
 		<router-link to='/about'>关于</router-link>
 		<router-link :to="'/user/'+userId">我的</router-link>
+		<router-link to='/profile'>档案</router-link>
 		<router-view/>
 		<h1>hello world</h1>
   </div>
