@@ -11,8 +11,9 @@
 		<router-link :to="'/user/'+userId">我的</router-link>
 		<router-link :to="{path:'/profile',
 		query:{name:'hollow',age:18,height:1.88}}">档案</router-link>
-		<router-view/>
-		<h1>hello world</h1>
+		<button @click='userClick'>用户</button>
+		<button @click='profileClick'>档案</button>
+		<router-view></router-view>
   </div>
 </template>
 
@@ -32,6 +33,19 @@ export default {
 		cpn2Click() {
 			// this.$router.push('/about');
 			this.$router.replace('/about');
+		},
+		userClick() {
+			this.$router.replace('/user/'+this.userId);
+		},
+		profileClick() {
+			this.$router.replace({
+				path:'/profile',
+				query:{
+					name:'profileHollow',
+					age:'profile18',
+					height:'profile1.88'
+				}
+			})	
 		}
 	},
 }
