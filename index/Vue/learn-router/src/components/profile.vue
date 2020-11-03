@@ -7,6 +7,8 @@
 		<h2>你的名字叫：{{$route.query.name}}</h2>
 		<h2>你今年：{{$route.query.age}}岁</h2>
 		<h2>你现在：{{$route.query.height}}m</h2>
+
+		<h2><button @click='btnclick'>按钮</button></h2>
 	</div>
 </template>
 
@@ -15,6 +17,11 @@ export default {
 	data () {
 		return {
 
+		}
+	},
+	methods: {
+		btnclick() {
+			console.log(this.name);
 		}
 	},
 
