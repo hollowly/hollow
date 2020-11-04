@@ -14,6 +14,9 @@ export default {
 
 		}
 	},
+	// created() {
+	// 	document.title='我的';
+	// }
 }
 
 </script>

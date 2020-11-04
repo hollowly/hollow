@@ -13,9 +13,9 @@ export default {
 
 		}
 	},
-	computed: {
-
-	}
+	// created() {
+	// 	document.title='关于'
+	// }
 
 }
 

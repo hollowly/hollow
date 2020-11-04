@@ -16,6 +16,10 @@ export default {
 
 		}
 	},
+	// 组件被创建时会执行 created 函数
+	// created() {
+	// 	document.title='首页'
+	// }
 
 }
 
