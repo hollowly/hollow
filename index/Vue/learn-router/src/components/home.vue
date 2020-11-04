@@ -5,7 +5,9 @@
 		 <h2>我是主页内容，哈哈哈</h2>
 		 <router-link to='/home/news'>新闻</router-link>
 		 <router-link to='/home/message'>消息</router-link>
-			<router-view></router-view>
+			<keep-alive>
+				<router-view></router-view>
+			</keep-alive>
 	 </div>
 </template>
 
@@ -13,14 +15,33 @@
 export default {
 	data () {
 		return {
-
+			path:'/home/news'
 		}
 	},
-	// 组件被创建时会执行 created 函数
-	// created() {
-	// 	document.title='首页'
-	// }
+	// 组件被渲染时执行 created 函数
+	created() {
+		console.log("home created")
+	},
+	// 组件被销毁前执行 destroyed 函数
+	destroyed() {
+		console.log('home destroyed')
+	},
+	// 这两个函数只有该组件使用了keep-alive，才是有效的
+	// 组件被切换前执行 activated 函数
+	activated() {
+		// console.log('home activated')
+		this.$router.push(this.path);
+	},
+	// 组件被切换后执行 deactivated 函数
+	deactivated() {
+		console.log('home deactivated')
+	},
 
+	beforeRouteLeave (to, from, next) {
+		// console.log(this.$route.path);
+		this.path = this.$route.path;
+		next()
+	}
 }
 
 </script>
