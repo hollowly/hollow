@@ -1,8 +1,8 @@
 <!--  -->
 <template>
 	<div class="tab-bar-item">
-				<img src='../../assets/img/tabbar/home.png'>
-				<div>首页</div>
+		<slot name='item-icon'></slot>
+		<slot name='item-text'></slot>
 	</div>
 </template>
 
