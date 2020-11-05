@@ -5,9 +5,9 @@
 		 <h2>我是主页内容，哈哈哈</h2>
 		 <router-link to='/home/news'>新闻</router-link>
 		 <router-link to='/home/message'>消息</router-link>
-			<keep-alive>
+			<!-- <keep-alive> -->
 				<router-view></router-view>
-			</keep-alive>
+			<!-- </keep-alive> -->
 	 </div>
 </template>
 
@@ -27,12 +27,12 @@ export default {
 		console.log('home destroyed')
 	},
 	// 这两个函数只有该组件使用了keep-alive，才是有效的
-	// 组件被切换前执行 activated 函数
+	// 组件被切换前执行 activated 函数(进入活跃状态时调用)
 	activated() {
-		// console.log('home activated')
+		console.log('home activated')
 		this.$router.push(this.path);
 	},
-	// 组件被切换后执行 deactivated 函数
+	// 组件被切换后执行 deactivated 函数(不是活跃状态时调用)
 	deactivated() {
 		console.log('home deactivated')
 	},

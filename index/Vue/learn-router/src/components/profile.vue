@@ -13,10 +13,17 @@
 
 <script>
 export default {
+	name:'profile',
 	data () {
 		return {
 
 		}
+	},
+	created() {
+		console.log('profile created');
+	},
+	destroyed() {
+		console.log('profile destroyed');
 	},
 	methods: {
 		btnclick() {
