@@ -6,15 +6,21 @@
 				<img src='./assets/img/tabbar/home.png' slot='item-icon'>
 				<div slot='item-text'>首页</div>
 			</tabbaritem>
+
 			<tabbaritem>
 				<img src='./assets/img/tabbar/categories.png' slot='item-icon'>
-				<div slot='item-text'>分类</div></tabbaritem>
+				<div slot='item-text'>分类</div>
+				</tabbaritem>
+
 			<tabbaritem>
 				<img src='./assets/img/tabbar/shopcart.png' slot='item-icon'>
-				<div slot='item-text'>购物车</div></tabbaritem>
+				<div slot='item-text'>购物车</div>
+				</tabbaritem>
+				
 			<tabbaritem>
 				<img src='./assets/img/tabbar/profile.png' slot='item-icon'>
-				<div slot='item-text'>我的</div></tabbaritem>
+				<div slot='item-text'>我的</div>
+				</tabbaritem>
 		</tabbar>
 	</div>
 </template>
