@@ -1,7 +1,7 @@
 <!--  -->
 <template>
 	<div>
-		profile
+		<h1>profile</h1>
 	</div>
 </template>
 

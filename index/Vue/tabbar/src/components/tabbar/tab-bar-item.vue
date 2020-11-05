@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-	<div class="tab-bar-item">
+	<div class="tab-bar-item" @click='btnClick'>
 		<div v-if='!isactive'>
 			<slot name='item-icon'></slot>
 		</div>
@@ -16,6 +16,14 @@ export default {
 	data () {
 		return {
 			isactive:true,
+		}
+	},
+	props: {
+		path:String,
+	},
+	methods: {
+		btnClick(){
+			this.$router.replace(this.path)
 		}
 	},
 

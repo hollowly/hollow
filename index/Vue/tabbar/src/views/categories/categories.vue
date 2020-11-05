@@ -1,7 +1,7 @@
 <!--  -->
 <template>
 	<div>
-		catgories
+		<h1>catgories</h1>
 	</div>
 </template>
 

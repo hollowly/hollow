@@ -1,7 +1,7 @@
 <!--  -->
 <template>
 	<div>
-		shopcart
+		<h1>shopcart</h1>
 	</div>
 </template>
 
