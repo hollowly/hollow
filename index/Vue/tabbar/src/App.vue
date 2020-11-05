@@ -1,12 +1,19 @@
 <!--  -->
 <template>
 	<div>
-		<tabbar></tabbar>
+		<tabbar>
+			<tabbaritem>
+			</tabbaritem>
+			<tabbaritem></tabbaritem>
+			<tabbaritem></tabbaritem>
+			<tabbaritem></tabbaritem>
+		</tabbar>
 	</div>
 </template>
 
 <script>
 import tabbar from './components/tabbar/tabbar'
+import tabbaritem from './components/tabbar/tabbaritem'
 export default {
 	data () {
 		return {
@@ -14,7 +21,8 @@ export default {
 		}
 	},
 	components: {
-		tabbar
+		tabbar,
+		tabbaritem
 	}
 
 }
