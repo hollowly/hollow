@@ -15,13 +15,17 @@ export default {
 	},
 	props: {
 		path:String,
+		isColor: {
+			type:String,
+			default:'red'
+		}
 	},
 	computed: {
 		isActive() {
 			return this.$route.path.indexOf(this.path)
 		},
 		getStyle() {
-			return this.isActive ? {} : {'color':'red'}
+			return this.isActive ? {} : {'color':this.isColor}
 		}
 	},
 	methods: {
