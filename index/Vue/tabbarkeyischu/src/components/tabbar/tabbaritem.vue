@@ -1,7 +1,7 @@
 <!--  -->
 <template>
-	<div class='tabbar-item' @click='tabbarClick'>
-			<div v-if='isactive'>
+	<div class='tabbar-item' @click='tabbaritemClick'>
+			<div v-if='!isactive'>
 				<slot name='item-lcon'></slot>
 			</div>
 
@@ -18,6 +18,14 @@ export default {
 	data () {
 		return {
 			isactive:true
+		}
+	},
+	props: {
+		path:String,
+	},
+	methods: {
+		tabbaritemClick() {
+			this.$router.push(this.path)
 		}
 	},
 
