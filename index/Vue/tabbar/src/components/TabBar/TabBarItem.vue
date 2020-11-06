@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-	<div class='TabBarItem'>
+	<div class='TabBarItem' @click='itemClick'>
 		<slot name='item-icon'></slot>
 		<slot name='item-text'></slot>
 	</div>
@@ -8,9 +8,12 @@
 
 <script>
 export default {
-	data () {
-		return {
-
+	props: {
+		path:String,
+	},
+	methods: {
+		itemClick() {
+			this.$router.push(this.path);
 		}
 	},
 
