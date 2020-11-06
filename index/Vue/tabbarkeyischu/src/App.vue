@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-		
+
   </div>
 </template>
 
@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style>
-
+	
 </style>
