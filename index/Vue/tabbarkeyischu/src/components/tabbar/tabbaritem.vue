@@ -1,15 +1,13 @@
 <!--  -->
 <template>
 	<div class='tabbar-item' @click='tabbaritemClick'>
-			<div v-if='!isactive'>
+			<div v-if='!isActive'>
 				<slot name='item-lcon'></slot>
 			</div>
-
 			<div v-else>
 				<slot name='item-lcon-active'></slot>
 			</div>
-
-			<div :class="{active:isactive}"><slot name='item-text'></slot></div>
+			<div :style='activeStyle'><slot name='item-text'></slot></div>
 	</div>
 </template>
 
@@ -17,11 +15,23 @@
 export default {
 	data () {
 		return {
-			isactive:true
+			// isactive:true
+		}
+	},
+	computed: {
+		isActive() {
+			return this.$route.path.indexOf(this.path) !== -1;
+		},
+		activeStyle() {
+			return this.isActive ? {color:this.activeColor} : {}
 		}
 	},
 	props: {
 		path:String,
+		activeColor: {
+			type:String,
+			default:'red',
+		}
 	},
 	methods: {
 		tabbaritemClick() {
@@ -44,8 +54,5 @@ export default {
 	.tabbar-item img {
 		width: 24px;
 		height: 24px;
-	}
-	.active {
-		color: red;
 	}
 </style>
