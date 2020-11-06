@@ -1,7 +1,7 @@
 <!--  -->
 <template>
 	<div class='tabbar-item' @click='tabbaritemClick'>
-			<div v-if='!isActive'>
+			<div v-if='isActive'>
 				<slot name='item-lcon'></slot>
 			</div>
 			<div v-else>
@@ -20,10 +20,10 @@ export default {
 	},
 	computed: {
 		isActive() {
-			return this.$route.path.indexOf(this.path) !== -1;
+			return this.$route.path.indexOf(this.path);
 		},
 		activeStyle() {
-			return this.isActive ? {color:this.activeColor} : {}
+			return this.isActive ? {} : {color:this.activeColor}
 		}
 	},
 	props: {

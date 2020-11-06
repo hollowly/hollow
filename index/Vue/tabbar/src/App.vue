@@ -2,25 +2,25 @@
 <template>
 	<div>
 		<tabbar>
-			<tabbaritem path='/home'>
+			<tabbaritem path='/home' activeColor='blue'>
 				<img src="./assets/img/tabbar/home.png" slot='item-icon'>
 				<img src="./assets/img/tabbar/home_active.png" slot='item-icon-active'>
 				<div slot='item-text'>首页</div>
 			</tabbaritem>
 
-			<tabbaritem path='/categories'>
+			<tabbaritem path='/categories' activeColor='pink'>
 				<img src="./assets/img/tabbar/categories.png" alt="" slot='item-icon'>
 				<img src="./assets/img/tabbar/categories_active.png" slot='item-icon-active'>
 				<div slot='item-text'>更多</div>
 			</tabbaritem>
 
-			<tabbaritem path='/shopcart'>
+			<tabbaritem path='/shopcart' activeColor='green'>
 				<img src="./assets/img/tabbar/shopcart.png" alt="" slot='item-icon'>
 				<img src="./assets/img/tabbar/shopcart_active.png" slot='item-icon-active'>
 				<div slot='item-text'>购物车</div>
 			</tabbaritem>
 
-			<tabbaritem path='/profile'>
+			<tabbaritem path='/profile' activeColor='orange'>
 				<img src="./assets/img/tabbar/profile.png" alt="" slot='item-icon'>
 				<img src="./assets/img/tabbar/profile_active.png" slot='item-icon-active'>
 				<div slot='item-text'>我的</div>

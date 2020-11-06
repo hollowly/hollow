@@ -1,7 +1,7 @@
 <!--  -->
 <template>
 	<div class="tab-bar-item" @click='btnClick'>
-		<div v-if='!isactive'>
+		<div v-if='getIsactive'>
 			<slot name='item-icon'></slot>
 		</div>
 
@@ -9,7 +9,7 @@
 			<slot name='item-icon-active'></slot>
 		</div>
 		
-		<div :class="{active:isactive}"><slot name='item-text'></slot></div>
+		<div :style="getStyle"><slot name='item-text'></slot></div>
 	</div>
 </template>
 
@@ -17,15 +17,27 @@
 export default {
 	data () {
 		return {
-			isactive:true,
+			// isactive:true,
 		}
 	},
 	props: {
 		path:String,
+		activeColor: {
+			type:String,
+			default:'red',
+		}
 	},
 	methods: {
 		btnClick(){
 			this.$router.replace(this.path)
+		}
+	},
+	computed: {
+		getIsactive() {
+			return this.$route.path.indexOf(this.path)
+		},
+		getStyle() {
+			return this.getIsactive ? {} : {'color':this.activeColor}
 		}
 	},
 
@@ -45,9 +57,4 @@ export default {
 		width: 24px;
 		height: 24px;
 	}
-
-	.active {
-		color: red;
-	}
-	
 </style>
