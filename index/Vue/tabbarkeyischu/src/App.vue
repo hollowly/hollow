@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-		<maintabbar>
-			
-		</maintabbar>
+		
+		<maintabbar></maintabbar>
 
 		<router-view></router-view>
   </div>
 </template>
 <script>
+
 import maintabbar from './components/tabbar/maintabbar'
+
 export default {
 	name: 'App',
 	components: {
@@ -19,6 +20,6 @@ export default {
 
 <style>
 
-@import url('../src/assets/css/base.css');
+	@import url('../src/assets/css/base.css');
 
 </style>
