@@ -1,8 +1,15 @@
 <!--  -->
 <template>
-	<div class='tabbar-item'>
-			<slot name='item-lcon'></slot>
-			<slot name='item-text'></slot>
+	<div class='tabbar-item' @click='tabbarClick'>
+			<div v-if='isactive'>
+				<slot name='item-lcon'></slot>
+			</div>
+
+			<div v-else>
+				<slot name='item-lcon-active'></slot>
+			</div>
+
+			<div :class="{active:isactive}"><slot name='item-text'></slot></div>
 	</div>
 </template>
 
@@ -10,7 +17,7 @@
 export default {
 	data () {
 		return {
-
+			isactive:true
 		}
 	},
 
@@ -29,5 +36,8 @@ export default {
 	.tabbar-item img {
 		width: 24px;
 		height: 24px;
+	}
+	.active {
+		color: red;
 	}
 </style>

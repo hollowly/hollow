@@ -4,9 +4,11 @@
 		<div v-if='!isactive'>
 			<slot name='item-icon'></slot>
 		</div>
+
 		<div v-else>
 			<slot name='item-icon-active'></slot>
 		</div>
+		
 		<div :class="{active:isactive}"><slot name='item-text'></slot></div>
 	</div>
 </template>
