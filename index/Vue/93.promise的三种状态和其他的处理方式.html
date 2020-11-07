@@ -12,6 +12,16 @@
 
 	<script>
 
+		new Promise((reslove, reject) => {
+			setTimeout(() => {
+				reslove('hello promies');
+				reject('error')
+			}, 1000)
+		}).then(data => {
+			console.log(data);
+		},err => {
+			console.log(err);
+		})
 		
 	</script>
 </body>
