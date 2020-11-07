@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script src="vue.js"></script>
+
+	<script>
+		// 在build目录下的 webpack.base.conf.js 文件中找到 resolve:{} 并添加文件引用路径
+		
+	// 	resolve: {
+  //   extensions: ['.js', '.vue', '.json'],
+  //   alias: {
+	// 		'@': resolve('src'),
+	// 		'assets':resolve('src/assets'),
+	// 		'components':resolve('src/components'),
+  //   }
+	// },
+	
+	// 以后要引用src目录下的文件就直接 src/xxx/xxx;
+	// 以后要引用assets目录下的文件就直接 assets/xxx/xxx;
+	// 以后要引用components目录下的文件就直接 components/xxx/xxx;
+
+		// 注：如果引用方式没有使用 import ,就必须要在引用前面添加 ~ 符号
+		// 例如：<img src='~assets/img/TabBar/home.png'>
+		// 使用 import 引用则不需要添加~符号：import TabBar from 'cimponents/home/home'
+	</script>
+</body>
+</html>
