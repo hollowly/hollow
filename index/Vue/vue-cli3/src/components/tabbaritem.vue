@@ -1,16 +1,32 @@
 <!--  -->
 <template>
-	<div class='tabbaritem'>
-		<slot name='item-icon'></slot>
-		<slot name='item-text'></slot>
+	<div class='tabbaritem' @click='itemClick'>
+		<div v-if='isActive'><slot name='item-icon'></slot></div>
+		<div v-else><slot name='item-icon-active'></slot></div>
+		<div :style="getStyle"><slot name='item-text'></slot></div>
 	</div>
 </template>
 
 <script>
 export default {
-	data () {
-		return {
-
+	props: {
+		path: String,
+		getColor: {
+			type:String,
+			default:'red'
+		}
+	},
+	computed: {
+		isActive() {
+			return this.$route.path.indexOf(this.path)
+		},
+		getStyle() {
+			return this.isActive ? {} : {'color':this.getColor}
+		}
+	},
+	methods: {
+		itemClick() {
+			this.$router.push(this.path)
 		}
 	},
 
