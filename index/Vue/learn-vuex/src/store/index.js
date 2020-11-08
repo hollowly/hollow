@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -5,8 +6,9 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 // 2. 创建对象
+	// Store：单一状态树
 const store = new Vuex.Store({
-	// 存储状态
+	// state：放一些基本的信息,和data类似
 	state: {
 		num:1000
 	},
@@ -18,8 +20,14 @@ const store = new Vuex.Store({
 		sub(state) {
 			state.num--
 		}
+	},
+	// getters:(计算属性) 和 computed 类似
+	getters: {
+		power(state) {
+			return state.num * state.num * 2
+		}
 	}
-	
+
 })
 
 // 3. 导出store组件
