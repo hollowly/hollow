@@ -18,7 +18,8 @@ const store = new Vuex.Store({
 			{id:193004, name:"james", age:28},
 			{id:193005, name:"tom", age:36},
 		],
-		info: {name:'koby',age:40,height:1.98}
+		info: {name:'koby',age:40,height:1.98},
+		books:['jquery','java','php','python']
 	},
 	// 修改状态
 	mutations: {
@@ -43,6 +44,9 @@ const store = new Vuex.Store({
 			Vue.set(state.info, 'address','洛杉矶')
 			// 删除同理
 			// Vue.delete(state.info, 'age');
+		},
+		updataBooks(state) {
+			state.books.push('git','github','gitee')
 		}
 	},
 	// getters:(计算属性) 和 computed 类似
