@@ -7,6 +7,9 @@
 
 		<h2>----------------App内容：getters相关信息----------------</h2>
 		<h2>{{$store.getters.power}}</h2>	
+		<h5>大于20岁的学生信息：{{$store.getters.more20Stu}}</h5>
+		<h2>大于20岁的学生人数：{{$store.getters.more20StuLength}}</h2>
+		<h3>{{$store.getters.moreAgeStu(30)}}</h3>
 
 
 
