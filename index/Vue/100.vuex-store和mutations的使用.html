@@ -1,0 +1,35 @@
+<script>
+	import Vue from 'vue'
+	import Vuex from 'vuex'
+	
+	Vue.use(Vuex)
+	
+	const store = new Vuex.Store({
+		// state：放一些基本的信息,和data类似
+		state: {
+			num:0,
+			student: [
+				{id:193001, name:"hollow", age:18},
+				{id:193002, name:"query", age:19},
+				{id:193003, name:"boby", age:24},
+				{id:193004, name:"james", age:28},
+				{id:193005, name:"tom", age:36},
+			]
+		},
+		mutations: {
+			add(state) {
+				state.num++;
+			},
+			sub(state) {
+				state.num--;
+			}
+		}
+		
+	})
+	
+	export default store
+	// 调用方法：在其他组件内调用：
+	// 调用属性：this.$store.num 	name为属性
+  // 调用方法：this.$store.commit('add')	add为方法
+  // 调用方法：this.$store.commit('sub')	sub为方法
+	</script>
