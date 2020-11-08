@@ -1,7 +1,7 @@
 <!--  -->
 <template>
 	<div>
-		{{$store.state.num}}
+		<h2>{{$store.state.num}}</h2>
 	</div>
 </template>
 
