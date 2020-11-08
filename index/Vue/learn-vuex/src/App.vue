@@ -1,8 +1,8 @@
 <template>
   <div id="app">
 		<h3>{{$store.state.num}}</h3>
-		<button @click='$store.state.num++'>+</button>
-		<button @click='$store.state.num--'>-</button>
+		<button @click='addClick'>+</button>
+		<button @click='subClick'>-</button>
 	<cpn1></cpn1>
   </div>
 </template>
@@ -14,7 +14,15 @@ export default {
 	name: 'App',
 	components: {
 		cpn1
-	}
+	},
+	methods: {
+		addClick() {
+			this.$store.commit('add')
+		},
+		subClick() {
+			this.$store.commit('sub')
+		}
+	},
 }
 </script>
 

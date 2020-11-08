@@ -5,11 +5,21 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 // 2. 创建对象
-
 const store = new Vuex.Store({
+	// 存储状态
 	state: {
 		num:1000
+	},
+	// 修改状态
+	mutations: {
+		add(state) {
+			state.num++
+		},
+		sub(state) {
+			state.num--
+		}
 	}
+	
 })
 
 // 3. 导出store组件
