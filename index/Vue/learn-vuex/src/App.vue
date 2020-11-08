@@ -11,6 +11,10 @@
 		<h2>大于20岁的学生人数：{{$store.getters.more20StuLength}}</h2>
 		<h3>{{$store.getters.moreAgeStu(30)}}</h3>
 
+		<h2>----------------App内容：mutations相关信息----------------</h2>
+		<button @click='addCount(5)'>+5</button>
+		<button @click='addCount(10)'>+10</button>
+		<button @click='addStudent'>添加学生</button>
 
 
 
@@ -33,6 +37,20 @@ export default {
 		},
 		subClick() {
 			this.$store.commit('sub')
+		},
+		addCount(count) {
+			// 普通的提交封装
+			// this.$store.commit('addCount', count);
+
+			// 特殊的提交封装
+			this.$store.commit({
+				type:'addCount',
+				count
+			})
+		},
+		addStudent() {
+			let stu = {id:'193006', name:'alean', age:35}
+			this.$store.commit('addStudent',stu)
 		}
 
 	},

@@ -26,6 +26,15 @@ const store = new Vuex.Store({
 		},
 		sub(state) {
 			state.num--
+		},
+		addCount(state, payload) {
+			// 普通封装提交
+			// state.num += count;
+			// 特殊封装提交
+			state.num += payload.count
+		},
+		addStudent(state, stu) {
+			state.student.push(stu)
 		}
 	},
 	// getters:(计算属性) 和 computed 类似
