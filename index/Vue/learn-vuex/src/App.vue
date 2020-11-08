@@ -11,6 +11,10 @@
 		<h2>大于20岁的学生人数：{{$store.getters.more20StuLength}}</h2>
 		<h3>{{$store.getters.moreAgeStu(30)}}</h3>
 
+		<h2>----------------mutations内的数据响应原理----------------</h2>
+		<h2>{{$store.state.info}}</h2>
+		<button @click='addData'>添加数据</button>
+
 		<h2>----------------App内容：mutations相关信息----------------</h2>
 		<button @click='addCount(5)'>+5</button>
 		<button @click='addCount(10)'>+10</button>
@@ -51,6 +55,9 @@ export default {
 		addStudent() {
 			let stu = {id:'193006', name:'alean', age:35}
 			this.$store.commit('addStudent',stu)
+		},
+		addData() {
+			this.$store.commit('updataInfo')
 		}
 
 	},

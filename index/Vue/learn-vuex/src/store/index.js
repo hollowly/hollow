@@ -17,7 +17,8 @@ const store = new Vuex.Store({
 			{id:193003, name:"boby", age:24},
 			{id:193004, name:"james", age:28},
 			{id:193005, name:"tom", age:36},
-		]
+		],
+		info: {name:'koby',age:40,height:1.98}
 	},
 	// 修改状态
 	mutations: {
@@ -35,6 +36,13 @@ const store = new Vuex.Store({
 		},
 		addStudent(state, stu) {
 			state.student.push(stu)
+		},
+		updataInfo(state) {
+			// state.info['address'] = '洛杉矶'
+			// Vue.set才能将添加的数据添加到响应式系统中，而上面的确不会
+			Vue.set(state.info, 'address','洛杉矶')
+			// 删除同理
+			// Vue.delete(state.info, 'age');
 		}
 	},
 	// getters:(计算属性) 和 computed 类似
