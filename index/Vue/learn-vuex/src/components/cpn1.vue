@@ -1,15 +1,12 @@
 <!--  -->
 <template>
 	<div>
-		{{num}}
+		{{$store.state.num}}
 	</div>
 </template>
 
 <script>
 export default {
-	props: {
-		num:Number
-	}
 
 }
 
