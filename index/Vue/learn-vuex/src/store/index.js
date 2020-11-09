@@ -1,4 +1,5 @@
 
+import resolve from 'resolve'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -71,13 +72,25 @@ const store = new Vuex.Store({
 
 	// actions:和 mutations类似，但是异步操作只能在actions中进行
 	actions: {
-		aupdataInfo(context) {
-			setTimeout(() => {
-				context.commit('updataInfo')
-			}, 1000);
+		// context：上下文
+		aupdataInfo(context,payload) {
+		// 	setTimeout(() => {
+		// 		context.commit('updataInfo');
+		// 		// 同时接收字符串和函数
+		// 		console.log(payload.message);
+		// 		payload.aaa();
+		// 	}, 1000);
+		// }
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					context.commit('updataInfo');
+					console.log(payload);
+
+					resolve('我是resolve传入的参数，需要then来接收')
+			}, 1000)
+			})
 		}
 	}
-
 })
 
 // 3. 导出store组件

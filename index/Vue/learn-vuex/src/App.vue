@@ -59,7 +59,19 @@ export default {
 		},
 		addData() {
 			// this.$store.commit('updataInfo')
-			this.$store.dispatch('aupdataInfo')
+			// this.$store.dispatch('aupdataInfo',{
+			// 	// 同时传入字符串和函数
+			// 	message:"我是携带的信息",
+			// 	aaa:() => {
+			// 		console.log('里面已经完成了')
+			// 	}
+			// })
+
+			this.$store.dispatch('aupdataInfo','我是携带的信息')
+			.then(res => {
+				console.log('里面已经完成了');
+				console.log(res);
+			})
 		}
 
 	},
