@@ -1,5 +1,6 @@
 
 import Vue from 'vue'
+import { set } from 'vue/types/umd'
 import Vuex from 'vuex'
 
 import {add, sub, addCount, addStudent} from './mutations-types'
@@ -7,11 +8,41 @@ import {add, sub, addCount, addStudent} from './mutations-types'
 // 1. 安装插件
 Vue.use(Vuex)
 
+const moduleA = {
+	state: {
+		name:'zhangsan'
+	},
+	mutations:{
+		updateName(state, payload) {
+			state.name = payload
+		}
+	},
+	getters:{
+		fullName(state) {
+			return state.name + '1111'
+		},
+		fullName2(state, getters) {
+			return getters.fullName + '2222'
+		},
+		fullName3(state, getters, rootState) {
+			return getters.fullName2 + rootState.stateMseeage
+		}
+	},
+	actions:{
+		aupdataName(context) {
+			setTimeout(() => {
+				context.commit('updateName','wangwu')
+			}, 1000);
+		}
+	},
+}
+
 // 2. 创建对象
 	// Store：单一状态树
 const store = new Vuex.Store({
 	// state：放一些基本的信息,和data类似
 	state: {
+		stateMseeage:'我是root(根)state',
 		num:1000,
 		student: [
 			{id:193001, name:"hollow", age:18},
@@ -89,6 +120,10 @@ const store = new Vuex.Store({
 			}, 1000)
 			})
 		}
+	},
+
+	modules: {
+		a:moduleA
 	}
 })
 
