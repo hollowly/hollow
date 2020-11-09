@@ -67,6 +67,15 @@ const store = new Vuex.Store({
 				return state.student.filter(s => s.age > age)
 			}
 		}
+	},
+
+	// actions:和 mutations类似，但是异步操作只能在actions中进行
+	actions: {
+		aupdataInfo(context) {
+			setTimeout(() => {
+				context.commit('updataInfo')
+			}, 1000);
+		}
 	}
 
 })

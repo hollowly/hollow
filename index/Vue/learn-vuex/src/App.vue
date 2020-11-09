@@ -58,7 +58,8 @@ export default {
 			this.$store.commit(addStudent,stu)
 		},
 		addData() {
-			this.$store.commit('updataInfo')
+			// this.$store.commit('updataInfo')
+			this.$store.dispatch('aupdataInfo')
 		}
 
 	},
