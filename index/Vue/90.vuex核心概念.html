@@ -16,9 +16,16 @@ const store = new Vuex.Store({
 	// 修改状态,和 methods 类似
 	mutations: {  },
 
+	// 和mutations类似，但是是用来替代mutations进行异步操作
 	action: {   },
 	
-	dodule: {   }
+	// 模块：vuex允许我们将store割分成模块(modules)，而每个模块拥有自己的state、mutation、action、getters等
+	modules: {
+  	state:{ },
+  	mutation:{ },
+  	action:{ },
+  	getters:{ }
+}
 
 })
 
