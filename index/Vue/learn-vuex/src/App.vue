@@ -29,6 +29,7 @@
 
 <script>
 import cpn1 from './components/cpn1'
+import {add, sub, addCount, addStudent} from './store/mutations-types'
 
 export default {
 	name: 'App',
@@ -37,14 +38,14 @@ export default {
 	},
 	methods: {
 		addClick() {
-			this.$store.commit('add')
+			this.$store.commit(add)
 		},
 		subClick() {
-			this.$store.commit('sub')
+			this.$store.commit(sub)
 		},
 		addCount(count) {
 			// 普通的提交封装
-			// this.$store.commit('addCount', count);
+			// this.$store.commit(addCount, count);
 
 			// 特殊的提交封装
 			this.$store.commit({
@@ -54,7 +55,7 @@ export default {
 		},
 		addStudent() {
 			let stu = {id:'193006', name:'alean', age:35}
-			this.$store.commit('addStudent',stu)
+			this.$store.commit(addStudent,stu)
 		},
 		addData() {
 			this.$store.commit('updataInfo')

@@ -2,6 +2,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import {add, sub, addCount, addStudent} from './mutations-types'
+
 // 1. 安装插件
 Vue.use(Vuex)
 
@@ -23,19 +25,19 @@ const store = new Vuex.Store({
 	},
 	// 修改状态
 	mutations: {
-		add(state) {
+		[add](state) {
 			state.num++
 		},
-		sub(state) {
+		[sub](state) {
 			state.num--
 		},
-		addCount(state, payload) {
+		[addCount](state, payload) {
 			// 普通封装提交
 			// state.num += count;
 			// 特殊封装提交
 			state.num += payload.count
 		},
-		addStudent(state, stu) {
+		[addStudent](state, stu) {
 			state.student.push(stu)
 		},
 		updataInfo(state) {
