@@ -1,5 +1,4 @@
 
-import resolve from 'resolve'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
