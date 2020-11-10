@@ -21,17 +21,17 @@
 			echo '面积：'.$this->area.'<br/>';
 		}
 		
-		public function setSize($newsize){
-			$this->size = $newsize;
-		}
+		// public function setSize($newsize){
+		// 	$this->size = $newsize;
+		// }
 		
-		public function getSize(){
-			return $this->size;
-		}		
+		// public function getSize(){
+		// 	return $this->size;
+		// }		
 	}
 	//子类
 	class Circle extends Tuxing{
-		public $radius;    //半径
+		public $radius;    //半径e
 		public $perimter;  //周长
 		
 		function __construct($name,$area,$ra,$per=0){
