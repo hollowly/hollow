@@ -4,17 +4,51 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<!-- jsonp原理：
+				
+	
+	-->
 </head>
 <body>
-	<script>
-	
-	function show(weather) {
-		document.write(weather)
-	}
+	<button id='showWeather'>查看天气</button>
 
-	// show('来自我自己的天气预报')
+
+<script src="../jquery-3.5.0.js"></script>
+
+
+	<script>
+		// 原生js创建  jsonp 请求：
+	// $('#showWeather').click(function() {
+	// 	var script = document.createElement('script')
+		
+	// 	script.src = 'http://localhost:3000?callback=show';
+	// 	document.body.appendChild(script)
+	// })
+	
+	// function show(weather) {
+	// 	alert((weather))
+	// 	$('body > script:last').remove();
+	// }
+
+
+
+	// jquery创建 jspnp 请求：
+	$('#showWeather').click(function() {
+		$.ajax({
+			url:'http://localhost:3000',
+			type:'get',
+			dataType:'jsonp',
+			// 其实也是动态创建<script>
+			// 借助<script>发送跨越请求
+			// 必须有服务器端的支持！
+			success:function(weather) {
+				alert(weather);
+			}
+		})
+	})
+
 	</script>
 
-	<script src='http://localhost:3000?callback=show'></script>
+	<!-- <script src='http://localhost:3000?callback=show'></script> -->
 </body>
 </html>

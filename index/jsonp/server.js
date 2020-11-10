@@ -15,9 +15,12 @@ http.createServer(
 		res.setHeader('Content-Type','text/plain; charset=utf-8');
 		var weather = '北京 晴 12~32'
 		res.write(`${callback}("${weather}")`)
-		res.end();
+		
+		setTimeout(() => {
+			res.end();
+		}, 500);
 
-		console.log('server is runing','http://localhost:3000');
+		// console.log('server is runing','http://localhost:3000');
 
 }
 
