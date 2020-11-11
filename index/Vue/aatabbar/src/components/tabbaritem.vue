@@ -1,16 +1,19 @@
 <!--  -->
 <template>
-	<div class='tabbaritem'>
-		<slot></slot>
-		<slot></slot>
+	<div class='tabbaritem' @click='tabbaritemClick'>
+		<slot name='item-icon'></slot>
+		<slot name='item-text'></slot>
 	</div>
 </template>
 
 <script>
 export default {
-	data () {
-		return {
-
+	props: {
+		path:Array,
+	},
+	methods: {
+		tabbaritemClick() {
+			this.$router.indexOf(this.path)
 		}
 	},
 
@@ -25,5 +28,11 @@ export default {
 		height: 49px;
 		background: #f2f2f2f2;
 		float: left;
+	}
+	.tabbaritem  img {
+		width: 24px;
+		vertical-align: middle;
+		margin-top: 1px;
+		margin-bottom: 4px;
 	}
 </style>
