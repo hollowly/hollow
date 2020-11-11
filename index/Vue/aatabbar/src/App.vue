@@ -1,23 +1,26 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+		<tabbar>
+			<tabbaritem>
+				<img src="">
+				<div>我的</div>
+			</tabbaritem>
+		</tabbar>
   </div>
 </template>
 
 <script>
+import tabbar from './components/tabbar'
+import tabbaritem from './components/tabbaritem'
 export default {
-  name: 'App'
+	name: 'App',
+	components: {
+		tabbar,
+		tabbaritem
+	}
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+ @import url('./assets/css/base.css');
 </style>
