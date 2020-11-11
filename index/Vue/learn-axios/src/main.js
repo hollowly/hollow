@@ -28,11 +28,20 @@ new Vue({
 // 	console.log(res);
 // })
 
+// axios({
+// 	url:'http://123.207.32.32:8000/home/',
+// 	// 专门针对get请求参数拼接
+// 	type:'sell',
+// 	page:'1'
+// }).then(res => {
+// 	console.log(res);
+// })
+
 axios({
-	url:'http://123.207.32.32:8000/home/',
-	// 专门针对get请求参数拼接
-	type:'sell',
-	page:'1'
+	url:'http://123.207.32.32:8000/home',
+	type:'pop',
+	page:'2',
+	method:'pop',
 }).then(res => {
 	console.log(res);
 })
