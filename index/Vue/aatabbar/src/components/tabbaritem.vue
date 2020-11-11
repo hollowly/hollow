@@ -1,7 +1,8 @@
 <!--  -->
 <template>
 	<div class='tabbaritem' @click='tabbaritemClick'>
-		<slot name='item-icon'></slot>
+		<slot name='item-icon' v-if='isactive'></slot>
+		<slot name='item-icon-active' v-else></slot>
 		<slot name='item-text'></slot>
 	</div>
 </template>
@@ -9,16 +10,19 @@
 <script>
 export default {
 	props: {
-		path:Array,
+		path:String,
 	},
 	methods: {
 		tabbaritemClick() {
-			this.$router.indexOf(this.path)
+			this.$router.push(this.path)
 		}
 	},
-
+	computed: {
+		isactive() {
+			return this.$router.indexOf(this.path)
+		}
+	},
 }
-
 </script>
 
 <style>
