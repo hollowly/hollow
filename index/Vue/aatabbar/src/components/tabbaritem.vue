@@ -3,7 +3,7 @@
 	<div class='tabbaritem' @click='tabbaritemClick'>
 		<slot name='item-icon' v-if='isactive'></slot>
 		<slot name='item-icon-active' v-else></slot>
-		<slot name='item-text'></slot>
+		<div :style='getColor'><slot name='item-text'></slot></div>
 	</div>
 </template>
 
@@ -19,7 +19,10 @@ export default {
 	},
 	computed: {
 		isactive() {
-			return this.$router.indexOf(this.path)
+			return this.$route.path.indexOf(this.path)
+		},
+		getColor() {
+			return this.isactive ? {} : {'color':'red'}
 		}
 	},
 }
