@@ -130,7 +130,7 @@ new Vue({
 // })
 //------------------------------
 
-// 方法三
+// 方法三/方法四
 import {request} from './network/request'
 
 request({
