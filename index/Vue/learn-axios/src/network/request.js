@@ -83,8 +83,8 @@ export function request(config) {
 
 	// 2.2响应拦截
 	instance.interceptors.request.use(res => {
-		// console.log(res);
-		return res.data
+		console.log(res);
+		return res
 	}, err => {
 		console.log(err);
 	})
