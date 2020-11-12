@@ -72,29 +72,62 @@ new Vue({
 
 //---------------------------------------------------------------------------
 // 4.创建对应的axios实例
-const instance1 = axios.create({
-	baseURL:'http://123.207.32.32:8000',
-	timeout:5000,
-})
+// const instance1 = axios.create({
+// 	baseURL:'http://123.207.32.32:8000',
+// 	timeout:5000,
+// })
 
-instance1({
-	url:'home/multidata',
-}).then(res => {
-	console.log(res);
-})
+// instance1({
+// 	url:'home/multidata',
+// }).then(res => {
+// 	console.log(res);
+// })
 
-const instance2 = axios.create({
-	baseURL:'http://123.207.30.30:8000',
-	timeout:10000,
-	headers:{},
-})
+// const instance2 = axios.create({
+// 	baseURL:'http://123.207.30.30:8000',
+// 	timeout:10000,
+// 	headers:{},
+// })
 
-instance2({
-	url:'home/data',
-	params: {
-		type:"pop",
-		page:3
-	}
-}).then(res => {
-	console.log(res);
-})
+// instance2({
+// 	url:'home/data',
+// 	params: {
+// 		type:"pop",
+// 		page:3
+// 	}
+// }).then(res => {
+// 	console.log(res);
+// })
+
+//---------------------------------------------------------------------------
+// 5.封装request模块
+
+// 方法一：
+// import {requset} from './network/request'
+
+// requset({
+// 	url:'/home/multidata'
+// },res => {
+// 	console.log(res);
+// },err => {
+// 	console.log(err);
+// })
+//------------------------------
+
+// 方法二：
+// import {requset} from './network/request'
+
+// requset({
+// 	baseConfig: {
+// 		url:'/home/multidata'
+// 	},
+// 	success: function(res) {
+// 		console.log(res);
+// 	},
+// 	failure: function(err) {
+// 		console.log(err);
+// 	}
+// })
+//------------------------------
+
+// 方法三
