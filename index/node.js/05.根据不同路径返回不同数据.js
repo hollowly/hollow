@@ -15,19 +15,11 @@ server.on('request',function(req ,res) {
     } else if (url === '/haha') {
         res.end('哈哈哈 page');
     } else if(url === '/products') {
-            var products = [{
-                name:'苹果 X',
-                price:8888
-            },
-            {
-                name:'菠萝 X',
-                price:6666
-            },
-            {
-                name:'小辣椒 X',
-                price:1999
-            },
-        ]
+            var products = [
+							{name:'苹果 X',price:8888},
+							{name:'菠萝 X',price:6666},
+							{name:'小辣椒 X',price:1999},
+						]
         res.end(JSON.stringify(products));
     } else {
         res.end('404 Not Found.');
