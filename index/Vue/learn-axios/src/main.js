@@ -131,3 +131,16 @@ new Vue({
 //------------------------------
 
 // 方法三
+import {request} from './network/request'
+
+request({
+	url:'/home/data',
+	params: {
+		type:'pop',
+		page:5
+	}
+}).then(res => {
+	console.log(res);
+}).catch(err => {
+	console.log(err);
+})
