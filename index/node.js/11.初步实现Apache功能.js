@@ -12,7 +12,6 @@ server.on('request',function(req, res) {
     if(url !== '/') {
         filePath = url;
     }
-    console.log(wwwDir + filePath);
     fs.readFile(wwwDir + filePath, function(err,data) {
         if(err) {
             res.end('404 Not Found.');
@@ -21,9 +20,4 @@ server.on('request',function(req, res) {
         res.end(data);
     })
 
-})
-
-
-server.listen(3000, function() {
-    console.log('Server is running...');
-})
+}).listen(3000)
