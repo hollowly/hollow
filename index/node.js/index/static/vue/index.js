@@ -9,3 +9,6 @@ new Vue({
 		]
 	}
 })
+
+
+export default arr;
