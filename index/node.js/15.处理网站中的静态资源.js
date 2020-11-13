@@ -14,8 +14,7 @@ http.createServer((req, res) => {
 		fs.readFile('.' + url,(err,data) => {
 			if(err) {
 				return res.end('读取失败')
-			} 
-			console.log('.' + url);
+			}
 			res.end(data)
 		})
 	} else {
