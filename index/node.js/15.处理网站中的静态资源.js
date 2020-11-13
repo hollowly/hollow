@@ -3,7 +3,7 @@ const fs = require('fs')
 
 http.createServer((req, res) => {
 	const url = req.url;
-	if(url === '/?' || url === '/') {
+	if(url === '/?' || url === '/' || url === '/index') {
 		fs.readFile('./index/index.html',(err, data) => {
 			if(err) {
 				return res.end('读取失败')
