@@ -33,14 +33,14 @@ http.createServer((req, res) => {
 			res.end(data)
 		})
 	} else if(pathname === '/pinglun') {
-		const obj2 = {};
+		res.statusCode = 302
+		res.setHeader('location','/index/static/vue/index.js')
+		var obj2 = {};
 		obj2['name'] = urlObj.query.name
 		obj2['message'] = urlObj.query.message
 		obj2['data'] = '2020-11-13'
 		arr.unshift(obj2)
 		console.log(arr);
-		res.statusCode = 302
-		res.setHeader('location','/')
 		res.end()
 	} else {
 		fs.readFile('./index/404.html',(err, data) => {
