@@ -13,10 +13,9 @@ server.on('request',function(req, res) {
         filePath = url;
     }
     fs.readFile(wwwDir + filePath, function(err,data) {
-        if(err) {
-            res.end('404 Not Found.');
-            return;
-        }
+			if(err) {
+				return res.end('404 Not Found')
+			}
         res.end(data);
     })
 
