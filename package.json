@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/2499538506/hollow#readme",
   "devDependencies": {
+    "art-template-loader": "^1.4.3",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "git-cz": "^4.7.1",
