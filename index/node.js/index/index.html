@@ -29,7 +29,7 @@
 				width: 100%;
 				height: 50px;
 				border: 1px solid #ccc;
-				line-height: 30px;
+				line-height: 50px;
 				list-style: none;
 				text-indent: 10px;
 			}
@@ -46,17 +46,15 @@
 		<a href="/post">发表留言</a>
 	</header>
 	<hr>
-	<div id='app'>
+	<div id='comments'>
 		<ul>
-			<li v-for='item in arr'>{{item.name + '说：' + item.message }}
-				<span>{{item.date}}</span>
-			</li>
+			<!-- 使用art-template对数据进行处理 -->
+			{{each comments}}
+			<li>{{$value.name}}说：{{$value.message}}<span>{{$value.date}}</span></li>
+			{{/each}}
 		</ul>
 	</div>
 	<script></script>
-
-		<script src="/index/static/vue/vue.js"></script>
-		<script src="/index/static/vue/index.js"></script>
 		<script src="/index/static/js/base.js"></script>
 </body>
 </html>
