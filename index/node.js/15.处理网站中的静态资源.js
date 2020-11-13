@@ -1,24 +1,28 @@
 const http = require('http')
 const fs = require('fs')
+const url = require('url')
 
 http.createServer((req, res) => {
-	const url = req.url;
-	if(url === '/?' || url === '/' || url === '/index') {
+	const urlObj = url.parse(req.url,true)
+	console.log(urlObj.query);
+	// pathname：单独获取不包含？之后的路径
+	const pathname = urlObj.pathname
+	if(pathname === '/?' || pathname === '/' || pathname === '/index') {
 		fs.readFile('./index/index.html',(err, data) => {
 			if(err) {
 				return res.end('读取失败')
 			}
 			res.end(data)
 		}) 
-	} else if(url === '/post') {
+	} else if(pathname === '/post') {
 		fs.readFile('./index/post.html',(err, data) => {
 			if(err) {
 				return	res.end('404 Not Font.')
 			}
 			res.end(data)
 		})
-	} else if(url.indexOf('/index/static/') === 0) {
-		fs.readFile('.' + url,(err,data) => {
+	} else if(pathname.indexOf('/index/static/') === 0) {
+		fs.readFile('.' + pathname,(err,data) => {
 			if(err) {
 				return res.end('读取失败')
 			}

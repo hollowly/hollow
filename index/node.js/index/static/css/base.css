@@ -1,6 +1,9 @@
 body {
 	margin: 0;
 	padding: 0;
+	background: url('/index/static/img/girl.jpg') center center;
+	background-size: cover;
+	/* background-repeat: no-repeat; */
 	background:linear-gradient(to right,#69F 30%,#6FF 80%);
 	/* background-image: linear-gradient(rgba(255, 255, 255, 0),rgb(0, 0, 0)); 
 	background-image: linear-gradient(rgba(0, 0, 0, 1),rgb(255, 255, 255,0));

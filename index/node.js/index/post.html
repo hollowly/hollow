@@ -39,8 +39,8 @@
 				height: 300px;
 				resize: none;
 			}
-			form textarea:focus {
-				border: 1px solid blue;
+			form textarea:focus, form input:focus {
+				box-shadow: 1px 1px 10px darksalmon;
 			}
 		</style>
 </head>
@@ -50,13 +50,17 @@
 		<a href="/">回到首页</a>
 	</header>
 	<hr>
-	<form action="/">
+	<form action="/index.html" method="get">
 		<label for="name">
-			<strong>你的大名</strong> <br>
-			<input type="text" id='name'>
+			<strong>你的大名</strong>
+			<input type="text" id='name' name='name' required maxlength="10" minlength="2" placeholder="请输入你的姓名">
 		</label> <br><br>
-		<strong>留言内容</strong> <br>
-		<textarea cols="30" rows="10"></textarea> <br>
+
+		<label for="message">
+			<strong>留言内容</strong> <br>
+			<textarea cols="30" rows="10" name='message' id='message' required></textarea> <br>
+	</label>
+
 
 		<input type="submit" value="发表" id='publish'>
 	</form>
