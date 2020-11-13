@@ -15,8 +15,11 @@ http.createServer((req, res) => {
 			if(err) {
 				return res.end('读取失败')
 			} 
+			console.log('.' + url);
 			res.end(data)
 		})
+	} else {
+		res.end('404 Not Font.')
 	}
 }).listen(3000,() => {
 	console.log('server is running http:127.0.0.1:3000');
