@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        div{
+            background: red;
+            width: 150px;
+            height: 150px;
+            margin: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="选项卡1">
+    <input type="button" value="选项卡2">
+    <input type="button" value="选项卡3">
+    <input type="button" value="选项卡4">
+
+    <div>11111</div>
+    <div>22222</div>
+    <div>33333</div>
+    <div>44444</div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('input').on('click',function()
+        {
+            idx = $(this).index();
+            $('div').eq(idx).show().siblings('div').hide();
+        })
+    })
+</script>

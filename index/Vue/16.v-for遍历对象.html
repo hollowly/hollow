@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <ul>
+            <!-- 在遍历对象中，如果只是获得一个值，那么获得的是value -->
+            <li v-for='item in info'>{{item}}</li> <br>
+
+            <!-- 获取value和key的格式：(value, key) -->
+            <li v-for='(value, key) in info'>{{key}}-{{value}}</li> <br>
+            
+            <!-- 获取value,key和index -->
+            <li v-for='(value, key, index) in info'>{{index+1}}.{{key}}-{{value}}</li>
+        </ul>
+    </div>
+
+    <script src="vue.js"></script>
+    
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data: {
+                info: {
+                    name:'boy',
+                    age:18,
+                    height:1.88,
+                }
+            }
+        })
+    </script>
+</body>
+</html>

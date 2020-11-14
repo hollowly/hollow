@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            border:1px solid red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="按钮1" id='btn1'>
+    <input type="button" value="按钮2" id='btn2'>
+    <div id='div1'></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        //给div注册一个自定义事件.
+        $('#div1').on('hollow',function()
+        {
+            console.log('我是hollow事件');
+        })
+
+        $('#btn2').on('click',function()
+        {
+            var res = confirm('是否触发事件');
+
+            if(res)
+            {
+                $('#div1').trigger('hollow');
+            }
+        })
+    })
+</script>

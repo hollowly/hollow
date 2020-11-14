@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width:100px;
+        height:50px;
+        background: red;
+        margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var adiv = document.getElementsByTagName('div');
+
+        for(i = 0;i < adiv.length;i++)
+        {
+            //adiv[i].timer=null;
+
+            adiv[i].onmouseover=function()
+            {
+                move(this,400);
+            }
+
+            adiv[i].onmouseout=function()
+            {
+                move(this,100);
+            }
+        }
+    }
+
+    //var timer = null;
+
+    function move(obj,iTarget)
+    {
+        clearInterval(obj.timer);
+
+        obj.timer=setInterval(function(){
+            var speed = (iTarget - obj.offsetWidth) / 6; //越远速度越快，越近速度越慢
+            speed = speed>0?Math.ceil(speed):Math.floor(speed);//取整
+
+            if(obj.offsetWidth==iTarget)
+            {
+                clearInterval(obj.timer);
+            }
+            else
+            {
+                obj.style.width=obj.offsetWidth+speed+'px';
+            }
+        },30)
+    } 
+</script>

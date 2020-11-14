@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            position: fixed;
+            bottom: 0;
+            right: -23px;
+            position: absolute;
+            display: none;
+        }
+        span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            position: relative;
+            top: -215px;
+            right: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id='div1'>
+        <img src="img/360.jpg">
+        <span></span>
+    </div>
+</body>
+</html>
+
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#div1 > span').on('click',function()
+        {
+            $(this).parent('div').remove();
+        });
+
+        $('#div1').slideDown(500).fadeOut(500).fadeIn(500);
+    })
+</script>

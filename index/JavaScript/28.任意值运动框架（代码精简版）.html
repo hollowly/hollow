@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background: yellow;
+            margin:10px;
+            float: left;
+            font-size:14px;
+            border:0px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id='div1'>变高</div>
+    <div id='div2'>变宽</div>
+    <div id='div3'>变字</div>
+    <div id='div4'>变border</div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var odiv1 = document.getElementById('div1');
+        var odiv2 = document.getElementById('div2');
+        var odiv3 = document.getElementById('div3');
+        var odiv4 = document.getElementById('div4');
+            //变高
+            odiv1.onmouseover = function()
+            {
+                move(this,'height',500);
+            }
+            odiv1.onmouseout = function()
+            {
+                move(this,'height',200);
+            }
+            //变宽
+            odiv2.onmouseover = function()
+            {
+                move(this,'width',500);
+            }
+            odiv2.onmouseout = function()
+            {
+                move(this,'width',200);
+            }
+            //变字
+            odiv3.onmouseover = function()
+            {
+                move(this,'fontSize',100);
+            }
+            odiv3.onmouseout = function()
+            {
+                move(this,'fontSize',14);
+            }
+            //border
+            odiv4.onmouseover = function()
+            {
+                move(this,'borderWidth',80);
+            }
+            odiv4.onmouseout = function()
+            {
+                move(this,'borderWidth',0);
+            }
+    }
+    //封装函数，取样式
+    function getStyle(obj,name)
+    {
+        if(obj.currentStyle)
+        {
+            return obj.currentStyle[name];
+        }
+        else
+        {
+            return getComputedStyle(obj,false)[name];
+        }
+    }
+
+    function move(obj,attr,iTarget)
+    {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+
+            var cur = parseInt(getStyle(obj,attr));
+
+            var speed = (iTarget-cur)/6;
+            speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+            if(cur == iTarget)
+            {
+                clearInterval(obj.timer);
+            }
+            else
+            {
+               obj.style[attr]=cur+speed+'px';
+            }
+        },30)
+    }
+</script>

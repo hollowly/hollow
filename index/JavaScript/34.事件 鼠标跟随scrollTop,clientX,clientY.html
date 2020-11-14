@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            background:red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body style = "height:2000px;width:2000px">
+    <div id='div1'></div>
+</body>
+</html>
+
+<script>
+    window.onload = function()
+    {
+        var odiv = document.getElementById('div1');
+
+        document.onmousemove = function()
+        {
+            var top = document.body.scrollTop || document.documentElement.scrollTop;
+            var left = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+            odiv.style.left = event.clientX + left + 'px';
+            odiv.style.top = event.clientY + top + 'px';
+        }
+    }
+</script>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隔行变色</title>
+    <style>
+    table{
+        margin: 0px auto;
+        text-align: center;
+    }
+    tr{
+        display: block;
+        border-bottom:1px solid #ccc;
+    }
+    td,th{
+        text-align: center;
+        width: 120px;
+    }
+    table > tr:first{
+        border-bottom: 1px solid red;
+    }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>产品名称</th>
+                <th>产地</th>
+                <th>厂商</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>爱美</td>
+                <td>福州</td>
+                <td>爱美电子</td>
+            </tr>
+            <tr>
+                <td>美好</td>
+                <td>北京</td>
+                <td>美好集团</td>
+            </tr>
+            <tr>
+                <td>理想</td>
+                <td>沈阳</td>
+                <td>理想科技</td>
+            </tr>
+            <tr>
+                <td>编程</td>
+                <td>长春</td>
+                <td>明日科技</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<script src='./jquery-3.5.0.js'></script>
+<script>
+    $(function()
+    {
+        $('tbody > tr:odd').css('background','pink');
+        $('tbody > tr:even').css('background','skyblue');
+
+
+        $('tbody > tr').mouseenter(function()
+        {
+            color = $(this).css('background');
+            $(this).css('background','yellow');
+
+        }).mouseleave(function()
+        {
+            $(this).css('background',color);
+        });
+    });
+</script>

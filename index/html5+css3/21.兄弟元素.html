@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first{
+            color: red;
+        }
+
+        /* 找到该元素的下一个兄弟元素 */
+        .first + li{
+            color: blue;
+        }
+
+        /* 找到该元素下的所有兄弟元素 */
+        .first ~ li{
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>前端</li>
+        <li>后端</li>
+        <li class="first">css</li>
+        <li>javascript</li>
+        <li>html5</li>
+    </ul>
+</body>
+</html>

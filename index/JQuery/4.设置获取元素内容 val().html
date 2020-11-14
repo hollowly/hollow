@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="button" value='按钮' id='btn'><br><br>
+    <input type="text" id='txt' value="哈哈哈">
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#btn').click(function()
+        {
+            $('#txt').val();//不给参数是获取
+
+            $('#txt').val('我是设置的内容');//给参数是设置
+        })
+    })
+</script>

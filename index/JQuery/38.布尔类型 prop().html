@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="button" value='设置' id='btn1'><br><br>
+    <input type="checkbox" id='box'>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#btn1').click(function()
+        {
+            //在jq1.6之后，对于checked,selected,disabled这类boolean类型的属性，来说，不能用attr，要用prop方法
+            console.log($('#box').prop('checked',true));
+        })
+    })
+</script>

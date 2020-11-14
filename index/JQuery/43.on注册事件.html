@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="按钮" id='one'>
+    <div id='div1'></div>
+    <span>span标签</span>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#one').click(function()
+        {
+            var newdiv = $('<div></div>');
+            newdiv.css('border','1px solid green');
+            newdiv.attr('id','div1');
+            $('body').append(newdiv);
+        })
+        
+        //on简单注册事件.不支持动态注册
+        // $('#div1').on('click',function()
+        // {
+        //     console.log('单击事件');
+        // })
+
+        //on委托注册.支持动态注册
+        $('body').on('click','div,span',function()
+        {
+            console.log('单击事件..');
+        })
+    })
+</script>

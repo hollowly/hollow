@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 450px;
+            height: 450px;
+            border:15px solid #ccc;
+            border-radius: 450px;
+            margin: 100px auto;
+            position: relative;
+        }
+        /* 4根儿线 */
+        .box > .box-div{
+            width: 10px;
+            height: 100%;
+            background: #ccc;
+            position: absolute;
+            left: 49%;
+        }
+        /* 隐藏白色的div */
+        .box > .div1{
+            width: 410px;
+            height: 410px;
+            background: white;
+            border-radius: 410px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform:translate(-50%,-50%);
+        }
+        /* 中心固定圆 */
+        .box > .div1 > .circular{
+            width: 25px;
+            height: 25px;
+            border-radius: 25px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform:translate(-50%,-50%);
+            background: #ccc;
+        }
+        /* 小时线 */
+        .box > .div1 > .hour{
+            background: blue;
+            width: 4px;
+            height: 38%;
+            position: absolute;
+            left: 50%;
+            top: 31%;
+            transform:translate(-50%,-50%);
+
+            
+            transform-origin: center bottom;
+
+            animation-name: movehour;
+            animation-duration: 60s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        /* 分钟线 */
+        .box > .div1 > .mnute{
+            background: green;
+            width: 6px;
+            height: 30%;
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            transform:translate(-50%,-50%);
+
+
+            transform-origin: center bottom;
+
+            animation-name: movemnute;
+            animation-duration: 3600s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        /* 秒钟线 */
+        .box > .div1 > .second{
+            background: red;
+            width: 11px;
+            height: 22%;
+            position: absolute;
+            left: 50%;
+            top: 39%;
+            transform:translate(-50%,-50%);
+
+            transform-origin: center bottom;
+
+            animation-name: movesecond;
+            animation-duration: 216000s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        /* 3根儿线css */
+        .box > .box-div:nth-child(2){
+            transform: rotate(30deg);
+        }
+        .box > .box-div:nth-child(3){
+            transform: rotate(60deg);
+        }
+        .box > .box-div:nth-child(4){
+            transform: rotate(90deg);
+        }
+        .box > .box-div:nth-child(5){
+            transform: rotate(120deg);
+        }
+        .box > .box-div:nth-child(6){
+            transform: rotate(150deg);
+        }
+
+        /* 动画 */
+        @keyframes movehour {
+            0%{
+                transform:translate(-50%,-50%) rotate(0deg);
+            }
+            100%{
+                transform: translate(-50%,-50%) rotate(360deg);
+            }
+        }
+        @keyframes movemnute {
+            0%{
+                transform:translate(-50%,-50%) rotate(0deg);
+            }
+            100%{
+                transform: translate(-50%,-50%) rotate(360deg);
+            }
+        }
+        @keyframes movesecond {
+            0%{
+                transform:translate(-50%,-50%) rotate(0deg);
+            }
+            100%{
+                transform: translate(-50%,-50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-div"></div>
+        <div class="box-div"></div>
+        <div class="box-div"></div>
+        <div class="box-div"></div>
+        <div class="box-div"></div>
+        <div class="box-div"></div>
+
+        <div class="div1">
+
+            <div class="second"></div>
+            <div class="mnute"></div>
+            <div class="hour"></div>
+            <div class="circular"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

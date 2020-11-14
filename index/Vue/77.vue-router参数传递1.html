@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<h2>{{$route.query}}</h2>
+	<h2>你的名字叫：{{$route.query.name}}</h2>
+	<h2>你今年：{{$route.query.age}}岁</h2>
+	<h2>你现在：{{$route.query.height}}m</h2>
+
+	<script src="vue.js"></script>
+
+	<script>
+		// URL：协议://主机:端口(port)/路径?查询
+		//			scheme://host:port/path?query#fragment
+		// <router-link :to="'/user/'+userId">我的</router-link>
+		// <router-link :to="{path:'/profile',query:{name:'hollow',age:18,height:1.88}}">档案</router-link>
+	</script>
+</body>
+</html>

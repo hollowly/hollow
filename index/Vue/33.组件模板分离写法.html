@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <cpn1></cpn1>
+        <cpn2></cpn2>
+    </div>
+
+    <template id='cpn1'>
+        <div>
+            <h1>我是标题1111</h1>
+            <p>11111</p>
+        </div>
+    </template>
+
+    <template id='cpn2'>
+        <div>
+            <h1>我是标题2222</h1>
+            <p>22222</p>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    
+    <script>
+        // 全局分离写法
+        Vue.component('cpn1', {
+            template:'#cpn1'
+        })
+
+
+        const app = new Vue({
+            el:'#app',
+            // 局部分离写法
+            components: {
+                cpn2: {
+                    template:'#cpn2',
+                }
+            }
+        })
+    </script>
+</body>
+</html>

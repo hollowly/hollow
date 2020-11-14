@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="vue.js"></script>
+
+    <script>
+// 十。webpack 中配置 uglifyjsWebpackPlugin：
+// 1.在项目下安装依赖：(如果要安装最新版本可以去掉@后面的数字)
+// npm install uglifyjs-webpack-plugin@1.1.1 --save-dev
+// -----------------------------------------------------------------------------------------------------------------------------
+// 2.在 webpack.config.js 中配置 UglifyjsWebpackPlugin
+// 先引用 UglifyjsWebpackPlugin：
+// 	const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin'); 
+// 然后在plugins中添加 new UglifyjsWebpackPlugin(),
+//     	plugins:[
+//       	    new webpack.BannerPlugin('最终版权归hollow所有'),
+//       	    new HtmlWebpackPlugin({
+//         	    template: 'index.html',
+//       	}),
+//       	    new UglifyjsWebpackPlugin(),
+// 	]
+        
+    </script>
+</body>
+</html>

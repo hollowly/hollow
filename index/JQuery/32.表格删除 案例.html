@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        table{
+            width: 300px;
+            text-align: center;
+            position: absolute;
+            top:50px;
+            left: 50px;
+            
+        }
+        table thead{
+            background: pink;
+        }
+        table tbody{
+            background: skyblue;
+        }
+        a{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="清空内容" id='remove'>
+    <table border cellspacing=0>
+        <thead>
+            <tr>
+                <td>课程名称</td>
+                <td>所属学院</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+
+        <tbody id='tbody'>
+            <tr>
+                <td>html</td>
+                <td>前端与开发</td>
+                <td><a href='#'>delete</a></td>
+            </tr>
+            <tr>
+                <td>javascript</td>
+                <td>前端与开发</td>
+                <td><a href='#'>delete</a></td>
+            </tr>
+            <tr>
+                <td>css</td>
+                <td>前端与开发</td>
+                <td><a href='#'>delete</a></td>
+            </tr>
+            <tr>
+                <td>jourey</td>
+                <td>前端与开发</td>
+                <td><a href='#'>delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#remove').click(function()
+        {
+            $('#tbody').empty();
+        })
+
+        $('td > a').click(function()
+        {
+            $(this).parent('td').parent('tr').remove();
+        })
+    })
+</script>

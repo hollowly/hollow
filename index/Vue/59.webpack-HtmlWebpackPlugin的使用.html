@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="vue.js"></script>
+
+    <script>
+// 九。webpack 配置 HtmlWebpackPlugin：
+// 1. 在项目下安装依赖：(如果要安装最新版本可以去掉@后面的数字)
+// npm install html-webpack-plugin@3.2.0 --save-dev
+// -----------------------------------------------------------------------------------------------------------------------------
+// 2. 在 webpack.config.is 中配置 plugins
+// 先引用 plugins：
+// 	const HtmlWebpackPlugin = require('html-webpack-plugin'); 
+// 然后在plugins中添加 new HtmlWebpackPlugin(),：
+//     	plugins:[
+//       	    new webpack.BannerPlugin('最终版权归hollow所有'),
+//       	    new HtmlWebpackPlugin(),
+//     	]
+// -----------------------------------------------------------------------------------------------------------------------------
+// 3.打包npm run build：
+// 会在 dist文件夹中生成一个 html 文件
+// -----------------------------------------------------------------------------------------------------------------------------
+// 4.修改 webpack.config.js 中配置的 publicPath: 'dist/' ：
+// 因为生成的 html 是在 dist 文件中，所以之前在webpack.config.js 中配置的 publicPath: 'dist/' 路径就不需要了：
+//     output: {      //出口文件
+//         path: path.resolve(__dirname, 'dist'),  //出口文件路径
+//         filename: 'bundle.js',   //出口文件名字
+//         //  publicPath: 'dist/'
+//       },
+// -----------------------------------------------------------------------------------------------------------------------------
+// 5. 让 HtmlWebpackPlugin 根据模板来生成新的 html 文件：
+// 因为新生成的文件没有包含 <div id='app'></div> 
+// 所以我们修改 webpack.config.js 中的 plugins 里的 new HtmlWebpackPlugin 来进行配置：
+//     plugins:[
+//       new webpack.BannerPlugin('最终版权归hollow所有'),
+//       new HtmlWebpackPlugin({
+//         template: 'index.html',
+//       }),
+//     ]
+// -----------------------------------------------------------------------------------------------------------------------------
+// 6.npm run build 打包：
+// 打包后发现新生成的 html 文件包含了我们以前 html 的所有内容
+        
+    </script>
+</body>
+</html>

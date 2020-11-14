@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #div1{
+            width:100px;
+            background: pink;
+            height: 100px;
+        }
+        .font{
+            font-size: 50px;
+        }
+        .width{
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='添加类' id='add'>
+    <input type="button" value='移除类' id='remove'>
+    <input type="button" value='判断类' id='has'>
+    <input type="button" value='切换类' id='toggle'>
+    <div id='div1'>div1</div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+       
+        $('#add').click(function()
+        {
+             //1.添加类
+            $('#div1').addClass('font width')
+        })
+
+        $('#remove').click(function()
+        {
+             //1.移除类
+            $('#div1').removeClass('font width')
+        })
+
+        $('#has').click(function()
+        {
+             //1.判断类.判断一个元素有没有某个类，有就返回true，没有就返回false.
+            alert($('#div1').hasClass('font width'));
+        })
+
+        $('#toggle').click(function()
+        {
+             //1.切换类.如果元素有这个类就移除，没有就添加这个类.
+            $('#div1').toggleClass('font width')
+        })
+    })
+</script>

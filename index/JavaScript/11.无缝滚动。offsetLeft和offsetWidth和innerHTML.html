@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width:200px;
+            height:100px
+        }
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #div1{
+            width:800px;
+            height:100px;
+            margin:100px auto;
+            position: relative;
+            background:red;
+            overflow:hidden;
+            /* 隐藏溢出的 */
+        }
+        #div1 ul{
+            position:absolute;left:0;right:0;
+            float:left;
+        }
+        #div1 ul li{
+            float:left;
+            list-style:none;
+            width:200px;height:100px;
+            
+        }
+        #left1{
+            height:100px;
+            width:100px;
+            background:pink;
+            font-size:25px;color:green;
+            margin-right:100px;
+        }
+        #right1{
+            height:100px;
+            width:100px;
+            background:pink;
+            font-size:25px;color:firebrick;
+            
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <input type="button" value="向左走" id="left1">
+        <input type="button" value="向右走" id="right1">
+    </center>
+    <div id="div1">
+        <ul>
+            <li><img src=img/10.jpg></li>
+            <li><img src=img/11.jpg></li>
+            <li><img src=img/12.jpg></li>
+            <li><img src=img/13.jpg></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<script>
+
+    window.onload=function()
+    {
+        var odiv1=document.getElementById('div1');
+        var oul=odiv1.getElementsByTagName('ul')[0];
+        var ali=oul.getElementsByTagName('li');
+        var timer=null;
+        var spend=2;
+
+        oul.innerHTML=oul.innerHTML+oul.innerHTML;
+
+        oul.style.width=ali[0].offsetWidth * ali.length+'px';
+
+        function move()
+        {
+            if(oul.offsetLeft<-oul.offsetWidth/2)
+            {
+                oul.style.left='0';
+            }
+            if(oul.offsetLeft>0)
+            {
+                oul.style.left=-oul.offsetWidth/2+'px';
+            }
+            oul.style.left=oul.offsetLeft+spend+'px';
+        }
+
+        timer=setInterval(move,30);
+
+        odiv1.onmouseover=function()
+        {
+            clearInterval(timer);
+        }
+        odiv1.onmouseout=function()
+        {
+            timer=setInterval(move,30);
+        }
+
+        var oleft=document.getElementById('left1');
+        var oright=document.getElementById('right1');
+
+        oleft.onclick=function()
+        {
+            spend=-2;
+        }
+        oright.onclick=function()
+        {
+            spend=2;
+        }
+
+    }
+</script>

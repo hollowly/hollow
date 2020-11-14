@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width:420px;
+            height: 300px;
+            list-style: none;
+            border:1px solid pink;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        ul > li{
+            width: 60px;
+            height: 70px;
+            float: left;
+            margin: 20px;
+            margin-top: 50px;
+            text-align: center;
+            font-size: 12px;
+            overflow: hidden;
+        }
+        ul > li > span{
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            position: relative;
+
+            
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><span style="background-image: url(img/Bilibili.png);"></span><p>哔哩哔哩</p></li>
+        <li><span style="background-image: url(img/Taobao.png);"></span></span><p>淘宝</p></li>
+        <li><span style="background-image: url(img/Steam.png);"></span></span><p>Steam</p></li>
+        <li><span style="background-image: url(img/Twitch.png);"></span></span><p>Twitch</p></li>
+        <li><span style="background-image: url(img/Weibo.png);"></span></span><p>微博</p></li>
+        <li><span style="background-image: url(img/Zhihu.png);"></span></span><p>知乎</p></li>
+        <li><span style="background-image: url(img/ditu.png);"></span></span><p>地图</p></li>
+        <li><span style="background-image: url(img/JD.png);"></span></span><p>京东</p></li>
+    </ul>
+</body>
+</html>
+
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('ul > li').mouseenter(function()
+        {
+            $(this).children('span').animate({top:-50},800,function()
+            {
+                $(this).css('top','50px').animate({top:0},800)
+            })
+        })
+    })
+</script>

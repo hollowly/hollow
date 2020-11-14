@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:nth-of-type(1){
+            width: 300px;
+            height: 200px;
+            background: red;
+            float: left;
+            position: relative;
+        }
+        div:nth-of-type(2){
+            width: 100px;
+            height: 200px;
+            background: blue;
+            float: left;
+            position: relative;
+        }
+        /* ------------------------------------------------------------- */
+        div:nth-of-type(2)::before{
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background: white;
+            position: absolute;
+            left: -10px;
+            top: -10px;
+        }
+        div:nth-of-type(2)::after{
+            /* 必须添加content属性，否则没用
+               默认是行级元素，如果想设置宽高，就必须转成块级元素 */
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background: white;
+            position: absolute;
+            left: -10px;
+            bottom: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+</body>
+</html>

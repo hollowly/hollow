@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #menu{
+            width: 200px;
+            height: auto;
+            margin: 10px auto;
+        }
+        .item{
+            width: 100%;
+            height: auto;
+            background: rgb(159,244,228);
+            border-bottom: 2px solid #ccc;
+            color: rgb(240,165,37);
+            text-align: left;
+            text-indent: 15px;
+            line-height: 50px;
+            text-shadow:rgb(38, 0, 255) 1px 1px 3px;  
+        }
+        .itembox{
+            display: none;
+            width: 100%;
+            height: auto;
+            background: rgb(255,232,150);
+        }
+        .itembox > #ul1{
+            list-style: none;
+            text-shadow: none;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        .item:hover > .itembox{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id='menu'>
+    <div class="item">
+        <h2>市内新闻</h2>
+        <div class="itembox">
+            <ul id='ul1'>
+                <li>11111111111111</li>
+                <li>22222222222222</li>
+                <li>33333333333333</li>
+                <li>44444444444444</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="item">
+        <h2>省内新闻</h2>
+        <div class="itembox">
+            <ul id='ul1'>
+                <li>11111111111111</li>
+                <li>22222222222222</li>
+                <li>33333333333333</li>
+                <li>44444444444444</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="item">
+        <h2>国内新闻</h2>
+        <div class="itembox">
+            <ul id='ul1'>
+                <li>11111111111111</li>
+                <li>22222222222222</li>
+                <li>33333333333333</li>
+                <li>44444444444444</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="item">
+        <h2>国际新闻</h2>
+        <div class="itembox">
+            <ul id='ul1'>
+                <li>11111111111111</li>
+                <li>22222222222222</li>
+                <li>33333333333333</li>
+                <li>44444444444444</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

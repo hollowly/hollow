@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #div1{
+            width: 300px;
+            height: 300px;
+            border:1px solid red;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="html()" id='btnhtml'>
+    <input type="button" value="$()" id='btn1'>
+    <div id='div1'>123
+        <span>span</span>
+    </div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        //html()
+        $('#btnhtml').click(function()
+        {
+            //获取内容，不给参数
+            //console.log($('#div1').html());
+
+            //设置内容，可以解析标签
+            $('#div1').html('我是设置的内容 <a href=http://baidu.com>百度一下</a> ');
+        })
+
+        //$()
+        $('#btn1').click(function()
+        {
+            var $lnk = $(' <a href=http://news.baidu.com>我是新闻</a>');
+
+            $('#div1').append($lnk);
+        })
+    })
+</script>

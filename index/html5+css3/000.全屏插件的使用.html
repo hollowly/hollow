@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.5.0.js"></script>
+    <script src="jquery.fullPage.js"></script>
+    <style>
+        .first.current{
+            font-size: 100px;
+            color: pink;
+        }
+
+        .second.current{
+            font-size: 150px;
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section first">第一屏</div>
+        <div class="section second">第二屏</div>
+        <div class="section">
+            <div class="slide">第三屏的第一屏</div>
+            <div class="slide">第三屏的第二屏</div>
+            <div class="slide">第三屏的第三屏</div>
+            <div class="slide">第三屏的第四屏</div>
+        </div>
+        <div class="section">第四屏</div>
+        <div class="section">第五屏</div>
+        <div class="section">第六屏</div>
+        <div class="section">第七屏</div>
+    </div>
+
+
+
+    <script>
+        $(function(){
+            $('#fullpage').fullpage({
+                sectionsColor:['red','blue','pink','green','skyBlue','yellow','orange'],
+                /* 当滚动到某一屏之后调用
+                index：当前屏幕的索引，索引从1开始 */
+                afterLoad:function(anchorLink,index){
+                    $('.section').removeClass('current');
+                    // alert(index);
+                    $('.section').eq(index-1).addClass('current');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

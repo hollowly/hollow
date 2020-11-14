@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <cpn :c-info='info' :child-my-message='message'></cpn>
+
+        {{aaa}}
+    </div>
+
+    <template id='cpn'>
+        <div>
+            <h1>{{aaa}}</h1>
+            <h3>{{cInfo}}</h3>
+
+            <ul>
+                <li v-for='(item, index) in cInfo'>{{item}}-{{index}}</li>
+            </ul>
+
+            <h3>{{childMyMessage}}</h3>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                aaa:'sgsdgsd',
+                info: {
+                    name: 'hollow',
+                    age: 18,
+                    sex: '男',
+                    height: 1.88,
+                },
+                message:'childeMyMessage(我的儿子消息)',
+            },
+            components: {
+                cpn: {
+                    template: '#cpn',
+                    data() {
+                        return {
+                            aaa:'我是aaaa',
+                        }
+                    },
+                    props: {
+                        cInfo: {
+                            type:Object,
+                            default:{},
+                        },
+                        childMyMessage: {
+                            type: String,
+                            default:'abc',
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

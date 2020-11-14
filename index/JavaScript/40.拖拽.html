@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            background:red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id='div1'></div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var odiv = document.getElementById('div1');
+
+        odiv.onmousedown = function()//鼠标按下
+        {
+            var disX = 0;
+            var disY = 0;
+
+            disX = event.clientX - odiv.offsetLeft;
+            disY = event.clientY - odiv.offsetTop;
+
+            document.onmousemove = function()//鼠标移动
+            {
+                var l = event.clientX - disX;
+                var t = event.clientY - disY;
+
+                if(l < 0)//上
+                {
+                    l = 0;
+                }
+                else if(l > document.documentElement.clientWidth - odiv.offsetWidth)//下
+                {
+                    l = document.documentElement.clientWidth - odiv.offsetWidth;
+                }
+
+                if(t < 0)//左
+                {
+                    t = 0;
+                }
+                else if(t > document.documentElement.clientHeight - odiv.offsetHeight)//右
+                {
+                    t = document.documentElement.clientHeight - odiv.offsetHeight;
+                }
+
+                odiv.style.left =  l + 'px';
+                odiv.style.top = t + 'px';
+            }
+
+            document.onmouseup = function()//鼠标松开
+            {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+
+            return false;
+        }
+    }
+</script>

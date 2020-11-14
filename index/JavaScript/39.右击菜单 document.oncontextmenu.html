@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        #div1{
+            background:#ccc;
+            width:100px;
+            height:120px;
+            display:none;
+            border:1px solid black;
+            position: absolute;
+        }
+        li{
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id='div1'>
+        <ul id='ul1'>
+            <li>返回</li>
+            <li>前进</li>
+            <li>重新加载</li>
+            <li>另存为</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<script>
+    document.oncontextmenu=function()
+    {
+        var odiv = document.getElementById('div1');
+
+        odiv.style.display = 'block';
+        odiv.style.left = event.clientX + 10 + 'px';
+        odiv.style.top = event.clientY+ 10 + 'px';
+
+        return false;  //去掉系统右击菜单
+    }
+
+    document.onclick = function()
+    {
+        var odiv = document.getElementById('div1');
+
+        odiv.style.display = 'none';
+    }
+</script>

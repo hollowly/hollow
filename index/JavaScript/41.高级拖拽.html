@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background:red;
+            position: absolute;
+        }
+        #box{
+            width:700px;
+            height:500px;
+            background:#ccc;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id='box'>
+        <div id='div1'></div>
+    </div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var odiv = document.getElementById('div1');
+        var odiv1 = document.getElementById('box');
+        
+        odiv.onmousedown = function()//鼠标按下
+        {
+            var disX = 0;
+            var disY = 0;
+
+            disX = event.clientX - odiv.offsetLeft;
+            disY = event.clientY - odiv.offsetTop;
+
+            document.onmousemove = function()//鼠标移动
+            {
+                var l = event.clientX - disX;
+                var t = event.clientY - disY;
+
+                if(l < 30)//上
+                {
+                    l = 0;
+                }
+                else if(l > odiv1.offsetWidth - odiv.offsetWidth - 30)//下
+                {
+                    l = odiv1.offsetWidth - odiv.offsetWidth
+                }
+
+                if(t < 30)//左
+                {
+                    t = 0;
+                }
+                else if(t > odiv1.offsetHeight - odiv.offsetHeight - 30)//右
+                {
+                    t = odiv1.offsetHeight - odiv.offsetHeight;
+                }
+
+                odiv.style.left =  l + 'px';
+                odiv.style.top = t + 'px';
+            }
+
+            document.onmouseup = function()//鼠标松开
+            {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+
+            return false;
+        }
+    }
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 div{
+            width:300px;
+            height:300px;
+            background:red;
+            margin-bottom:5px;
+            display:none;
+        }
+        .active{background:yellow;}
+    </style>
+</head>
+<body>
+<div id='div1'>
+    <input type="button" value='选项卡1'  class='active'>
+    <input type="button" value='选项卡2'>
+    <input type="button" value='选项卡3'>
+    <input type="button" value='选项卡4'>
+    <div style="display:block;">1111111</div>
+    <div>2222222</div>
+    <div>3333333</div>
+    <div>4444444</div>
+</div>
+</body>
+</html>
+<script>
+    // window.onload=function()
+    // {
+        //面向过程代码：
+        // var odiv = document.getElementById('div1');
+
+        // var abtn = odiv.getElementsByTagName('input');
+        // var adiv = odiv.getElementsByTagName('div');
+
+        // for(i = 0;i < abtn.length;i++)
+        // {
+        //     abtn[i].index = i;
+        //     abtn[i].onclick = function()
+        //     {
+        //         for(i = 0;i < abtn.length;i++)
+        //         {
+        //             abtn[i].className='';
+        //             adiv[i].style.display='none';
+        //         }
+        //         this.className = 'active';
+        //         adiv[this.index].style.display = 'block';
+        //     }
+        // }
+    //}
+
+
+            //面向对象代码：
+        window.onload=function()
+        {
+            new tabswitch('div1');
+        }
+
+        function tabswitch(id)
+        {
+            var _this=this;
+            var odiv = document.getElementById(id);
+            this.abtn = odiv.getElementsByTagName('input');
+            this.adiv = odiv.getElementsByTagName('div');
+
+            for(i = 0;i < this.abtn.length;i++)
+            {
+                this.abtn[i].index = i;
+                this.abtn[i].onclick = function()
+                {
+                    _this.fnclick(this);
+                };
+            }
+        }
+        
+        tabswitch.prototype.fnclick = function (obtn)
+        {
+            for(i = 0;i < this.abtn.length;i++)
+            {
+                this.abtn[i].className='';
+                this.adiv[i].style.display='none';
+            }
+            obtn.className = 'active';
+            this.adiv[obtn.index].style.display = 'block';
+        }
+</script>

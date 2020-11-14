@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<!-- <script src="vue.js"></script> -->
+
+	<script>
+		// new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		resolve('aaa');
+		// 	}, 1000)
+		// }).then(data => {
+		// 	console.log('第一次请求成功，结果为：',data);
+
+		// 	return new Promise((resolve, reject) => {
+		// 		setTimeout(() => {
+		// 			resolve(data + '1111');
+		// 		}, 1000)
+		// 	}).then(data => {
+		// 		console.log('第二次请求成功，结果为：',data);
+
+		// 		return new Promise((resolve, reject) => {
+		// 			setTimeout(() => {
+		// 				resolve(data + 'bbbb');
+		// 			}, 1000)
+		// 		}).then(data => {
+		// 			console.log('第三次请求成功，结果为：',data);
+		// 		},err => {
+		// 			console.log('第三次求失败');
+		// 		})
+		// 	}, err => {
+		// 		console.log('第二次请求失败');
+		// 	})
+
+		// }, err => {
+		// 	console.log('第一次请求失败');
+		// })
+
+		// new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		resolve('aaa');
+		// 	}, 1000)
+		// }).then(data => {
+		// 	console.log(data);
+
+		// 	return Promise.resolve(data + '11111')
+		// }).then(data => {
+		// 	console.log(data);
+		// })
+
+		// Promise简写
+		new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('aaaa');
+			}, 1000)
+		}).then(data => {
+			console.log(data);
+
+			return data += '1111';
+		}).then(data => {
+			console.log(data);
+			
+			return data += 'bbbb';
+		}).then(data => {
+			console.log(data);
+
+			throw 'error message'
+		}).catch(err => {
+			console.log(err);
+		})
+	</script>
+</body>
+</html>

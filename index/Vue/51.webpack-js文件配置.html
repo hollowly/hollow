@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script src="vue.js"></script>
+    <script>
+//         一。配置weboack js：
+// 1. 在项目下创建 webpack.config.js 并配置好以下内容：
+
+// const path = require('path');  //在node (全局) 中寻找 path 包
+
+// module.exports = {
+//     entry: './src/main.js',     //入口文件
+//     output: {      //出口文件
+//         path: path.resolve(__dirname, 'dist'),  //出口文件路径
+//         filename: 'bundle.js'   //出口文件名字
+//     },
+// }
+// 2. npm init
+//      在项目终端目录下 npm init：会帮助你安装一个package.json的文件：如下
+// {
+//   "name": "meetwebpack",
+//   "version": "1.0.0",
+//   "description": "",
+//   "main": "index.js",
+//   "scripts": {
+//     "test": "echo \"Error: no test specified\" && exit 1"
+//   },
+//   "author": "",
+//   "license": "ISC"
+// }
+// 然后再 npm install 安装依赖
+// -----------------------------------------------------------------------------------------------------------------------------
+// 3. 之后就可以直接用 webpack 打包项目，不在使用麻烦的  'webpack ./src/main.js ./dist/bundle.js' 打包了
+// -----------------------------------------------------------------------------------------------------------------------------
+// 4. npm run build
+//       把 webpack 映射到 npm run build 上，用 npm run build 进行打包
+// 在 package.json 文件中的 "scripts" 中添加 "build": "webpack"。因为 npm run XXX 就是在 scripts 中找 XXX 然后执行后面的语句
+// -----------------------------------------------------------------------------------------------------------------------------
+// 5.npm install webpack@3.6.0 --save-dev
+//      局部安装 webpack ：因为考虑到有些 clone 的项目和自己全局安装的 webpack 版本不一样从而导致打包失败，所以每个项目都需要安装局部 webpack 
+// 注：在使用局部打包的时候一定要用 npm run build 进行打包，因为 npm run build 才会在本地 node_modules/bin 路径中找命令进行打包，如果没有找到，才会去全局的环境变量中寻找。
+    </script>
+</body>
+</html>

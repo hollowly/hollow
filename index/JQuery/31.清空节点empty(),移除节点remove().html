@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="button" value='按钮' id='ipt1'>
+    <ul id='ul1'>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li id='li3'>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+    </ul>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#ipt1').click(function()
+        {
+            //清空元素empty();
+            //$('#ul1').empty();
+            //$('#li3').remove();//  "自杀"
+            $('#li3').parent('ul').remove();
+        })
+    })
+</script>

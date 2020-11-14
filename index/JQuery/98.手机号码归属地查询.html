@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <h1>手机号码归属地查询</h1>
+        <div class="outer">
+            <p>请输入手机号码</p>
+            <input type="text" >
+            <button class="button">查询</button>
+            <ul>
+                <li class="num">手机号码: <span></span></li>            
+                <li class="province">归属省份: <span></span></li>
+                <li class="operators">运 营 商: <span></span></li>
+            </ul>
+        </div>
+</body>
+
+</html>
+    <script src='jquery-3.5.0.js'></script>
+    <script>
+        var tel;
+        var ajax = function()
+    {
+        //淘宝接口    
+        $.ajax(
+        {
+            type: "get",
+            url: 'http://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel='+tel,
+            dataType: "jsonp",
+            jsonp: "callback",
+            success: function(data)
+            {
+                $('.error').css('display','none');
+                var province = data.province,
+
+                operators = data.catName,
+                num = data.telString;
+                $('.num span').html(num);
+                $('.province span').html(province);
+                $('.operators span').html(operators);
+            },
+            error:function ()
+            {    
+                $('li span').html('');
+                $('.error').css('display','block');        
+            }
+        });
+    }
+    var reg = /^(13|15|18)[0-9]{9}$/;//点击查询
+    $('.button').click(function()
+    {
+        tel=$('input[type=text]').val();
+        if(tel)
+        {
+            if(reg.test(tel))
+            {
+                ajax();
+            }
+            else
+            {
+                $('li span').html('');
+                $('.error').css('display','block');    
+            }
+        }
+    });
+    </script>

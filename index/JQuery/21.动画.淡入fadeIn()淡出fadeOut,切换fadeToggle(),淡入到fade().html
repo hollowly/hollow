@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        input{
+            background: white;
+            border: 1px solid pink;
+            width:100px;
+            text-align: center;
+        }
+        #div1{
+            background: red;
+            width: 300px;
+            height: 300px;
+            margin: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='淡入' id="fadeIn">
+    <input type="button" value='淡出' id="fadeOut">
+    <input type="button" value='切换' id="fadeToggle">
+    <input type="button" value='淡入到' id="fadeTo">
+    <div id='div1'></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $('#fadeIn').click(function()
+    {
+        //参数1:代表执行动画的时长.也可以是fast(200)毫秒 normal(400)毫秒 slow(600)毫秒,如果单词写错就相当于normal
+        //参数2:代表动画执行完毕后的回调函数.
+
+        //滑入
+        $('#div1').fadeIn(800,function(){alert('动画淡入完毕......')});
+    })
+
+    $('#fadeOut').click(function()
+    {
+        //滑出
+        $('#div1').fadeOut(800,function(){alert('动画淡出完毕......')});
+    })
+
+    $('#fadeToggle').click(function()
+    {
+        //切换 如果动画淡入就淡出，如果动画淡出就淡入
+        $('#div1').fadeToggle(800);
+    })
+
+    $('#fadeTo').click(function()
+    {
+        $('#div1').fadeTo(800,0.2);
+    })
+</script>

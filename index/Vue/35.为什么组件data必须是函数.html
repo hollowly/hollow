@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <cpn1></cpn1>
+        <cpn2></cpn2>
+    </div>
+
+
+    
+    <template id='cpn1'>
+        <div>
+            <h1>{{title}}</h1>
+            <p>{{content}}</p>
+        </div>
+    </template>
+    <template id='cpn2'>
+        <div>
+            <h1>{{title}}</h1>
+            <p>{{content}}</p>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    
+    <script>
+        
+        Vue.component('cpn1', {
+            template:'#cpn1',
+            data() {
+                return {
+                    title:'我是标题11',
+                    content:'我是内容11',
+                }
+            }
+        })
+
+
+        const app = new Vue({
+            el: '#app',
+            components: {
+                cpn2: {
+                    template: '#cpn2',
+                    data() {
+                        return {
+                            title: '我是标题22',
+                            content: '我是内容22',
+                        }
+                    },
+                },
+            }
+        })
+// 为什么组件中的data必须是函数
+        const obj = {
+            name:'why',
+            age:18,
+        }
+
+        function abc() {
+            return obj;
+        }
+
+        let obj1 = abc()
+        let obj2 = abc()
+        let obj3 = abc()
+
+        obj1.name = 'koby';
+        console.log(obj1);
+        console.log(obj2);
+        console.log(obj3);
+// 总结：如果组件中的data是对象，那么组件进行多次调用的时候就会互相影响
+// 因为每一个组件实例都有属于组件的状态
+    </script>
+</body>
+</html>

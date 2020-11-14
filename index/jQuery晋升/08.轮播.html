@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin-top: 200px;
+            margin-left: 100px;
+            width: 800px;
+            height: 200px;
+            overflow: hidden;
+            /* border: 1px solid red; */
+        }
+        div > ul{
+            width: 2800px;
+            height: 200px;
+            /* border: 2px solid red; */
+            background: black;
+        }
+        div > ul > li{
+            float: left;
+            list-style: none;
+            
+        }
+        div > ul > li > img{
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="img/10.jpg"></li>
+            <li><img src="img/11.jpg"></li>
+            <li><img src="img/12.jpg"></li>
+            <li><img src="img/13.jpg"></li>
+            <li><img src="img/14.jpg"></li>
+            <li><img src="img/10.jpg"></li>
+            <li><img src="img/11.jpg"></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        var offset = 0;
+        var timer;
+        function lunbo()
+        {
+            timer = setInterval(function()
+            {
+                offset += -10;
+                if(offset <= -1600)
+                {
+                    offset = 0;
+                }else
+                {
+                    $('ul').css('marginLeft',offset)
+                }
+            },50)
+        }
+
+        lunbo();
+    
+        $('li').mouseenter(function()
+        {
+            clearInterval(timer);
+            $(this).siblings().stop(true,false).fadeTo(100,0.5)
+        });
+        $('li').mouseleave(function()
+        {
+           lunbo();
+           $(this).siblings().stop(true,false).fadeTo(100,1)
+        });
+        
+    })
+</script>

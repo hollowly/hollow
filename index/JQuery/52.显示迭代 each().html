@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+            background: pink;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <ul id='ul1'>
+        <li>什么都看不见</li>
+        <li>什么都看不见</li>
+        <li>什么都看不见</li>
+        <li>什么都看不见</li>
+        <li>什么都看不见</li>
+        <li>什么都看不见</li>
+        <li>什么都看不见</li>
+        <li>什么都看不见</li>
+        <li>什么都看不见</li>
+        <li>什么都看不见</li>
+    </ul>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        var lis = $('#ul1 > li');
+        //jquery的隐世迭代会对所有的DOM对象设置相同的值，如果需要给每个对象设置不同的值的时候，就需要自己进行迭代
+        //隐式迭代：each()：遍历jquery对象集合，为每个匹配的元素执行一个函数
+        lis.each(function(index,element)
+        {
+            //index:   每个元素的索引
+            //element：每个元素是一个dom对象
+            $(element).css('opacity',(index + 1) / 10);
+        })
+    })
+</script>

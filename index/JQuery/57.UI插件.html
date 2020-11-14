@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="plugi/jquery-ui.css" rel="stylesheet">
+    <style>
+	#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+    </style>
+</head>
+<body>
+    <h1>Welcome to hollows</h1>
+
+<div class="ui-widget">
+	<p>此页面演示了您在Download Builder中选择的小部件和主题。请确保您将它们与兼容的jQuery版本一起使用。</p>
+</div>
+
+<h1>您的组件</h1>
+
+    <!-- Accordion -->
+<h2 class="demoHeaders">Accordion</h2>
+<div id="accordion">
+	<h3>博客园</h3>
+	<div><a href="https://www.cnblogs.com/hollows/">hollows-博客园</a></div>
+	<h3>github1</h3>
+	<div><a href='https://github.com/hollowly'>github1</a></div>
+	<h3>github2</h3>
+    <div><a href='https://github.com/hollowly'>github2 博客</a></div>
+</div>
+    
+<!-- Tabs -->
+<h2 class="demoHeaders">Tabs</h2>
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">博客园</a></li>
+		<li><a href="#tabs-2">github1</a></li>
+        <li><a href="#tabs-3">github2</a></li>
+	</ul>
+	<div id="tabs-1"><a href="https://www.cnblogs.com/hollows/">github1</a></div>
+	<div id="tabs-2"><a href='https://github.com/hollowly'>github1</a></div>
+    <div id="tabs-3"><a href='https://github.com/hollowly'>github2 博客</a></div>
+</div>
+
+
+<!-- Datepicker -->
+<h2 class="demoHeaders">Datepicker</h2>
+<div id="datepicker"></div>
+
+<!-- Highlight / Error -->
+<h2 class="demoHeaders">突出显示/错误</h2>
+<div class="ui-widget">
+	<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+		<strong>嘿!</strong>示例ui状态突出显示样式。</p>
+	</div>
+</div>
+<br>
+<div class="ui-widget">
+	<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>警报:</strong>示例ui状态错误样式</p>
+	</div>
+</div>
+
+<!-- Dialog -->
+<h2 class="demoHeaders">对话</h2>
+<p>
+	<button id="dialog-link" class="ui-button ui-corner-all ui-widget">
+		<span class="ui-icon ui-icon-newwin"></span>打开对话框
+	</button>
+</p>
+<h2 class="demoHeaders">叠加和阴影类</h2>
+<div style="position: relative; width: 96%; height: 200px; padding:1% 2%; overflow:hidden;" class="fakewindowcontain">
+<p>Lorem ipsum dolor sit amet,  Nulla nec tortor. Donec id elit quis purus consectetur consequat. </p><p>Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. Aliquam ante. Suspendisse scelerisque dui nec velit. Duis augue augue, gravida euismod, vulputate ac, facilisis id, sem. Morbi in orci. </p><p>Nulla purus lacus, pulvinar vel, malesuada ac, mattis nec, quam. Nam molestie scelerisque quam. Nullam feugiat cursus lacus.orem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero risus, commodo vitae, pharetra mollis, posuere eu, pede. Nulla nec tortor. Donec id elit quis purus consectetur consequat. </p><p>Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. Aliquam ante. Suspendisse scelerisque dui nec velit. Duis augue augue, gravida euismod, vulputate ac, facilisis id, sem. Morbi in orci. Nulla purus lacus, pulvinar vel, malesuada ac, mattis nec, quam. Nam molestie scelerisque quam. 
+</p><p>Nullam feugiat cursus lacus.orem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero risus, commodo vitae, pharetra mollis, posuere eu, pede. Nulla nec tortor. Donec id elit quis purus consectetur consequat. Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. Aliquam ante. </p><p>Suspendisse scelerisque dui nec velit. Duis augue augue, gravida euismod, vulputate ac, facilisis id, sem. Morbi in orci. Nulla purus lacus, pulvinar vel, malesuada ac, mattis nec, quam. Nam molestie scelerisque quam. Nullam feugiat cursus lacus.orem ipsum dolor sit amet, consectetur adipiscing elit. Donec libero risus, commodo vitae, pharetra mollis, posuere eu, pede. Nulla nec tortor. Donec id elit quis purus consectetur consequat. Nam congue semper tellus. Sed erat dolor, dapibus sit amet, venenatis ornare, ultrices ut, nisi. </p>
+
+	<!-- ui-dialog -->
+	<!-- <div class="ui-widget-overlay ui-front"></div>
+	<div style="position: absolute; width: 320px; left: 50px; top: 30px; padding: 1.2em" class="ui-widget ui-front ui-widget-content ui-corner-all ui-widget-shadow">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	</div>
+</div> -->
+
+<!-- ui-dialog -->
+<div id="dialog" title="对话框标题">
+	<p>这是一个对话框，你可以改变里面的内容</p>
+</div>
+
+
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+<script src="plugi/jquery-ui.js"></script>
+<script>
+    $(function()
+    {  
+        $( "#accordion" ).accordion();
+        
+        $( "#tabs" ).tabs();
+
+        $( "#datepicker" ).datepicker(
+        {
+	        inline: true
+        });
+        
+        $( "#dialog" ).dialog({
+	autoOpen: false,
+	width: 400,
+	buttons: [
+		{
+			text: "Ok",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		{
+			text: "Cancel",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	]
+});
+
+// Link to open the dialog
+$( "#dialog-link" ).click(function( event ) {
+	$( "#dialog" ).dialog( "open" );
+	event.preventDefault();
+});
+// Hover states on the static widgets
+$( "#dialog-link, #icons li" ).hover(
+	function() {
+		$( this ).addClass( "ui-state-hover" );
+	},
+	function() {
+		$( this ).removeClass( "ui-state-hover" );
+	}
+);
+    })
+</script>

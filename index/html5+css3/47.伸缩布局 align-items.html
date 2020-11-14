@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 900px;
+            height: 600px;
+            border:1px solid red;
+            margin: 0 auto;
+
+            display: flex;
+            justify-content: space-around;
+            /*  align-items:设置子元素在侧轴方向上的对齐方式 */
+            /*align-items:设置子元素(伸缩项)在侧轴方向上的对齐方式
+            center:设置在侧轴方向上居中对齐
+            flex-start:设置在侧轴方向上顶对齐
+            flex:end:设置在侧轴方向上底对齐
+            stretch:拉伸:让子元素在侧轴方向上进行拉伸，填充满整个侧轴方向>>默认值
+            baseline:文本基线*/
+            align-items: center;
+        }
+        .one{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .two{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            /* 设置单个元素在侧轴方向上的对齐方式 */
+            align-self: flex-end;
+        }
+        .there{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="one">aa</div>
+        <div class="two" style="font-size: 100px;">bb</div>
+        <div class="there">cc</div>
+    </div>
+</body>
+</html>

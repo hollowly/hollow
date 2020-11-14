@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id='txt1'>
+    <input type="button" id='btn1' value='发布'><br><br>
+    <textarea rows="10" cols="40" id='txt2'></textarea>
+</body>
+</html>
+
+<script>
+    window.onload = function()
+    {
+        var otxt1 = document.getElementById('txt1');
+        var obtn = document.getElementById('btn1');
+        var otxt2 = document.getElementById('txt2');
+
+        obtn.onclick=function()
+        {
+            otxt2.value += otxt1.value + '\n';
+            otxt1.value = '';
+        }
+
+        otxt1.onkeydown = function()
+        {
+            if(event.keyCode == 13 )//&& event.ctrlKey)//回车加ctrl
+            {
+                otxt2.value += otxt1.value+ '\n';
+                otxt1.value = '';
+            }
+        }
+    }
+</script>

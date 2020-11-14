@@ -1,0 +1,1 @@
+document.write('<p>我是base.js的内容</p>')

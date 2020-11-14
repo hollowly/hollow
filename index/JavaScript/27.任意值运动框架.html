@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background: yellow;
+            margin:10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id='div1'>变高</div>
+    <div id='div2'>变宽</div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var odiv1 = document.getElementById('div1');
+        var odiv2 = document.getElementById('div2');
+        
+            odiv1.onmouseover = function()
+            {
+                move(this,500);
+            }
+            odiv1.onmouseout = function()
+            {
+                move(this,200);
+            }
+
+            odiv2.onmouseover = function()
+            {
+                move1(this,500);
+            }
+            odiv2.onmouseout = function()
+            {
+                move1(this,200);
+            }
+    }
+
+    function move(obj,iTarget)
+    {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+            var speed = (iTarget-obj.offsetHeight)/6;
+            speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+            if(obj.offsetHeight == iTarget)
+            {
+                clearInterval(obj.timer);
+            }
+            else
+            {
+               obj.style.height=obj.offsetHeight+speed+'px';
+            }
+        },30)
+    }
+    function move1(obj,iTarget)
+    {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+            var speed = (iTarget-obj.offsetWidth)/6;
+            speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+            if(obj.offsetWidth == iTarget)
+            {
+                clearInterval(obj.timer);
+            }
+            else
+            {
+               obj.style.width=obj.offsetWidth+speed+'px';
+            }
+        },30)
+    }
+</script>

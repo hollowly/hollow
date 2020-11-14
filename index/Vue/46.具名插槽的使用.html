@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <cpn>
+            <span slot="center">主体红</span>
+            <span slot='right'>☰</span>
+        </cpn>
+        <cpn>
+            <span slot="center">主体绿</span>
+            <span slot='right'>...</span>
+        </cpn>
+        <cpn>
+            <span slot="center">主体白</span>
+            <span slot='right'>更多</span>
+        </cpn>
+    </div>
+    
+    <template id='cpn'>
+        <div>
+            <slot name='left'><button>返回</button></slot>
+            <slot name='center'><span>中间</span></slot>
+            <slot name='right'><span>右边</span></slot>
+            <hr>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            components: {
+                cpn: {
+                template: '#cpn',
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

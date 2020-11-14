@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li标签</li>
+        <li>我是第2个li标签</li>
+        <li>我是第3个li标签</li>
+        <li>我是第4个li标签</li>
+        <li>我是第5个li标签</li>
+        <li>我是第6个li标签</li>
+        <li>我是第7个li标签</li>
+        <li>我是第8个li标签</li>
+        <li>我是第9个li标签</li>
+        <li>我是第10个li标签</li>
+    </ul>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('ul >li:odd').css('background','pink');
+        $('ul >li:even').css('background','skyblue');
+        $('ul >li:eq(0)').css('background','red')
+        $('ul >li:eq(9)').css('background','red')
+    })
+</script>

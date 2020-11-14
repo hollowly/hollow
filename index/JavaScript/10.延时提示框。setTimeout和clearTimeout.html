@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:50px;height:50px;background:red;
+        }
+        #div2{
+            width:250px;height:180px;background:#ccc;display:none;
+        }
+        div{
+            float:left;margin:10px;;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var odiv1=document.getElementById('div1');
+        var odiv2=document.getElementById('div2');
+        var timer=null;
+        odiv1.onmouseover=function()
+        {
+            clearTimeout(timer);
+            odiv2.style.display='block';
+        }
+        odiv1.onmouseout=function()
+        {
+            timer=setTimeout(function()
+            {
+                odiv2.style.display='none';
+            },500);
+        }
+
+        odiv2.onmouseover=function()
+        {
+            clearTimeout(timer);
+        }
+        odiv2.onmouseout=function()
+        {
+           timer=setTimeout(function()
+           {
+            odiv2.style.display='none';
+           },500);
+        }
+    }
+</script>

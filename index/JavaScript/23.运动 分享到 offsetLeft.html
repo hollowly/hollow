@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:150px;
+            height:220px;
+            background:yellow;
+            position: absolute;
+            left:-150px;
+            text-align: center;
+        }
+        #div1 span{
+            position: absolute;
+            width:30px;
+            height:65px;
+            line-height:20px;
+            background: red;
+            right:-30px;
+            top:70px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "div1">
+        <a href=#>QQ好友</a><br><br>
+        <a href=#>QQ空间</a><br><br>
+        <a href=#>微博</a><br><br>
+        <a href=#>微信</a><br><br>
+        <a href=#>朋友圈</a><br><br>
+        <span>分享到</span>
+    </div>
+        
+</body>
+</html>
+
+<script>
+    window.onload=function()
+    {
+        var odiv1 = document.getElementById('div1');
+
+        odiv1.onmouseover = function()
+        {
+            move(0,15);
+        }
+
+        odiv1.onmouseout = function()
+        {
+            move(-150,-15);
+        }
+    }
+
+    timer = null;
+
+    function move(target,speed)
+    {
+        var odiv1 = document.getElementById('div1');
+
+        clearInterval(timer);
+
+        timer = setInterval(function(){
+            if(odiv1.offsetLeft == target)
+            {
+                clearInterval(timer);
+            }
+            else
+            {
+                odiv1.style.left = odiv1.offsetLeft + speed + 'px';
+            }
+        },30)
+    }
+</script>

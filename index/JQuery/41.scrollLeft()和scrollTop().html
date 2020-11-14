@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #img1{
+            width: 800px;
+            height: 400px;
+        }
+        #div1{
+            width:200px;
+            height:200px;
+            border: 2px solid red;
+            overflow: auto;
+        }
+        body{
+            width: 2000px;
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="设置" id='one'>
+    <input type="button" value="设置到100" id='go100'>
+    <input type="button" value="设置到窗口1000" id='window1000'>
+    <div id='div1'>
+        <img src="img/10.jpg" id='img1'>
+    </div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#one').click(function()
+        {
+            //scrollLeft():表示元素内容被卷曲的宽度.
+            //scrollTop():表示元素内容被卷曲的高度.
+            console.log($('#div1').scrollLeft() +':'+$('#div1').scrollTop());
+        })
+        
+            //设置到100
+        $('#go100').click(function()
+        {
+            $('#div1').scrollLeft(100);
+            $('#div1').scrollTop(100);
+        })
+
+        //获取页面被卷曲的高度和宽度
+        console.log('页面被卷曲的left:' + $(window).scrollLeft());
+        console.log('页面被卷曲的top:' + $(window).scrollTop());
+
+        $('#window1000').click(function()
+        {
+            $(window).scrollLeft(100);
+            $(window).scrollTop(800);
+        })
+    })
+</script>
+

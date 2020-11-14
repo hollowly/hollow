@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 600px;
+            height: 600px;
+            margin: 0px auto;
+            padding-top: 15px;
+            padding-left: 100px;
+            box-sizing: border-box;
+            background: #ccc;
+        }
+/* ---------------------------------------------------- */
+        #top{
+            width: 300px;
+            height: 150px;
+            background: green;
+            border-radius: 300px 300px 0px 0px;
+            position: relative;
+            float: left;
+        }
+        #top::before{
+            content: "";
+            position: absolute;
+            bottom: 45px;
+            left: 190px;
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            background: white;
+        }
+        #top::after{
+            content: "";
+            position: absolute;
+            bottom: 45px;
+            left: 90px;
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            background: white;
+        }
+/* ---------------------------------------------------- */
+        #bottom{
+            float: left;
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+            background: green;
+            border-radius: 0px 0px 30px 30px;
+            position: relative;
+        }
+        #bottom::before{
+            content:"";
+            width: 30px;
+            height: 100px;
+            background: green;
+            position: absolute;
+            bottom: -100px;
+            left: 70px;
+            border-radius: 0px 0px 15px 15px;
+        }
+        #bottom::after{
+            content:"";
+            width: 30px;
+            height: 100px;
+            background: green;
+            position: absolute;
+            bottom: -100px;
+            right: 70px;
+            border-radius: 0px 0px 15px 15px;
+        }
+/* ---------------------------------------------------- */
+        #left{
+            width: 30px;
+            height: 180px;
+            background: green;
+            float: left;
+            margin-right: 15px;
+            border-radius: 10px;
+            margin-top: 200px;
+        }
+        #right{
+            width: 30px;
+            height: 180px;
+            background: green;
+            float: left;
+            margin-top: 50px;
+            margin-left: 15px;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id='box'>
+        
+        <div id="left"></div>
+
+        <div id="top"></div>
+        
+        <div id="bottom"></div>
+        
+        <div id="right"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 父组件模板 -->
+    <div id='app'>
+        <cpn :cmessage='message' :cmoves='moves' :c-info='info'></cpn>
+    </div>
+
+
+    <!-- 子组件模板 -->
+    <template id='cpn'>
+        <div>
+            <h1>{{cmessage}}</h1>
+            <ul>
+                <li v-for='item in cmoves'>{{item}}</li>
+            </ul>
+            {{cmoves}}
+
+            <h2>{{cInfo.name}}</h2>
+        </div>
+    </template>
+
+    <script src="vue.js"></script>
+
+    <script>
+        // 父组件
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+                moves:['海王','海贼王','海尔兄弟'],
+                info: {
+                    name:'hollow',
+                    age:18,
+                    height:1.88,
+                }
+            },
+            components: {
+                // 子组件
+                cpn: {
+                    template: '#cpn',
+                    props: {
+                        cmessage: {
+                            type:String,
+                            default:'aaaa',
+                            required:true,
+                        },
+                        cmoves: {
+                            type:Array,
+                            default:[],
+                        },
+                        cInfo: {
+                            type:Object,
+                            default:{},
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

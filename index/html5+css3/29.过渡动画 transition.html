@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            background:red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            /* 添加过渡效果的属性样式名称 */
+            /* transition-property: all; */
+            /* 添加过渡效果的耗时 */
+            /* transition-duration: 2s; */
+            /* 过渡效果的延迟 */
+            /* transition-delay: 1s; */
+
+
+            /* transition:属性名称  过渡时间  时间函数  延迟 */
+            transition: all 2s linear 0s;
+            -moz-transition: all 2s linear 0s;
+            -webkit-transition: all 2s linear 0s;
+            -o-transition: all 2s linear 0s;
+        }
+        .div1:active{
+            left: 1000px;
+            background: blue;
+            /* transition: 过渡; */
+            /* transition: all 2s; */
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">点我</div>
+</body>
+</html>

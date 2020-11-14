@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='jquery-3.5.0.js'></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box {
+            border: 2px solid red;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            position: absolute;
+        }
+        header {
+            width: 100%;
+            height: 50px;
+            background: pink;
+        }
+        header > ul {
+            width: 100%;
+        }
+        header > ul > li {
+            display: inline-block;
+            list-style: none;
+            width: 32.5%;
+            text-align: center;
+            line-height: 48px;
+            box-sizing: border-box;
+        }
+        main{
+            margin-top: 50px;
+            width: 1500px;
+            height: 300px;
+            /* border: 1px solid red; */
+            position: relative;
+        }
+        main > ul {
+            float: left;
+            text-indent: 1rem;
+            list-style:none;
+            width: 500px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id='box'>
+        <header>
+            <ul>
+                <li>通知</li>
+                <li>公告</li>
+                <li>新闻</li>
+            </ul>
+        </header>
+    <main>
+        <ul>
+            <li>通知11111</li>
+            <li>通知11111</li>
+            <li>通知11111</li>
+        </ul>
+        <ul>
+            <li>公告11111</li>
+            <li>公告11111</li>
+            <li>公告11111</li>
+        </ul>
+        <ul>
+            <li>新闻11111</li>
+            <li>新闻11111</li>
+            <li>新闻11111</li>
+        </ul>
+    </main>
+    </div>
+
+    <script>
+        $(function() {
+            $('header > ul > li').click(function() {
+                $('main').animate({
+                    'left':(-500 * $(this).index()),
+                })
+            })
+        })
+    </script>
+</body>
+</html>

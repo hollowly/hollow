@@ -1,0 +1,356 @@
+/* 定义变量 */
+a {
+  color: black;
+}
+a:link,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+/* 头部块 */
+.wjs_header {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+.row {
+  text-align: center;
+  height: 100%;
+}
+.row > div:nth-of-type(-n+3) {
+  border-right: 1px solid #ccc;
+}
+.row .wjs_code > img {
+  position: absolute;
+  display: none;
+  z-index: 999;
+}
+.row .wjs_code:hover > img {
+  display: block;
+  z-index: 999;
+}
+.row .btn-danger {
+  background: red;
+  border: 1px solid red;
+  outline: none;
+}
+.row .btn {
+  padding: 4px 15px;
+  outline: none;
+}
+.row .btn-link {
+  color: #444;
+}
+.row .btn-link:hover {
+  text-decoration: none;
+  outline: none;
+}
+/* 导航块 */
+.wjs_nav .navbar-brand {
+  height: 80px;
+  line-height: 50px;
+  font-size: 40px;
+}
+.wjs_nav .navbar-toggle {
+  margin-top: 23px;
+}
+.wjs_nav .navbar-nav > li > a {
+  font-size: 16px;
+  line-height: 50px;
+  color: #555;
+}
+.wjs_nav .navbar-nav > li > a:hover,
+.wjs_nav .navbar-nav > li a:focus {
+  color: #555;
+  border-bottom: 3px solid red;
+}
+.wjs_nav .navbar-nav .active > a,
+.wjs_nav .navbar-nav .active a:hover,
+.wjs_nav .navbar-nav .active a:focus {
+  background: transparent;
+  border-bottom: 3px solid red;
+}
+/* 轮播图 */
+.wjs_banner {
+  border: 0px;
+}
+@media screen and (max-width: 767px) {
+  .item-img {
+    width: 100%;
+    display: block;
+  }
+  .item-img > img {
+    width: 100%;
+    display: block;
+  }
+}
+@media screen and (min-width: 767px) {
+  .item-img {
+    width: 100%;
+    height: 410px;
+    display: block;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+/* 信息块 */
+.wis_info {
+  margin: 30px;
+}
+.wis_info > .container-fluid > .row {
+  height: 80px;
+}
+.wis_info > .container-fluid > .row > a:hover {
+  color: red;
+}
+/* 预约块 */
+.reverse {
+  height: 70px;
+  line-height: 70px;
+  border: 1px solid #d2d2d2;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+.reverse .row {
+  display: inline-block;
+  text-align: left;
+}
+.reverse .row > a {
+  color: red;
+  border-bottom: 1px dashed red;
+}
+.reverse .row > .reverse-what,
+.reverse .row .reverse-xcp {
+  color: #333;
+  border-bottom: 0px;
+}
+.reverse .row > a:hover {
+  color: red;
+}
+.reverse .row > span {
+  color: red;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+/* 产品块 */
+.product {
+  clear: both;
+  background: #eee;
+}
+.product .tab-parent {
+  width: 100%;
+  overflow: hidden;
+}
+.product .tab-parent .nav-tabs {
+  width: 150%;
+}
+.product .tab-parent .nav-tabs > .active > a {
+  border-bottom: 3px solid red;
+}
+.product .tab-parent .nav-tabs > li > a {
+  line-height: 50px;
+}
+.product .tab-parent .nav-tabs > li > a:active,
+.product .tab-parent .nav-tabs > li a:hover,
+.product .tab-parent .nav-tabs > li a:focus,
+.product .tab-parent .nav-tabs > li a {
+  border-bottom: 3px solid red;
+  background: none;
+  border: none;
+}
+.product .tab-parent .nav-tabs > li > a:hover,
+.product .tab-parent .nav-tabs > li a:focus {
+  color: red;
+  border-bottom: 3px solid red;
+}
+.product .tab-content .row > div {
+  border-right: 0px;
+}
+.product .tab-content > div:nth-of-type(n+2) {
+  color: red;
+  line-height: 250px;
+  font-size: 100px;
+}
+.product .product-box {
+  height: 150px;
+  margin-top: 20px;
+}
+.product .product-box > .box-left {
+  margin-right: 100px;
+  height: 150px;
+  background: white;
+  border-right: 1px dashed #ccc;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.product .product-box > .box-left > p {
+  padding-top: 5px;
+}
+.product .product-box > .box-left > .row > div {
+  border: 0px;
+}
+.product .product-box > .box-right {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  background: white;
+  text-align: center;
+  padding-top: 30px;
+}
+.product .product-box > .box-right > b {
+  font-size: 40px;
+  color: red;
+}
+.product .product-box > .box-right > span {
+  color: red;
+}
+.product .product-box > .box-right > .box-right-text {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-55%);
+}
+.product .product-box > .box-right > .box-right-text > .first {
+  cursor: pointer;
+  border: 1px solid red;
+  color: red;
+}
+.product .product-box > .box-right > .box-right-text > .last {
+  cursor: pointer;
+  border: 1px solid blue;
+  color: blue;
+}
+.product .first-box-div > .box-left {
+  background: red;
+  color: white;
+}
+.product .first-box-div > .box-right {
+  background: red;
+  color: white;
+}
+.product .first-box-div > .box-right > b {
+  color: white;
+}
+.product .first-box-div > .box-right > span {
+  color: white;
+}
+/* 新闻块 */
+.news {
+  height: 100%;
+  height: 450px;
+}
+.news > .container {
+  margin-top: 30px;
+}
+.news > .container > .row .news-title {
+  font-size: 25px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+.news > .container > .row .news-title::before {
+  content: "";
+  border: 1px solid #ccc;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  right: -8px;
+  bottom: -5px;
+}
+.news > .container > .row > div {
+  border: none;
+}
+.news > .container .nav-tabs {
+  border: none;
+  position: relative;
+  /* 使用媒体查询设置li元素之间的宽度 */
+  /* 宽度小于768 */
+}
+.news > .container .nav-tabs > .news-before {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  left: 45%;
+  border-left: 1px dashed red;
+}
+.news > .container .nav-tabs > li {
+  margin-bottom: 60px;
+}
+.news > .container .nav-tabs > li > a {
+  background: #ccc;
+  border: none;
+  width: 60px;
+  height: 60px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.news > .container .nav-tabs > li > a:hover {
+  border: none;
+  background: red;
+  color: white;
+}
+.news > .container .nav-tabs > li.active a,
+.news > .container .nav-tabs > li.active a:hover,
+.news > .container .nav-tabs > li.active a:focus {
+  border: none;
+  color: white;
+  background: red;
+}
+.news > .container .nav-tabs > li:last-child {
+  margin-bottom: 0px;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .news > .container .nav-tabs > li {
+    margin: 20px 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .news > .container .nav-tabs > li {
+    margin: 20px 0px;
+    width: 25%;
+  }
+}
+.news .tab-content {
+  margin-left: 10px;
+}
+.news .tab-content > div {
+  text-align: left;
+  font-size: 14px;
+  height: 400px;
+}
+.news .tab-content > div > p {
+  padding: 28px;
+}
+/* 合作伙伴 */
+.partne {
+  background: #eee;
+}
+.partne > .container > div {
+  padding: 30px;
+}
+.partne > .container > div > ul {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+  line-height: 100px;
+  height: 100px;
+}
+.partne > .container > div > ul > li {
+  float: left;
+  list-style: none;
+}
+.partne > .container > div > ul > li > img {
+  width: 100px;
+  margin-right: 60px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="file" id="myfile" name="myfile" multiple onchange="getFileContent()"> <br>
+        <input type="submit">
+    </form>
+    <img src="" id='img1'>
+    <!-- 
+    FileReader:读取文件内容
+    1. readAsText():读取文本文件(可以使用Txt打开的文件)，返回文本字符串，默认编码是UTF-8。
+    2. readAsBinaryString():读取任意类型的文件。返回二进制字符串。这个方法不是用来读取。
+文件展示给用户看，而是存储文件。例如:读取文件的内容，获取二进制数据，传递给后台，后台接
+收了数据之后，再将数据存在。
+    3. readAsDataURL():读取文件获取一段以data开头的字符串，这段字符串的本质就是
+DateURL.DateURL是一种将文件嵌入到文档的方案。DateURL是将资源转换为base64编码的字符串
+形式，并且将这些内容直接存储在url中>>优化网站的加载速度和执行效率。
+    abort():中断读取
+该对象常见应用在即时预览：
+即时：当用户选择完图片之后就立刻进行预览的处理 >>onchange
+预览：通过文件读取对象的readAsDataURL()完成。-->
+</body>
+</html>
+
+<script>
+    function getFileContent()
+    {
+        // 1.创建文件读取对象
+        var reader = new FileReader(); 
+        /* 2.读取文件，获取DateURL
+            2.1.没有任何返回值：void：但是读取完文件之后，它会将读取的结果存储在文件
+            读取对象的result中
+            2.2.需要传递一个参数 binary large object:文件(图片或者其它可以嵌入到文档的类型)
+            2.3.文件存储在file表单元素的files属性中，他是一个数组
+        */
+        var file = document.getElementById('myfile').files;
+        reader.readAsDataURL(file[0]);
+        // 获取数据
+        /* FileReader提供一个完整的事件模型，同来捕获读取文件时的状态
+        onabort：读取文件中断片时触发
+        onerror：读取文件错误时触发
+        onload：文件读取成功完成时触发
+        onloadend：读取完成时触发，无论成功还是失败
+        onloadstart：开始读取时触发
+        onprogress：读取文件过程中持续触发 */
+        reader.onload = function()
+        {
+            document.getElementById('img1').src=reader.result;
+        }
+
+    }
+</script>

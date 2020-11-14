@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ 
+    </style>
+
+</head>
+<body>
+    <textarea id='txt1' rows='10' cols='40'></textarea><br>
+    <input type="button" value="运行" id='btn1'>
+    <input type="button" value="关闭" id='btn2'>
+</body>
+</html>
+
+<script>
+    window.onload = function()
+    {
+        var otxt = document.getElementById('txt1');
+        var obtn1 = document.getElementById('btn1');
+        var obtn2 = document.getElementById('btn2');
+
+        obtn1.onclick=function()
+        {
+            var onewwin = window.open('about:blank','_blank');
+
+            onewwin.document.write(otxt.value);
+        }
+
+        obtn2.onclick=function()
+        {
+            window.close();
+        }
+
+    }
+</script>

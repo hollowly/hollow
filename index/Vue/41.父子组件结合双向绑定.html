@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <h2>app-num1：{{num1}}</h2>
+        <h2>app-num2：{{num2}}</h2>
+<hr>
+        <cpn :cnum1=num1 :cnum2=num2 @cpn-change1='num1Change' @cpn-change2='num2Change'></cpn>
+    </div>
+
+
+    <template id='cpn'>
+        <div>
+            <h2>cpn-num1：{{cnum1}}</h2>
+            <h2>data-num1：{{dnum1}}</h2>
+            <input type="text" v-model='dnum1' @input='dnum1Input'>
+            <h2>cpn-num2：{{cnum2}}</h2>
+            <h2>data-num1：{{dnum2}}</h2>
+            <input type="text" v-model='dnum2' @input='dnum2Input'>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                num1: 1,
+                num2: 2,
+            },
+            methods: {
+                num1Change(value) {
+                    this.num1 = parseInt(value) * 5;
+                },
+                num2Change(value) {
+                    this.num2 = parseInt(value) * 5;
+                }
+            },
+            components:{
+                cpn: {
+                    template:'#cpn',
+                    props: {
+                        cnum1: {
+                            type:Number,
+                            default:111,
+                        },
+                        cnum2: {
+                            type:Number,
+                            default:222,
+                        }
+                    },
+                    data() {
+                        return {
+                            dnum1: this.cnum1,
+                            dnum2: this.cnum2,
+                        }
+                    },
+                    methods: {
+                        dnum1Input(value) {
+                            this.$emit('cpn-change1',this.dnum1);
+                        },
+                        dnum2Input(value) {
+                            this.$emit('cpn-change2',this.dnum2);
+                        }
+                    },
+                }
+            }
+        })
+    </script>
+</body>
+</html>

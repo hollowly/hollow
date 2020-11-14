@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            user-select:none;
+        }
+        .active{
+            color: red;
+        }
+        .shadow{
+            text-shadow: 1px 1px 2px blue;
+        }
+        body {
+            height: 10000px;
+        }
+        table {
+            border: 1px solid #cccccc;
+            border-collapse: collapse;
+        }
+        th ,td {
+            padding: 16px;
+            border: 1px solid #cccccc;
+            text-align: center;
+        }
+        th {
+            color: #5c6b77;
+            background: #f7f7f7;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <h1>{{message}}</h1>
+<hr>
+        <h1>列表：</h1>
+        <ul>
+            <li v-for='items in moves'>{{items}}</li>
+        </ul>
+<hr>
+        <h1>计数器：</h1>
+        当前计数：{{num}} <br>
+        <button @click='addCount'>+</button>
+        <button @click='subCount'>-</button>
+<hr>
+        <h1>v-bind的使用：</h1>
+        <h3><a v-bind:href="aUrl">{{coblogs}}</a></h3>
+        <img v-bind:src='imgUrl' width="500px">
+<hr>
+        <h1>v-bind动态绑定class：</h1>
+        <h3 v-bind:class='getClass()'>{{test}}</h3>
+        <button @click='changeClass()'>点击我为上面的文字添加效果(class)</button>
+<hr>
+        <h1>动态绑定style：</h1>
+        <h6 :style="getStyle()">你好啊Vue！</h6>
+<hr>
+        <h1>计数属性：</h1>
+        <h3>总价格：{{prices}}</h3>
+<hr>
+        <h1>v-if切换：</h1>
+        <span v-if='isUser'>
+            用户账号：<input type="text" placeholder="请输入用户账号">
+        </span>
+        <span v-else>
+            用户邮箱：<input type="text" placeholder="请输入用户邮箱">
+        </span>
+        <button @click='isUser = !isUser'>切换类型</button>
+<hr>
+        <h1>v-for中添加key：</h1>
+        <h4>注释：加key是为了内部修改节点的时候效率更高</h4>
+        <ul>
+            <li v-for = '(items, index) in lis' :key='items'>{{items}}</li>
+        </ul>
+        <button @click='btnClearLi()'>删除</button>
+<hr>
+        <h1>购物车案列：</h1>
+        <div v-if='books2.length > 0'>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>书籍名称</th>
+                        <th>出版日期</th>
+                        <th>价格</th>
+                        <th>购买数量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr v-for='(items, index) in books2'>
+                        <td>{{items.id}}</td>
+                        <td>{{items.name}}</td>
+                        <td>{{items.deta}}</td>
+                        <td>{{'￥' + items.price * items.count + '.00'}}</td>
+                        <td>
+                            <button @click = 'add(index)'>+</button>
+                            {{items.count}}
+                            <button @click = 'sub(index)' :disabled = 'items.count <= 1'>-</button>
+                        </td>
+                        <td><button @click = 'btnRemove(index)'>移除</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>总价格：{{'￥' + getPrice + '.00'}}</h2>
+        </div>
+        <div v-else>
+            <h2>当前购物车为空！</h2>
+        </div>
+<hr>
+        <h1>v-model的使用：</h1>
+        <input type="text" v-model='message2'>
+        <h2>{{message2}}</h2>
+<hr>
+        <h1>v-model结合radio:</h1>
+        <h3>
+            <label for="man">
+                <input type="radio" id="man" value='男' v-model='sex'>男
+            </label>
+            <label for="woman">
+                <input type="radio" id="woman" value='女' v-model='sex'>女
+            </label> <br>
+            您当前的性别是：{{sex}}
+        </h3>
+<hr>
+        <h1>v-mode结合checkbox：</h1>
+        <h3>
+            <label for="ball1">
+                <input type="checkbox" id="ball1" value="篮球" v-model='hobbys'>篮球
+            </label>
+            <label for="ball2">
+                <input type="checkbox" id="ball2" value="足球" v-model='hobbys'>足球
+            </label>
+            <label for="ball3">
+                <input type="checkbox" id="ball3" value="乒乓球" v-model='hobbys'>乒乓球
+            </label>
+            <label for="ball4">
+                <input type="checkbox" id="ball4" value="羽毛球" v-model='hobbys'>羽毛球
+            </label>
+            <label for="ball5">
+                <input type="checkbox" id="ball5" value="台球" v-model='hobbys'>台球
+            </label> <br>
+            <h3>您选择的兴趣有：{{hobbys}}</h3>
+<hr>
+            <label for="agreen">
+                <h3><input type="checkbox" id="agreen" v-model='isAgreen'>同意协议</h3>
+            </label>
+            <button :disabled='!isAgreen'>下一步</button>
+        </h3>
+<hr>
+        <h1>v-model结合select：</h1>
+        <select name="abc" v-model='fruit'>
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="菠萝">菠萝</option>
+            <option value="葡萄">葡萄</option>
+            <option value="哈密瓜">哈密瓜</option>
+        </select>
+        <h3>您选择的水果有：{{fruit}}</h3>
+
+        <select name="abc" multiple v-model='fruits'>
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="菠萝">菠萝</option>
+            <option value="葡萄">葡萄</option>
+            <option value="哈密瓜">哈密瓜</option>
+        </select>
+        <h3>您选择的水果有：{{fruits}}</h3>
+<hr>
+        <h1>v-model修饰符：</h1>
+        <h2>
+            <label :for="item" v-for='item in newhobbys'>
+                <input type="checkbox" :id="item" :value="item" v-model='newhobby'>{{item}}
+            </label>
+            <h3>您选择的兴趣有：{{newhobby}}</h3>
+        </h2>
+<hr>
+<hr>
+<hr>
+        <h1>组件化全局/局部，语法糖和模板分离写法：</h1>
+        <cpn1></cpn1>
+        <cpn2></cpn2>
+<hr>
+        <h1>组件中常量存放问题data()：</h1>
+        <cpn3></cpn3>
+        <cpn4></cpn4>
+<hr>
+        <h1>计数器组件化：</h1>
+        <cpn5></cpn5>
+        <cpn5></cpn5>
+        <cpn5></cpn5>
+<hr>
+<hr>    
+        <h1>父子组件通信—父传子 (props):</h1>
+        <cpn6 :cmoves='moves' :cmessage='message' :c-info='info'></cpn6>
+<hr>
+        <h1>父子组件通信—子传父(自定义事件)：</h1>
+        <!-- :ccat='cat'是父传子绑定        @item-click='cpnClick'是子传父绑定 -->
+        <cpn7 :ccat='cat' @item-click='cpnClick'></cpn7>
+<hr>
+        <h1>父子组件访问结合双向绑定：</h1>
+        <cpn8 :cnum1='num1' :cnum2='num2' @num1-change='num1Cange' @num2-change='num2Change'></cpn8>
+        <hr>
+        <h1>组件访问-父访问子 and 子访问父：</h1>
+        <button @click='Vchildren'>父访问子</button>
+        <cpn9 ref='ref1'></cpn9>
+<hr>
+    </div>
+
+
+
+
+    <!-- 组件： -->
+        <template id='cpn1'>
+            <div>
+                <h1>我是全局定义的111</h1>
+                <p>我是内容哈哈哈111</p>
+            </div>
+        </template>
+
+        <template id='cpn2'>
+            <div>
+                <h1>我是局部定义的222</h1>
+                <p>我是内容呵呵呵222</p>
+            </div>
+        </template>
+
+        <template id='cpn3'>
+            <div>
+                <h1>{{title}}</h1>
+                <p>{{cont}}</p>
+            </div>
+        </template>
+
+        <template id='cpn4'>
+            <div>
+                <h1>{{title}}</h1>
+                <p>{{cont}}</p>
+            </div>
+        </template>
+
+        <template id='cpn5'>
+            <div>
+                <h3>当前计数：{{num}}</h3>
+                <button @click='add()'>+</button>
+                <button @click='sub()'>-</button>
+            </div>
+        </template>
+
+        <template id='cpn6'>
+            <div>
+                <h3>
+                    {{cmoves}} <br>
+                    {{cmessage}}
+                    <ul>
+                        <li v-for='item in cmoves'>{{item}}</li>
+                    </ul>
+                    {{cInfo}}
+                </h3>
+            </div>
+        </template>
+
+        <template id='cpn7'>
+            <div>
+                <button v-for='item in ccat' @click='btnClick(item)'>{{item.name}}</button>
+            </div>
+        </template>
+
+        <template id='cpn8'>
+            <div>
+                <h2>cnum1={{cnum1}}</h2>
+                <h2>dnum1={{dnum1}}</h2>
+                <input type="text" v-model='dnum1' @input='dnum1Input'>
+                <hr>
+                <h2>cnum2={{cnum2}}</h2>
+                <h2>dnum2={{dnum2}}</h2>
+                <input type="text" v-model='dnum2' @input='dnum2Input'>
+            </div>
+        </template>
+
+        <template id='cpn9'>
+            <div>
+                <button @click='Vparpent'>子访问父</button>
+            </div>
+        </template>
+    <script src="vue.js"></script>
+
+    <script>
+        // 组件化全局写法
+        Vue.component('cpn1', {
+            template: '#cpn1',
+        }),
+        Vue.component('cpn3', {
+            template:'#cpn3',
+            data() {
+                return {
+                    title: '我是标题111',
+                    cont: '我是内容111'
+                }
+            },
+        })
+
+
+        const app = new Vue({
+            el:'#app',
+            data:{
+                coblogs:'我的博客',
+                num: 0,
+                isactive: false,
+                isshadow: false,
+                message:"第一个vue",
+                moves: ['我和我的祖国','hello','world','hollow'],
+                aUrl:'https://www.cnblogs.com/hollows/',
+                imgUrl: 'https://files.dbnuo.com/wallpaper/wallhaven-83yl1y.webp',
+                test: '你好啊Vue!',
+                findbgColor:'pink',
+                findSize:100,
+                findmarginSize:0,
+                findColor:'red',
+                lis:['javascript','php','java','python','c++','jquery','bootstrap'],
+                books1: [
+                    {id: 100, name:'javascript', price: 62},
+                    {id: 101, name:'php', price: 45},
+                    {id: 102, name:'jquery', price: 53},
+                    {id: 103, name:'linux', price: 120},
+                    {id: 104, name:'java', price: 140},
+                ],
+                isUser:true,
+                books2: [
+                    {id:1, name:'《算法导论》', deta:'2006-9', price:85.00, count:1},
+                    {id:1, name:'《unix编程艺术》', deta:'2006-2', price:59.00, count:1},
+                    {id:1, name:'《编程珠玑》', deta:'2008-10', price:39.00, count:1},
+                    {id:1, name:'《代码大全》', deta:'2006-3', price:128.00, count:1},
+                ],
+                message2:'你好啊！',
+                sex:'男',
+                hobbys:[],
+                isAgreen:false,
+                fruit:'葡萄',
+                fruits:[],
+                newhobby:[],
+                newhobbys:['篮球','足球','乒乓球','羽毛球','台球'],
+                info: {
+                    id:19301013,
+                    name:'hollow',
+                    age:20,
+                    height:1.86,
+                },
+                cat:[
+                    {id:'aaa',name:'javascript'},
+                    {id:'bbb',name:'php'},
+                    {id:'ccc',name:'java'},
+                    {id:'ddd',name:'jquery'},
+                ],
+                num1: 1,
+                num2: 2,
+            },
+
+            methods: {
+                addCount:function() {
+                    this.num++;
+                },
+                subCount:function() {
+                    this.num--;
+                },
+                changeClass:function() {
+                    this.isactive = !this.isactive;
+                    this.isshadow = !this.isshadow;
+                },
+                getClass:function() {
+                    return {active: this.isactive, shadow: this.isshadow};
+                },
+                getStyle:function() {
+                    return {'background':this.findbgColor,'font-size':this.findSize + 'px','margin':this.findmarginSize,'color':this.findColor}
+                },
+                btnClearLi() {
+                    this.lis.pop();
+                },
+                add(index) {
+                    this.books2[index].count++;
+                },
+                sub(index) {
+                    this.books2[index].count--;
+                },
+                btnRemove(index) {
+                    this.books2.splice(index, 1);
+                },
+                cpnClick(item) {
+                    console.log('cpnClick',item);
+                },
+                num1Cange(value) {
+                    this.num1 = parseFloat(value) * 5;
+                },
+                num2Change(value) {
+                    this.num2 = parseFloat(value) * 5;
+                },
+                Vchildren() {
+                    console.log(this.$children);
+
+                    this.$refs.ref1.show();
+                },
+                show() {
+                    console.log('我是爸爸根VueShow');
+                }
+
+            },
+
+            computed: {
+                prices: function() {
+                    let allPrices = 0;
+                    for(let i = 0;i < this.books1.length;i++) {
+                        allPrices += this.books1[i].price;
+                        return allPrices;
+                    }
+                },
+                getPrice() {
+                    return this.books2.reduce(function(pre, book) {
+                        return pre + book.price * book.count;
+                    }, 0)
+                },
+            },
+            
+            // 组件化局部写法
+            components: {
+                cpn2: {
+                    template: '#cpn2',
+                },
+                cpn4: {
+                    template: '#cpn4',
+                    data() {
+                        return {
+                            title:'我是标题222',
+                            cont:'我是内容222'
+                        }
+                    },
+                },
+                cpn5: {
+                    template: '#cpn5',
+                    data() {
+                        return {
+                            num: 0,
+                        }
+                    },
+                    methods: {
+                        add() {
+                            this.num++;
+                        },
+                        sub() {
+                            this.num--;
+                        }
+                    },
+                },
+                cpn6: {
+                    template:'#cpn6',
+                    props: {
+                        cmoves: {
+                            type:Array,
+                            default:['default'],
+                        },
+                        cmessage: {
+                            type:String,
+                            default:'default',
+                        },
+                        cInfo: {
+                            type:Object,
+                            // default: {default:'default'},
+                        }
+                    }
+                },
+                cpn7: {
+                    template:'#cpn7',
+                    // 父传子
+                    props: {
+                        ccat: {
+                            type:Array,
+                            default:['defult'],
+                        }
+                    },
+                    // 子传父
+                    methods: {
+                        btnClick(item) {
+                            this.$emit('item-click',item);
+                        }
+                    }
+                },
+                cpn8: {
+                    template: '#cpn8',
+                    props: {
+                        cnum1: {
+                            type:Number,
+                            default:111,
+                        },
+                        cnum2: {
+                            type:Number,
+                            default:222,
+                        }
+                    },
+                    data() {
+                        return {
+                            dnum1: this.cnum1,
+                            dnum2: this.cnum2,
+                        }
+                    },
+                    methods: {
+                        dnum1Input(value) {
+                            this.$emit('num1-change',this.dnum1);
+                        },
+                        dnum2Input(value) {
+                            this.$emit('num2-change',this.dnum2);
+                        }
+                    },
+                },
+                cpn9: {
+                    template: '#cpn9',
+                    methods: {
+                        Vparpent() {
+                            console.log(this.$root);
+
+                            this.$root.show();
+                        },
+                        show() {
+                            console.log('我是儿子cpn9Show');
+                        }
+                    },
+                }
+
+
+
+            }
+        })
+    </script>
+</body>
+</html>

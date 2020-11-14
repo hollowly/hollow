@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<!-- <router-link></router-link>：中的一些属性
+		1.tag：可以指定 <router-link> 之后渲染成什么组件，可以让默认的a标签渲染成其他按钮
+			<router-link tag='button'></router-link>
+		2.replace：replace不会留下 history 记录，所以指定 relpace 的情况下，后退返回不能返回到上一个页面中
+		3.active-class：当 <router-link> 对应的路由匹配成功时，会自动给当前元素设置一个	router-link-active的class，
+			设置active-class可以修改默认的名称.
+	-->
+	
+
+	<script src="vue.js"></script>
+
+	<template>
+		<div>
+			<h1>我是App组件</h1>
+			<h2><router-link to='cpn1' tag="button" replace active-class='active'>cpn1</router-link></h2>
+			<h2><router-link to='cpn2' tag='button' replace active-class='active'>cpn2</router-link></h2>
+			<router-view></router-view>
+			<h1>hello world</h1>
+		</div>
+	</template>
+	
+	<script>
+	export default {
+		name: 'App',
+	}
+	</script>
+	
+	<style>
+	body {
+		background: url('./img/10.jpg');
+		background-position: center 0%;
+	}
+	button {
+		background: pink;
+		border: none;
+		outline: none;
+		cursor:pointer;
+		width: 100px;
+		height: 30px;
+	}
+	 .active {
+		 color: #FF0000;
+		 border: 1px solid red;
+	}
+	</style>
+	
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<keep-alive exclude='profile,user'>
+		<router-view></router-view>
+	</keep-alive>
+
+	<script src="vue.js"></script>
+
+	<script>
+		/*
+	// 组件被渲染时执行 created 函数
+	created() {
+		console.log("home created")
+	},
+	// 组件被销毁前执行 destroyed 函数
+	destroyed() {
+		console.log('home destroyed')
+	},
+	// 组件被切换前执行 activated 函数
+	activated() {
+		console.log('home activated')
+		this.$router.push(this.path);
+	},
+	// 组件被切换后执行 deactivated 函数
+	deactivated() {
+		console.log('home deactivated')
+	},
+	beforeRouteLeave (to, from, next) {
+		// console.log(this.$route.path);
+		this.path = this.$route.path;
+		next()
+	}
+		*/
+	</script>
+</body>
+</html>

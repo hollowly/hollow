@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        input{
+            background: white;
+            border: 1px solid pink;
+            width:100px;
+            text-align: center;
+        }
+        #div1{
+            background: red;
+            width: 300px;
+            height: 300px;
+            margin: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='显示' id="show">
+    <input type="button" value='隐藏' id="hide">
+    <input type="button" value='切换' id="toggle">
+    <div id='div1'></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $('#show').click(function()
+    {
+        //显示  show()没有参数就没有动画效果.
+
+        //参数1:代表执行动画的时长.也可以是fast(200)毫秒 normal(400)毫秒 slow(600)毫秒,如果单词写错就相当于normal
+        //参数2:代表动画执行完毕后的回调函数.
+        $('#div1').show(800,function(){alert('动画显示完毕......')});
+    })
+
+    $('#hide').click(function()
+    {
+        //隐藏
+        $('#div1').hide(800,function(){alert('动画隐藏完毕......')});
+    })
+
+    $('#toggle').click(function()
+    {
+        //切换 如果动画隐藏就显示，如果动画显示就隐藏
+        $('#div1').toggle(800);
+    })
+</script>

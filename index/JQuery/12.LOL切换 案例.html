@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        img{
+            width:262px;
+            display: none;
+        }
+        li{
+            background: white;
+            border:1px solid pink;
+            width:70px;
+            text-align: center;
+            margin-bottom:7px;
+            list-style: none;
+        }
+        #ul1,#ul2,#ul3{
+            float: left;
+        }
+        #div1{
+            position: absolute;
+            top:160px;
+            left:320px;
+        }
+    </style>
+</head>
+<body>
+<div id='div1'>
+    <ul id='ul1'>
+        <li style='background-color: red;'>刀妹</li>
+        <li>寒冰</li>
+        <li>豹女</li>
+        <li>迦娜</li>
+        <li>提莫</li>
+        <li>瑞文</li>
+        <li>马尔扎哈</li>
+        <li>卡牌</li>
+        <li>曙光</li>
+    </ul>
+    <ul id='ul2'>
+        <img src="img/16.jpg" style="display: block"><img src="img/17.jpg">
+        <img src="img/18.jpg"><img src="img/19.jpg">
+        <img src="img/20.jpg"><img src="img/21.jpg">
+        <img src="img/22.jpg"><img src="img/23.jpg">
+        <img src="img/24.jpg">
+        <img src="img/25.jpg"><img src="img/26.jpg">
+        <img src="img/27.jpg"><img src="img/28.jpg">
+        <img src="img/29.jpg"><img src="img/30.jpg">
+        <img src="img/31.jpg"><img src="img/32.jpg">
+        <img src="img/33.jpg">
+    </ul>
+    <ul id='ul3'>
+        <li>辛德拉</li>
+        <li>盲僧</li>
+        <li>狗头</li>
+        <li>索拉卡</li>
+        <li>猪妹</li>
+        <li>小炮</li>
+        <li>安妮</li>
+        <li>****</li>
+        <li>****</li>
+    </ul>
+</div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#ul1>li').mouseenter(function()
+        {
+            $(this).css('background','red').siblings('li').css('background','white');
+            var idx = $(this).index();
+            $('#ul2 > img').eq(idx).show().siblings('img').hide();
+        });
+
+        $('#ul3>li').mouseenter(function()
+        {
+            $(this).css('background','red').siblings('li').css('background','white');
+            var idx = $(this).index() + 9;
+            $('#ul2 > img').eq(idx).show().siblings('img').hide();
+        });
+    });
+</script>

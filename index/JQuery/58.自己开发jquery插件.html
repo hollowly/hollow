@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    <div></div>
+    <p></p>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+<script src="jquery-add.js"></script>
+<script src="jquery-bgColor.js"></script>
+<script>
+    //$('div').width('100px').height('100px').css('background','red')
+    //$('div').width('100px').height('100px').bgColor('red');
+
+    //方法1:给jQuery的原型添加方法.
+    $('div').width('100px').height('100px').bgColor('red');
+    //$('div').bgColor('red').width('100px').height('100px');
+
+    //方法2:给jQuery直接添加方法.
+    console.log($.add(40,30));
+</script>

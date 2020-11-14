@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 300px auto;
+            position: relative;
+        }
+        div > img{
+            width: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 1.5s;
+            transform-origin: top right;
+
+        }
+        div:hover > img:nth-of-type(1){
+            transform: rotate(60deg);
+        }
+        div:hover > img:nth-of-type(2){
+            transform: rotate(90deg);
+        }
+        div:hover > img:nth-of-type(3){
+            transform: rotate(120deg);
+        }
+        div:hover > img:nth-of-type(4){
+            transform: rotate(150deg);
+        }
+        div:hover > img:nth-of-type(5){
+            transform: rotate(180deg);
+        }
+        div:hover > img:nth-of-type(6){
+            transform: rotate(210deg);
+        }
+        div:hover > img:nth-of-type(7){
+            transform: rotate(240deg);
+        }
+        div:hover > img:nth-of-type(8){
+            transform: rotate(270deg);
+        }
+        div:hover > img:nth-of-type(9){
+            transform: rotate(300deg);
+        }
+        div:hover > img:nth-of-type(10){
+            transform: rotate(330deg);
+        }
+        div:hover > img:nth-of-type(11){
+            transform: rotate(360deg);
+        }
+        div:hover > img:nth-of-type(12){
+            transform: rotate(390deg);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/pk1.png" alt="">
+        <img src="img/pk2.png" alt="">
+        <img src="img/pk3.png" alt="">
+        <img src="img/pk1.png" alt="">
+        <img src="img/pk2.png" alt="">
+        <img src="img/pk3.png" alt="">
+        <img src="img/pk1.png" alt="">
+        <img src="img/pk2.png" alt="">
+        <img src="img/pk3.png" alt="">
+        <img src="img/pk1.png" alt="">
+        <img src="img/pk2.png" alt="">
+        <img src="img/pk3.png" alt="">
+    </div>
+</body>
+</html>

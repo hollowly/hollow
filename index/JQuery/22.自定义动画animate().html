@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="开始" id='start'>
+    <div id='div1'></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $('#start').click(function()
+        {
+            //自定义动画 animate();
+            //参数1:必选 对象 代表逍遥做动画的属性.
+            //参数2:可选      代表动画执行的时长.
+            //参数3:可选      代表缓动还是匀速  linear(匀速)  默认:swing(缓动).
+            //参数4:可选      动画执行完毕后的回调函数.
+            //可以套用
+            $('#div1').animate({
+                'left':'600px',
+                'width':'200px',
+                'height':'200px',
+            },1000,'swing',function(){
+                $('#div1').animate({
+                    'left':'280px',
+                    'top':'300px',
+                    'width':'300px',
+                    'height':'300px',
+                },1000,'swing',function()
+                {
+                    $('#div1').animate({
+                        'left':'8px',
+                        'top':'33px',
+                        'width':'100px',
+                        'height':'100px',
+                    },1000,'swing',function(){alert('动画执行完毕......')});
+                })
+            })
+        })
+    })
+</script>

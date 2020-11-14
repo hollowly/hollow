@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="/index/static/css/base.css">
+		<style>
+			header {
+				width: 90%;
+				margin: 0 auto;
+			}
+			header > a {
+				display: block;
+				width: 100px;
+				height: 50px;
+				line-height: 50px;
+				background: pink;
+				color: red;
+				text-align: center;
+				text-decoration: none;
+				border-radius: 50px;
+			}
+			form {
+				margin-top: 20px;
+				width: 80%;
+				margin: 0 auto;
+			}
+			form #name,form textarea {
+				width: 90%;
+				height: 30px;
+				border-radius: 5px;
+				outline: none;
+				border: none;
+				padding-left: 10px;
+				margin: 10px 0px;
+			}
+			form textarea {
+				height: 300px;
+				resize: none;
+			}
+			form textarea:focus, form input:focus {
+				box-shadow: 1px 1px 10px darksalmon;
+			}
+		</style>
+</head>
+<body>
+	<header>
+		<h1 style="color: pink;">发表评论</h1>
+		<a href="/">回到首页</a>
+	</header>
+	<hr>
+	<form action="/pinglun" method="get">
+		<label for="name">
+			<strong>你的大名</strong>
+			<input type="text" id='name' name='name' required maxlength="10" minlength="2" placeholder="请输入你的姓名">
+		</label> <br><br>
+
+		<label for="message">
+			<strong>留言内容</strong> <br>
+			<textarea cols="30" rows="10" name='message' id='message' required></textarea> <br>
+	</label>
+
+
+		<input type="submit" value="发表">
+	</form>
+
+
+</body>
+</html>

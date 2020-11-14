@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jquery插件/jquery.mCustomScrollbar.css">
+    <script src="jquery-3.5.0.js"></script>
+    <script src="jquery插件/jquery.mCustomScrollbar.js"></script>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .div1{
+            width: 300px;
+            height: 200px;
+            margin-left: 30px;
+            overflow: auto;
+        }
+        ul >li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="content div1" data-mcs-theme="minimal-dark">
+        <ul>
+            <li>aaaaaaaaaaaaaaa</li>
+            <li>bbbbbbbbbbbbbbbb</li>
+            <li>cccccccccccccccc</li>
+            <li>dddddddddddddddddddd</li>
+            <li>eeeeeeeeeeeeeeeeeeeeeee</li>
+            <li>ffffffffffffffffffffffff</li>
+            <li>gggggggggggggggggggg</li>
+            <li>hhhhhhhhhhhhhhhhhhhhhh</li>
+            <li>hiiiiiiiiiiiiiiiiiiiiii</li>
+            <li>jjjjjjjjjj</li>
+            <li>eeeeeeeeeeeeeeeeeeeeeee</li>
+            <li>ffffffffffffffffffffffff</li>
+            <li>gggggggggggggggggggggg</li>
+            <li>hhhhhhhhhhhhhhhhhhhhhh</li>
+            <li>hiiiiiiiiiiiiiiiiiiiiii</li>
+            <li>jjjjjjjj</li>
+            <li>jjjjjjjjjj</li>
+            <li>eeeeeeeeeeeeeeeeeeeeeee</li>
+            <li>ffffffffffffffffffffffff</li>
+            <li>gggggggggggggggggggggg</li>
+            <li>hhhhhhhhhhhhhhhhhhhhhh</li>
+            <li>hiiiiiiiiiiiiiiiiiiiiii</li>
+            <li>jjjjjjjjjj</li>
+            <li>eeeeeeeeeeeeeeeeeeeeeee</li>
+            <li>ffffffffffffffffffffffff</li>
+            <li>gggggggggggggggggggggg</li>
+            <li>hhhhhhhhhhhhhhhhhhhhhh</li>
+            <li>hiiiiiiiiiiiiiiiiiiiiii</li>
+            <li>jjjjjjjjjj</li>
+            <li>eeeeeeeeeeeeeeeeeeeeeee</li>
+            <li>ffffffffffffffffffffffff</li>
+            <li>gggggggggggggggggggggg</li>
+            <li>hhhhhhhhhhhhhhhhhhhhhh</li>
+            <li>hiiiiiiiiiiiiiiiiiiiiii</li>
+            <li>jjjjjjjjjj</li>
+            <li>eeeeeeeeeeeeeeeeeeeeeee</li>
+            <li>ffffffffffffffffffffffff</li>
+            <li>gggggggggggggggggggggg</li>
+            <li>hhhhhhhhhhhhhhhhhhhhhh</li>
+            <li>hiiiiiiiiiiiiiiiiiiiiii</li>
+        </ul>
+    </div>
+
+    <script>
+        $(function(){
+            $(".content").mCustomScrollbar();
+        })
+    </script>
+</body>
+</html>

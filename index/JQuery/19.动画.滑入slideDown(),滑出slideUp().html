@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        input{
+            background: white;
+            border: 1px solid pink;
+            width:100px;
+            text-align: center;
+        }
+        #div1{
+            background: red;
+            width: 300px;
+            height: 300px;
+            margin: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='滑入' id="slideDown">
+    <input type="button" value='滑出' id="slideUp">
+    <input type="button" value='切换' id="slideToggle">
+    <div id='div1'></div>
+</body>
+</html>
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $('#slideDown').click(function()
+    {
+        //参数1:代表执行动画的时长.也可以是fast(200)毫秒 normal(400)毫秒 slow(600)毫秒,如果单词写错就相当于normal
+        //参数2:代表动画执行完毕后的回调函数.
+
+        //滑入
+        $('#div1').slideDown(800,function(){alert('动画滑入完毕......')});
+    })
+
+    $('#slideUp').click(function()
+    {
+        //滑出
+        $('#div1').slideUp(800,function(){alert('动画滑出完毕......')});
+    })
+
+    $('#slideToggle').click(function()
+    {
+        //切换 如果动画滑入就滑出，如果动画滑出就滑入
+        $('#div1').slideToggle(800);
+    })
+</script>

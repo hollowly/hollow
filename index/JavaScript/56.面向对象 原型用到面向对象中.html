@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    window.onload = function()
+    {
+        function a(name,qq)
+        {
+            this.name=name;
+            this.qq=qq;
+        }
+        
+        //用构造函数加属性
+        //原型加方法
+
+        a.prototype.showname=function()//原型
+        {
+            alert('我的名字叫'+this.name);
+        }
+        a.prototype.showQQ=function()//原型
+        {
+            alert('我的QQ是'+this.qq);
+        }
+
+        var obj1 = new a('blue','2405751973');
+        var obj2 = new a('hollow','2499538506');
+
+        // obj1.showname();
+        // obj1.showQQ();
+        
+        // obj2.showname();
+        // obj2.showQQ();
+
+        alert(obj1.showname == obj2.showname);
+    }
+</script>

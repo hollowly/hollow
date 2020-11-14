@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        //数组
+        var arr=[1,2,3,4,5,6];
+        arr.push(4);//尾部添加数组
+        arr.pop();//尾部删除数组
+        arr.unshift();//头部添加数组
+        arr.shift(5);//头部删除数组
+
+        //删除：splice(起点,长度);
+        arr.splice(2,3);
+        //插入：splice(起点,长度,元素.....);
+        arr.splice(2,2,'a','b');
+
+        alert(arr);
+    </script>
+</body>
+</html>

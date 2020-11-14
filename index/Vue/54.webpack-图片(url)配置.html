@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	
+	<script src="vue.js"></script>
+	
+	<script>
+// 四。配置webpack 图片：
+// 1. 在项目下安装图片 (url) 依赖：
+// npm install --save-dev url-loader
+// -----------------------------------------------------------------------------------------------------------------------------
+// 2. 在 webpack.config.js rules中进行配置：
+//             {
+//               test: /\.(png|jpg|gif)$/,
+//               use: [
+//                 {
+//                   loader: 'url-loader',
+//                   options: {
+//                     limit: 8192
+//                     name:'img/[name].[hash:8].[ext]'
+//                   }
+//                 }
+//               ]
+//             }
+// 3. 在 webpack.config.js output中进行配置：（添加一个 dist/ 的路径）
+// publicPath: 'dist/'
+// -----------------------------------------------------------------------------------------------------------------------------
+// 4.对于太大的图片，我们建议安装 file-loader：
+// npm install file-loader --save-dev
+// 如果打包出来的图片没有显示并且网页上的链接显示 background: url([object Object]);这是因为file-loader版本问题，所以对版本进行降级，替换的版本：
+// npm install file-loader@3.0.1 --save-dev -s
+// -----------------------------------------------------------------------------------------------------------------------------
+// 5. npm run build 进行打包，成功即ok。
+			
+	</script>
+</body>
+</html>

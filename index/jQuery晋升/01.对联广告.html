@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #left{
+            float: left;
+            position: fixed;
+            left: 0;
+            top:300px;
+            display: none;
+        }
+        #right{
+            float:right;
+            position: fixed;
+            right: 0;
+            top:300px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/001.jpg" id='left'>
+    <img src="img/002.jpg" id='right'>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+<script src="jquery-3.5.0.js"></script>
+
+<script>
+    $(function()
+    {
+        $(window).scroll(function()
+        {
+          if($("html,body").scrollTop() > 500)
+          {
+            $('#left,#right').show(1000);
+          }
+          else{
+              $('#left,#right').hide(1000);
+          }
+        })
+    })
+</script>

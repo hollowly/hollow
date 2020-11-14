@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="vue.js"></script>
+    
+    <script>
+        const nums = [10,234,254,46,76,786,678,54];
+        // // filter/map/reduce
+        // // 1.filter函数的使用
+        // // 对数组中的内容进行对应的条件过滤
+        // // filter函数中的回调函数有一个要求，必须返回一个boolean值
+        // // true：当返回true时，函数内部会自动将这次回调的值加入到新的数组中
+        // // false：当返回false时，函数内部会过滤掉这个值
+        // let newNums = nums.filter(function(n) {
+        //     return n < 100;
+        // })
+        // console.log(newNums); // 10,46,76,54
+
+
+        // // 2.map函数的使用
+        // // 对数组中所有内容遍历，然后进行对应的操作
+        // let new2Nums = newNums.map(function(n) {
+        //     return n * 2;
+        // })
+        // console.log(new2Nums); // 20,92,152,108
+
+        // // 3.reduce函数的使用
+        // // 对数组中所有内容进行汇总
+        // let new3Nums = new2Nums.reduce(function(preValue,n) {
+        //     return preValue + n;
+        // }, 0);
+        // // 第一次： 0     n = 20
+        // // 第二次： 20    n = 92
+        // // 第三次:  112   n = 152
+        // // 第四次： 264   n = 108
+        // // 372
+        // console.log(new3Nums);
+
+
+        // 链式编程
+        // let newNums =  nums.filter(function(n) {
+        //     return n < 100;
+        // }).map(function(n) {
+        //     return n * 2;
+        // }).reduce(function(preValue, n) {
+        //     return preValue + n;
+        // }, 0);
+
+        // console.log(newNums);
+
+
+        // 箭头函数
+        let newNums = nums.filter(n => n < 100).map(n => n * 2).reduce((pre, n) => pre + n);
+        console.log(newNums);
+    </script>
+</body>
+</html>

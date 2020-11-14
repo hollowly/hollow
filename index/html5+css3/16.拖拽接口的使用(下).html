@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            border: 1px solid red;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        
+        #div2{
+            border: 1px solid blue;
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin-left: 20px;
+        }
+        #div3{
+            border: 1px solid green;
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin-left: 20px;
+        }
+        p{
+            background: yellow;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 在h5中想要拖拽元素，就必须为元素添加draggable="true"，图片和超链接默认就可以拖拽 -->
+    <div id='div1'>
+        <p draggable="true" id='p1'>试着拖拽我到另一个框架</p>
+        <p draggable="true" id='p2'>试着也拖拽我到另一个框架</p>
+    </div>
+    <div id='div2'></div>
+    <div id='div3'></div>
+</body>
+</html>
+
+<script>
+
+    document.ondragstart = function(e)
+    {
+        // e.target.style.opacity = 0.5;
+
+        e.dataTransfer.setData('text/html',e.target.id);
+    }
+    // document.ondragend = function(e)
+    // {
+    //     e.target.style.opacity = 1;
+    // }
+
+
+    // document.ondragenter = function(e)
+    // {
+    //     console.log(e.target);
+    // }
+
+    document.ondragover = function(e)
+    {
+        e.preventDefault();
+    }
+    document.ondrop = function(e)
+    {
+        var id = e.dataTransfer.getData('text/html');
+        e.target.appendChild(document.getElementById(id));
+    }
+
+</script>

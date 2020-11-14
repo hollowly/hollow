@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id='txt1'>
+    <input type="button" value="按钮" id="btn1">
+
+    <ui id="ul1">
+        <li class="box"></li>
+        <li class="box"></li>
+        <li></li>
+        <li></li>
+        <li class="box"></li>
+        <li></li>
+    </ui>
+</body>
+</html>
+
+<script>
+    //setAttribute      获取
+    //getAttribute      设置
+    //removeAttribute   删除
+    window.onload=function()
+    {
+        var otxt=document.getElementById('txt1');
+        var obtn=document.getElementById('btn1');
+
+        obtn.onclick=function()
+        {
+            //otxt.value="1111";
+            //otxt['value']="2222";
+
+            otxt.setAttribute('value','3333');
+        }
+
+        var oul1=document.getElementById('ul1');
+        var ali1=document.getElementsByClassName('box')
+        for(i = 0; i < ali1.length;i++)
+        {
+            ali1[i].style.background='red';
+        }
+    }
+</script>

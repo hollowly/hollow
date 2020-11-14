@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script src="vue.js"></script>
+
+	<script>
+			// 箭头函数中的 this 
+			const obj = {
+				aaa() {
+					setTimeout(function() {
+						console.log(this);  //window
+						});
+							// 箭头函数中的this是向外层作用域中，一层层查找this,直到有 this 的定义.
+					setTimeout(() => {
+						console.log(this);  //obj对象
+						})
+				}
+			}
+
+			obj.aaa();
+
+	</script>
+</body>
+</html>
