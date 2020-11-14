@@ -2,34 +2,41 @@ const http = require('http')
 const fs = require('fs')
 const url = require('url')
 
-
-
 http.createServer((req, res) => {
-	const urlPath = url.parse(req.url,true).pathname
-
+	var urlObj = url.parse(req.url)
+	var urlPath = urlObj.path
 	if(urlPath === '/') {
-		fs.readFile('./index2/index.html',(err, date) => {
+		fs.readFile('./index/index.html',(err, data) => {
 			if(err) {
 				res.setHeader('Content-Type','text/plain;charset=utf-8')
-				return res.end('读取失败')
+				return res.end('读取失败');
 			}
-			res.end(date)
+			res.end(data)
 		})
-	} else if(urlPath === '/static/login') {
-		fs.readFile('./index2/static/login.html',(err, data) => {
+	} else if(urlPath.indexOf('/index/static/') === 0) {
+		fs.readFile('.' + urlPath,(err, data) => {
+			if(err) {
+				res.setHeader('Content-Type','text/plain;charset=utf-8')
+				return res.end('读取失败');
+			}
+			res.end(data)
+		})
+	} else if(urlPath === '/post') {
+		fs.readFile('./index/post.html',(err, data) => {
 			if(err) {
 				res.setHeader('Content-Type','text/plain;charset=utf-8')
 				return res.end('读取失败')
 			}
 			res.end(data)
 		})
-	}else if(urlPath === '/static/img') {
+	} else if(urlPath === '/img') {
 		fs.readFile('./index2/static/girl.jpg',(err, data) => {
 			if(err) {
-				res.setHeader('Content-Type','image/jpeg')
+				res.setHeader('Content-Type','text/plain;charset=utf-8')
 				return res.end('读取失败')
 			}
 			res.end(data)
 		})
 	}
+
 }).listen(3000)
