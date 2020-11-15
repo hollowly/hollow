@@ -8,6 +8,7 @@
 
 	app.get('/index',(req, res) => {
 		res.send('主页')
+		console.log(req.query);
 	})
 	app.get('/about',(req, res) => {
 		res.send('关于')
