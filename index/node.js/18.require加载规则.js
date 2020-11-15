@@ -25,6 +25,9 @@ require('http')
 // 如果上一级还没有，则继续玩上上一级查找
 // 直到当前磁盘根目录还没找到，最后报错：	can not find module xxx
 
+// 注意：我们一个项目尤其只有一个 node_modules，放在项目根目录中，这样的话项目中所有的子目录中的代码都能加载到第三方包
+// 不会出现多个 node_modules
+
 const template = require('art-template')
 
 console.log(template);
