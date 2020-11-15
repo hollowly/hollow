@@ -12,3 +12,6 @@
 // nodt_modules/art-template/package.json文件中的main属性
 // main属性中就记录了art-template的入口模块
 
+const template = require('art-template')
+
+console.log(template);
