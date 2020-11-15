@@ -28,6 +28,21 @@ require('http')
 // 注意：我们一个项目尤其只有一个 node_modules，放在项目根目录中，这样的话项目中所有的子目录中的代码都能加载到第三方包
 // 不会出现多个 node_modules
 
+// 总结：require：
+// 模块查找机制
+// 	 优先从缓存加载
+// 	 核心模块
+// 	 路径形式的文件模块
+// 	 第三方模块
+			//node_modules/jquery
+			//node_modules/jquery/package.json
+			//node_modules/jquery/package.json main
+			//index.js备选项
+			// 进入上一级目录 node_modules
+			// 按照这个规则依次往上找，知道磁盘根目录也找不到就报错 can not modules xxx
+// 一个项目尤其只有一个node_modules，且存放在项目的根目录
+
+
 const template = require('art-template')
 
 console.log(template);
