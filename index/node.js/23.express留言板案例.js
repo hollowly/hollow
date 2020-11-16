@@ -31,7 +31,6 @@ app.get('/about',(req, res) => {
 	res.send('关于')
 })
 
-
 // 公开文件
 app.use('/index/static/',express.static('./index/static/'))
 

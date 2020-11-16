@@ -1,2 +1,2 @@
 // 1、安装nodemon
-	// npm install nodemon
+	// npm install --global nodemon
