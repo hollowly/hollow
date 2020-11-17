@@ -48,12 +48,10 @@ app.post('/post',(req, res) => {
 	// 4.通过 req.body 获取post请求的数据
 	// console.log(req.body);
 	let comment = req.body
-	comment.data = '2020-11-17'
-	let str = JSON.stringify(comment)
-	str = JSON.parse(str)
-
-	console.log(str);
-	comments.unshift(str)
+	comment.date = '2020-11-17'
+	console.log(JSON.stringify(comment));
+	console.log(comment);
+	comments.unshift(comment)
 	res.redirect('/')
 
 })

@@ -36,12 +36,10 @@
 
 	router.post('/students/new',(req, res) => {
 		// 1.获取表单数据
-		// 2.处理数据
+		console.log(JSON.stringify(req.body));
+		// 2.处理数据：将数据保存到 db.json 文件中用于持久化
+
 		// 3.发送响应
-		// console.log(req.body);
-		console.log(req.body);
-		// comments.unshift(comment)
-		// res.redirect('/students')
 
 	})
 
