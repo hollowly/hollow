@@ -8,7 +8,7 @@
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="/public/css/index.css" rel="stylesheet">
@@ -39,12 +39,33 @@
 				</div>
 				
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-
-          <h2 class="sub-header">Student management</h2>
-          <div class="table-responsive">
-						<a class="btn btn-su">添加学生</a>
-          </div>
+					<h2 class="sub-header">Add students</h2>
+					
+<form action="/students/new" method="POST">
+  <div class="form-group">
+    <label for="studentsid">学号：</label>
+    <input type="text" class="form-control" name='id' id="studentsid" placeholder="请输入学号">
+  </div>
+  <div class="form-group">
+    <label for="studentsname">姓名：</label>
+    <input type="text" class="form-control" name='name' id="studentsname" placeholder="请输入姓名">
+	</div>
+  <div class="form-group">
+    <label for="studentclass">班级：</label>
+    <input type="text" class="form-control" name='class' id="studentclass" placeholder="请输入班级">
+	</div>
+  <div class="form-group">
+    <label for="studentsage">年龄：</label>
+    <input type="text" class="form-control" name='age' id="studentsage" placeholder="请输入年龄">
+	</div>
+  <div class="form-group">
+    <label for="studentshobbys">兴趣：</label>
+    <input type="text" class="form-control" name='hobbys' id="studentshobbys" placeholder="请输入兴趣">
+	</div>
+	
+  <button type="submit" class="btn btn-success">提交</button>
+  <a href="/students" class="btn btn-warning">返回</a>
+</form>
         </div>
       </div>
     </div>

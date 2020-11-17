@@ -7,6 +7,7 @@
 	// 1.创建路由容器
 	const router = express.Router()
 	
+
 	router.get('/',(req, res) => {
 		res.send('index page')
 	})
@@ -34,7 +35,13 @@
 	})
 
 	router.post('/students/new',(req, res) => {
-		
+		// 1.获取表单数据
+		// 2.处理数据
+		// 3.发送响应
+		var comment = req.body
+		comments.unshift(comment)
+		res.redirect('/students')
+
 	})
 
 	router.get('/students/edit',(req, res) => {
