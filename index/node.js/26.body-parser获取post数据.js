@@ -46,7 +46,7 @@ app.get('/post', (req, res) => {
 
 app.post('/post',(req, res) => {
 	// 4.通过 req.body 获取post请求的数据
-	// console.log(req.body);
+	console.log(req.body);
 	let comment = req.body
 	comment.data = '2020-11-17'
 	comments.unshift(comment)

@@ -38,9 +38,10 @@
 		// 1.获取表单数据
 		// 2.处理数据
 		// 3.发送响应
-		var comment = req.body
-		comments.unshift(comment)
-		res.redirect('/students')
+		// console.log(req.body);
+		console.log(req.body);
+		// comments.unshift(comment)
+		// res.redirect('/students')
 
 	})
 
