@@ -36,10 +36,16 @@
 
 	router.post('/students/new',(req, res) => {
 		// 1.获取表单数据
-		console.log(JSON.stringify(req.body));
+		var comment = JSON.stringify(req.body);
 		// 2.处理数据：将数据保存到 db.json 文件中用于持久化
-
+		fs.readFile('./db.json',(err, data) => {
+			if(err) {
+				return	res.send('读取失败')
+			}
+			console.log(data.toString());
+		})
 		// 3.发送响应
+		res.redirect('/students')
 
 	})
 
