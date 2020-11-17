@@ -22,7 +22,8 @@ app.get('/', (req, res) => {
 				'橘子',
 				'西瓜'
 			],
-			info: JSON.parse(data)
+			// 从文件中读取到的数据一定是字符串，所以一定要手动转成对象
+			info: JSON.parse(data).student
 		})
 	})
 })
