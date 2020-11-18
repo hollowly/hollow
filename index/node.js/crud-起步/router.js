@@ -1,5 +1,6 @@
 
 	const fs = require('fs')
+	const Student = require('./studnet')
 
 	// express提供了一种封装专门用来包装路由的
 	const express = require("express")
@@ -28,6 +29,12 @@
 				info: JSON.parse(data).student
 			})
 		})
+	})
+
+	Student.find((err, student) => {
+		if(err) {
+			require
+		}
 	})
 
 	router.get('/students/new',(req, res) => {
