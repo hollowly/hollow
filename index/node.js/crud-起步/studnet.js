@@ -3,11 +3,11 @@
 	职责：操作文件中的数据，只处理逻辑，不关心业务
 */
 const fs = require('fs')
-
 const dbPath = './db.json'
+
 // 获取所有学生列表
 exports.find = (callback) => {
-	fs.readFile(dbPath, (err, data) => {
+	fs.readFile(dbPath, 'utf8', (err, data) => {
 		if(err) {
 			return	callback(err)
 		}

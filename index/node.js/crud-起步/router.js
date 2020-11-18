@@ -15,7 +15,7 @@
 
 	// 2.把路由都挂载到 router 容器中
 	router.get('/students',(req, res) => {
-		fs.readFile('./db.json','utf8',(err, data) => {
+		Student.find((err, student) => {
 			if(err) {
 				return res.status(500).send('server error.')
 			}
@@ -26,15 +26,24 @@
 					'橘子',
 					'西瓜',
 				],
-				info: JSON.parse(data).student
+				info: student
 			})
 		})
-	})
 
-	Student.find((err, student) => {
-		if(err) {
-			require
-		}
+		// fs.readFile('./db.json','utf8',(err, data) => {
+		// 	if(err) {
+		// 		return res.status(500).send('server error.')
+		// 	}
+		// 	res.render('index.html', {
+		// 		fruits: [
+		// 			'苹果',
+		// 			'香蕉',
+		// 			'橘子',
+		// 			'西瓜',
+		// 		],
+		// 		info: JSON.parse(data).student
+		// 	})
+		// })
 	})
 
 	router.get('/students/new',(req, res) => {
