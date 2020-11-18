@@ -8,7 +8,6 @@
 	// 1.创建路由容器
 	const router = express.Router()
 	
-
 	router.get('/',(req, res) => {
 		res.send('index page')
 	})
