@@ -24,10 +24,10 @@ exports.save = ((student, callback) => {
 		}
 		var students = JSON.parse(data).students
 		// 处理id唯一，不重复
-		students.id = students[students.length -1].id + 1;
+		student.id = students[students.length -1].id + 1;
 		// 把用户传递的对象保存到数组中
-		students.push(students)
-
+		students.push(student)
+		console.log(students);
 		// 把对象数据转成字符串
 		var result =	JSON.stringify({
 			students:students
