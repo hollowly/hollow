@@ -64,8 +64,11 @@ exports.update = ((student, callback) => {
 		}
 		var students = JSON.parse(data).students
 
+		// 注意，这里记得把id统一
+		student.id = parseInt(student.id)
+
 		var stu = students.find((item) => {
-			return item.id === parseInt(student.id)
+			return item.id === student.id
 		})
 
 		for(let key in student) {
