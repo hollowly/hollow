@@ -16,6 +16,19 @@ exports.find = (callback) => {
 }
 
 
+exports.findById = (id, callback) => {
+	fs.readFile(dbPath, 'utf8', (err, data) => {
+		if(err) {
+			return callback(err)
+		}
+		var students = JSON.parse(data).students
+		var ret = students.find(item => {
+			return item.id === id
+		})
+		callback(null, ret)
+	})
+}
+
 // 添加保存学生
 exports.save = ((student, callback) => {
 	fs.readFile(dbPath, 'utf8',(err, data) => {
@@ -27,7 +40,7 @@ exports.save = ((student, callback) => {
 		student.id = students[students.length -1].id + 1;
 		// 把用户传递的对象保存到数组中
 		students.push(student)
-		console.log(students);
+		// console.log(students);
 		// 把对象数据转成字符串
 		var result =	JSON.stringify({
 			students:students

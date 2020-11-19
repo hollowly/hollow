@@ -37,21 +37,6 @@
 				info: student
 			})
 		})
-
-		// fs.readFile('./db.json','utf8',(err, data) => {
-		// 	if(err) {
-		// 		return res.status(500).send('server error.')
-		// 	}
-		// 	res.render('index.html', {
-		// 		fruits: [
-		// 			'苹果',
-		// 			'香蕉',
-		// 			'橘子',
-		// 			'西瓜',
-		// 		],
-		// 		info: JSON.parse(data).student
-		// 	})
-		// })
 	})
 
 	router.get('/students/new',(req, res) => {
@@ -65,15 +50,23 @@
 			}
 			res.redirect('/students')
 		})
-
 	})
 
 	router.get('/students/edit',(req, res) => {
-		
+		Student.findById(parseInt(req.query.id), (err, student) => {
+			if(err) {
+				return res.status(500).send('server error.')
+			}
+			res.render('edit.html', {
+				student:student
+			})
+		})
 	})
+
 	router.post('/students/edit',(req, res) => {
 		
 	})
+
 	router.get('/students/delete',(req, res) => {
 		
 	})
