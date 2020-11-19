@@ -22,7 +22,24 @@ exports.save = ((student, callback) => {
 		if(err) {
 			return callback(err)
 		}
-		var students = JSON.parse(student)
+		var students = JSON.parse(data).student
+
+		// 处理id唯一，不重复
+		student.id = students[students.length -1].id + 1;
+
+		// 把用户传递的对象保存到数组中
+		students.unshift(student)
+
+		// 把对象数据转成字符串
+		var result =	JSON.stringify({
+			students:student
+		})
+		
+		// 把字符串保存到文件中
+		fs.writeFile(dbPath, result,(err) => {
+			return callback(err)
+		})
+		callback(null)
 	})
 })
 
