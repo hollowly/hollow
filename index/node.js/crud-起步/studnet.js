@@ -69,7 +69,6 @@ exports.update = ((student, callback) => {
 			}
 			callback(null)
 		})
-
 	})
 })
 
