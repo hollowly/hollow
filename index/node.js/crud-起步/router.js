@@ -50,12 +50,12 @@
 	})
 
 	router.post('/students/new',(req, res) => {
-		stdout.save((err, data) => {
+		Student.save(req.body,(err) => {
 			if(err) {
-				return res.end('添加失败')
+				return res.status(500).send('server error.')
 			}
-			res.end(data)
-		});
+			res.redirect('/students')
+		})
 
 	})
 

@@ -11,7 +11,7 @@ exports.find = (callback) => {
 		if(err) {
 			return callback(err)
 		}
-		callback(null, JSON.parse(data).student)
+		callback(null, JSON.parse(data).students)
 	})
 }
 
@@ -22,28 +22,28 @@ exports.save = ((student, callback) => {
 		if(err) {
 			return callback(err)
 		}
-		var students = JSON.parse(data).student
-
+		var students = JSON.parse(data).students
+		console.log(students);
 		// 处理id唯一，不重复
-		student.id = students[students.length -1].id + 1;
-
+		students.id = students[students.length -1].id + 1;
+		console.log(students);
 		// 把用户传递的对象保存到数组中
-		students.unshift(student)
+		students.push(students)
 
 		// 把对象数据转成字符串
 		var result =	JSON.stringify({
-			students:student
+			students:students
 		})
 		
 		// 把字符串保存到文件中
-		fs.writeFile(dbPath, result,(err) => {
-			return callback(err)
+		fs.writeFile(dbPath, result, (err) => {
+			if(err) {
+				return callback(err)
+			}
+			callback(null)
 		})
-		callback(null)
 	})
 })
-
-
 
 // 更新学生
 exports.update = () => {
