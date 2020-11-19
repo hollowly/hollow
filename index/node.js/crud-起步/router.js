@@ -18,7 +18,7 @@
 	// )
 
 	router.get('/',(req, res) => {
-		res.render('index page')
+		res.send('<h1>请访问/students <p> <a href="http://127.0.0.1:3000/students">点击跳转</a></h1>')
 	})
 
 	// 2.把路由都挂载到 router 容器中

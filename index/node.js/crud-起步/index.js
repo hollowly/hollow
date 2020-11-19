@@ -18,4 +18,6 @@ app.use(bodyParser.json())
 // 把路由容器挂载到 app 服务中
 app.use(router)
 
-app.listen(3000)
+app.listen(3000,() => {
+	console.log('server is running，你可以通过访问http://127.0.0.1:3000');
+})
