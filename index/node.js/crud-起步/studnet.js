@@ -23,7 +23,7 @@ exports.save = ((student, callback) => {
 			return callback(err)
 		}
 		var students = JSON.parse(data).students
-		// 处理id唯一，不重复
+		// 处理id唯一，不重复gt
 		student.id = students[students.length -1].id + 1;
 		// 把用户传递的对象保存到数组中
 		students.push(student)
@@ -44,10 +44,34 @@ exports.save = ((student, callback) => {
 })
 
 // 更新学生
-exports.update = () => {
-	
-}
+exports.update = ((student, callback) => {
+	fs.readFile(dbPath, 'utf8', (err, data) => {
+		if(err) {
+			return callback(err)
+		}
+		var students = JSON.parse(data).students
 
+		var stu = students.find((item) => {
+			return item.id === student.id
+		})
+
+		for(let key in student) {
+			stu[key] = student[key]
+		}
+
+		var result = JSON.stringify({
+			students:students
+		})
+
+		fs.writeFile(dbPath, result, (err) => {
+			if(err) {
+				return callback(err)
+			}
+			callback(null)
+		})
+
+	})
+})
 
 
 // 删除学生
