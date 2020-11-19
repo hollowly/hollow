@@ -8,15 +8,14 @@
 	// 1.创建路由容器
 	const router = express.Router()
 	
-	Student.update({
-		id:1,
-		name:'张小三'
-	}, (err) => {
-		if(err) {
-		return	console.log('修改失败');
-		}
-		console.log('修改成功');
-	})
+	Student.update(
+		{id:1,name:'张八八',function(err) {
+			if(err) {
+				return console.log('修改失败');
+			}
+			console.log('修改成功');
+		}}
+	)
 
 	router.get('/',(req, res) => {
 		res.render('index page')
