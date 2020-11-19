@@ -89,7 +89,7 @@ exports.update = ((student, callback) => {
 
 
 // 删除学生
-exports.delete = () => {
+exports.delete = ((id, callback) => {
 	fs.readFile(dbPath, 'utf8',(err, data) => {
 		if(err) {
 			return callback(err)
@@ -115,4 +115,4 @@ exports.delete = () => {
 			callback(null)
 		})
 	})
-}
+})
