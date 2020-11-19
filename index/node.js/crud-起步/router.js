@@ -64,7 +64,13 @@
 	})
 
 	router.post('/students/edit',(req, res) => {
-		
+		console.log(req.body);
+		Student.update(req.body,(err) => {
+			if(err) {
+				return res.status(500).send('Server error.')
+			}
+			res.redirect('/students')
+		})
 	})
 
 	router.get('/students/delete',(req, res) => {

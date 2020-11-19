@@ -23,7 +23,7 @@ exports.findById = (id, callback) => {
 		}
 		var students = JSON.parse(data).students
 		var ret = students.find(item => {
-			return item.id === id
+			return item.id === parseInt(id)
 		})
 		callback(null, ret)
 	})
@@ -65,7 +65,7 @@ exports.update = ((student, callback) => {
 		var students = JSON.parse(data).students
 
 		var stu = students.find((item) => {
-			return item.id === student.id
+			return item.id === parseInt(student.id)
 		})
 
 		for(let key in student) {
