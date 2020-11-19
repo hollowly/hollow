@@ -74,7 +74,12 @@
 	})
 
 	router.get('/students/delete',(req, res) => {
-		
+		Student.delete(id, (err) => {
+			if(err) {
+				return res.status(500).send('Server is error.')
+			}
+			res.redirect('/students')
+		})
 	})
 
 
