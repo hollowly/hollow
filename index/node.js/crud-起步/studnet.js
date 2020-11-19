@@ -15,7 +15,6 @@ exports.find = (callback) => {
 	})
 }
 
-
 exports.findById = (id, callback) => {
 	fs.readFile(dbPath, 'utf8', (err, data) => {
 		if(err) {
@@ -91,5 +90,29 @@ exports.update = ((student, callback) => {
 
 // 删除学生
 exports.delete = () => {
-	
+	fs.readFile(dbPath, 'utf8',(err, data) => {
+		if(err) {
+			return callback(err)
+		}
+		var students = JSON.parse(data).students
+
+		// findexIndex：专门用来根据条件查找元素下标
+		var deleteId = students.findIndex(item => {
+			return item.id === parseInt(id)
+		})
+
+		// 根据下标从数组中删除对应的学生对象
+		students.splice(deleteId,1)
+
+		var result = JSON.stringify({
+			students:students
+		})
+
+		fs.writeFile(dbPath, result, (err) => {
+			if(err) {
+				return callback(err)
+			}
+			callback(null)
+		})
+	})
 }
