@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		function get(url,callback) {
+			var oReq = new XMLHttpRequest();
+
+			oReq.onload = function() {
+				// 请求加载成功后调用指定的函数
+				callback(oReq.responseText)
+			}
+			oReq.open('get',url,true)
+			oReq.send()
+		}
+
+		get('http://123.207.32.32:8000/home/multidata',(res) => {
+			console.log(res);
+		})
+	</script>
+</body>
+</html>
