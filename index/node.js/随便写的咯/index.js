@@ -1,20 +1,14 @@
-const http = require('http')
+const express = require('express')
+const app = express()
 const fs = require('fs')
 
-http.createServer((req, res) => {
-	if(req.url === '/') {
-		fs.readFile('./views/index.html',(err, data) => {
-			if(err) {
-				res.setHeader('Content-Type','text/plain;charset=utf-8')
-				return res.end('读取失败')
-			}
-			res.end(data)
-		})
-	} else if(req.url === '/post') {
-		res.end('post page')
-	} else if(req.url === '/404') {
-		res.end('404 page')
-	}
-}).listen(3000,() => {
-	console.log('server is running');
+app.engine('html',require('express-art-template'))
+
+app.get('/',(req, res) => {
+	res.render('index.html')
+})
+
+
+app.listen(3000,function() {
+	console.log('go');
 })
