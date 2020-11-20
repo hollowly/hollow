@@ -1,4 +1,5 @@
-body {
-	background: url('/public/img/girl.jpg') center center no-repeat;
-	background-size: 110%;
+* {
+	margin: 0;
+	padding: 0;
+	background: red;
 }
