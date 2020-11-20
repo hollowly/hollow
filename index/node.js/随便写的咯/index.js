@@ -4,6 +4,9 @@ const fs = require('fs')
 
 app.engine('html',require('express-art-template'))
 
+app.use('/public/',express.static('./public/'))
+
+
 app.get('/',(req, res) => {
 	res.render('index.html')
 })

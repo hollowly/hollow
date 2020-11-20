@@ -1,5 +1,8 @@
 * {
 	margin: 0;
 	padding: 0;
-	background: url('../img/girl.jpg')
+}
+body {
+	background: url('/public/img/girl.jpg') no-repeat;
+	background-size: 100%;
 }
