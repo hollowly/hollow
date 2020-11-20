@@ -7,6 +7,8 @@ app.engine('html',require('express-art-template'))
 app.use('/public/',express.static('./public/'))
 
 app.use(router)
+
+
 app.listen(3000,function() {
-	console.log('go');
+	console.log('server is runnig');
 })
