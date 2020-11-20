@@ -1,17 +1,12 @@
 const express = require('express')
 const app = express()
-const fs = require('fs')
+const router = require('./router')
 
 app.engine('html',require('express-art-template'))
 
 app.use('/public/',express.static('./public/'))
 
-
-app.get('/',(req, res) => {
-	res.render('index.html')
-})
-
-
+app.use(router)
 app.listen(3000,function() {
 	console.log('go');
 })
