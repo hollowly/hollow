@@ -6,15 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+	<!-- 根组件 -->
     <div id='app'>
         <cpn></cpn>
     </div>
 
-
+		<!-- 子组件 -->
     <template id='cpn'>
+			<!-- 子组件里挂载子子组件 -->
         <ccpn></ccpn>
     </template>
 
+		<!-- 子子组件 -->
     <template id='ccpn'>
         <div>
             <h2>我是子子组件</h2>
@@ -27,12 +30,14 @@
 
 
         const app = new Vue({
+					// 根组件
             el: '#app',
             data: {
                 message:'你好啊',
                 name:'我是根的name',
             },
             components: {
+							// 子组件
                 cpn: {
                     template:'#cpn',
                     data() {
@@ -40,14 +45,16 @@
                             name:'我是cpn的name',
                         }
                     },
+										// 子组件里注册组件，也就是子子组件
                     components: {
                         ccpn: {
                             template:'#ccpn',
                             methods: {
                                 btnClick() {
-                                    // console.log('父组件是：',this.$parent);
+																		// 通过this.$parent和this.$root访问父组件，也可以通过.的方式获取变量和方法
+                                    console.log('父组件是：',this.$parent);
                                     console.log(this.$parent.name);
-                                    // console.log('根组件是',this.$root);
+                                    console.log('根组件是',this.$root);
                                     console.log(this.$root.name);
                                 }
                             },
