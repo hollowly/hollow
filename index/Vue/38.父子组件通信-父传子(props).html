@@ -15,7 +15,7 @@
 
     <!-- 子组件模板 -->
     <template id='cpn'>
-			<!-- 在子组件中就能使用 props 中接收的变量来使用 -->
+			<!-- 在子组件中就能使用 props 中接收的变量来渲染 -->
         <div>
             <h1>{{cMessage}}</h1>
             <ul>
@@ -47,14 +47,14 @@
                 // 子组件
                 cpn: {
                     template: '#cpn',
-										// 使用props来接受父组件传过来的三个变量
+										// 使用props来接收父组件传过来的三个变量
                     props: {
-											// 接受的时候可以随便取名
+											// 接收的时候可以随便取名
                         cMessage: {
 													// 接收的时候可以添加参数：
 													// type：类型 (String、Array、Object)等
 													// default：默认值，如果子组件没有定义接收，那么接收到的就是默认值
-													// 
+													// required：定义是否必须接收参数，不写是false
                             type:String,
                             default:'null',
                             required:true,
