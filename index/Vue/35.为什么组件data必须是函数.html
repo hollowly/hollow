@@ -11,26 +11,27 @@
         <cpn2></cpn2>
     </div>
 
-
-    
     <template id='cpn1'>
         <div>
             <h1>{{title}}</h1>
             <p>{{content}}</p>
         </div>
-    </template>
+		</template>
+		
     <template id='cpn2'>
         <div>
             <h1>{{title}}</h1>
             <p>{{content}}</p>
         </div>
-    </template>
+		</template>
+		
     <script src="vue.js"></script>
     
     <script>
-        
+			// 全局注册的组件
         Vue.component('cpn1', {
             template:'#cpn1',
+						// data必须是函数
             data() {
                 return {
                     title:'我是标题11',
@@ -39,12 +40,13 @@
             }
         })
 
-
         const app = new Vue({
             el: '#app',
+						// 局部注册的组件
             components: {
                 cpn2: {
                     template: '#cpn2',
+										// data必须是函数
                     data() {
                         return {
                             title: '我是标题22',

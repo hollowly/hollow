@@ -15,6 +15,7 @@
     <script src="vue.js"></script>
     
     <script>
+			// 1.创建组件构造器对象
         const cpnC = Vue.extend({
             template:`
             <div>
@@ -22,9 +23,6 @@
                 <p>哈哈哈哈</p>
             </div>`
         })
-        // 全局组件
-        // Vue.component('cpn',cpnC);
-
 
         const app = new Vue({
             el:'#app',
