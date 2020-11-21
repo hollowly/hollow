@@ -35,18 +35,18 @@ var User = mongoose.model('User',userSchema)
 // 当我们有了模型构造函数之后，就可以使用这个函数对 users 集合中的数据为所欲为了（增删改查）
 
 
+// 新增数据：
+// var admin = new User({
+// 	username:'hollow',
+// 	passworld:'123',
+// 	email:'admin@admin.com'
+// })
 
-var admin = new User({
-	username:'hollow',
-	passworld:'123',
-	email:'admin@admin.com'
-})
-
-admin.save((err, ret) => {
-	if(err) {
-		console.log('保存失败');
-	} else {
-		console.log('保存成功');
-		console.log(ret);
-	}
-})
+// admin.save((err, ret) => {
+// 	if(err) {
+// 		console.log('保存失败');
+// 	} else {
+// 		console.log('保存成功');
+// 		console.log(ret);
+// 	}
+// })
