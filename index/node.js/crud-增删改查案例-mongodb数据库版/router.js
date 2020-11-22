@@ -44,7 +44,7 @@
 	})
 
 	router.post('/students/new',(req, res) => {
-		Student.save(req.body,(err) => {
+		new Student(req.body).save((err) => {
 			if(err) {
 				return res.status(500).send('server error.')
 			}
@@ -53,7 +53,7 @@
 	})
 
 	router.get('/students/edit',(req, res) => {
-		Student.findById(parseInt(req.query.id), (err, student) => {
+		Student.findById(req.query.id, (err, student) => {
 			if(err) {
 				return res.status(500).send('server error.')
 			}
@@ -64,8 +64,8 @@
 	})
 
 	router.post('/students/edit',(req, res) => {
-		console.log(req.body);
-		Student.update(req.body,(err) => {
+		// console.log(req.body);
+		Student.findByIdAndUpdate(req.body.id,req.body,(err) => {
 			if(err) {
 				return res.status(500).send('Server error.')
 			}
