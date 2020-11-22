@@ -35,9 +35,9 @@ var User = mongoose.model('User',userSchema)
 // 当我们有了模型构造函数之后，就可以使用这个函数对 users 集合中的数据为所欲为了（增删改查）
 
 
-// 新增数据：
+// 新增数据**************************
 // var admin = new User({
-// 	username:'hollow',
+// 	username:'zs',
 // 	passworld:'123',
 // 	email:'admin@admin.com'
 // })
@@ -50,3 +50,94 @@ var User = mongoose.model('User',userSchema)
 // 		console.log(ret);
 // 	}
 // })
+// 新增数据**************************
+
+
+// 查询数据**************************
+// 查询所有
+User.find((err, data) => {
+	if(err) {
+		console.log('查询失败');
+		return console.log(err);
+	}
+	console.log('查询成功');
+	console.log(data);
+})
+
+// 按条件查询
+// User.find({
+// 	username:'zs'
+// },(err, data) => {
+// 	if(err) {
+// 		console.log('查询失败');
+// 		return console.log(err);
+// 	}
+// 	console.log('查询成功');
+// 	console.log(data);
+// })
+
+// 按条件查询单个
+// User.findOne({
+// 	username:'zs',
+// 	passworld:'456',
+// },(err, data) => {
+// 	if(err) {
+// 		console.log('查询失败');
+// 		return console.log(err);
+// 	}
+// 	console.log('查询成功');
+// 	console.log(data);
+// })
+// 查询数据**************************
+
+
+// 删除数据**************************
+// 删除单个
+// User.deleteOne({
+// 	username:'zs',
+// },(err, data) => {
+// 	if(err) {
+// 		console.log('删除失败');
+// 		return console.log(err);
+// 	}
+// 	console.log('删除成功');
+// 	console.log(data);
+// })
+
+
+// 删除所有
+// User.deleteMany({
+// 	username:'zs',
+// },(err, data) => {
+// 	if(err) {
+// 		console.log('删除失败');
+// 		return console.log(err);
+// 	}
+// 	console.log('删除成功');
+// 	console.log(data);
+// })
+// 删除数据**************************
+
+
+// 更新数据数据**************************
+// 更新一个
+// User.updateOne({username:'hollow'},{username:'giao'},(err, data) => {
+// 	if(err) {
+// 		console.log('更新失败');
+// 		return console.log(err);
+// 	}
+// 	console.log('更新成功');
+// 	console.log(data);
+// })
+
+// 更新所有
+// User.updateMany({username:'giao'},{username:'hollowUpdata'},(err, data) => {
+// 	if(err) {
+// 		console.log('更新失败');
+// 		return console.log(err);
+// 	}
+// 	console.log('更新成功');
+// 	console.log(data);
+// })
+
+// 更新数据数据**************************
