@@ -64,8 +64,7 @@
 	})
 
 	router.post('/students/edit',(req, res) => {
-		// console.log(req.body);
-		Student.findByIdAndUpdate(req.body.id,req.body,(err) => {
+		Student.findByIdAndUpdate(req.body.id, req.body,(err) => {
 			if(err) {
 				return res.status(500).send('Server error.')
 			}
@@ -74,7 +73,7 @@
 	})
 
 	router.get('/students/delete',(req, res) => {
-		Student.delete(req.query.id, (err) => {
+		Student.findByIdAndRemove(req.query.id, (err) => {
 			if(err) {
 				return res.status(500).send('Server is error.')
 			}

@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/itcast')
+mongoose.connect('mongodb://localhost/itcast',{useNewUrlParser: true, useUnifiedTopology: true});
+
 
 var Schema = mongoose.Schema
 
