@@ -29,7 +29,7 @@ pReadeFile('./callback-hell/a.txt')
 
 
 pReadeFile('./callback-hell/a.txt').then(data => {
-	console.log(data); 
+	console.log(data);
 	return pReadeFile('./callback-hell/b.txt')
 }).then(data => {
 	console.log(data);
