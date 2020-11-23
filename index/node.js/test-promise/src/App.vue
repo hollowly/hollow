@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-			<ul>
-				<li v-for='(item, index) in list' :key='index'>{{item}}</li>
-			</ul>
+		<!-- <button @click='getData'>获取数据</button> -->
+		<table>
+			<tr v-for="(item, index) in bannerList" :key='index'>
+				<td>{{index}}{{item.sort}}.</td>
+				<td><a :href="item.link">{{item.title}}</a></td>
+				<td><img :src="item.image" width="100"></td>
+			</tr>
+		</table>
   </div>
 </template>
 <script>
@@ -11,23 +16,31 @@ import axios from 'axios'
 export default {
   data() {
 		return {
-			list:['111','222']
+			bannerList:[]
 		}
 	},
-	computed: {
-		
+	created() {
+		Promise.all([
+			new Promise((resolve, reject) => {
+				axios({
+					url:'http://123.207.32.32:8000/home/multidata',
+					method:'get',
+				}).then(data => {
+					this.bannerList = data.data.data.banner.list
+				})
+			}),
+			new Promise((resolve, reject) => {
+				axios({
+					url:'http://123.207.32.32:8000/home/multidata',
+					method:'get',
+				}).then(data => {
+					this.recommendList = data.data.data.recommend.list
+				})
+			})
+		])
 	},
-}
 
-axios({
-	url:'http://123.207.32.32:8000/home/multidata',
-	method:'get',
-}).then(res => {
-	this.list = res.data.data.banner.list
-	console.log(this.list);
-}).catch(err => {
-	console.log(err);
-})
+}
 
 </script>
 
