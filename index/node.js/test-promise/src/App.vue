@@ -3,7 +3,12 @@
 		<!-- <button @click='getData'>获取数据</button> -->
 		<table>
 			<tr v-for="(item, index) in bannerList" :key='index'>
-				<td>{{index}}{{item.sort}}.</td>
+				<td>{{index + 1}}{{item.sort}}.</td>
+				<td><a :href="item.link">{{item.title}}</a></td>
+				<td><img :src="item.image" width="100"></td>
+			</tr>
+			<tr v-for="item in recommendList">
+				<td>{{item.sort}}.</td>
 				<td><a :href="item.link">{{item.title}}</a></td>
 				<td><img :src="item.image" width="100"></td>
 			</tr>
@@ -16,7 +21,8 @@ import axios from 'axios'
 export default {
   data() {
 		return {
-			bannerList:[]
+			bannerList:[],
+			recommendList:[]
 		}
 	},
 	created() {
@@ -39,7 +45,6 @@ export default {
 			})
 		])
 	},
-
 }
 
 </script>
