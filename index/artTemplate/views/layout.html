@@ -3,16 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
 	<title>Document</title>
+	<!-- 可以添加的样式 -->
+	{{block 'style'}}{{/block}}
 </head>
 <body>
+	<!-- 公共的头部内容 -->
 	{{include './header.html'}}
 
+	<!-- 可以手动修改的内容 -->
 	{{block 'content'}}
 	<h1>默认的内容</h1>
 	{{/block}}
 
-	
+	<!-- 公共的尾部内容 -->
 	{{include './footer.html'}}
+	
+<script src='../node_modules/jquery/dist/jquery.js'></script>
+<script src='../node_modules/bootstrap/dist/js/bootstrap.js'></script>
+
+<!-- 可以添加的脚本 -->
+{{block 'script'}}{{/block}}
 </body>
 </html>

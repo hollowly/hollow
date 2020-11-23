@@ -1,1 +1,23 @@
-{extend './layout.art'}}
+<!-- 继承的layout.html模板 -->
+{{extend './layout.html'}}
+
+<!-- 样式 -->
+	{{block 'style'}}
+	<style>
+		body {
+			background: pink;
+		}
+	</style>
+	{{/block}}
+
+<!-- 主体内容 -->
+{{block 'content'}}
+	<h1>我是index 的内容</h1>
+{{/block}}
+
+<!-- 默认的脚本 -->
+	{{block 'script'}}
+	<script>
+		console.log($);
+	</script>
+	{{/block}}
