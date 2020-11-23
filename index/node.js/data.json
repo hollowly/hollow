@@ -1,0 +1,46 @@
+{
+	"users": [
+		{
+			"username":"admin11",
+			"age":18,
+			"job":1
+		},
+		{
+			"username":"admin22",
+			"age":20,
+			"job":2
+		},
+		{
+			"username":"admin33",
+			"age":24,
+			"job":3
+		},
+		{
+			"username":"admin44",
+			"age":25,
+			"job":4
+		}
+	],
+	"jobs": [
+		{
+			"id":1,
+			"name":"学生"
+		},
+		{
+			"id":2,
+			"name":"老师"
+		},
+		{
+			"id":3,
+			"name":"司机"
+		},
+		{
+			"id":4,
+			"name":"画家"
+		},
+		{
+			"id":5,
+			"name":"演员"
+		}
+	]
+}
