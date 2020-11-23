@@ -5,7 +5,7 @@ function pReadeFile(filePath) {
 		fs.readFile(filePath,'utf8',(err, data) => {
 			if(err) {
 				reject(err)
-			}else {
+			} else {
 				resolve(data)
 			}
 		})
