@@ -26,25 +26,15 @@ export default {
 		}
 	},
 	created() {
-		Promise.all([
-			new Promise((resolve, reject) => {
-				axios({
-					url:'http://123.207.32.32:8000/home/multidata',
-					method:'get',
-				}).then(data => {
-					this.bannerList = data.data.data.banner.list
-				})
+		axios.all([
+			axios({url:'http://123.207.32.32:8000/home/multidata'}).then(data => {
+				this.bannerList = data.data.data.banner.list
 			}),
-			new Promise((resolve, reject) => {
-				axios({
-					url:'http://123.207.32.32:8000/home/multidata',
-					method:'get',
-				}).then(data => {
-					this.recommendList = data.data.data.recommend.list
-				})
+			axios({url:'http://123.207.32.32:8000/home/multidata'}).then(data => {
+				this.recommendList = data.data.data.recommend.list
 			})
 		])
-	},
+	}
 }
 
 </script>
