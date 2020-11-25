@@ -12,8 +12,8 @@
 			//   saveUninitialized: true
 			// }))
 // 3. 使用
-	req.session
-	// 添加session数据：req.session.foo = 'bar'
+	// req.session
+	// 添加session数据：req.session.foo = 'bar'	//向session中添加一个键foo。值是bar
 	// 访问session数据：
 
 var express = require('express')
