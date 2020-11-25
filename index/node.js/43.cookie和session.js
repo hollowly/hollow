@@ -3,5 +3,6 @@
 
 // 1. npm install express-session 
 // 2. 配置
+const session = require('express-session')
 // 3. 使用
 
