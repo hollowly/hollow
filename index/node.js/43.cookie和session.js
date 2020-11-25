@@ -16,6 +16,9 @@
 	// 添加session数据：req.session.foo = 'bar'	//向session中添加一个键foo。值是bar
 	// 访问session数据：
 
+	// 提示：默认 session 数据是内存存储的，
+	// 服务器一旦重启就会丢失，真正的生成环境会把 session 进行持久化存储
+
 var express = require('express')
 var parseurl = require('parseurl')
 var session = require('express-session')
