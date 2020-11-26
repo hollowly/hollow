@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 7px;
+		}
+	</style>
+</head>
+<body>
+	<form action="get提交作业.php" method="get">
+		学号：<input type="text" name='id' required> <br>
+		姓名：<input type="text" name='name' required> <br>
+		性别：
+		<label for="man">
+			<input type="radio" name='sex' id='man' value="男" required> 男
+		</label>
+		<label for="woman">
+			<input type="radio" name='sex' id='woman' value="女" required> 女 
+		</label>
+		<br>
+		课程名称：
+		<label for="php">
+			<input type="checkbox" id='php' name='php' value="php"> php
+		</label>
+		<label for="javascript">
+			<input type="checkbox" id='javascript' name='javascript' value="javascript"> javascript
+		</label>
+		<label for="jquery">
+			<input type="checkbox" id='jquery' name='jquery' value="jquery"> jquery
+		</label>
+		<label for="Laravel">
+			<input type="checkbox" id='Laravel' name='Laravel' value="Laravel"> Laravel
+		</label>
+		<label for="vue">
+			<input type="checkbox" id='vue' name='vue'> vue
+		</label> <br>
+		平时成绩：<input type="number" name='Pscore' id='Pscore' required min="1" max="100" onblur="sub()"> <br>
+		考核成绩：<input type="number" name='Kscore' id='Kscore' required min="1" max="100" onblur="sub()"> <br>
+		总评成绩：<input type="text" name='Allscore' id='Allscore'> <br>
+		提交按钮：<input type="submit">
+	</form>
+
+	<script>
+		function sub() {
+			Pscore = parseInt(document.getElementById('Pscore').value);
+			Kscore = parseInt(document.getElementById('Kscore').value);
+			Allscore = document.getElementById('Allscore');
+
+			Allscore.value = (Pscore + Kscore) * 0.5;
+		}
+	</script>
+</body>
+</html>

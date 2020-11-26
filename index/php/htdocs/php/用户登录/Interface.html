@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form action="addUser.php" method="post">
+		<label for="id">
+		账号：<input type="text" id='id' name='id' required>
+		</label> <br>
+
+		<label for="user">
+		用户：<input type="text" id='user' name='user' required>
+		</label> <br>
+
+		<label for='email'>
+		邮箱：<input type="email" id='email' name='email' required>
+		</label> <br>
+
+		<label for="phone">
+		手机：<input type="number" id='phone' name='phone' required>
+		</label> <br>
+
+		<label for="password">
+		密码：<input type="password" id='password' name='password' required>
+		</label> <br>
+
+		性别：
+		<label for="woman" >
+			<input type="radio" id='woman' name="sex" value="男" required> 男
+		</label>
+
+		<label for="man">
+			<input type="radio" id='man' name="sex" value="女" required> 女
+		</label> <br>
+		
+		<input type="submit" value="注册">
+		<input type="button" value="登录">
+	</form>
+</body>
+</html>
