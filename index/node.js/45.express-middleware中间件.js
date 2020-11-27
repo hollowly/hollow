@@ -9,29 +9,31 @@ const app = express()
 	// request 请求对象
 	// response 响应对象
 	// next	 下一个中间件：是一个方法，用来调用下一个中间件的
-// app.use((req, res, next) => {
-// 	console.log('1')
-// 	next()
-// })
-// app.use((req, res, next) => {
-// 	console.log('2')
-// 	next()
-// })
-// app.use((req, res, next) => {
-// 	console.log('3')
-// 	next()
-// })
+
+	// 全局中间件
+app.use((req, res, next) => {
+	console.log('1')
+	next()
+})
+app.use((req, res, next) => {
+	console.log('2')
+	next()
+})
+app.use((req, res, next) => {
+	console.log('3')
+	next()
+})
 
 // 以 /xxx 开头
-// app.use('/a',(req, res, next) => {
-// 	console.log('a')
-// 	next()
-// })
+app.use('/a',(req, res, next) => {
+	console.log('a')
+	next()
+})
 
-// app.use('/b',(req, res, next) => {
-// 	console.log('b')
-// 	next()
-// })
+app.use('/b',(req, res, next) => {
+	console.log('b')
+	next()
+})
 
 // 除了以上中间件之外，还有一种最常用的，严格匹配请求方法和请求路径的中间件
 // app.get
@@ -44,13 +46,28 @@ app.use((req, res, next) => {
 
 app.get('/',(req, res, next) => {
 	console.log('/')
-	next()
 })
 
 app.get('/a',(req, res, next) => {
 	console.log('/a')
+	next()
 })
 
+app.use((req, res, next) => {
+	console.log('/2')
+	next()
+})
+
+
+// 相同的也会继续执行，不会被覆盖
+app.get('/abc',(req, res, next) => {
+	console.log('abc')
+	next()
+})
+app.get('/abc',(req, res, next) => {
+	console.log('abc')
+	next()
+})
 
 app.listen(3000,() => {
 	console.log('server is running');
