@@ -7,14 +7,14 @@
 			// const session = require('express-session')
 			// 配置(配置一定要在app.use(router)之前)
 			// app.use(session({
-			//   secret: 'keyboard cat',
+			//   secret: 'itcast',  // 配置加密字符串，在原有的加密基础上拼接上这个字符串来一起加密
 			//   resave: false,
-			//   saveUninitialized: true
+			//   saveUninitialized: true  //无论你是否使用 session 我都会默认给你分配一把钥匙
 			// }))
 // 3. 使用
 	// req.session
 	// 添加session数据：req.session.foo = 'bar'	//向session中添加一个键foo。值是bar
-	// 访问session数据：
+	// 访问session数据：req.session.foo
 
 	// 提示：默认 session 数据是内存存储的，
 	// 服务器一旦重启就会丢失，真正的生成环境会把 session 进行持久化存储
