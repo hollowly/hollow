@@ -8,6 +8,9 @@ app.engine('html',require('express-art-template'))
 // 设置 render 默认访问的文件夹
 app.set('views', __dirname + '/views');
 
+// 设置公开文件夹
+app.use('/index/static/',express.static('./index/static'))
+
 app.get('/',(req, res) => {
 	res.render('index.html')
 })
@@ -15,6 +18,7 @@ app.get('/',(req, res) => {
 app.get('/post',(req, res) => {
 	res.render('post.html')
 })
+
 
 app.listen(3000,() => {
 	console.log('server is running');
