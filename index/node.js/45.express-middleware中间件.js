@@ -17,22 +17,39 @@ const app = express()
 // 	console.log('2')
 // 	next()
 // })
-app.use((req, res, next) => {
-	console.log('3')
-	next()
-})
+// app.use((req, res, next) => {
+// 	console.log('3')
+// 	next()
+// })
 
 // 以 /xxx 开头
-app.use('/a',(req, res, next) => {
-	console.log('a')
+// app.use('/a',(req, res, next) => {
+// 	console.log('a')
+// 	next()
+// })
+
+// app.use('/b',(req, res, next) => {
+// 	console.log('b')
+// 	next()
+// })
+
+// 除了以上中间件之外，还有一种最常用的，严格匹配请求方法和请求路径的中间件
+// app.get
+// app.post
+
+app.use((req, res, next) => {
+	console.log('1')
 	next()
 })
 
-app.use('/b',(req, res, next) => {
-	console.log('b')
+app.get('/',(req, res, next) => {
+	console.log('/')
 	next()
 })
 
+app.get('/a',(req, res, next) => {
+	console.log('/a')
+})
 
 
 app.listen(3000, () => {
