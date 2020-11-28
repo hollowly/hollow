@@ -1,48 +1,47 @@
 <!--  -->
 <template>
-	<div class='contentDiv'>
-		<div></div>
+	<div>
+		<middleItem>
+			<li slot='left'><a href="">海外酒店</a></li>
+			<li slot='left'><a href="">团购</a></li>
+			<li slot="right"><a href="">特惠酒店</a></li>
+			<li slot="right"><a href="">客栈公寓</a></li>
+		</middleItem>
 
-		<div>
-			<ul>
-				<slot></slot>
-			</ul>
-		</div>
+		<middleItem style="background:rgb(156,86,161)">
+			<li slot='left'><a href="">海外酒店1</a></li>
+			<li slot='left'><a href="">团购1</a></li>
+			<li slot="right"><a href="">特惠酒店1</a></li>
+			<li slot="right"><a href="">客栈公寓1</a></li>
+		</middleItem>
 
-		<div></div>
+		<middleItem  style="background:rgb(93,111,187)">
+			<li slot='left'><a href="">海外酒店2</a></li>
+			<li slot='left'><a href="">团购2</a></li>
+			<li slot="right"><a href="">特惠酒店2</a></li>
+			<li slot="right"><a href="">客栈公寓2</a></li>
+		</middleItem>
 
+		<middleItem>
+			<li slot='left'><a href="">海外酒店3</a></li>
+			<li slot='left'><a href="">团购3</a></li>
+			<li slot="right"><a href="">团购3</a></li>
+			<li slot="right"><a href="">客栈公寓3</a></li>
+		</middleItem>
 	</div>
 </template>
 
 <script>
+import middleItem from './middleItem'
+
 export default {
-	data () {
-		return {
-
-		}
-	},
-
+	components: {
+		middleItem
+	}
 }
 
 </script>
 
 <style>
-.contentDiv {
-	margin: 20px 0px;
-		display: flex;
-		width: 100%;
-		height: 120px;
-		background: rgb(83,166,82)
-}
-.contentDiv > div {
-	width: 33.3333333%;
-}
-ul > li {
-	height: 60px;
-	list-style: none;
-	border-bottom: 1px solid white;
-	border-left: 1px solid white;
-	float: left;
-	
-}
+
 </style>
