@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-	<div>
+	<div class="footImg">
 		<a href=""><img src="../assets/img/foot1.png" class='left'></a>
 		<a href=""><img src="../assets/img/foot2.png" class='right'></a>
 	</div>
@@ -15,13 +15,11 @@ export default {
 
 <style>
 	.left {
-		margin-left:15%;
+		margin:0px 10%;
 		width: 30%;
-		float: left;
 	}
 	.right {
 		width: 30%;
-		margin-right:15%;
-		float: right;
+		margin: 0px 6%;
 	}
 </style>

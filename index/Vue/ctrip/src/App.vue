@@ -8,18 +8,19 @@
 </template>
 
 <script>
-import headerImg from './components/headerImg'
-import middle from './components/middle'
-import footImg from './components/footImg'
-import footText from './components/footText'
-export default {
-	components: {
-		headerImg,
-		middle,
-		footImg,
-		footText
+	import headerImg from './components/headerImg'
+	import middle from './components/middle'
+	import footImg from './components/footImg'
+	import footText from './components/footText'
+
+	export default {
+		components: {
+			headerImg,
+			middle,
+			footImg,
+			footText
+		}
 	}
-}
 </script>
 
 <style>
