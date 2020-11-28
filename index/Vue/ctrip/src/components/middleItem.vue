@@ -51,8 +51,6 @@ export default {
 }
  .contentDiv ul > li > a {
 	color: white;
-	text-decoration: none;
-	font-size: 16px;
  }
  .contentDiv ul > li > a:hover {
 	 text-decoration:underline;

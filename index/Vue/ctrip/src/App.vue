@@ -1,30 +1,23 @@
 <template>
   <div id="app">
-		<headerImg></headerImg>
-		<middle></middle>
-		<footImg></footImg>
-		<footText></footText>
+		<homepage></homepage>
   </div>
 </template>
 
 <script>
-	import headerImg from './components/headerImg'
-	import middle from './components/middle'
-	import footImg from './components/footImg'
-	import footText from './components/footText'
+	import homepage from './components/homepage'
+	
 
 	export default {
 		components: {
-			headerImg,
-			middle,
-			footImg,
-			footText
+			homepage,
+
+			
+			
 		}
 	}
 </script>
 
 <style>
 	@import url('./assets/css/base.css');
-
-	
 </style>
