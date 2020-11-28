@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#canvas {
+			border: 1px solid #ccc;
+			display: block;
+			margin: 50px auto;
+		}
+	</style>
+</head>
+
+<body>
+	<canvas id='canvas' width="850" height="600"></canvas>
+
+
+
+
+	<script>
+		window.onload = function () {
+			var canvas = document.getElementById('canvas')
+			canvas.width = 850
+			canvas.height = 600
+
+			// 判断用户浏览器是否支持 canvas
+			if (canvas.getContext('2d')) {
+				var context = canvas.getContext('2d')
+			} else {
+				alert('您的浏览器不支持canvas，请更换浏览器后再试！')
+			}
+			// 使用 context 进行绘画
+			context.beginPath()
+				context.moveTo(100, 100)			//状态设置
+				context.lineTo(500, 400)			//状态设置
+				context.lineTo(100, 300)			//状态设置
+				context.lineTo(100, 100)			//状态设置
+
+				context.lineWidth = 5				//线条宽度
+				context.strokeStyle = 'red'	//线条颜色
+				context.fillStyle = 'pink'	//图形的填充颜色
+				context.fill()		//填充绘制
+				context.stroke()	//绘制
+			context.closePath
+
+
+			context.beginPath()
+				context.moveTo(500, 200)
+				context.lineTo(700, 20)
+				context.lineTo(800, 100)
+				context.lineTo(500, 200)
+				context.lineWidth = 10
+				context.strokeStyle = 'blue'
+			context.closePath
+
+
+			context.stroke()		//绘制
+		}
+	</script>
+</body>
+
+</html>
