@@ -41,7 +41,7 @@ export default {
 .contentDiv > div {
 	width: 33.3333333%;
 }
-ul > li {
+.contentDiv ul > li {
 	height: 50px;
 	list-style: none;
 	border-bottom: 1px solid white;
@@ -49,12 +49,12 @@ ul > li {
 	text-align: center;
 	line-height: 50px;
 }
- ul > li > a {
+ .contentDiv ul > li > a {
 	color: white;
 	text-decoration: none;
 	font-size: 16px;
  }
- ul > li > a:hover {
+ .contentDiv ul > li > a:hover {
 	 text-decoration:underline;
  }
 </style>

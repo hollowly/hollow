@@ -3,7 +3,6 @@
 	<div>
 		<a href=""><img src="../assets/img/foot1.png" class='left'></a>
 		<a href=""><img src="../assets/img/foot2.png" class='right'></a>
-
 	</div>
 </template>
 
