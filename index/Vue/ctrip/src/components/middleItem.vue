@@ -33,7 +33,7 @@ export default {
 	margin: 20px 0px;
 	display: flex;
 	width: 100%;
-	height: 80px;
+	height: 100px;
 	background: rgb(83,166,82);
 	border-radius: 10px;
 	
@@ -42,16 +42,19 @@ export default {
 	width: 33.3333333%;
 }
 ul > li {
-	height: 40px;
+	height: 50px;
 	list-style: none;
 	border-bottom: 1px solid white;
 	border-left: 1px solid white;
 	text-align: center;
-	line-height: 40px;
+	line-height: 50px;
 }
  ul > li > a {
 	color: white;
 	text-decoration: none;
 	font-size: 16px;
+ }
+ ul > li > a:hover {
+	 text-decoration:underline;
  }
 </style>
