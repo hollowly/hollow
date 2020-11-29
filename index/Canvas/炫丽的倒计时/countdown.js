@@ -1,8 +1,8 @@
-var WINDOW_WIDTH = 1200;
-var WINDOW_HEIGHT = 400;
-var RADIUS = 8;
-var MARGIN_TOP = 60;
-var MARGIN_LEFT = 30;
+// var WINDOW_WIDTH = 1200;
+// var WINDOW_HEIGHT = 400;	
+// var RADIUS = 8;
+// var MARGIN_TOP = 60;
+// var MARGIN_LEFT = 30;
 
 const endTime = new Date(2021, 6, 11, 18, 47, 52);
 var curShowTimeSeconds = 0;
@@ -22,6 +22,12 @@ const colors = [
 ];
 
 window.onload = function () {
+	WINDOW_WIDTH = document.body.clientWidth
+	WINDOW_HEIGHT = document.body.clientHeight
+	MARGIN_LEFT = Math.round(WINDOW_WIDTH / 10)
+	RADIUS = Math.round(WINDOW_WIDTH *4 / 5 / 108) -1
+	MARGIN_TOP = Math.round(WINDOW_HEIGHT / 5)
+
   var canvas = document.getElementById("canvas");
   var context = canvas.getContext("2d");
 
@@ -102,7 +108,7 @@ function update() {
 
   updateBalls();
 
-  // console.log( balls.length)
+  console.log( balls.length)
 }
 
 function updateBalls() {
