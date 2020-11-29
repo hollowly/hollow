@@ -26,11 +26,11 @@
 			// 三角形
 			context.beginPath()
 			context.moveTo(2, 2)
-			context.lineTo(200, 200)
-			context.lineTo(0, 200)
+			context.lineTo(80, 80)
+			context.lineTo(0, 80)
 			context.lineTo(2, 2)
 			context.strokeStyle = 'red'
-			context.lineWidth = 5
+			context.lineWidth = 2
 			context.fillStyle = 'blue'
 			context.closePath()
 			context.fill()
@@ -38,13 +38,32 @@
 
 			// 圆形
 			context.beginPath()
-			context.arc(380, 200, 100, 0, 2*Math.PI)
+			context.arc(380, 120, 100, 0, 2*Math.PI)
 			context.strokeStyle = 'red'
 			context.lineWidth = 5
 			context.fillStyle = 'blue'
 			context.closePath()
 			context.stroke()
 			context.fill()
+
+			// 箭头
+			context.beginPath()
+			context.moveTo(20, 200)
+			context.lineTo(20, 250)
+			context.lineTo(200, 250)
+			context.lineTo(200, 350)
+			context.lineTo(300, 220)
+			context.lineTo(200, 100)
+			context.lineTo(200, 200)
+			context.lineTo(20, 200)
+			context.strokeStyle = 'rgb(3,81,120)'
+			context.fillStyle = 'yellow'
+			context.fill()
+			context.stroke()
+			context.closePath()
+
+			// 五角星
+
 		}
 	</script>
 </body>
