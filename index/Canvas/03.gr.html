@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#canvas {
+			border: 1px solid #aaa;
+			display: block;
+			margin: 30px auto;
+		}
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width="500" height="500">
+		
+	</canvas>
+
+	<script>
+		window.onload = function() {
+			var canvas = document.getElementById('canvas')
+
+			var context = canvas.getContext('2d')
+
+			// 三角形
+			context.beginPath()
+			context.moveTo(2, 2)
+			context.lineTo(200, 200)
+			context.lineTo(0, 200)
+			context.lineTo(2, 2)
+			context.strokeStyle = 'red'
+			context.lineWidth = 5
+			context.fillStyle = 'blue'
+			context.closePath()
+			context.fill()
+			context.stroke()
+
+			// 圆形
+			context.beginPath()
+			context.arc(380, 200, 100, 0, 2*Math.PI)
+			context.strokeStyle = 'red'
+			context.lineWidth = 5
+			context.fillStyle = 'blue'
+			context.closePath()
+			context.stroke()
+			context.fill()
+		}
+	</script>
+</body>
+</html>
