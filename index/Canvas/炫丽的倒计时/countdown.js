@@ -1,10 +1,6 @@
-// var WINDOW_WIDTH = 1200;
-// var WINDOW_HEIGHT = 400;	
-// var RADIUS = 8;
-// var MARGIN_TOP = 60;
-// var MARGIN_LEFT = 30;
-
-const endTime = new Date(2021, 6, 11, 18, 47, 52);
+// 倒计时用的参数
+// const endTime = new Date();
+// endTime.setTime(endTime.getTime() + 3600*1000)
 var curShowTimeSeconds = 0;
 
 var balls = [];
@@ -42,11 +38,15 @@ window.onload = function () {
 };
 
 function getCurrentShowTimeSeconds() {
-  var curTime = new Date();
-  var ret = endTime.getTime() - curTime.getTime();
-  ret = Math.round(ret / 1000);
+	var curTime = new Date();
+	// 倒计时设置的参数
+  // var ret = endTime.getTime() - curTime.getTime();
+	// ret = Math.round(ret / 1000);
+  // return ret >= 0 ? ret : 0;
 
-  return ret >= 0 ? ret : 0;
+
+	var ret = curTime.getHours() * 3600 + curTime.getMinutes() * 60 + curTime.getSeconds()
+	return ret
 }
 
 function update() {
@@ -158,7 +158,7 @@ function render(cxt) {
 
 	console.log(parseInt(hours/1000));
 
-	renderDigit(MARGIN_LEFT, MARGIN_TOP,parseInt(hours/1000),cxt);
+	renderDigit(MARGIN_LEFT, MARGIN_TOP,parseInt(hours/10),cxt);
   renderDigit(MARGIN_LEFT + 15 * (RADIUS + 1),MARGIN_TOP,parseInt(hours%10),cxt);
   renderDigit(MARGIN_LEFT + 30 * (RADIUS + 1),MARGIN_TOP,10,cxt);
   renderDigit(MARGIN_LEFT + 39 * (RADIUS + 1),MARGIN_TOP,parseInt(minutes/10),cxt);
