@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#canvas {
+			border: 1px solid #aaa;
+			margin: 20px auto;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<canvas id='canvas' width="600" height="600"></canvas>
+
+
+	<script>
+		window.onload = function() {
+			var canvas = document.getElementById('canvas')
+
+			var context = canvas.getContext('2d')
+
+			context.lineWidth = 5
+			context.strokeStyle = 'blue'
+			// 第一个参数：圆心X轴位置
+			// 第二个参数：圆心Y轴位置
+			// 第三个参数：半径
+			// 第四个和第五个参数：弧线从第四个参数到第五个参数
+			// 第六个参数：true是逆时针画，false是顺时针画。默认是顺时针
+			context.arc(300, 300, 200, 0, 2*Math.PI,true)
+
+			context.fillStyle = 'red'
+
+			context.fill()
+			context.stroke()
+		}
+	</script>
+</body>
+</html>
