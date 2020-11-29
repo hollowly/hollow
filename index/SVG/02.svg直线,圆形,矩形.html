@@ -9,7 +9,7 @@
 			fill:deeppink;
 			stroke:black;
 			stroke-width:4;
-			transition: all 3s;
+			transition: all .5s;
 
 		}
 		.circle1:hover {
@@ -25,7 +25,7 @@
 			fill:pink;
 			stroke:black;
 			stroke-width:4;
-			transition: all 3s;
+			transition: all .5s;
 		}
 		.polyline1:hover {
 			fill:blue;
@@ -52,18 +52,39 @@
 			fill:green;
 			stroke:blue;
 			stroke-width:5;
-			transition:all 2s;
+			transition:all .5s;
 		}
 		.rect1:hover {
 			fill:skyblue;
 			stroke:deeppink;
 		}
+		.ellipse1 {
+			stroke: black;
+			stroke-width: 3;
+			fill: deeppink;
+			transition: all .5s;
+		}
+		.ellipse1:hover {
+			stroke: deeppink;
+			stroke-width: 3;
+			fill: purple;
+		}
+		.polygon1 {
+			stroke: black;
+			stroke-width: 3;
+			fill: deeppink;
+			transition: all .5s;
+		}
+		.polygon1:hover {
+			stroke: deepskyblue;
+			fill:green;
+		}
 	</style>
 </head>
 <body>
 	<!-- bilibili图标 -->
-	<svg width='300' height='100' style="border:1px solid #aaa">
-		<!-- 线条代码 -->
+	<svg width='300' height='100'>
+	<!-- 线条代码 -->
 		<line x1='20' y1='40' x2='20' y2='80' stroke='rgb(0,176,234)' stroke-width='3'></line>
 		<line x1='20' y1='80' x2='80' y2='80' stroke='rgb(0,176,234)' stroke-width='3'></line>
 		<line x1='80' y1='40' x2='80' y2='80' stroke='rgb(0,176,234)' stroke-width='3'></line>
@@ -80,7 +101,7 @@
 		<line x1='250' y1='40' x2='255' y2='25' stroke='rgb(0,176,234)' stroke-width='3'></line>
 	</svg>
 	
-	<svg width='500' height='500'>
+	<svg width='500' height='500' style="border:1px solid #aaa">
 		<!--  -->
 		<circle cx='50' cy='50' r='30' class="circle1" ></circle>
 
@@ -94,6 +115,14 @@
 
 		<!-- 绘制矩形：——参数：x坐标，y坐标，高度，宽度 -->
 		<rect x='200' y='20' width='200' height='100' class='rect1'></rect>
+
+		<!-- 椭圆:——参数： 圆心x坐标，圆心y坐标，纵向半径，横向半径 -->
+		<ellipse cx='100' cy='300' ry='20' rx='30' class="ellipse1"></ellipse>
+		<ellipse cx='100' cy='360' ry='30' rx='20' class="ellipse1"></ellipse>
+		<ellipse cx='100' cy='420' ry='20' rx='20' class="ellipse1"></ellipse>
+
+		<!-- 多边形 -->
+		<polygon points='150,400 150,440,180,480,200,410,280,330' class="polygon1"></polygon>
 	</svg>
 
 </body>
