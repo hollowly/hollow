@@ -1,5 +1,5 @@
-var WINDOW_WIDTH = 2048;
-var WINDOW_HEIGHT = 500;
+var WINDOW_WIDTH = 1200;
+var WINDOW_HEIGHT = 400;
 var RADIUS = 8;
 var MARGIN_TOP = 60;
 var MARGIN_LEFT = 30;
@@ -173,7 +173,7 @@ function render(cxt) {
 }
 
 function renderDigit(x, y, num, cxt) {
-	cxt.fillStyle = "rgb(0,102,153)";
+	cxt.fillStyle = "skyblue";
 
   for(let i = 0; i < digit[num].length;i++)
     for(let j = 0; j < digit[num][i].length;j++)
