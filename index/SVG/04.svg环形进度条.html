@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width='device-width', initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.text {
+			/* 文本水平居中 */
+			text-anchor: middle;
+			dominant-baseline:middle;
+		}
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<!-- viewBox="x, y, width, height" // x:左上角横坐标，y:左上角纵坐标，width:宽度，height:高度 -->
+		<svg width='600' height='600' viewBox='0 0 3000 3000'  style="border:1px solid red">
+			<use href='#progress1' x='0' y='700'></use>
+			<use href='#progress1' x='0' y='1400'></use>
+			<use href='#progress1' x='700' y='0'></use>
+			<use href='#progress1' x='700' y='700'></use>
+			<use href='#progress1' x='700' y='1400'></use>
+			<use href='#progress1' x='1400' y='0'></use>
+			<use href='#progress1' x='1400' y='700'></use>
+			<use href='#progress1' x='1400' y='1400'></use>
+			<use href='#progress1' x='2100' y='0'></use>
+			<use href='#progress1' x='2100' y='700'></use>
+			<use href='#progress1' x='2100' y='1400'></use>
+
+			
+		<g id='progress1'>
+			<!-- 设置底色的圆环 -->
+			<circle cx='350' cy='350' r='300' 
+							fill='none' stroke='grey' 
+							stroke-width='40' stroke-linecap='round'></circle>
+			<!-- 设置进度条 -->
+			<circle class='progress' transform='rotate(-90,350,350)'
+						cx='350' cy='350' r='300' 
+						fill='none' stroke='red' stroke-width='40'
+						stroke-linecap='round' stroke-dasharray='0, 10000'></circle>
+						<!-- stroke-dasharray：一个表示长度，一个表示间距 -->
+			<!-- 设置文本 -->
+			<text class='text' x='350' y='350' font-size='200' fill='red'>0</text>
+		</g>
+		</svg>
+
+
+	<script>
+		window.onload = function() {
+			// 获取进度条circle对象
+			var oprogress = document.querySelector('.progress')
+			// 获取文本对象
+			var otext = document.querySelector('.text')
+			
+			function rotateCircle(persent) {
+				// 获取svg圆形环的总长，
+				var circleLength = Math.floor(2 * Math.PI * parseFloat(oprogress.getAttribute('r')))
+				var value = persent * circleLength/100;
+
+				// 红色是RGB是 255,0,0
+				var red = 255 + parseInt((0-255)/100*persent)
+				var green = 0 + parseInt((191-0)/100*persent)
+				var blue = 0 + parseInt((255-0)/100*persent)
+
+				// 设置stroke-dasharray的路径和颜色
+				oprogress.setAttribute('stroke-dasharray', value + ',10000')
+				oprogress.setAttribute('stroke', `rgb(${red},${green},${blue})`)
+				// 设置文本内容和颜色
+				otext.innerHTML = persent + '%'
+				otext.setAttribute('fill',`rgb(${red},${green},${blue})`)
+			}
+			let num = 0
+			setInterval(() => {
+				num++;
+				if(num > 100) {
+					num = 0
+				}
+			rotateCircle(num)
+			}, 90);
+		}
+	</script>
+</body>
+</html>
