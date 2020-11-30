@@ -1,4 +1,5 @@
-// 倒计时用的参数
+
+			// 倒计时用的参数
 // const endTime = new Date();
 // endTime.setTime(endTime.getTime() + 3600*1000)
 var curShowTimeSeconds = 0;
@@ -18,11 +19,17 @@ const colors = [
 ];
 
 window.onload = function () {
-	WINDOW_WIDTH = document.body.clientWidth
-	WINDOW_HEIGHT = document.body.clientHeight
-	MARGIN_LEFT = Math.round(WINDOW_WIDTH / 10)
-	RADIUS = Math.round(WINDOW_WIDTH *4 / 5 / 108) -1
-	MARGIN_TOP = Math.round(WINDOW_HEIGHT / 5)
+	// WINDOW_WIDTH = document.body.clientWidth
+	// console.log(WINDOW_WIDTH);
+	WINDOW_WIDTH = 650
+	// WINDOW_HEIGHT = document.body.clientHeight
+	WINDOW_HEIGHT = 300
+	// MARGIN_LEFT = Math.round(WINDOW_WIDTH / 10)
+	// RADIUS = Math.round(WINDOW_WIDTH *4 / 5 / 108) -1
+	// MARGIN_TOP = Math.round(WINDOW_HEIGHT / 5)
+	MARGIN_LEFT = 100
+	RADIUS = 2
+	MARGIN_TOP = 100
 
   var canvas = document.getElementById("canvas");
   var context = canvas.getContext("2d");
@@ -63,15 +70,8 @@ function update() {
   if(nextSeconds != curSeconds) {
     if(parseInt(curHours / 10) != parseInt(nextHours / 10)) {
       addBalls(MARGIN_LEFT + 0, MARGIN_TOP, parseInt(curHours / 10));
-    }
-    if(parseInt(curHours % 10) != parseInt(nextHours % 10)) {
-      addBalls(
-        MARGIN_LEFT + 15 * (RADIUS + 1),
-        MARGIN_TOP,
-        parseInt(curHours / 10)
-      );
-    }
-
+		}
+		
     if(parseInt(curMinutes / 10) != parseInt(nextMinutes / 10)) {
       addBalls(
         MARGIN_LEFT + 39 * (RADIUS + 1),
@@ -108,7 +108,7 @@ function update() {
 
   updateBalls();
 
-  console.log( balls.length)
+  // console.log( balls.length)
 }
 
 function updateBalls() {
@@ -156,7 +156,7 @@ function render(cxt) {
   var minutes = parseInt((curShowTimeSeconds - hours * 3600) / 60);
 	var seconds = curShowTimeSeconds % 60;
 
-	console.log(parseInt(hours/1000));
+	// console.log(parseInt(hours/1000));
 
 	renderDigit(MARGIN_LEFT, MARGIN_TOP,parseInt(hours/10),cxt);
   renderDigit(MARGIN_LEFT + 15 * (RADIUS + 1),MARGIN_TOP,parseInt(hours%10),cxt);
@@ -166,6 +166,7 @@ function render(cxt) {
   renderDigit(MARGIN_LEFT + 69 * (RADIUS + 1),MARGIN_TOP,10,cxt);
   renderDigit(MARGIN_LEFT + 78 * (RADIUS + 1),MARGIN_TOP,parseInt(seconds/10),cxt);
   renderDigit(MARGIN_LEFT + 93 * (RADIUS + 1),MARGIN_TOP,parseInt(seconds%10),cxt);
+  renderDigit(MARGIN_LEFT + 15 * (RADIUS + 1),MARGIN_TOP,parseInt(hours%10),cxt)
 
   for(let i = 0; i < balls.length; i++) {
     cxt.fillStyle = balls[i].color;
