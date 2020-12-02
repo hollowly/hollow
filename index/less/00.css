@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#box {
+  width: 300px;
+  height: 500px;
+  border: 1px solid red;
+}
+#box > #div1 {
+  width: 100px;
+  height: 100px;
+  background: deeppink;
+  margin: 200px auto;
+}
+#box > #div1:hover {
+  background: pink;
+}
+#box > #div1 > #div2 {
+  width: 80px;
+  height: 80px;
+  background: black;
+}
+#box > #div1 > #div2:hover {
+  background: green;
+}
+#box > #div1 > #div2 > #div3 {
+  width: 60px;
+  height: 60px;
+  background: skyblue;
+}
+#box > #div1 > #div2 > #div3:hover {
+  background: orange;
+}
+#box > #div1 > #div2 > #div3 > #div4 {
+  width: 40px;
+  height: 40px;
+  background: red;
+}
+#box > #div1 > #div2 > #div3 > #div4:hover {
+  background: yellow;
+}
+#box > #div1 > #div2 > #div3 > #div4 > #div5 {
+  width: 20px;
+  height: 20px;
+  background: purple;
+}
+#box > #div1 > #div2 > #div3 > #div4 > #div5:hover {
+  background: fuchsia;
+}

@@ -1,0 +1,53 @@
+@color:deeppink;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#box {
+	width: 300px;
+	height: 500px;
+	border: 1px solid red;
+	>#div1 {
+		width: 100px;
+		height: 100px;
+		background: @color;
+		margin: 200px auto;
+		&:hover {
+			background: pink;
+		}
+		>#div2 {
+			width: 80px;
+			height: 80px;
+			background: black;
+			&:hover {
+				background: green;
+			}
+			>#div3 {
+				width: 60px;
+				height: 60px;
+				background: skyblue;
+				&:hover {
+					background: orange;
+				}
+				>#div4 {
+					width: 40px;
+					height: 40px;
+					background: red;
+					&:hover {
+						background: yellow;
+					}
+					>#div5 {
+						width: 20px;
+						height: 20px;
+						background: purple;
+						&:hover {
+							background: fuchsia;
+						}
+					}
+				}
+			}
+		}
+	}
+}
