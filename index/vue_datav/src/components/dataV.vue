@@ -1,5 +1,5 @@
 <!--  -->
-<template>
+<template style='none'>
 	<div class="barbox">
 		<dv-border-box-11 class="box">
 			<!-- 上部分 -->
@@ -44,7 +44,6 @@
 				<dv-scroll-ranking-board :config="configRanking" class="configRanking" />
 			</div>
 		</dv-border-box-11>
-
 	</div>
 </template>
 <script>
@@ -234,20 +233,17 @@
 
 
 <style scoped>
-	* {
-		display: inline-block;
-	}
 	.barbox {
-		margin: 0 auto;
 		width: 1500px;
+		height: 1300px;
+		margin: 0 auto;
 	}
-	.box {
-		padding: 7px;
-		width: 100%;
-	}
-	div{
-		/* display: block; */
+	.barbox div{
 		float: left !important;
+	}
+	
+	.box {
+		width: 100%;
 	}
 
 	div.dv-decoration-1 {
