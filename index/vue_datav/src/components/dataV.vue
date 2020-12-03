@@ -4,36 +4,45 @@
 		<dv-border-box-11 class="box">
 			<!-- 上部分 -->
 			<div>
-			<!-- <dv-full-screen-container> -->
-			<dv-loading style="color:white">Loading...</dv-loading>
-			<dv-decoration-5 />
-			<dv-decoration-1 />
-			<dv-decoration-5 />
-			<dv-decoration-1 />
-			<dv-decoration-5 />	
-			<dv-decoration-1 />
-			<dv-decoration-9>66%</dv-decoration-9>
-			<dv-decoration-10 />
-			<dv-decoration-11 >dv-decoration-11</dv-decoration-11>
-			<dv-decoration-12></dv-decoration-12>
-			<!-- 桃花运 -->
-			<dv-charts :option="option" class="charts" />
-			<dv-active-ring-chart :config="configBar" class="configBar"/>
-			<dv-capsule-chart :config="configBar" class="row-data-bar"/>
-			<!-- 水位图 -->
-			<dv-water-level-pond :config="configWater" class="configWater" />
-			<!-- 进度池 -->
-			<dv-percent-pond :config="configProgress" class="configProgress"/>
+				<!-- <dv-full-screen-container> -->
+				<dv-loading style="color:white">Loading...</dv-loading>
+				<dv-decoration-5 />
+				<dv-decoration-1 />
+				<dv-decoration-5 />
+				<dv-decoration-1 />
+				<dv-decoration-5 />	
+				<dv-decoration-1 />
+				<dv-decoration-9>66%</dv-decoration-9>
+				<dv-decoration-10 />
+				<dv-decoration-11 >dv-decoration-11</dv-decoration-11>
+				<dv-decoration-12></dv-decoration-12>
+				<!-- 桃花运 -->
+				<dv-charts :option="option" class="charts" />
+				<dv-active-ring-chart :config="configBar" class="configBar"/>
+				<dv-capsule-chart :config="configBar" class="row-data-bar"/>
+				<!-- 水位图 -->
+				<dv-water-level-pond :config="configWater" class="configWater" />
+				<!-- 进度池 -->
+				<dv-percent-pond :config="configProgress" class="configProgress"/>
 			</div>
-			<!-- 飞线图 -->
-			<!-- <dv-flyline-chart-enhanced :config="config" style="width:100%;height:100%;" /> -->
-			<!-- 锥形图 -->
-			<dv-conical-column-chart :config="configCone" class="configCone"/>
-			<!-- </dv-full-screen-container> -->
-			<!-- 数字翻牌器 -->
-			<!-- <dv-digital-flop :config="config1" style="width:150px;height:100px;" /> -->
-			<!-- 轮播表 -->
-			<dv-scroll-board :config="configTable" class="configTable"/>
+
+			<!-- 中部分 -->
+			<div>
+				<!-- 飞线图 -->
+				<!-- <dv-flyline-chart-enhanced :config="config" style="width:100%;height:100%;" /> -->
+				<!-- 锥形图 -->
+				<dv-conical-column-chart :config="configCone" class="configCone"/>
+				<!-- </dv-full-screen-container> -->
+				<!-- 数字翻牌器 -->
+				<!-- <dv-digital-flop :config="config1" style="width:150px;height:100px;" /> -->
+				<!-- 轮播表 -->
+				<dv-scroll-board :config="configTable" class="configTable"/>
+			</div>
+
+			<!-- 下部分 -->
+			<div>
+				<dv-scroll-ranking-board :config="configRanking" class="configRanking" />
+			</div>
 		</dv-border-box-11>
 
 	</div>
@@ -170,7 +179,53 @@
 						['行9列1', '行9列2', '行9列3'],
 						['行10列1', '行10列2', '行10列3']
 					]
-				}
+				},
+
+				configRanking: {
+					data: [
+						{
+							name:'南阳',
+							value: 120
+						},
+						{
+							name:'新乡',
+							value: 80
+						},
+						{
+							name:'西峡',
+							value: 120
+						},
+						{
+							name:'驻马店',
+							value: 66
+						},
+						{
+							name:'周口',
+							value: 55
+						},
+						{
+							name:'信阳',
+							value: 35
+						},
+						{
+							name:'漯河',
+							value: 15
+						}
+				],
+					unit: '单位',
+					valueFormatter ({ value }) {
+						console.warn(arguments)
+						const reverseNumber = (value + '').split('').reverse()
+						let valueStr = ''
+						while (reverseNumber.length) {
+							const seg = reverseNumber.splice(0, 3).join('')
+							valueStr += seg
+							if (seg.length === 3) valueStr += ','
+						}
+						return valueStr.split('').reverse().join('')
+					}
+				},
+
 			}
 		}
 
@@ -262,5 +317,11 @@
 		width:500px;
 		height:220px;
 		transform: translate(30px,-160px);
+	}
+	
+	.configRanking {
+		width:500px;
+		height:300px;
+		transform:translate(-950px,100px);
 	}
 </style>
