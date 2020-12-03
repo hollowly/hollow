@@ -22,7 +22,7 @@
 <style>
 @import url('./assets/css/base.css');
 body {
-	color:white;
+	color:rgb(126,198,153);
 	background: black;
 }
 </style>
