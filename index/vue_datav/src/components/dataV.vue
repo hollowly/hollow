@@ -1,6 +1,8 @@
 <!--  -->
 <template style='none'>
 	<div class="barbox">
+		
+	<router-link to='/flyline'>aaaa</router-link>
 		<dv-border-box-11 class="box">
 			<!-- 上部分 -->
 			<div>
@@ -43,6 +45,7 @@
 			<div>
 				<dv-scroll-ranking-board :config="configRanking" class="configRanking" />
 			</div>
+			
 		</dv-border-box-11>
 	</div>
 </template>
