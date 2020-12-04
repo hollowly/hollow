@@ -2,7 +2,7 @@
 <template style='none'>
 	<div class="barbox">
 		
-	<router-link to='/flyline'>aaaa</router-link>
+	<router-link to='/flyline'>所有归hollow所有</router-link>
 		<dv-border-box-11 class="box">
 			<!-- 上部分 -->
 			<div>
