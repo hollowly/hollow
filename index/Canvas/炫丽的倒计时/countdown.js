@@ -19,16 +19,16 @@ const colors = [
 ];
 
 window.onload = function () {
-	// WINDOW_WIDTH = document.body.clientWidth
+	WINDOW_WIDTH = document.body.clientWidth
 	// console.log(WINDOW_WIDTH);
-	WINDOW_WIDTH = 650
+	// WINDOW_WIDTH = 650
 	// WINDOW_HEIGHT = document.body.clientHeight
-	WINDOW_HEIGHT = 300
+	WINDOW_HEIGHT = 500
 	// MARGIN_LEFT = Math.round(WINDOW_WIDTH / 10)
 	// RADIUS = Math.round(WINDOW_WIDTH *4 / 5 / 108) -1
 	// MARGIN_TOP = Math.round(WINDOW_HEIGHT / 5)
-	MARGIN_LEFT = 100
-	RADIUS = 2
+	MARGIN_LEFT = WINDOW_WIDTH / 3.2
+	RADIUS = 4
 	MARGIN_TOP = 100
 
   var canvas = document.getElementById("canvas");
