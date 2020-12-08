@@ -2,20 +2,20 @@ o<template>
   <div id="app">
 		<div id='tabbar'>
 			<div class="tabbar-item">
-				首页
 				<img src="./assets/img/tabbar/categories.png">
+				<p>首页</p>
 				</div>
 			<div class="tabbar-item">
-				购物车
 				<img src="./assets/img/tabbar/shopcart.png">
+				<p>购物车</p>
 				</div>
 			<div class="tabbar-item">
-				关于
 				<img src="./assets/img/tabbar/home.png">
+				<p>关于</p>
 				</div>
 			<div class="tabbar-item">
-				我的
 				<img src="./assets/img/tabbar/profile.png">
+				<p>我的</p>
 				</div>
 		</div>
   </div>
@@ -38,6 +38,8 @@ o<template>
 		text-align: center;
 	}
 	.tabbar-item > img {
-		
+		width: 25px;
+		height: 25px;
+		border-radius: 25px;
 	}
 </style>
