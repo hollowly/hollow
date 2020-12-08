@@ -53,7 +53,6 @@ export default {
 
 				$('.img1').hide()
 				$(this).children('img').eq(1).show().siblings('img').hide().parents('a').siblings('a').children('div').children('.img2').show()
-
 			})
 		})
 	},
