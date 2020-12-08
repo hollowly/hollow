@@ -22,12 +22,17 @@ o<template>
 </template>
 
 <script>
+import $ from '../node_modules/jquery/dist/jquery'
+$(function() {
+	$('.tabbar-item').click(function() {
+		$(this).addClass('active')
+	})
+})
 
 export default {
 
 }
 </script>
-
 <style>
 	@import url("./assets/css/base.css");
 	#tabbar {
