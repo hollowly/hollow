@@ -3,8 +3,8 @@
 	<div id='tabbar'>
 		<router-link to='/categories'>
 			<div class="tabbar-item active">
-				<img src="../assets/img/tabbar/categories.png" class='img2'>
-				<img src="../assets/img/tabbar/categories_active.png" style="display:none" class='img1'>
+				<img src="../assets/img/tabbar/categories.png" class='img2' style="display:none">
+				<img src="../assets/img/tabbar/categories_active.png" class='img1'>
 				<p>首页</p>
 			</div>
 		</router-link>
