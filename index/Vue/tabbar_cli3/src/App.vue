@@ -22,16 +22,14 @@ o<template>
 </template>
 
 <script>
+
 export default {
-	methods: {
-		
-	},
+
 }
 </script>
 
 <style>
 	@import url("./assets/css/base.css");
-
 	#tabbar {
 		position: fixed;
 		display:flex;
