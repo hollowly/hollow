@@ -1,23 +1,37 @@
 o<template>
   <div id="app">
 		<div id='tabbar'>
-			<div class="tabbar-item">
-				<img src="./assets/img/tabbar/categories.png">
-				<p>首页</p>
+			<router-link to='/categories'>
+				<div class="tabbar-item active">
+					<img src="./assets/img/tabbar/categories.png">
+					<p>首页</p>
 				</div>
+			</router-link>
+			
+			<router-link to='/shopcart'>
 			<div class="tabbar-item">
 				<img src="./assets/img/tabbar/shopcart.png">
 				<p>购物车</p>
-				</div>
+			</div>
+			</router-link>
+
+			<router-link to='/home'>
 			<div class="tabbar-item">
 				<img src="./assets/img/tabbar/home.png">
 				<p>关于</p>
-				</div>
+			</div>
+			</router-link>
+
+			<router-link to='/profile'>
 			<div class="tabbar-item">
 				<img src="./assets/img/tabbar/profile.png">
 				<p>我的</p>
-				</div>
+			</div>
+			</router-link>
+
 		</div>
+
+		<router-view />
   </div>
 </template>
 
