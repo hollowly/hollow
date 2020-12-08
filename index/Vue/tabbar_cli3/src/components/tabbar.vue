@@ -4,7 +4,7 @@
 		<router-link to='/categories'>
 			<div class="tabbar-item active">
 				<img src="../assets/img/tabbar/categories.png">
-				<img src="../assets/img/tabbar/categories_active.png" class="hidden">
+				<img src="../assets/img/tabbar/categories_active.png" style="display:none">
 				<p>首页</p>
 			</div>
 		</router-link>
@@ -12,7 +12,7 @@
 		<router-link to='/shopcart'>
 		<div class="tabbar-item">
 			<img src="../assets/img/tabbar/shopcart.png">
-			<img src="../assets/img/tabbar/shopcart_active.png" class="hidden">
+			<img src="../assets/img/tabbar/shopcart_active.png" style="display:none">
 			<p>购物车</p>
 		</div>
 		</router-link>
@@ -20,7 +20,7 @@
 		<router-link to='/home'>
 		<div class="tabbar-item">
 			<img src="../assets/img/tabbar/home.png">
-			<img src="../assets/img/tabbar/home_active.png" class="hidden">
+			<img src="../assets/img/tabbar/home_active.png" style="display:none">
 			<p>关于</p>
 		</div>
 		</router-link>
@@ -28,7 +28,7 @@
 		<router-link to='/profile'>
 		<div class="tabbar-item">
 			<img src="../assets/img/tabbar/profile.png">
-			<img src="../assets/img/tabbar/profile_active.png" class="hidden">
+			<img src="../assets/img/tabbar/profile_active.png" style="display:none">
 			<p>我的</p>
 		</div>
 		</router-link>
@@ -50,8 +50,7 @@ export default {
 				$('.tabbar-item').removeClass('active');
 				$(this).addClass('active')
 
-				$(this).children('img').eq(0).hide()
-				$(this).children('img').eq(1).toggleClass()
+				$(this).children('img').eq(0).hide().siblings('img').toggleClass();
 			})
 		})
 	},
