@@ -22,14 +22,18 @@ o<template>
 </template>
 
 <script>
-import $ from '../node_modules/jquery/dist/jquery'
-$(function() {
-	$('.tabbar-item').click(function() {
-		$(this).addClass('active')
-	})
-})
+import $ from 'jquery'
 
 export default {
+	// mounted：渲染后
+	mounted() {
+		$(function() {
+		$('.tabbar-item').click(function() {
+			$('.tabbar-item').removeClass('active');
+			$(this).addClass('active')
+		})
+	})
+	},
 
 }
 </script>
