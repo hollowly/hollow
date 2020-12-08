@@ -2,3 +2,6 @@
 	padding: 0;
 	margin: 0;
 }
+a,a:hover,a:link,a:active,a:visited,a {
+	text-decoration: none;
+}

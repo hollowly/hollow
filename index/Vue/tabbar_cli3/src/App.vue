@@ -51,7 +51,7 @@ export default {
 
 }
 </script>
-<style>
+<style scoped>
 	@import url("./assets/css/base.css");
 	#tabbar {
 		position: fixed;
@@ -62,7 +62,7 @@ export default {
 		height: 49px;	
 		background: #eee;
 	}
-	.tabbar-item {
+	a {
 		flex: 1;
 		text-align: center;
 	}
@@ -71,7 +71,6 @@ export default {
 		height: 25px;
 		border-radius: 25px;
 	}
-
 	.active {
 		color: red;
 	}
