@@ -3,32 +3,32 @@
 	<div id='tabbar'>
 		<router-link to='/categories'>
 			<div class="tabbar-item active">
-				<img src="../assets/img/tabbar/categories.png" class="img1">
-				<img src="../assets/img/tabbar/categories_active.png" style="display:none">
+				<img src="../assets/img/tabbar/categories.png" class='img2'>
+				<img src="../assets/img/tabbar/categories_active.png" style="display:none" class='img1'>
 				<p>首页</p>
 			</div>
 		</router-link>
 		
 		<router-link to='/shopcart'>
 		<div class="tabbar-item">
-			<img src="../assets/img/tabbar/shopcart.png" class="img1">
-			<img src="../assets/img/tabbar/shopcart_active.png" style="display:none">
+			<img src="../assets/img/tabbar/shopcart.png" class='img2'>
+			<img src="../assets/img/tabbar/shopcart_active.png" style="display:none" class='img1'>
 			<p>购物车</p>
 		</div>
 		</router-link>
 
 		<router-link to='/home'>
 		<div class="tabbar-item">
-			<img src="../assets/img/tabbar/home.png" class="img1">
-			<img src="../assets/img/tabbar/home_active.png" style="display:none">
+			<img src="../assets/img/tabbar/home.png" class='img2'>
+			<img src="../assets/img/tabbar/home_active.png" style="display:none" class='img1'>
 			<p>关于</p>
 		</div>
 		</router-link>
 
 		<router-link to='/profile'>
 		<div class="tabbar-item">
-			<img src="../assets/img/tabbar/profile.png" class="img1">
-			<img src="../assets/img/tabbar/profile_active.png" style="display:none">
+			<img src="../assets/img/tabbar/profile.png" class='img2'>
+			<img src="../assets/img/tabbar/profile_active.png" style="display:none" class='img1'>
 			<p>我的</p>
 		</div>
 		</router-link>
@@ -49,9 +49,11 @@ export default {
 			$('.tabbar-item').click(function() {
 				$('.tabbar-item').removeClass('active');
 				$(this).addClass('active')
-		
-				$(this).children('img').eq(0).hide().siblings('img').show()
-				$()
+
+
+				$('.img1').hide()
+				$(this).children('img').eq(1).show().siblings('img').hide().parents('a').siblings('a').children('div').children('.img2').show()
+
 			})
 		})
 	},
