@@ -3,7 +3,7 @@
 	<div id='tabbar'>
 		<router-link to='/categories'>
 			<div class="tabbar-item active">
-				<img src="../assets/img/tabbar/categories.png">
+				<img src="../assets/img/tabbar/categories.png" class="img1">
 				<img src="../assets/img/tabbar/categories_active.png" style="display:none">
 				<p>首页</p>
 			</div>
@@ -11,7 +11,7 @@
 		
 		<router-link to='/shopcart'>
 		<div class="tabbar-item">
-			<img src="../assets/img/tabbar/shopcart.png">
+			<img src="../assets/img/tabbar/shopcart.png" class="img1">
 			<img src="../assets/img/tabbar/shopcart_active.png" style="display:none">
 			<p>购物车</p>
 		</div>
@@ -19,7 +19,7 @@
 
 		<router-link to='/home'>
 		<div class="tabbar-item">
-			<img src="../assets/img/tabbar/home.png">
+			<img src="../assets/img/tabbar/home.png" class="img1">
 			<img src="../assets/img/tabbar/home_active.png" style="display:none">
 			<p>关于</p>
 		</div>
@@ -27,7 +27,7 @@
 
 		<router-link to='/profile'>
 		<div class="tabbar-item">
-			<img src="../assets/img/tabbar/profile.png">
+			<img src="../assets/img/tabbar/profile.png" class="img1">
 			<img src="../assets/img/tabbar/profile_active.png" style="display:none">
 			<p>我的</p>
 		</div>
@@ -49,8 +49,9 @@ export default {
 			$('.tabbar-item').click(function() {
 				$('.tabbar-item').removeClass('active');
 				$(this).addClass('active')
-
-				$(this).children('img').eq(0).hide().siblings('img').toggleClass();
+		
+				$(this).children('img').eq(0).hide().siblings('img').show()
+				$()
 			})
 		})
 	},
