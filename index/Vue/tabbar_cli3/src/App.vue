@@ -21,6 +21,14 @@ o<template>
   </div>
 </template>
 
+<script>
+export default {
+	methods: {
+		
+	},
+}
+</script>
+
 <style>
 	@import url("./assets/css/base.css");
 
@@ -41,5 +49,9 @@ o<template>
 		width: 25px;
 		height: 25px;
 		border-radius: 25px;
+	}
+
+	.active {
+		color: red;
 	}
 </style>
