@@ -28,11 +28,11 @@ export default {
 	// mounted：渲染后
 	mounted() {
 		$(function() {
-		$('.tabbar-item').click(function() {
-			$('.tabbar-item').removeClass('active');
-			$(this).addClass('active')
+			$('.tabbar-item').click(function() {
+				$('.tabbar-item').removeClass('active');
+				$(this).addClass('active')
+			})
 		})
-	})
 	},
 
 }
