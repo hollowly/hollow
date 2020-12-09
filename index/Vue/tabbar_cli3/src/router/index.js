@@ -10,7 +10,11 @@ Vue.use(VueRouter)
 const routes = [
   {
 		path: '/',
-		redirect:'/categories'
+		redirect:'/home'
+	},
+	{
+		path:'/home',
+		component:home
 	},
 	{
 		path:'/categories',
@@ -19,10 +23,6 @@ const routes = [
 	{
 		path:'/shopcart',
 		component:shopcart
-	},
-	{
-		path:'/home',
-		component:home
 	},
 	{
 		path:'/profile',

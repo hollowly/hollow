@@ -1,7 +1,7 @@
 <!--  -->
 <template>
 	<div>
-		categories
+		<h1>更多categories</h1>
 	</div>
 </template>
 

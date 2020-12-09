@@ -1,10 +1,10 @@
 <!--  -->
 <template>
 	<div id='tabbar'>
-		<router-link to='/categories'>
+		<router-link to='/home'>
 			<div class="tabbar-item active">
-				<img src="../assets/img/tabbar/categories.png" class='img2' style="display:none">
-				<img src="../assets/img/tabbar/categories_active.png" class='img1'>
+				<img src="../assets/img/tabbar/home.png" class='img2'  style="display:none">
+				<img src="../assets/img/tabbar/home_active.png" class='img1'>
 				<p>首页</p>
 			</div>
 		</router-link>
@@ -17,11 +17,11 @@
 		</div>
 		</router-link>
 
-		<router-link to='/home'>
+		<router-link to='/categories'>
 		<div class="tabbar-item">
-			<img src="../assets/img/tabbar/home.png" class='img2'>
-			<img src="../assets/img/tabbar/home_active.png" style="display:none" class='img1'>
-			<p>关于</p>
+				<img src="../assets/img/tabbar/categories.png" class='img2'>
+				<img src="../assets/img/tabbar/categories_active.png" class='img1' style="display:none">
+			<p>更多</p>
 		</div>
 		</router-link>
 

@@ -1,7 +1,7 @@
 <!--  -->
 <template>
 	<div>
-		profile
+		<h1>我的profile</h1>
 	</div>
 </template>
 
