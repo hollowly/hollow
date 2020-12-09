@@ -42,7 +42,7 @@ export default {
 		return {
 
 		}
-	},
+	},			
 	// mounted：渲染后
 	mounted() {
 		$(function() {
