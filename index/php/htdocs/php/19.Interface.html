@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form action="19.submit.php" method="post">
+		<label for="id">
+		学号：<input type="text" id='id' name='id' required>
+		</label> <br>
+
+		<label for="name">
+		姓名：<input type="text" id='name' name='name' required>
+		</label> <br>
+
+		<label for="password">
+		密码：<input type="password" id='password' name='password' required>
+			</label> <br>
+
+		<label for="phone">
+		手机：<input type="text" id='phone' name='phone' required>
+		</label> <br>
+
+		性别：
+		<label for="woman" >
+			<input type="radio" id='woman' name="sex" value="男" required> 男
+		</label>
+
+		<label for="man">
+			<input type="radio" id='man' name="sex" value="女" required> 女
+		</label> <br>
+
+		<label for='grade'>
+		年级：<input type="text" id='grade' name='grade' required>
+		</label> <br>
+
+		<label for='major'>
+			专业：<select name="major" id="major">
+							<option value="软件技术" name='软件技术'>软件技术</option>
+							<option value="大数据" name='大数据'>大数据</option>
+							<option value="信息安全" name='信息安全'>信息安全</option>
+							<option value="数字媒体" name='数字媒体'>数字媒体</option>
+						</select>
+			</label> <br>
+
+		<input type="submit" value="注册">
+	</form>
+</body>
+</html>

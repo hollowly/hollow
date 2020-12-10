@@ -26,4 +26,4 @@
 	$mysqli->close();
 ?>
 
-<a href="rememberCookie.php">退出</a>
+<a href="Interface.html">退出</a>

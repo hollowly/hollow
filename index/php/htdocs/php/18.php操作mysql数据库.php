@@ -26,12 +26,6 @@
 		password varchar(80),
 		sex char(30),
 		registertime datetime )");
-		
-	if($result == true) {
-		echo "表创建成功","<br>";
-	} else {
-		echo "表创建失败","<br>";
-	}
 
 
 	// 第四步：清除记录表，释放资源
