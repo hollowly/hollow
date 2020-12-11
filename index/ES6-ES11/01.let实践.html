@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#box > .item {
+			width: 150px;
+			height: 100px;
+			border: 1px solid black;
+			float: left;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id='box'>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+</body>
+
+<script>
+	window.onload = function() {
+		let items = document.getElementsByClassName('item')
+
+		for(let i = 0; i < items.length; i++) {
+			items[i].onclick = function() {
+				// this.style.background = 'deeppink'
+
+				// 如果用 var 定义 i 就不能使用下面这种方法
+				items[i].style.background = 'deeppink'
+			}
+
+
+			// var 定义 i (for循环实现原理)
+			{
+				var i = 0
+			}
+			{
+				var i = 1
+			}
+			{
+				var i = 2
+			}
+			// 如果我们用 let 定义 i
+			{
+				let  i = 0
+			}
+			{
+				let  i = 1
+			}
+			{
+				let  i = 2
+			}
+			// 结论：因为在 for 循环的时候 var 会声明了多次 i，最终 i 会被替换成最后一个
+			// 而使用 let 声明 i 就不会被替换，因为 let 是 块级作用域，而 var 是全局作用域
+		}
+
+	}
+</script>
+</html>
