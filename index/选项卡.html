@@ -1,58 +1,52 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <style>
-        #a{
-            width:265px;
-            height:150px;
-            border:2px solid blue;
-            background:yellow;
-            display:none;
-        }
-        .active{
-            background:red;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		#a {
+			width: 265px;
+			height: 150px;
+			border: 2px solid blue;
+			background: yellow;
+			display: none;
+		}
+		.active {
+			background: red;
+		}
+	</style>
 </head>
-
 <body>
-
+	<input type="button" value="选项卡1" class="active">
+	<input type="button" value="选项卡2">
+	<input type="button" value="选项卡3">
+	<input type="button" value="选项卡4">
+	
+	<div id="a" style="display:block">1111</div>
+	<div id="a">2222</div>
+	<div id="a">3333</div>
+	<div id="a">4444</div>
 </body>
-<input type="button" value="选项卡1" class="active">
-<input type="button" value="选项卡2">
-<input type="button" value="选项卡3">
-<input type="button" value="选项卡4">
-
-<div id="a" style="display:block">1111</div>
-<div id="a">2222</div>
-<div id="a">3333</div>
-<div id="a">4444</div>
 
 <script>
-    window.onload=function()
-    {
-        var ainput=document.getElementsByTagName('input');
-        var adiv=document.getElementsByTagName('div');
-        
-        for(var i = 0;i < ainput.length;i++)
-        {
-            ainput[i].index = i;
-            ainput[i].onclick=function()
-            {
-                for(var i = 0;i < ainput.length;i++)
-                {
-                    ainput[i].className='';
-                    adiv[i].style.display='none';
-                }
-                this.className='active';
-                adiv[this.index].style.display='block';
-            }
-        }
-    }
+	window.onload = function () {
+		var ainput = document.getElementsByTagName('input');
+		var adiv = document.getElementsByTagName('div');
+
+		for (var i = 0; i < ainput.length; i++) {
+			ainput[i].index = i;
+			ainput[i].onclick = function () {
+				for (var i = 0; i < ainput.length; i++) {
+					ainput[i].className = '';
+					adiv[i].style.display = 'none';
+				}
+				this.className = 'active';
+				adiv[this.index].style.display = 'block';
+			}
+		}
+	}
 </script>
+
 </html>
