@@ -5,4 +5,5 @@
 
 a,a:link,a:hover,a:active {
 	text-decoration: none;
+	color: black;
 }
