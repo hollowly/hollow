@@ -18,24 +18,11 @@ export default {
 </script>
 
 <style scoped>
-#profile {
+	#profile {
 		position: absolute;
 		top: 280px;
-		left: 100px;
-		border:1px solid red;
-	}
-	ul > li {
-		list-style: none;
-		margin: 20px 20px 20px 0px;
-	}
-	ul > li > a {
-		color: #777;
-	}
-	ul > li > a:hover {
-		color: black;
-	}
-	ul > li > a:hover {
+		left: 20px;
+		font-size: 30px;
 		font-weight: 700;
-		border-bottom: 3px solid #00a862;
 	}
 </style>
