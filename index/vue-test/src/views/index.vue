@@ -35,9 +35,8 @@ export default {
 		display: inline-block;
 	}
 	#sidebar {
-		position: fixed;
-		top: 0;
-		bottom: 0;
+		width: 35%;
+		height: 100vh;
 		box-shadow: 1px 1px 4px #ccc;
 		font-weight: 700
 	}
@@ -53,6 +52,7 @@ export default {
 	}
 
 	.sidebar-more {
+		float: right;
 		margin: 2px 20px;
 		font-size: 25px
 	}
