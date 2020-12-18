@@ -4,6 +4,7 @@
 }
 html,body {
 	width: 1200px;
+	overflow:hidden;
 }
 
 a,a:link,a:hover,a:active {
