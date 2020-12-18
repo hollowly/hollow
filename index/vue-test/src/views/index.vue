@@ -2,7 +2,6 @@
 <template>
 	<div>
 		<div id='sidebar'>
-
 			<div class="sidebar-header">
 				<a href="/" style="float:left"><img src="@/assets/img/logo.svg" width="40"></a>
 				<div class="title">
@@ -12,7 +11,6 @@
 				</div>
 				<a href="" class='sidebar-more'>☰</a>
 			</div>
-
 
 
 		</div>
