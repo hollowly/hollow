@@ -38,14 +38,14 @@ export default {
 		list-style: none;
 		margin: 20px 20px 20px 0px;
 	}
-	ul > li:hover {
-		font-weight: 700;
-		border-bottom: 3px solid #00a862;
-	}
 	ul > li > a {
 		color: #777;
 	}
 	ul > li > a:hover {
 		color: black;
+	}
+	ul > li > a:hover {
+		font-weight: 700;
+		border-bottom: 3px solid #00a862;
 	}
 </style>
