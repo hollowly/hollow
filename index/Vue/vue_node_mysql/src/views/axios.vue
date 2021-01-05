@@ -7,11 +7,13 @@
 				<td><a :href="item.link">{{item.title}}</a></td>
 				<td><img :src="item.image" width="100"></td>
 			</tr>
+
 			<tr v-for="item in recommendList">
 				<td>{{item.sort}}.</td>
 				<td><a :href="item.link">{{item.title}}</a></td>
 				<td><img :src="item.image" width="100"></td>
 			</tr>
+			
 		</table>
   </div>
 </template>
@@ -28,6 +30,7 @@ export default {
 	created() {
 		axios.all([
 			axios({url:'http://123.207.32.32:8000/home/multidata'}).then(data => {
+				console.log(data);
 				this.bannerList = data.data.data.banner.list
 			}),
 			axios({url:'http://123.207.32.32:8000/home/multidata'}).then(data => {
