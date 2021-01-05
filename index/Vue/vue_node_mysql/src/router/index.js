@@ -5,12 +5,13 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-  },
+		path: '/',
+	},
 ]
 
 const router = new VueRouter({
-  routes
+	routes,
+	mode:'history'
 })
 
 export default router
