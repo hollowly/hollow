@@ -1,12 +1,12 @@
 <template>
   <form>
     <label for="username">账户:</label>
-    <input type="text" v-model="username" id="username" />
+    <input type="text" v-model="username" id="username" required />
     <br />
     <label for="pwd">密码:</label>
-    <input type="text" v-model="pwd" id="pwd" />
+    <input type="text" v-model="pwd" id="pwd" required />
     <br />
-    <button @click.prevent="register">注册</button>
+    <input type="submit" name="register" value="注册" @click="register()" />
     <div>{{ msg }}</div>
   </form>
 </template>
@@ -14,9 +14,9 @@
 export default {
   data() {
     return {
-      username: "",
-      pwd: "",
-      msg: "", //接收数据
+      username: null,
+      pwd: null,
+      msg: null, //接收数据
     };
   },
   methods: {
