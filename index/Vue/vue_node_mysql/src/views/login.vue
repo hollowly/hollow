@@ -1,13 +1,12 @@
 <template>
   <form>
     <label for="username">用户名:</label>
-    <input type="text" v-model="username" id="username">
-    <br>
+    <input type="text" v-model="username" id="username" />
+    <br />
     <label for="pwd">密码:</label>
-    <input type="text" v-model="pwd" id="pwd">
-    <br>
+    <input type="text" v-model="pwd" id="pwd" />
+    <br />
     <button @click.prevent="login">登录</button>
-    <!-- <button @click.prevent="login">注册</button> -->
     <div>{{ msg }}</div>
   </form>
 </template>
