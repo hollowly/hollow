@@ -3,6 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import Axios from 'axios'
+Vue.prototype.HOST = 'http://localhost:4000'
+Vue.prototype.$axios  = Axios
+
+
 Vue.config.productionTip = false
 
 new Vue({
