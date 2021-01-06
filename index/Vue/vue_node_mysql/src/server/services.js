@@ -9,7 +9,7 @@ exports.login = (req,res)=>{
     let sql = 'select * from login where username = ?'
     db.base(sql,username,(result)=>{
         if(!result.length){
-            return res.json({ status: 1, msg: '登录失败' })
+            return res.json({ status: 1, msg: '账户不存在，请先注册' })
         }else{
             // [ RowDataPacket { password: '123', username: 'admin', id: 1 } ]
             if(result[0].password==pwd){

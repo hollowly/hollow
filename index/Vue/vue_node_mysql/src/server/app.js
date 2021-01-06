@@ -22,6 +22,6 @@ app.use(bodyParser.json())
 // 配置路由
 app.use(router)
 // 服务器已经启动
-app.listen('4000',function(){
+app.listen('3000',function(){
     console.log('running...')
 })
