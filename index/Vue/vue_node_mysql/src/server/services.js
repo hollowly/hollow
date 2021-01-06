@@ -1,7 +1,10 @@
+// services.js 处理义务逻辑代码
+
+
 const db = require('./db.js')
 exports.start = (req,res) => {
 }
-// 登录处理
+// 登录处理 (查)
 exports.login = (req,res) => {
 	let username = req.body.username
 	let pwd = req.body.password
@@ -19,7 +22,7 @@ exports.login = (req,res) => {
 		}
 	})
 }
-// 注册处理
+// 注册处理 (增)
 exports.register = (req,res) => {
 		let username = req.body.username
 		let pwd = req.body.password
@@ -39,3 +42,8 @@ exports.register = (req,res) => {
 	})
   // res.send('测试sss')
 }
+
+// 修改处理 (改)
+
+
+// 删除处理 (删)

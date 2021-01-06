@@ -1,4 +1,6 @@
-// 连接数据库
+// db.js 连接数据库文件
+
+
 let mysql = require('mysql')
 exports.base = (sql,data,callback)=>{
 	let connection = mysql.createConnection({
