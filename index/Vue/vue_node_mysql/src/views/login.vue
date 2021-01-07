@@ -22,7 +22,10 @@ export default {
   methods: {
     login() {
       this.$axios
-        .post(this.HOST + "/api/login", { username: this.username, password: this.pwd })
+        .post(this.HOST + "/api/login", {
+          username: this.username,
+          password: this.pwd,
+        })
         .then((result) => {
           console.log(result.data);
           this.msg = result.data.msg;
