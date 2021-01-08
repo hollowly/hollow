@@ -4,8 +4,8 @@
 		<h1>欢迎这是主页.</h1>
 		<router-link to="/login">点我登录</router-link>
 
-		<div>当前登录人：{{ cookiename }}</div>
-		<div><button @click.prevent='exit()'>退出登录</button></div>
+		<div v-if='isshow'>当前登录人：{{ cookiename }}</div>
+		<div v-if='isshow'><button @click.prevent='exit()'>退出登录</button></div>
 	</div>
 </template>
 
@@ -15,6 +15,7 @@ export default {
 		return {
 			cookiename: null,
 			cookiepwd: null,
+			isshow: false
 		}
 	},
 	methods: {
@@ -28,6 +29,11 @@ export default {
 	},
 	mounted() {
 		this.cookiename = this.cookie.getCookie('loginname')
+		if(this.cookiename == null) {
+			this.isshow = false;
+		} else {
+			this.isshow = true
+		}
 	}
 
 }
