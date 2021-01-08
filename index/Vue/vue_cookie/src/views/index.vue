@@ -29,10 +29,8 @@ export default {
 	},
 	mounted() {
 		this.cookiename = this.cookie.getCookie('loginname')
-		if(this.cookiename == null) {
-			this.isshow = false;
-		} else {
-			this.isshow = true
+		if(this.cookiename) {
+			this.isshow = true;
 		}
 	}
 

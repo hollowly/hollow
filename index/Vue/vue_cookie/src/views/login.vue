@@ -33,7 +33,7 @@ export default {
         }
         if (!this.pwd) {
           alert("请输入密码");
-          return;
+					return;
         }
         if(this.pwd&&this.name) {
           // 以json格式传给setCookie方法存入信息,方法里面会循环遍历该json以单个数据存储的方式，多次存入cookie中　　　　　　// 注：cookie不支持直接以json的方式存入
