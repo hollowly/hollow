@@ -5,7 +5,7 @@
 		<router-link to="/login">点我登录</router-link>
 
 		<div>当前登录人：{{ cookiename }}</div>
-		<div>退出登录</div>
+		<div><button @click.prevent='exit()'>退出登录</button></div>
 	</div>
 </template>
 
@@ -15,6 +15,15 @@ export default {
 		return {
 			cookiename: null,
 			cookiepwd: null,
+		}
+	},
+	methods: {
+		exit() {
+			// 调用this.cookie.clearCookie方法删除cookie
+			this.cookie.clearCookie('loginname')
+			this.cookie.clearCookie('openId')
+			// 跳转到主页面
+			this.$router.replace('/login')
 		}
 	},
 	mounted() {
