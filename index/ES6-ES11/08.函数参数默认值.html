@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script>
+		// ES6 允许给函数参数赋默认值
+		// 1. 新参初始值 具有默认值的参数， 一般位置放在最后(潜规则)
+
+		function add(a, b, c=10) {
+			return a + b + c
+		}
+		console.log(add(2,1));
+
+		// 2. 与解构赋值结合
+		function connent({host='127.0.0.1', username, password, port}) {
+			console.log(host);
+			console.log(username);
+			console.log(password);
+			console.log(port);
+		}
+
+		connent({
+			host:'localhost',
+			username:'root',
+			password:'root',
+			port:3306
+		})
+	</script>
+</body>
+</html>
