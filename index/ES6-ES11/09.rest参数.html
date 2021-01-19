@@ -9,7 +9,29 @@
 	
 
 	<script>
-		
+		// ES6 引入 rest cs，用于获取函数的实参，用来代替 arguments
+
+		// ES5 获取实参的方法
+		function date() {
+			console.log(arguments)
+		}
+		date('白芷','阿娇','思慧','hollow')
+
+
+		// rest 参数
+		function date(...args) {
+			// rest实参是一个数组，可以使用数组的其他方法 filter, some, map, every
+			console.log(args)
+		}
+		date('阿娇','hollow','思慧','白芷')
+
+		// rest 参数必须放在参数的最后
+		function fn(a,b,...args) {
+			console.log(a)
+			console.log(b)
+			console.log(args);
+		}
+		fn(1,2,3,4,5,6,7,8)
 	</script>
 </body>
 </html>
