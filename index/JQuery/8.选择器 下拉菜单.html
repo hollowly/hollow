@@ -32,7 +32,8 @@
             background: skyblue;
         }
         #ul1 ul{
-            display: none;
+					position: relative;
+          display: none;
         }
     </style>
 </head>
@@ -67,13 +68,15 @@
 <script>
     $(function()
     {
-        $('#ul1>li').mousemove(function()
+        $('#ul1>li').mouseenter(function()
         {
             $(this).children('ul').show();
+						$(this).children('ul').animate({top:'8px'},200);
         })
 
-        $('#ul1>li').mouseout(function()
+        $('#ul1>li').mouseleave(function()
         {
+						$(this).children('ul').animate({top:'-8px'},200);
             $(this).children('ul').hide();
         })
     })
