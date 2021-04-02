@@ -7,8 +7,7 @@
   </div>
 </template>
 <script>
-//先导入charts
-import Charts from '@jiaminghi/charts'
+import Charts from '@jiaminghi/charts' 	//先导入charts
 export default {
   data () {
     return {
