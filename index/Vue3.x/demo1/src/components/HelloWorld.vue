@@ -1,36 +1,34 @@
 <template>
   <div class="hello">
-    <input type="text" v-model="state.num1" />
+    <input type="text" v-model='state.num1'/>
     <span>+</span>
-    <input type="text" v-model="state.num2" />
+    <input type="text" v-model='state.num2'/>
     <span>=</span>
-    {{ state.result }}<br>
+		{{state.result}} <br><br>
 		<button value="event" @click="clickevent()">emit event</button>
 		<br><br><br>
-		<span>{{ state.spannum }}</span><br>
-		<button @click="state.spannum++">+</button>
-		<button @click="state.spannum--">-</button>
+
+		<span>{{state.num3}}</span><br>
+		<button @click='state.num3++'>+</button>
+		<button @click='state.num3--'>-</button>
   </div>
 </template>
 
 <script>
-// function add() {
-// 	return state.result = parseInt(state.num1) + parseInt(state.num2)
-// }
 const state = reactive({
 	num1: 0,
 	num2: 0,
-	spannum: 0,
 	result: computed(() => parseInt(state.num1) + parseInt(state.num2)),
+	num3: 0,
 })
 import {
-	reactive, 
-	computed, 
 	onMounted, 
 	onUpdated, 
 	onUnmounted, 
 	onRenderTracked,
-	onRenderTriggered 
+	onRenderTriggered, 
+  reactive,
+	computed
 } from 'vue'
 export default {
   name: "HelloWorld",
@@ -58,31 +56,15 @@ export default {
 			console.log('onRenderTriggered');
 		})
 		return {
-			state,
-			clickevent
+			clickevent,
+			state
 		}
 	}
-	
-	// const num1 = ref(0);
-	// const num2 = ref(0);
-	// const result = ref(0);
-
-  // data() {
-  // 	return {
-  // 		num1: 0,
-  // 		num2: 0,
-  // 		result: 0,
-  // 	}
-  // },
-  // computed: {
-  // 	result() {
-  // 		return parseInt(this.num1) + parseInt(this.num2)
-  // 	}
-  // }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- 添加 “scoped” 属性以将CSS仅限于此组件 -->
 <style scoped lang="scss">
 h3 {
   margin: 40px 0 0;
