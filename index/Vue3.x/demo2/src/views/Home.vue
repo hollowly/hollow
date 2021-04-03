@@ -1,6 +1,6 @@
 <!-- home -->
 <template>
-  <div class="box">
+  <div class="box" @mousedown="mousedown()">
     <p>ToDo List</p>
     <strong>
       共有<span>{{ list.length }} </span>个任务，其中
@@ -10,19 +10,19 @@
     <p>未完成列表</p>
     <ul>
       <template v-for="(item, index) in list">
-        <li
-          class="ccli"
-          :key="index"
-          @click="() => (item.checked = !item.checked)"
-          v-if="!item.checked"
-        >
+        <li class="ccli" :key="index" v-if="!item.checked">
           <div>
             <input
               type="checkbox"
-              :id="'item-' + index"
               v-model="item.checked"
+              @click="() => (item.checked = !item.checked)"
             />
-            <label :for="'item-' + index">{{ item.name }}</label>
+            <label v-if="!item.isEdit" @dblclick="showEdit(item, index)"
+              >{{ item.name }}
+            </label>
+            <label :for="'item-' + index" v-else>
+              <input type="text" v-model="editValue" ref="myinput" />
+            </label>
           </div>
         </li>
       </template>
@@ -43,17 +43,51 @@
       </li>
     </ul>
     <p>添加新的Task</p>
-    <input type="text" class="txt" v-model="value" />
+    <input
+      type="text"
+      class="txt"
+      v-model="value"
+      placeholder="添加新的Task"
+      @keydown.enter="addel()"
+    />
     <button class="btn" @click="addel()">添加</button>
   </div>
 </template>
 
 <script>
-import { reactive, toRefs, computed } from "vue";
+import { reactive, toRefs, computed, ref } from "vue";
 export default {
   setup() {
+    let editIndex = 0;
+    const myinput = ref(null);
+    // 添加功能
+    const addel = () => {
+      state.list.push({
+        name: state.value,
+        checked: false,
+        isEdit: false,
+      });
+      state.value = "";
+    };
+    // 双击进行编辑
+    const showEdit = (item, index) => {
+      editIndex = index;
+      item.isEdit = true;
+      state.editValue = item.name;
+    };
+    // 点击其他位置，退出编辑状态
+    const mousedown = (e) => {
+      if (myinput.value && !e.target !== myinput.value) {
+        state.list[editIndex] = {
+          name: state.editValue,
+          checked: false,
+          isEdit: false,
+        };
+      }
+    };
     const state = reactive({
       value: "",
+      editValue: "",
       list: [
         {
           name: "1",
@@ -73,15 +107,8 @@ export default {
       ],
       finish: computed(() => state.list.filter((item) => item.checked == true)),
     });
-    const addel = () => {
-      state.list.push({
-        name: state.value,
-        checked: false,
-        isEdit: false,
-      });
-      state.value = "";
-    };
-    return { ...toRefs(state), addel };
+
+    return { ...toRefs(state), addel, showEdit, myinput, mousedown };
   },
 };
 </script>

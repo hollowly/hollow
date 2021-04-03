@@ -1,65 +1,66 @@
 <template>
   <div class="hello">
-    <input type="text" v-model='state.num1'/>
+    <input type="text" v-model="state.num1" />
     <span>+</span>
-    <input type="text" v-model='state.num2'/>
+    <input type="text" v-model="state.num2" />
     <span>=</span>
-		{{state.result}} <br><br>
-		<button value="event" @click="clickevent()">emit event</button>
-		<br><br><br>
+    {{ state.result }} <br /><br />
+    <button value="event" @click="clickevent()">emit event</button>
+    <br /><br /><br />
 
-		<span>{{state.num3}}</span><br>
-		<button @click='state.num3++'>+</button>
-		<button @click='state.num3--'>-</button>
+    <span>{{ state.num3 }}</span
+    ><br />
+    <button @click="state.num3++">+</button>
+    <button @click="state.num3--">-</button>
   </div>
 </template>
 
 <script>
 const state = reactive({
-	num1: 0,
-	num2: 0,
-	result: computed(() => parseInt(state.num1) + parseInt(state.num2)),
-	num3: 0,
-})
+  num1: 0,
+  num2: 0,
+  result: computed(() => parseInt(state.num1) + parseInt(state.num2)),
+  num3: 0,
+});
 import {
-	onMounted, 
-	onUpdated, 
-	onUnmounted, 
-	onRenderTracked,
-	onRenderTriggered, 
+  onMounted,
+  onUpdated,
+  onUnmounted,
+  onRenderTracked,
+  onRenderTriggered,
   reactive,
-	computed
-} from 'vue'
+  computed,
+} from "vue";
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
-	setup(props, { emit } ) {
-		console.log(props);
-		const clickevent = () => {
-			emit('sengMsg', state.result)
-		}
-		onMounted(() => {
-			console.log('onMounted');
-		})
-		onUpdated(() => {
-			console.log('onUpdated');
-		})
-		onUnmounted(() => {
-			console.log('onUnmounted');
-		})
-		onRenderTracked((e) => {
-			console.log('onRenderTracked'+ e);
-		})
-		onRenderTriggered(() => {
-			console.log('onRenderTriggered');
-		})
-		return {
-			clickevent,
-			state
-		}
-	}
+  setup(props, { emit }) {
+    console.log(props);
+    const clickevent = () => {
+      emit("sengMsg", state.result);
+    };
+    onMounted(() => {
+      console.log("onMounted");
+    });
+    onUpdated(() => {
+      console.log("onUpdated");
+    });
+    onUnmounted(() => {
+      console.log("onUnmounted");
+    });
+    onRenderTracked((e) => {
+      console.log("onRenderTracked" + e);
+    });
+    onRenderTriggered(() => {
+      console.log("onRenderTriggered");
+    });
+    return {
+      clickevent,
+      state,
+    };
+  },
 };
 </script>
 
