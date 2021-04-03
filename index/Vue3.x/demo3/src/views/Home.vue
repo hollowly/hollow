@@ -1,18 +1,28 @@
+<!--  -->
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>{{ home }}</h1>
+    <button @click="add">++</button>
+
+    <input type="text" v-model="result" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import { reactive, toRefs } from "vue";
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  setup() {
+    const state = reactive({
+      result: 0,
+      home: "Home page",
+    });
+    const add = () => {
+      return state.result++;
+    };
+
+    return { ...toRefs(state), add };
+  },
+};
 </script>
+
+<style scoped lang="scss"></style>
