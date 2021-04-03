@@ -1,26 +1,26 @@
 <!--  -->
 <template>
-  <div>
-    <h1>{{ home }}</h1>
-    <button @click="add">++</button>
-
-    <input type="text" v-model="result" />
-  </div>
+  <Test :title="title"></Test>
 </template>
 
 <script>
-import { reactive, toRefs } from "vue";
+import { reactive, toRefs, ref } from "vue";
+import Test from "@/components/Test";
 export default {
   setup() {
     const state = reactive({
-      result: 0,
-      home: "Home page",
+      title: "我是vue",
     });
-    const add = () => {
-      return state.result++;
-    };
 
-    return { ...toRefs(state), add };
+    setTimeout(() => {
+      state.title = "我是vue3.0";
+    }, 1000);
+
+    return { ...toRefs(state) };
+  },
+
+  components: {
+    Test,
   },
 };
 </script>
