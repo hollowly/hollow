@@ -1,10 +1,12 @@
 <!--  -->
 <template>
-  <Test :title="title"></Test>
+  <div>
+    <Test :title="title"></Test>
+  </div>
 </template>
 
 <script>
-import { reactive, toRefs, ref } from "vue";
+import { reactive, toRefs, computed } from "vue";
 import Test from "@/components/Test";
 export default {
   setup() {
