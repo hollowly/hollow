@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const Home = () => import("@/views/Home");
 const Add = () => import("@/views/Add");
+const quict = () => import("@/components/quict");
 const routes = [
   {
     path: "/",
@@ -12,6 +13,11 @@ const routes = [
     path: "/add",
     name: "add",
     component: Add,
+  },
+  {
+    path: "/quict",
+    name: "quict",
+    component: quict,
   },
 ];
 
