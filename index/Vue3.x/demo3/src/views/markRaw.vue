@@ -1,4 +1,4 @@
-<!--  -->
+<!-- markRaw -->
 <template>
 	<div>
 	</div>

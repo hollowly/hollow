@@ -13,11 +13,14 @@
       </li>
     </ul>
     <button @click="change">修改info</button>
+    <!-- customRef：防抖 -->
+    {{ customRefname }}
+    <input type="text" v-model="customRefname" />
   </div>
 </template>
 
 <script>
-import { computed, reactive, ref, toRefs } from "vue";
+import { computed, reactive, ref, toRefs, customRef } from "vue";
 export default {
   setup(props) {
     const aa = ref(2); //ref
@@ -37,10 +40,11 @@ export default {
         { name: "封铃笙", age: "90", sex: "女" },
         { name: "殷剑平", age: "250", sex: "男" },
       ],
+      infoname: "张三",
       // computed 使用
       result: computed(() => parseInt(state.num1) + parseInt(state.num2)),
+      customRefname: "",
     });
-
     // 方法写在下面 ↓
     const change = () => {
       let maxlength = state.info.length;
@@ -54,11 +58,46 @@ export default {
       }
     };
 
+    const showname = (value) => {
+      console.log(`我的名字是：${value}`);
+    };
+    const changename = () => {
+      state.infoname = "我是被修改的张三";
+    };
+
+    showname(state.infoname);
+
+    setTimeout(() => {
+      changename();
+      console.log(state.infoname);
+    }, 2000);
+
     console.log(aa.value); //ref 使用
     console.log(state.num1); //reactive 使用
+    // customRef防抖：
+    const useDebounce = (value, delay = 500) => {
+      let t = null;
+      return customRef((track, trigger) => {
+        return {
+          get() {
+            track();
+            return value;
+          },
+          set(newVal) {
+            clearTimeout(t);
+            t = setTimeout(() => {
+              value = newVal;
+              trigger();
+            }, delay);
+          },
+        };
+      });
+    };
+
+    const text = useDebounce("", 1000);
 
     // 要暴露的参数或方法 ↓
-    return { ...toRefs(state), change };
+    return { ...toRefs(state), change, showname, changename, text };
   },
 };
 </script>
