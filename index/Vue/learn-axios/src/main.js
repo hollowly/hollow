@@ -1,16 +1,16 @@
-import Vue from 'vue'
-import App from './App'
-import router from './router'
-import axios from 'axios'
+import Vue from "vue";
+import App from "./App";
+import router from "./router";
+import axios from "axios";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
   render: h => h(App)
-})
+});
 
 //---------------------------------------------------------------------------
 // 1.axios的基本使用
@@ -20,7 +20,6 @@ new Vue({
 // }).then(res => {
 // 	console.log(res);
 // })
-
 
 // axios({
 // 	url:'http://123.207.32.32:8000/home/data?type=sell&page=1',
@@ -54,12 +53,10 @@ new Vue({
 // 	console.log(res);
 // })
 
-
 //---------------------------------------------------------------------------
 // 3.axios全局配置
 // axios.defaults.baseURL = 'http://123.207.32.32:8000'
 // axios.defaults.timeout = 5000
-
 
 // axios.all([axios({
 // 	url:'/home/multidata'
@@ -68,7 +65,6 @@ new Vue({
 // })]).then(results => {
 // 	console.log(results);
 // })
-
 
 //---------------------------------------------------------------------------
 // 4.创建对应的axios实例
@@ -131,16 +127,18 @@ new Vue({
 //------------------------------
 
 // 方法三/方法四
-import {request} from './network/request'
+import { request } from "./network/request";
 
 request({
-	url:'/home/data',
-	params: {
-		type:'pop',
-		page:5
-	}
-}).then(res => {
-	console.log(res);
-}).catch(err => {
-	console.log(err);
+  url: "/home/data",
+  params: {
+    type: "pop",
+    page: 5
+  }
 })
+  .then(res => {
+    console.log(res);
+  })
+  .catch(err => {
+    console.log(err);
+  });
