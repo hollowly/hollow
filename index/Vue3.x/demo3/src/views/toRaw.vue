@@ -4,13 +4,10 @@
 </template>
 
 <script>
-import { reactive, toRefs, ref, isProxy, toRef, toRaw } from "vue";
+import { reactive, toRefs, ref, isProxy, toRef, toRaw, markRaw } from "vue";
 export default {
   setup(props) {
     // 定义的参数或变量
-    const obj = {
-      a: 10,
-    };
 
     var proxyObj = reactive(obj); //响应式对象
     console.log(isProxy(proxyObj));

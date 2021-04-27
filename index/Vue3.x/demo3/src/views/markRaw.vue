@@ -1,6 +1,8 @@
 <!-- markRaw -->
 <template>
-  <div></div>
+  <div>
+    <!-- shallow :转响应式。。markRaw：转普通对象。这两个都不是深度的 -->
+  </div>
 </template>
 
 <script>
@@ -26,21 +28,23 @@ export default {
     console.log(proxyObj);
     console.log(newproxyObj);
 
-    // 使用
+    // markRaw 不会让more变成响应式
     const more = markRaw({
-      c: 3,
-      d: 4,
+      a: 10,
+      b: 20,
     });
 
-    const objA = {
+    const obj1 = {
       a: 1,
       b: 2,
+      // 这里的 more 被 markRaw 包装过，所以 more 不会被 reactive 变成响应式的
       more: more,
     };
 
-    // 这样包装的话，objA会变成响应式的，但是 more 被 markRaw 包装了，所以objA里面的 more 不会被响应式
-    const newObjA = reactive(objA);
-    console.log(newObjA);
+    //因为 reactive 是深度的，而 markRaw 不是深度的，所以要用 markRaw 包装more
+    // 然后 reactive 才不会把 more 变成响应式的
+    const state = reactive(obj1);
+    console.log(obj1); //仍然是原对象
 
     // 方法写在下面 ↓
     const methods = () => {

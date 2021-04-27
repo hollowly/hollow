@@ -8,6 +8,8 @@ const watch = () => import("@/views/watch");
 const shallowReactive = () => import("@/views/shallowReactive");
 const toRaw = () => import("@/views/toRaw");
 const markRaw = () => import("@/views/markRaw");
+// 生命周期钩子函数
+const life1 = () => import("@/views/生命周期钩子函数1");
 const routes = [
   {
     path: "/",
@@ -48,6 +50,11 @@ const routes = [
     path: "/markRaw",
     name: "markRaw",
     component: markRaw,
+  },
+  {
+    path: "/life1",
+    naem: "life1",
+    component: life1,
   },
 ];
 
