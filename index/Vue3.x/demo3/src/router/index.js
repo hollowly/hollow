@@ -10,6 +10,8 @@ const toRaw = () => import("@/views/toRaw");
 const markRaw = () => import("@/views/markRaw");
 // 生命周期钩子函数
 const life1 = () => import("@/views/生命周期钩子函数1");
+
+const father = () => import("@/views/father");
 const routes = [
   {
     path: "/",
@@ -55,6 +57,11 @@ const routes = [
     path: "/life1",
     naem: "life1",
     component: life1,
+  },
+  {
+    path: "/father",
+    name: "father",
+    component: father,
   },
 ];
 
