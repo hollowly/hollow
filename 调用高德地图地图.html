@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#container {
+			width: 100%;
+			height: 100vh;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+	
+
+	<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.14&key=7f6880a0842f4650e95a2f7a86864771"></script> 
+	<script>
+		var map = new AMap.Map('container');
+		map.setZoom(10);              //setzoom 指定缩放级别
+		map.setCenter([116.39,39.9]);  //指定地图中心
+	</script>
+</body>
+</html>
