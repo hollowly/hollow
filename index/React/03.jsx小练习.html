@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<style>
+		.box {
+			width: 300px;
+			height: 300px;
+			border: 1px solid #ccc;
+			box-shadow: 1px 2px 2px #ccc;
+		}
+	</style>
 </head>
-<body>
-	
 
+<body>
 	<div id='app'></div>
 
 	<script src='js/react.development_V17.02.js'></script>
 	<script src='js/react-dom.development_V17.02.js'></script>
 	<script src='js/babel_V7.0.0.js'></script>
 
-	<script type="text/babel">
-		let VDOM = <h1>1234</h1>
-		let oapp = document.querySelector('#app')
-		ReactDOM.render(VDOM, oapp)
+	<script type='text/babel'>
+		const title = '前端js框架列表'
+		const vdom = (
+			<div className='box'>
+				<h1>{title}</h1>
+				<ul>
+					<li>angular</li>
+					<li>React</li>
+					<li>Vue</li>
+				</ul>
+			</div>
+		)
+
+		ReactDOM.render(vdom, document.querySelector('#app'))
 	</script>
 </body>
+
 </html>

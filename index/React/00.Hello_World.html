@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 </head>
-<body>
 
+<body>
+	<!-- 准备好一个容器 -->
 	<div id="app"></div>
 	<!-- react核心库 -->
 	<script src='js/react.development_V17.02.js'></script>
@@ -16,15 +18,16 @@
 	<!-- 将 jsx => js 和 ES6 => ES5-->
 	<script src='js/babel_V7.0.0.js'></script>
 
-	<script type="text/babel">
-	// 1. 创建虚拟DOM
-	const VDOM = <h1 id='title'>hello React</h1>
-	// 2.渲染虚拟 DOM 到页面 
-	ReactDOM.render(VDOM, document.querySelector('#app'))
-	// ReactDOM.render(	
+	<script type="text/babel">	/* 此处一定要写babel */
+		// 1. 创建虚拟DOM
+		const VDOM = <h1 id='title'>hello React</h1>
+		// 2.渲染虚拟 DOM 到页面 
+		ReactDOM.render(VDOM, document.querySelector('#app'))
+	// ReactDOM.render(
 	// 	<h1>Hello React</h1>,
 	// 	document.querySelector('#app')
 	// )
-	</script> 
+	</script>
 </body>
+
 </html>

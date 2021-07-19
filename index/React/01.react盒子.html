@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,17 +14,20 @@
 			color: red;
 			text-align: center;
 		}
+
 		.cdiv {
 			margin-top: 50px;
 			width: 200px;
 			height: 50px;
 			background: black;
 		}
+
 		.rdiv {
 			width: 180px;
 			height: 40px;
 			background: deeppink;
 		}
+
 		.adiv {
 			width: 160px;
 			height: 30px;
@@ -31,8 +35,9 @@
 		}
 	</style>
 </head>
+
 <body>
-	
+
 	<div id='app'>
 
 	</div>
@@ -59,10 +64,12 @@
 			3、虚拟 DOM 最终会被 React 转化为真实 DOM，呈现在页面上。
 		*/
 		const realDOM = document.querySelector('#app')
-		console.log('虚拟DOM',vdom);
-		console.log('真实DOM',realDOM);
+		console.log('虚拟DOM', vdom);
+		console.log('真实DOM', realDOM);
+		console.dir(realDOM);
 		var oapp = document.querySelector('#app')
 		ReactDOM.render(vdom, oapp)
 	</script>
 </body>
+
 </html>
