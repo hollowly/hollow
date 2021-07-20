@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+
+	<script type="text/javascript">
+		// 创建一个Person类 【封装类】
+		class Person {
+			// 构造器方法
+			constructor(name, age) {
+				// 构造器中的this是谁？ —— 类的实例对象
+				this.name = name;
+				this.age = age;
+			}
+			// 一般方法
+			speak() {
+				// speak方法放在了哪里，—— 类的原型上，给实例对象使用
+				// 通过Person实例调用speak时，speak中的实例对象就是Person实例
+				console.log(`我叫${this.name}，我今年${this.age}岁`);
+			}
+		}
+
+		// 创建一个Student类，继承与Person类 【继承类】
+		class Stundet extends Person {
+			constructor(name, age, grade) {
+				super(name, age);
+				this.grade = grade;
+			}
+			// 重写从父类继承的方法，重构
+			speak() {
+				// speak方法放在了哪里，—— 类的原型上，给实例对象使用
+				// 通过Person实例调用speak时，speak中的实例对象就是Person实例
+				console.log(`我叫${this.name}，我今年${this.age}岁，我现在读${this.grade}了`);
+			}
+		}
+
+		// 创建一个Person的实例对象
+		const p1 = new Person('tom', 18);
+		const p2 = new Person('jeery', 19);
+		console.log(p1);
+		console.log(p2);
+		p1.speak();
+		p2.speak();
+
+		//创建一个Student的实例对象
+		const s1 = new Stundet('小张', 15, '高一')
+		const s2 = new Stundet('小红', 17, '高二')
+		console.log(s1);
+		console.log(s2);
+		s1.speak();
+	</script>
+</body>
+
+</html>
