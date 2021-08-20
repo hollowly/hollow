@@ -1,9 +1,9 @@
 <!--  -->
 <template>
   <div>
-    <slot name="a">1111</slot>
-    <slot name="b">2222</slot>
-    <slot name="c">3333</slot>
+    <div class="a"><slot name="a">旧1111</slot></div>
+    <slot name="b">旧2222</slot><br />
+    <slot name="c">旧3333</slot><br />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
       mount: "onMounted",
     });
 
-    // 方法写在下面 ↓=
+    // 方法写在下面 ↓
 
     // 要暴露的参数或方法 ↓
     return { ...toRefs(state) };
@@ -24,4 +24,9 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.a {
+  color: red;
+  font-size: 30px;
+}
+</style>

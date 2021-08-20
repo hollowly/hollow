@@ -3,15 +3,13 @@
   <div>
     <topslot>
       <template v-slot:a>
-        <div>
-          aaaaaaaaaaaaa
-        </div>
+        <div>aaa</div>
       </template>
-      <template v-slot:b>
-        <span>bbbbbbbbbbbbbbbbbb</span>
+      <template v-slot:default>
+        <span>bbb</span>
       </template>
       <template v-slot:c>
-        <p>ccccccccccccccccccccc</p>
+        <span>ccc</span>
       </template>
     </topslot>
   </div>

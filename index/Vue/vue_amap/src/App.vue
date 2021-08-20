@@ -1,17 +1,20 @@
 <template>
-  <div id="app">
-		<cmap></cmap>
+  <div>
+    <div style="width: 100vw;height: 100vh" id="container"></div>
   </div>
 </template>
-
 <script>
-import cmap from '@/components/map'
+import AMap from "AMap";
 export default {
-	components: {
-		cmap,
-	}
-}
+  name: "Index",
+  data() {
+    return {};
+  },
+  mounted() {
+    new AMap.Map("container", {
+      resizeEnable: true,
+      zoom: 11,
+    });
+  },
+};
 </script>
-
-<style>
-</style>
