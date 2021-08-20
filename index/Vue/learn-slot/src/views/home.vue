@@ -2,14 +2,14 @@
 <template>
   <div>
     <topslot>
-      <template v-slot:a>
-        <div>aaa</div>
+      <template #a>
+        <div>aaaaaa</div>
       </template>
-      <template v-slot:default>
-        <span>bbb</span>
+      <template #default>
+        <div></div>
       </template>
       <template v-slot:c>
-        <span>ccc</span>
+        <div>cccc</div>
       </template>
     </topslot>
   </div>
