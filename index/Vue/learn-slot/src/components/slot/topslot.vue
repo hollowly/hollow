@@ -1,6 +1,7 @@
 <!--  -->
 <template>
   <div>
+    <!-- 要使用样式的话，必须使用再使用div包一层 -->
     <div class="a"><slot name="a">旧1111</slot></div>
     <slot name="b">旧2222</slot><br />
     <slot name="c">旧3333</slot><br />
@@ -27,6 +28,6 @@ export default {
 <style scoped lang="scss">
 .a {
   color: red;
-  font-size: 30px;
+  font-size: 40px;
 }
 </style>
