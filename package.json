@@ -34,7 +34,7 @@
   "dependencies": {
     "@jiaminghi/data-view": "^2.10.0",
     "ansi-escapes": "^3.2.0",
-    "ansi-regex": "^4.1.0",
+    "ansi-regex": "^5.0.1",
     "ansi-styles": "^3.2.1",
     "argparse": "^1.0.10",
     "arr-diff": "^4.0.0",
