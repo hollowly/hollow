@@ -1,134 +1,143 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <meta charset="utf-8" />
 
-	<head>
+    <title>自轮播图</title>
 
-		<meta charset="utf-8">
+    <script src="jquery-3.5.0.js"></script>
+  </head>
 
-		<title>自轮播图</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-		<script src="jquery-3.5.0.js"></script>
+    .banner {
+      width: 400px;
+      height: 200px;
+      margin: 20px 20px;
+      outline: 2px solid red;
 
-	</head>
+      position: relative;
+      margin: 10% auto;
+    }
 
-	<style>
+    ul {
+      width: 1600px;
+      height: 200px;
+    }
 
-		*{margin: 0; padding: 0;}
+    ul li {
+      list-style-type: none;
+      float: left;
+    }
 
-		.banner{width: 400px;height: 200px; margin: 20px 20px; outline:2px solid red;
+    ul li img {
+      width: 400px;
+      height: 200px;
+    }
 
-		position: relative;margin: 10% auto;}
+    .prev {
+      position: absolute;
+      top: 45%;
+      left: 0%;
+    }
 
-		ul {width: 1600px; height: 200px; }
+    .next {
+      position: absolute;
+      top: 45%;
+      right: 0%;
+    }
+  </style>
 
-		ul li{list-style-type: none; float: left;}
+  <body>
+    <div class="banner">
+      <ul>
+        <li><img src="img/2.jpg" /></li>
 
-		ul li img{width: 400px; height: 200px;}
+        <li><img src="img/1.jpeg" /></li>
 
-		.prev{position: absolute; top: 45%; left: 0%;}
+        <li><img src="img/3.jpeg" /></li>
 
-		.next{position: absolute; top: 45%; right: 0%;}
+        <li><img src="./img/4.png" /></li>
+      </ul>
 
-	</style>
+      <button class="next">下一张</button>
 
-	<body>
-
-		<div class="banner">
-
-			<ul>
-
-				<li><img src="img/2.jpg"></li>
-
-				<li><img src="img/1.jpeg" ></li>
-
-				<li><img src="img/3.jpeg"></li>
-
-				<li><img src="./img/4.png" ></li>
-
-			</ul>
-
-			<button class="next">下一张</button>
-
-			<button class="prev">上一张</button>
-
-		</div>
-
-	</body>
-
+      <button class="prev">上一张</button>
+    </div>
+  </body>
 </html>
 
-
-
 <script>
+  $(function () {
+    var imgArr = $("img"); //获取所有的图片
+    var index = 0; //定义一个索引0（图片数组下标）
+    var timer; //将定时器的名字声明在外部
+    lunbo(); //进入页面先调用定时器  让其自动播放
+    //自动轮播	 把自动播放定时器写在一个lunbo函数里面  方便后面调用
+    function lunbo() {
+      timer = setInterval(function () //给定时器起个名字  便于后面停止
+      {
+        index++; //每隔一秒index+1 (img数组下标+1)
+        if (index == imgArr.length) {
+          //如果下标==数组最大长度时
+          index = 0; //让index = 0  回到第一张
+        } else if (index == -1) {
+          //如果下标==-1时
+          index = 3; //回到最后一张
+        }
+        $("ul").animate({
+          marginLeft: -400 * index + "px", //让整个图片ul向左移动一个图片宽度的距离
+        });
+      }, 1000);
+    }
 
-	$(function(){
+    $(".next").click(function () {
+      //点击下一张时
+      clearInterval(timer); //利用名字停止定时器
+      index++;
+      if (index == imgArr.length) {
+        index = 0;
+      } else if (index == -1) {
+        index = 3;
+      }
 
-		var imgArr = $('img');  //获取所有的图片
-		var index = 0;			//定义一个索引0（图片数组下标）
-		var  timer;				//将定时器的名字声明在外部
-		lunbo();   				//进入页面先调用定时器  让其自动播放
-	//自动轮播	 把自动播放定时器写在一个lunbo函数里面  方便后面调用 
-	function lunbo ()
-    {
-		timer = setInterval(function ()     //给定时器起个名字  便于后面停止
-        {   
-			index++;						//每隔一秒index+1 (img数组下标+1)
-			if(index == imgArr.length)
-            {		//如果下标==数组最大长度时
-				index = 0;					//让index = 0  回到第一张
-			}
-            else if(index == -1)   //如果下标==-1时 
-            {			 
-				index = 3;					//回到最后一张
-			}
-			$('ul').animate
-            ({				
-				marginLeft:-400 * index + 'px'   //让整个图片ul向左移动一个图片宽度的距离
-			})
-		},1000)
-	}
+      console.log(index);
+      $("ul").animate({
+        //以动画的方式
+        marginLeft: -400 * index + "px", //向左移动一个图片宽的距离
+      });
+    });
 
-		$('.next').click(function(){		//点击下一张时
-			clearInterval(timer);			//利用名字停止定时器
-			index ++;
-			if(index == imgArr.length){
-				index = 0;
-			}else if(index == -1){
-				index = 3;
-			}
+    $(".prev").click(function () {
+      //当点击上一张时
+      clearInterval(timer); //利用名字停止定时器
+      index--;
+      if (index == imgArr.length) {
+        index = 0;
+      } else if (index == -1) {
+        //当上一张--到-1的时候 不是0的时候
+        index = 3;
+      }
 
-			console.log(index);
-			$('ul').animate({			//以动画的方式
-				marginLeft:-400 *index + 'px'	//向左移动一个图片宽的距离  
-			})
-		})
+      console.log(index);
+      $("ul").animate({
+        marginLeft: -400 * index + "px",
+      });
+    });
 
-		$('.prev').click(function(){		//当点击上一张时
-			clearInterval(timer);			//利用名字停止定时器
-			index --;
-			if(index == imgArr.length){
-				index = 0;
-			}else if(index == -1){			//当上一张--到-1的时候 不是0的时候
-				index = 3;
-			}
+    // 当鼠标移入图片区域  停止轮播（清除定时器）
+    $(".banner").mouseover(function () {
+      clearInterval(timer); //清除定时器
+    });
 
-			console.log(index);
-			$('ul').animate({
-				marginLeft:-400 *index + 'px'
-			});
-
-		});
-
-		// 当鼠标移入图片区域  停止轮播（清除定时器）
-		$('.banner').mouseover(function(){
-			clearInterval(timer);   //清除定时器
-		})
-
-		// 当鼠标移出图片区域  调用开启轮播(开启定时器)
-		$('.banner').mouseout(function(){
-			lunbo();		//调用开启定时器
-		})
-		})
-
+    // 当鼠标移出图片区域  调用开启轮播(开启定时器)
+    $(".banner").mouseout(function () {
+      lunbo(); //调用开启定时器
+    });
+  });
 </script>

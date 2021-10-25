@@ -1,81 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        #div1{
-            width:600px;
-            height:20px;
-            background:#ccc;
-            position: relative;
-            margin:10px auto;
-        }
-        #div2{
-            width:20px;
-            height:20px;
-            background:red;
-            position: absolute;
-        }
-        #div3{
-            width:0px;
-            height:0px;
-            background:green;
-            margin-top:10px;
-            /* opacity:0; */
-        }
+      #div1 {
+        width: 600px;
+        height: 20px;
+        background: #ccc;
+        position: relative;
+        margin: 10px auto;
+      }
+      #div2 {
+        width: 20px;
+        height: 20px;
+        background: red;
+        position: absolute;
+      }
+      #div3 {
+        width: 0px;
+        height: 0px;
+        background: green;
+        margin-top: 10px;
+        /* opacity:0; */
+      }
     </style>
-</head>
-<body>
-    <div id='div1'>
-        <div id='div2'></div>
+  </head>
+  <body>
+    <div id="div1">
+      <div id="div2"></div>
     </div>
-    <div id='div3'></div>
-</body>
+    <div id="div3"></div>
+  </body>
 </html>
 <script>
-  window.onload=function()
+  window.onload = function () {
+    var odiv2 = document.getElementById("div2");
+    var odiv1 = document.getElementById("div1");
+    var odiv3 = document.getElementById("div3");
+
+    odiv2.onmousedown = function () //鼠标按下
     {
-        var odiv2 = document.getElementById('div2');
-        var odiv1 = document.getElementById('div1');
-        var odiv3 = document.getElementById('div3');
+      var disX = 0;
 
-        odiv2.onmousedown = function()//鼠标按下
-        {
-            var disX = 0;
+      disX = event.clientX - odiv2.offsetLeft;
 
-            disX = event.clientX - odiv2.offsetLeft;
+      document.onmousemove = function () //鼠标移动
+      {
+        var l = event.clientX - disX;
 
-            document.onmousemove = function()//鼠标移动
-            {
-                var l = event.clientX - disX;
-
-                if(l < 0)
-                {
-                    l = 0;
-                }
-                else if(l > odiv1.offsetWidth - odiv2.offsetWidth)
-                {
-                    l = odiv1.offsetWidth - odiv2.offsetWidth;
-                }
-
-                odiv2.style.left =  l + 'px';
-
-                var scale = l / (odiv1.offsetWidth - odiv2.offsetWidth);
-
-                odiv3.style.width = 400 * scale + 'px';
-                odiv3.style.height = 400 * scale + 'px';
-                //odiv3.style.opacity = scale;
-            }
-
-            document.onmouseup = function()//鼠标松开
-            {
-                document.onmousemove = null;
-                document.onmouseup = null;
-            }
-
-            return false;
+        if (l < 0) {
+          l = 0;
+        } else if (l > odiv1.offsetWidth - odiv2.offsetWidth) {
+          l = odiv1.offsetWidth - odiv2.offsetWidth;
         }
-    }
+
+        odiv2.style.left = l + "px";
+
+        var scale = l / (odiv1.offsetWidth - odiv2.offsetWidth);
+
+        odiv3.style.width = 400 * scale + "px";
+        odiv3.style.height = 400 * scale + "px";
+        //odiv3.style.opacity = scale;
+      };
+
+      document.onmouseup = function () //鼠标松开
+      {
+        document.onmousemove = null;
+        document.onmouseup = null;
+      };
+
+      return false;
+    };
+  };
 </script>
