@@ -6,16 +6,7 @@
 </template>
 
 <script>
-import {
-  reactive,
-  toRefs,
-  onMounted,
-  onBeforeMount,
-  onBeforeUpdate,
-  onUpdated,
-  onBeforeUnmount,
-  onUnmounted,
-} from "vue";
+import { reactive, toRefs, onMounted, onBeforeMount, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from "vue";
 export default {
   setup(props) {
     // 定义的参数或变量
