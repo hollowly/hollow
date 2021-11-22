@@ -1,0 +1,43 @@
+
+
+<!-- 热门推荐 -->
+<view class="title"><text>热门推荐</text></view>
+<view class="itemBox" wx:for="{{ hotRecommend }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 通信服务 -->
+<view class="title"><text>通信服务</text></view>
+<view class="itemBox" wx:for="{{ communicationServices }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 手机服务 -->
+<view class="title"><text>手机服务</text></view>
+<view class="itemBox" wx:for="{{ phoneService }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 笔记本服务 -->
+<view class="title"><text>笔记本服务</text></view>
+<view class="itemBox" wx:for="{{ notebookService }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 金融服务 -->
+<view class="title"><text>金融服务</text></view>
+<view class="itemBox" wx:for="{{ financeService }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 小米云服务 -->
+<view class="title"><text>小米云服务</text></view>
+<view class="itemBox" wx:for="{{ cloudService }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>

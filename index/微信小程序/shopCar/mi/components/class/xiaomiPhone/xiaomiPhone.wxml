@@ -1,0 +1,22 @@
+<image class="topImg" mode="widthFix" src='{{topImg}}'></image>
+
+<!-- 小米数字系列 -->
+<view class="title"><text>小米数字系列</text></view>
+<view class="itemBox" wx:for="{{ xiaomiDigital }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 小米MIX系列 -->
+<view class="title"><text>小米MIX系列</text></view>
+<view class="itemBox" wx:for="{{ xiaomiMix }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 小米手机配件 -->
+<view class="title"><text>小米手机配件</text></view>
+<view class="itemBox" wx:for="{{ xiaomiPhoneAccessories }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>

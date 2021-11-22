@@ -1,0 +1,16 @@
+
+<image class="topImg" mode="widthFix" src='{{topImg}}'></image>
+
+<!-- 游戏手机 -->
+<view class="title"><text>游戏手机</text></view>
+<view class="itemBox" wx:for="{{ gamePhone }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 游戏手机配件 -->
+<view class="title"><text>游戏手机配件</text></view>
+<view class="itemBox" wx:for="{{ gamePhoneAccessories }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>

@@ -1,0 +1,44 @@
+
+<!-- 小爱音箱 -->
+<view class="title"><text>小爱音箱</text></view>
+<view class="itemBox" wx:for="{{ AndyLoudspeakerBox }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 路由器 -->
+<view class="title"><text>路由器</text></view>
+<view class="itemBox" wx:for="{{ routers }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 智能安防 -->
+<view class="title"><text>智能安防</text></view>
+<view class="itemBox" wx:for="{{ IntelligentSecurity }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 智能控制 -->
+<view class="title"><text>智能控制</text></view>
+<view class="itemBox" wx:for="{{ intelligentControl }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 智能灯具 -->
+<view class="title"><text>智能灯具</text></view>
+<view class="itemBox" wx:for="{{ IntelligentLamps }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 智能酷玩 -->
+<view class="title"><text>智能酷玩</text></view>
+<view class="itemBox" wx:for="{{ SmartCoolPlay }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<image class="bottomImg" mode="widthFix" src='{{bottomImg}}'></image>

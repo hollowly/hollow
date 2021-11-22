@@ -1,0 +1,30 @@
+
+
+<!-- 空调 -->
+<view class="title"><text>空调</text></view>
+<view class="itemBox" wx:for="{{ airConditioner }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 洗衣机 -->
+<view class="title"><text>洗衣机</text></view>
+<view class="itemBox" wx:for="{{ washingMachine }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 冰箱 -->
+<view class="title"><text>冰箱</text></view>
+<view class="itemBox" wx:for="{{ refrigerator }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 厨房大电 -->
+<view class="title"><text>厨房大电</text></view>
+<view class="itemBox" wx:for="{{ bigKitchenElectrical }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+<image class="bottomImg" mode="widthFix" src='{{bottomImg}}'></image>

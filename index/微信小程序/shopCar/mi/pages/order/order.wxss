@@ -1,0 +1,89 @@
+/* pages/order/order.wxss */
+.box {
+  overflow: hidden;
+  margin-top: 30rpx;
+  background: rgb(250,250,250);
+}
+.orderId {
+  padding: 20rpx 0rpx 0rpx 20rpx;
+}
+.orderId > text:last-of-type {
+  float: right;
+  padding: 0rpx 20rpx 0rpx 0rpx;
+  color: #ccc;
+}
+
+.orderImg {
+   overflow: hidden;
+   padding-bottom: 20rpx;
+}
+.orderImg > image {
+  width: 250rpx;
+  height: 200rpx;
+  padding: 0rpx 0rpx 0rpx 50rpx;
+  float: left;
+}
+.orderImg > .title {
+  float: left;
+  width: 300rpx;
+  height: 140rpx;
+  padding: 0rpx 0rpx 0rpx 20rpx;
+}
+.orderImg > .price {
+  float: left;
+  width: 200rpx;
+  font-weight: 700;
+  padding: 0rpx 0rpx 0rpx 20rpx;
+  color: red;
+}
+.orderImg > .count {
+  float: left;
+  font-size: 28rpx;
+  color: #ccc;
+}
+
+.info > view {
+  color: rgb(180, 178, 178);
+  height: 50rpx;
+  padding: 0rpx 0rpx 20rpx 50rpx;
+}
+
+.info > .pay {
+  float: right;
+  transform: translateY(-90rpx);
+}
+.info > .pay > button {
+  margin: 0;
+  padding: 0;
+  margin-top: 10rpx;
+  line-height: 90rpx;
+  text-align: center;
+  float: right;
+  width:240rpx !important;
+  border-radius: 100rpx;
+  height: 90rpx;
+  color: #fff;
+  background-image: linear-gradient(90deg,#ff7310,#fe3f00);
+  transform: translateX(-20px);
+}
+
+.tip {
+  color: #ccc;
+  padding: 10rpx;
+  text-align: center;
+  font-size: 30rpx;
+  margin: 20rpx 0px;
+}
+.tip > image {
+  width: 200px;
+  height: 200px;
+}
+
+.tip > view {
+  padding-top: 40rpx;
+}
+
+.tip navigator {
+  color: red;
+  display: inline-block;
+}

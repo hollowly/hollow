@@ -1,0 +1,35 @@
+
+<!-- ReadmiBook -->
+<view class="title"><text>ReadmiBook</text></view>
+<view class="itemBox" wx:for="{{ readmiBook }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 小米笔记本 -->
+<view class="title"><text>小米笔记本</text></view>
+<view class="itemBox" wx:for="{{ xiaomibook }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 显示器 -->
+<view class="title"><text>显示器</text></view>
+<view class="itemBox" wx:for="{{ monitor }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 电脑配件 -->
+<view class="title"><text>电脑配件</text></view>
+<view class="itemBox" wx:for="{{ computerAccessories }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 办公学习 -->
+<view class="title"><text>办公学习</text></view>
+<view class="itemBox" wx:for="{{ officeStudy }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>

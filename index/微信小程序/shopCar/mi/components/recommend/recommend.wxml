@@ -1,0 +1,9 @@
+<!-- 推荐 -->
+<view class="recommend">
+  <navigator 
+  url="{{item.url}}" 
+  class="item1"
+  wx:for="{{recommendList}}"
+  wx:key="index"
+  ><image class="img1" mode="widthFix" src='{{item.img}}'></image></navigator>
+</view>

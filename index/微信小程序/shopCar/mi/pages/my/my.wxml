@@ -1,0 +1,58 @@
+
+<view class="box">
+<!-- 微信授权 -->
+<view wx:if="{{isWarrant}}">
+  <button class="warrant" catchtap="warrant">微信授权</button>
+</view>
+<!-- 头像和信息 -->
+  <view class="info" wx:else>
+    <image src="{{user.userInfo.avatarUrl}}" mode="widthFix"></image>
+    <view class="name">
+      {{user.userInfo.nickName}}
+      <view class="account">2262332567</view>
+    </view>
+  </view>
+  <!-- 我的订单 -->
+  <view class="order">
+    <text>我的订单</text>
+    <navigator url="/pages/order/order">全部订单 <image src="{{orderRight}}" mode="widthFix"></image> </navigator>
+  </view>
+
+
+
+  <view class="orderSituation">
+    <navigator wx:for="{{orderImg}}" wx:key="index"  url="/pages/order/order">
+      <image src="{{item.img}}" mode="widthFix"></image>
+      <view>{{item.text}}</view>
+    </navigator>
+  </view>
+<!-- -------------主内容---------------------->
+<view class="ui-line"></view>
+  <mp-cells class="cells">
+    <mp-cell class="cell" link hover value="{{myOptionImg[0].value}}">
+        <image slot="title" src="{{myOptionImg[0].img}}" />
+    </mp-cell>
+    <mp-cell class="cell" link hover value="{{myOptionImg[1].value}}">
+        <image slot="title" src="{{myOptionImg[1].img}}" />
+    </mp-cell>
+    <mp-cell class="cell" link hover value="{{myOptionImg[2].value}}">
+        <image slot="title" src="{{myOptionImg[2].img}}" />
+    </mp-cell>
+    <mp-cell class="cell" link hover value="{{myOptionImg[3].value}}">
+        <image slot="title" src="{{myOptionImg[3].img}}" />
+    </mp-cell>
+    <mp-cell class="cell" link hover value="{{myOptionImg[4].value}}" bindtap="callTel">
+        <image slot="title" src="{{myOptionImg[4].img}}" />
+    </mp-cell>
+    <mp-cell class="cell" link hover value="{{myOptionImg[5].value}}">
+        <image slot="title" src="{{myOptionImg[5].img}}" />
+    </mp-cell>
+    <mp-cell class="cell" link hover value="{{myOptionImg[6].value}}">
+        <image slot="title" src="{{myOptionImg[6].img}}" />
+    </mp-cell>
+    <mp-cell class="cell" link hover value="{{myOptionImg[7].value}}">
+        <image slot="title" src="{{myOptionImg[7].img}}" />
+    </mp-cell>
+  </mp-cells>
+<view class="ui-line"></view>
+</view>

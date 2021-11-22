@@ -1,0 +1,8 @@
+<!-- 智能穿戴 -->
+<view class="title"><text>智能穿戴</text></view>
+<view class="itemBox" wx:for="{{ smartWear }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<image class="bottomImg" mode="widthFix" src='{{bottomImg}}'></image>

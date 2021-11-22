@@ -1,0 +1,12 @@
+.page {
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+input {
+  border: 1px solid #999;
+  margin: 30rpx 0rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  padding-left: 20rpx;
+}

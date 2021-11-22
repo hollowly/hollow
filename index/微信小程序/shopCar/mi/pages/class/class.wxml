@@ -1,0 +1,143 @@
+<view class="box">
+<!-- left -->
+  <scroll-view scroll-y="true" class="left">
+  <!-- 不带冒泡的点击事件 -->
+    <view 
+      class='listBox {{index==current?"current-class":""}}'
+      scroll-with-animation='true'
+      wx:for='{{ classLeftList }}' 
+      wx:key='index'
+      id='{{index}}'
+      catchtap="setCurrent"
+    >{{ item.name }}</view>
+  </scroll-view>
+
+<!-- right -->
+  <scroll-view scroll-y="true" class="right" scroll-top='true' scroll-into-view='{{jump}}' scroll-with-animation='true'>
+    <!-- 小米手机 -->
+    <view></view>
+    <xiaomiPhone
+    id='jump0'
+      xiaomiDigital="{{ xiaomiDigital }}" 
+      xiaomiMix="{{xiaomiMix}}" 
+      xiaomiPhoneAccessories="{{xiaomiPhoneAccessories}}"
+    ></xiaomiPhone>
+
+    <!-- Readmi手机 -->
+    <readmiPhone
+    id='jump1'
+      readmiNote="{{readmiNote}}" 
+      readmiK="{{readmiK}}" 
+      readmiX="{{readmiX}}" 
+      readmiDigital="{{readmiDigital}}" 
+      readmiPhoneAccessories="{{readmiPhoneAccessories}}"
+    ></readmiPhone>
+    
+    <!-- 游戏手机 -->
+    <gamePhone
+    id='jump2'
+      gamePhone="{{gamePhone}}"
+      gamePhoneAccessories="{{gamePhoneAccessories}}"
+    ></gamePhone>
+
+    <!-- 智能穿戴 -->
+    <smartWear
+      id='jump3'
+      smartWear="{{smartWear}}"
+    ></smartWear>
+
+    <!-- 电视 -->
+    <television
+    id='jump4'
+      television="{{television}}"
+      TvMaster="{{TvMaster}}"
+      TvAccessories="{{TvAccessories}}"
+    ></television>
+
+    <!-- 电脑办公 -->
+    <computerOffice
+    id='jump5'
+      readmiBook="{{readmiBook}}"
+      xiaomibook="{{xiaomibook}}"
+      monitor="{{monitor}}"
+      computerAccessories="{{computerAccessories}}"
+      officeStudy="{{officeStudy}}"
+    ></computerOffice>
+
+    <!-- 大家电 -->
+    <bigAppliances
+    id='jump6'
+      airConditioner="{{airConditioner}}"
+      washingMachine="{{washingMachine}}"
+      refrigerator="{{refrigerator}}"
+      bigKitchenElectrical="{{bigKitchenElectrical}}"
+    ></bigAppliances>
+
+    <!-- 小家电 -->
+    <smallAppliances
+    id='jump7'
+      smallKitchenElectrical="{{smallKitchenElectrical}}"
+      floorCleaning="{{floorCleaning}}"
+      airPurification="{{airPurification}}"
+      lifeAppliance="{{lifeAppliance}}"
+    ></smallAppliances>
+
+    <!-- 智能家居 -->
+    <smartHome
+    id='jump8'
+    AndyLoudspeakerBox="{{AndyLoudspeakerBox}}"
+    routers="{{routers}}"
+    IntelligentSecurity="{{IntelligentSecurity}}"
+    intelligentControl="{{intelligentControl}}"
+    IntelligentLamps="{{IntelligentLamps}}"
+    SmartCoolPlay="{{SmartCoolPlay}}"
+    >
+    </smartHome>
+
+    <!-- 户外出行 -->
+    <outdoorTravel
+    id='jump9'
+    outdoorTravel="{{outdoorTravel}}"
+    luggageBag="{{luggageBag}}"
+    >
+    </outdoorTravel>
+
+    <!-- 日用百货 -->
+    <generalMerchandise
+    id='jump10'
+      HouseholdDailyUse="{{HouseholdDailyUse}}"
+      ProtectionCleaning="{{ProtectionCleaning}}"
+      personalCare="{{personalCare}}"
+      healthy="{{healthy}}"
+      footwearAccessories="{{footwearAccessories}}"
+      bedFurniture="{{bedFurniture}}"
+      giftPeriphery="{{giftPeriphery}}"
+    >
+    </generalMerchandise>
+
+    <!-- 儿童用品 -->
+    <childrenArticles
+    id='jump11'
+      childrenArticles="{{childrenArticles}}"
+    ></childrenArticles>
+
+    <!-- 小米服务 -->
+    <xiaomiService
+    id='jump12'
+      hotRecommend="{{hotRecommend}}"
+      communicationServices="{{communicationServices}}"
+      phoneService="{{phoneService}}"
+      notebookService="{{notebookService}}"
+      financeService="{{financeService}}"
+      cloudService="{{cloudService}}"
+    >
+    </xiaomiService>
+
+    <!-- 零售店 -->
+    <retailStores
+    id='jump13'
+    retailStores="{{retailStores}}"
+    >
+    </retailStores>
+  </scroll-view>
+</view>

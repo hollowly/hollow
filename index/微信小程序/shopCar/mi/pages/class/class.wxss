@@ -1,0 +1,32 @@
+/*---------left---------- */
+.box {
+  color: #3c3c3c;
+  font-size: 30rpx;
+}
+.box > .left {
+  width: 30%;
+  height: 100vh;
+  border-right: 2rpx solid #efefef;
+  float: left;
+  box-sizing: border-box;
+}
+.box > .left .listBox {
+  padding: 26rpx 0px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+/* ---------right--------- */
+.box > .right {
+  padding: 20rpx 20rpx;
+  width: 70%;
+  height: 100vh;
+  float: right;
+  box-sizing: border-box;
+}
+
+.current-class {
+  color: #fb7d34;
+  font-size: 40rpx;
+}

@@ -1,0 +1,36 @@
+<image class="topImg" mode="widthFix" src='{{topImg}}'></image>
+
+<!-- Readmi红米 Mote系列 -->
+<view class="title"><text>Readmi红米 Note系列</text></view>
+<view class="itemBox" wx:for="{{ readmiNote }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- Readmi红米 K系列 -->
+<view class="title"><text>Readmi红米 K系列</text></view>
+<view class="itemBox" wx:for="{{ readmiK }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- Readmi红米 X系列 -->
+<view class="title"><text>Readmi红米 X系列</text></view>
+<view class="itemBox" wx:for="{{ readmiX }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- Readmi红米 数字系列 -->
+<view class="title"><text>Readmi红米 数字系列</text></view>
+<view class="itemBox" wx:for="{{ readmiDigital }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- Readmi手机配件< -->
+<view class="title"><text>Readmi手机配件</text></view>
+<view class="itemBox" wx:for="{{ readmiPhoneAccessories }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>

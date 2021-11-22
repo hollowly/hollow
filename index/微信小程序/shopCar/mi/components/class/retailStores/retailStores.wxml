@@ -1,0 +1,6 @@
+<!--零售店 -->
+<view class="title"><text>零售店</text></view>
+<view class="itemBox" wx:for="{{ retailStores }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>

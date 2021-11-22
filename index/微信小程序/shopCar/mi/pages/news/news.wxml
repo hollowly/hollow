@@ -1,0 +1,25 @@
+
+<view class="search">
+  <input placeholder="请输入关键字..."  bindinput="setinput" />
+  <button bindtap="search">搜索</button>
+</view>
+
+<view class="list">
+  <navigator url="/pages/news/detail/detail?id={{item.id}}" class="link" wx:for="{{newsList}}" wx:key='id'>
+    <image class="img" mode="widthFix" src='{{item.url}}'></image>
+    <view class="text">
+      <view class="title">{{item.title}}</view>
+      <view class="info">日期{{item.date}} 浏览量：{{item.hits}}</view>
+    </view>
+  </navigator>
+</view>
+
+<!-- 发布文章按钮 -->
+<movable-area>
+  <movable-view x="{{x}}" y="{{y}}" direction="all" animation="true">
+    <image src="{{add}}" class="btnAdd"></image>
+  </movable-view>
+</movable-area>
+
+
+<view wx:if="{{isShow}}" class="bottom-text">已经到底了...</view>

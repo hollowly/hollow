@@ -1,0 +1,6 @@
+<view class="page">
+<!-- 双向绑定：mode:value="{{uid}}" -->
+  账号：<input type='text' model:value="{{uid}}" placeholder="输入账号"/>
+  账号：<input type='password' model:value="{{pwd}}" placeholder="输入密码"/>
+  <button catchtap="login">登录</button>
+</view>

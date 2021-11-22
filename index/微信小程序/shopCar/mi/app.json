@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shopcar/shopcar",
+    "pages/order/order",
+    "pages/news/news",
+    "pages/class/class",
+    "pages/login/login",
+    "pages/news/detail/detail",
+    "pages/my/my",
+    "pages/index/detailed/detailed",
+    "pages/logs/logs",
+    "pages/grid/grid1/grid1",
+    "pages/grid/grid2/grid2",
+    "pages/grid/grid3/grid3",
+    "pages/grid/grid4/grid4",
+    "pages/grid/grid5/grid5",
+    "pages/grid/grid6/grid6",
+    "pages/grid/grid7/grid7",
+    "pages/grid/grid8/grid8"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "小米商城",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#f00",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/img/tabbar/_home.png",
+        "selectedIconPath": "/img/tabbar/home.png"
+      },
+      {
+        "pagePath": "pages/class/class",
+        "text": "分类",
+        "iconPath": "/img/tabbar/_class.png",
+        "selectedIconPath": "/img/tabbar/class.png"
+      },
+      {
+        "pagePath": "pages/shopcar/shopcar",
+        "text": "购物车",
+        "iconPath": "/img/tabbar/_shopcar.png",
+        "selectedIconPath": "/img/tabbar/shopcar.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "社区",
+        "iconPath": "/img/tabbar/_news.png",
+        "selectedIconPath": "/img/tabbar/news.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "/img/tabbar/_my.png",
+        "selectedIconPath": "/img/tabbar/my.png"
+      }
+    ],
+    "position": "bottom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

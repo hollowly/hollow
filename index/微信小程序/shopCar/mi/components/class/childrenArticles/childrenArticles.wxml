@@ -1,0 +1,10 @@
+
+
+<!-- 儿童用品 -->
+<view class="title"><text>儿童用品</text></view>
+<view class="itemBox" wx:for="{{ childrenArticles }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<image class="bottomImg" mode="widthFix" src='{{bottomImg}}'></image>

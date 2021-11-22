@@ -1,0 +1,9 @@
+{
+  "usingComponents": { 
+    "swiper": "/components/swiper/swiper",
+    "grid":"/components/grid/grid",
+    "goods":"/components/goods/goods",
+    "recommend":"/components/recommend/recommend"
+  },
+  "navigationBarTitleText": "首页"
+}

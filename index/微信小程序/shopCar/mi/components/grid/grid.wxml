@@ -1,0 +1,12 @@
+<!-- 九宫格 -->
+<view class="mygrid">
+<!-- navigator：跳转页面：跳转的页面在 tabbar 列表中，就要添加 open-type="switchTab" 属性，否则不加 -->
+  <navigator
+    url='{{item.url}}'
+    class="item"
+    wx:for="{{gridList}}"
+    wx:key='index'
+  >
+    <image class="img" src='{{item.img}}'></image>
+  </navigator>
+</view>   

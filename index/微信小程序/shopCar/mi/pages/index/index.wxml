@@ -1,0 +1,16 @@
+<!-- 轮播图 -->
+<swiper swiperList='{{swiperList}}'></swiper>
+
+<!-- 九宫格 -->
+<grid gridList='{{gridList}}'></grid>
+
+<!-- 推荐 -->
+<recommend recommendList='{{recommendList}}'></recommend>
+
+<!-- 热销 -->
+<navigator url="/pages/index/detailed/detailed?id=6" class="hotSale">
+  <image src='/img/hotSale.png' />
+</navigator>
+
+<!-- 商品 -->
+<goods goodList="{{ goodList }}"></goods>

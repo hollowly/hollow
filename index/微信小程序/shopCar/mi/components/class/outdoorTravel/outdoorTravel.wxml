@@ -1,0 +1,14 @@
+
+<!-- 户外出行 -->
+<view class="title"><text>户外出行</text></view>
+<view class="itemBox" wx:for="{{ outdoorTravel }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 箱包 -->
+<view class="title"><text>箱包</text></view>
+<view class="itemBox" wx:for="{{ luggageBag }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>

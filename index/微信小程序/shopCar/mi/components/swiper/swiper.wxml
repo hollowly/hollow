@@ -1,0 +1,10 @@
+<swiper class="swiper" autoplay indicator-dots duration="500" interval="3000">
+  <!-- mode="widthFix"	缩放模式，宽度不变，高度自动变化，保持原图宽高比不变 -->
+  <swiper-item wx:for="{{swiperList}}" wx:key='index'>
+    <navigator url='/pages/index/detailed/detailed?id={{item.id}}' open-type="reLaunch">
+      <image mode="widthFix" src="{{item.img}}"></image>
+    </navigator>
+  </swiper-item>
+  <!-- <swiper-item><image mode="widthFix" src="/img/swiper/sw-02.jpg"></image></swiper-item>
+  <swiper-item><image mode="widthFix" src="/img/swiper/sw-03.jpg"></image></swiper-item> -->
+</swiper>

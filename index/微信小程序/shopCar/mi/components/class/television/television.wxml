@@ -1,0 +1,23 @@
+
+<!-- 电视 -->
+<view class="title"><text>电视</text></view>
+<view class="itemBox" wx:for="{{ television }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 小米电视大师 -->
+<view class="title"><text>小米电视大师</text></view>
+<view class="itemBox" wx:for="{{ TvMaster }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 电视配件相关 -->
+<view class="title"><text>电视配件相关</text></view>
+<view class="itemBox" wx:for="{{ TvAccessories }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<image class="bottomImg" mode="widthFix" src='{{bottomImg}}'></image>

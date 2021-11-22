@@ -1,0 +1,8 @@
+<view>{{article.id}}</view>
+<view class="box">
+  <view class="title">{{article.title}}</view>
+  <view class="data">日期：{{article.data}} 浏览量：{{article.hits}}</view>
+  <view class="intro">{{article.intro}}</view>
+
+  <view><image src="{{article.img}}" mode="widthFix"></image></view>
+</view>

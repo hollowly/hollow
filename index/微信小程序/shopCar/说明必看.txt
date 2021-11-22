@@ -1,0 +1,5 @@
+1. 创建数据库名为db_scitc_ego，安装数据库(db_scitc_ego.sql) (mysql必须是8以上的版本)
+
+2. miAPI为laravel后端代码，先进入目录miAPI运行php artisan serve(如果运行后的地址不是 http://127.0.0.1:8000，请进入scitc_ego的app.js，修改最后的Server和StoragePath路径，改为php artisan serve运行后的地址)
+
+3. 再打开scitc_ego小程序

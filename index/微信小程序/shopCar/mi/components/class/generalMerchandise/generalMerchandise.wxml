@@ -1,0 +1,52 @@
+
+
+<!-- 家居日用 -->
+<view class="title"><text>家居日用</text></view>
+<view class="itemBox" wx:for="{{ HouseholdDailyUse }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 防护清洁 -->
+<view class="title"><text>防护清洁</text></view>
+<view class="itemBox" wx:for="{{ ProtectionCleaning }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 个人护理 -->
+<view class="title"><text>个人护理</text></view>
+<view class="itemBox" wx:for="{{ personalCare }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 健康 -->
+<view class="title"><text>健康</text></view>
+<view class="itemBox" wx:for="{{ healthy }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 鞋服配饰 -->
+<view class="title"><text>鞋服配饰</text></view>
+<view class="itemBox" wx:for="{{ footwearAccessories }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 床品家居 -->
+<view class="title"><text>床品家居</text></view>
+<view class="itemBox" wx:for="{{ bedFurniture }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 礼品周边 -->
+<view class="title"><text>礼品周边</text></view>
+<view class="itemBox" wx:for="{{ giftPeriphery }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<image class="bottomImg" mode="widthFix" src='{{bottomImg}}'></image>

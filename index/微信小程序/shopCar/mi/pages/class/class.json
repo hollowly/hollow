@@ -1,0 +1,19 @@
+{
+  "usingComponents": {
+    "xiaomiPhone":"/components/class/xiaomiPhone/xiaomiPhone",
+    "readmiPhone":"/components/class/readmiPhone/readmiPhone",
+    "gamePhone":"/components/class/gamePhone/gamePhone",
+    "smartWear":"/components/class/smartWear/smartWear",
+    "television":"/components/class/television/television",
+    "computerOffice":"/components/class/computerOffice/computerOffice",
+    "bigAppliances":"/components/class/bigAppliances/bigAppliances",
+    "smallAppliances":"/components/class/smallAppliances/smallAppliances",
+    "smartHome":"/components/class/smartHome/smartHome",
+    "outdoorTravel":"/components/class/outdoorTravel/outdoorTravel",
+    "generalMerchandise":"/components/class/generalMerchandise/generalMerchandise",
+    "childrenArticles":"/components/class/childrenArticles/childrenArticles",
+    "xiaomiService":"/components/class/xiaomiService/xiaomiService",
+    "retailStores":"/components/class/retailStores/retailStores"
+  },
+  "navigationBarTitleText": "分类"
+}

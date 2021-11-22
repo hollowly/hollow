@@ -1,0 +1,16 @@
+/* 自定义九宫格 */
+.mygrid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
+}
+.mygrid > .item {
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+}
+.mygrid .img {
+  width: 200rpx;
+  height: 200rpx;
+}

@@ -1,0 +1,9 @@
+var Fix = {
+     tofix:function(value) {
+          return value.toFixed(2);
+     }
+}
+
+module.exports = {
+     toFixed:Fix.tofix
+}

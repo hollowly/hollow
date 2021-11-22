@@ -1,0 +1,119 @@
+.hr {
+  width: 100%;
+  height: 20rpx;
+  background: #f5f5f5;
+}
+
+.box {
+  display:flex;
+  padding: 20rpx 0rpx 10rpx 0rpx;
+  border-bottom: 1px solid #fff;
+}
+/* 选择图标 */
+.icon {
+  width: 150rpx;
+  height: 70rpx;
+  transform: translate(30%,100%);
+  display: block;
+  float: left;
+}
+/* 图片 */
+.goods {
+  width: 94px;
+  height: 94px;
+  border: 1px solid #eee;
+  float: left;
+  margin-right: 30rpx;
+}
+/* 内容 */
+.info {
+  padding-top: 20rpx;
+}
+/* 标题 */
+.title {
+  font-size: 28rpx;
+}
+/* 价格 */
+.price {
+  padding: 10rpx 0rpx;
+  font-size: 28rpx;
+  color: red;
+}
+
+/* 减按钮 */
+.reduce {
+  width: 40rpx;
+  border-radius: 0px;
+}
+/* 数量 */
+.count {
+  display: inline-block;
+  border: 1px solid #ccc;
+  width: 60rpx;
+  height: 55rpx;
+  text-align: center;
+  transform: translateY(-22rpx);
+}
+/* 加按钮 */
+.add {
+  width: 40rpx;
+}
+.deleteIcon {
+  transform: translateY(-8rpx);
+  width: 70rpx;
+  float: right;
+}
+
+.point {
+  color: #999;
+  padding: 10rpx;
+  text-align: center;
+  font-size: 24rpx;
+  background: #f5f5f5;
+  margin: 20rpx 0px;
+}
+
+.sum {
+  width: 100%;
+  display: flex;
+  border: 1px solid #f4f4f4f4;
+  height: 110rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #eee;
+  z-index: 999;
+}
+.sum > .icon {
+  flex: 1;
+  transform: translate(15rpx ,25rpx);
+  display: inline-block;
+}
+.sum > .left {
+  padding-top: 15rpx;
+  flex: 3;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.sum > .center {
+  font-size: 30rpx;
+  line-height: 110rpx;
+  flex: 3;
+  background: #fcdfdff4;
+}
+
+.sum > .right {
+  font-size: 30rpx;
+  color: white;
+  line-height: 110rpx;
+  flex: 3;
+  background: #ff6700;
+}
+
+.sum .sumPrice {
+  color: red;
+  font-size: 36rpx;
+  font-weight: 700;
+}

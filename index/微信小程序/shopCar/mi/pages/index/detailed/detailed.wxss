@@ -1,0 +1,92 @@
+.swiper {
+  width: 100%;
+  height: 400px;
+}
+/* 使图片占满整个宽度 */
+.swiper image {
+  width: 100%;
+}
+/* 价格和介绍 */
+.price{
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.price > .new_price {
+  color: #ff6700;
+  font-size: 40rpx;
+  font-weight: 700;
+  padding-left: 20rpx;
+}
+.price > .old_price {
+  padding-left: 10rpx;
+  color: rgba(0,0,0,.54);
+  font-size: 30rpx;
+  text-decoration: line-through;
+}
+.intro{
+  width: 100%;
+  height: 400rpx;
+  padding: 0rpx 30rpx 0rpx 20rpx;
+}
+.intro > view {
+  line-height: 90rpx;
+  padding: 10rpx 0rpx 10rpx 0rpx;
+}
+.intro > .title {
+  line-height: 1.5em;
+  color: #000;
+  font-weight: 700;
+  font-size: 32rpx;
+}
+.intro > view {
+  line-height: 1.5em;
+  font-size: 28rpx;
+}
+
+.simg {
+  width: 100%;
+}
+
+/* 购物定位 */
+.pay {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.1);
+}
+.pay > view {
+  margin-left: 10rpx;
+  width: 130rpx;
+  height: 100rpx;
+  float: left;
+  text-align: center;
+}
+.icon > image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.icon > view {
+  font-size: 30rpx;
+  color: #ccc;
+  padding-bottom: 10rpx;
+}
+
+.btn-1 {
+  margin: 0;
+  padding: 0;
+  margin-top: 10rpx;
+  line-height: 90rpx;
+  text-align: center;
+  float: right;
+  width:240rpx !important;
+  border-radius: 100rpx;
+  height: 90rpx;
+  color: #fff;
+  background-image: linear-gradient(90deg,#ff7310,#fe3f00);
+  transform: translateX(-20px);
+}

@@ -1,0 +1,29 @@
+<!-- 厨房小电 -->
+<view class="title"><text>厨房小电</text></view>
+<view class="itemBox" wx:for="{{ smallKitchenElectrical }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 地面清洁 -->
+<view class="title"><text>地面清洁</text></view>
+<view class="itemBox" wx:for="{{ floorCleaning }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 空气净化 -->
+<view class="title"><text>空气净化</text></view>
+<view class="itemBox" wx:for="{{ airPurification }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<!-- 生活电器 -->
+<view class="title"><text>生活电器</text></view>
+<view class="itemBox" wx:for="{{ lifeAppliance }}" wx:key="id">
+  <image class="itemImg" mode="widthFix" src='{{ item.img }}'></image>
+  <view>{{ item.name }}</view>
+</view>
+
+<image class="bottomImg" mode="widthFix" src='{{bottomImg}}'></image>

@@ -1,0 +1,26 @@
+<!--pages/order/order.wxml-->
+<view class="box" wx:if='{{isshow}}'>
+  <view class="orderId">
+    <text>订单号：1</text>
+    <text>待发货</text>
+  </view>
+  <view class="orderImg" wx:for="{{order_item}}" wx:key='{{index}}'>
+    <image src="{{item.img}}"></image>
+    <text class="title">{{item.title}}</text>
+    <text class="price">￥{{item.price}}</text>
+    <text class="count">数量 {{item.count}} 件</text>
+  </view>
+
+ <view class="info">
+  <view>收货人：八重神子</view>
+  <view>联系电话：13980524660</view>
+  <view>收货地址：稻妻</view>
+ <view class="pay"><button>立即支付</button></view>
+ </view>
+
+</view>
+
+<view class="tip" wx:else="{{isshow}}">
+<image src="/img/tip.jpg"></image>
+<view>你还没有订单，请前往<navigator open-type="switchTab" url="/pages/shopcar/shopcar">购物车</navigator>添加</view>
+</view>

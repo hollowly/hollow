@@ -1,0 +1,59 @@
+.goods {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-top: 10px; */
+  /* background: rgb(245,245,245);/ */
+}
+
+.goods > .item {
+  width: 50%;
+  text-align: center;
+  font-size: 12px;
+  /* border: 1px solid red;
+  box-sizing: border-box; */
+  padding-bottom: 20px;
+}
+/* 介绍 */
+.goods > .item > view {
+  padding-top: 1px;
+}
+.goods > .item > .name {
+  font-size: 15px;
+  color: rgba(0,0,0,.87);
+}
+.goods > .item > .intro {
+  width: 75%;
+  overflow: hidden; /*溢出隐藏*/
+  white-space: nowrap;  /*规定文本不进行换行*/
+  text-overflow: ellipsis;  /*当对象内文本溢出时显示省略标记（...）*/
+  color: rgba(0,0,0,.54);
+  font-size: 12px;
+  margin: auto;
+}
+.goods > .item > .price {
+  color: red;
+  font-size: 12px;
+  padding-top: 2px;
+}
+.goods > .item > .price > text {
+  font-size: 16px;
+}
+/* 按钮 */
+.goods > .item > button {
+  background: rgb(234,98,91);
+  color: white;
+  border: none;
+  width: 70%;
+  font-weight: 700;
+}
+.goods .img {
+  width: 170px;
+}
+
+.hr {
+  height: 2px;
+  width: 80%;
+  margin: auto;
+  border: 1px solid red;
+}

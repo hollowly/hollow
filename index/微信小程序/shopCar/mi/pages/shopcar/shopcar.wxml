@@ -1,0 +1,36 @@
+<wxs module="Fix" src="/utils/toFixed.wxs"></wxs>
+<!-- 购物车 -->
+<view wx:for="{{goods}}" wx:key="id">
+  <mp-slideview  buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" id="{{index}}">
+    <view class="box">
+      <!-- 图标图片 -->
+      <icon class="icon" type="{{item.state?'success':'circle'}}" id="{{index}}" size="30" catchtap="setState"></icon>
+      <image class="goods" mode="widthFix" src='{{item.img}}'></image>
+      <view class="info">
+      <!-- 标题和价格 -->
+        <view class="title">{{item.title}}</view>
+        <view class="price">售价:￥{{Fix.toFixed((item.price) * item.count)}}元</view>
+        <!-- 按钮 -->
+        <view>
+        <!-- 在元素上传递参数：
+            1. 直接使用id
+            2. 使用dataset，需要在数据前加 data-    如：data-flg = '-'
+        -->
+          <button class="reduce" size="mini" catchtap="setCount" id="{{index}}" data-flg='-'>-</button>
+          <text class="count">{{item.count}}</text>
+          <button class="add" size="mini" catchtap="setCount" id="{{index}}" data-flg='+'>+</button>
+        </view>
+      </view>
+    </view>
+    <view class="hr"></view>
+  </mp-slideview>
+</view>
+
+<view class="sum">
+  <icon class="icon" type="{{isCKAll?'success':'circle'}}" size="30" catchtap="ckAll"></icon>
+  <text class="left">共{{totalCount}}件金额:\n <text class="sumPrice">{{Fix.toFixed((totalPiece))}}</text> 元 </text>
+  <navigator class="center" url="/pages/class/class" open-type="switchTab">继续购物</navigator>
+  <navigator class="right" bindtap="pay" data-item='{{goods}}'>去结算</navigator>
+</view>
+
+<view class="point">温馨提示：产品是否购买成功，以最终下单为准，请尽快结算</view>
