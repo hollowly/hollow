@@ -182,7 +182,7 @@
     "safe-regex": "^1.1.0",
     "safer-buffer": "^2.1.2",
     "set-value": "^2.0.1",
-    "shelljs": "^0.7.8",
+    "shelljs": "^0.8.5",
     "signal-exit": "^3.0.3",
     "snapdragon": "^0.8.2",
     "snapdragon-node": "^2.1.1",
